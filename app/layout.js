@@ -1,5 +1,15 @@
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "@/context/AuthContext";
+import { BookingProvider } from "@/context/BookingContext";
+import { PaymentProvider } from "@/context/PaymentContext";
+import { ReviewProvider } from "@/context/ReviewContext";
+import { AdminProvider } from "@/context/AdminContext";
+import GoogleMapsWrapper from "@/components/googleComponents/GoogleMapsWrapper";
+import RouteLoader from "@/components/Loader/RouteLoader";
+import OfflineNotice from "@/components/offline/OfflineNotice";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,12 +27,29 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  
   return (
     <html lang="en">
+     
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <AuthProvider>
+          <BookingProvider>
+            <PaymentProvider>
+              <ReviewProvider>
+                <AdminProvider>
+                  <GoogleMapsWrapper>
+                    <RouteLoader />
+                    <OfflineNotice/>
+                  {children}
+                  </GoogleMapsWrapper>
+                </AdminProvider>
+              </ReviewProvider>
+            </PaymentProvider>
+          </BookingProvider>
+        </AuthProvider>
       </body>
     </html>
   );
