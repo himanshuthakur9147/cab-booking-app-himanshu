@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema(
   {
-    phone: { type: Number, required: true, unique: true },
+    phone: { type: String, required: true, unique: true },
     name: { type: String,default:"" }, // Optional: extend later
     email: { type: String,default:"" }, // Optional: extend later
     allow_whatsapp: { type: Boolean }, // Optional: extend later

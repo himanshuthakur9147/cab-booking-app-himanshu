@@ -18,6 +18,8 @@ export default function BillingForm() {
   const dropLocation = searchParams.get("to");
   const pickupDate =  searchParams.get("pickup_date")
   const pickupTime = searchParams.get("pickup_time")
+  const service_type = searchParams.get("service_type")
+
   const [name,setName]=useState("")
   const [email,setEmail]=useState("")
 
@@ -27,8 +29,13 @@ export default function BillingForm() {
   const distance = searchParams.get("distance");
   const duration = searchParams.get("duration");
   const rentalType = searchParams.get("rental_type");
+  const carName = searchParams.get("carName");
+  const seatCapacity = searchParams.get("seatCapacity");
+  const car_extra_fare = searchParams.get("car_extra_fare");
+  const km_limit = searchParams.get("km_limit");
+
   const effectiveDistance = searchParams.get("effectiveDistance");
-  console.log("All details are billing form",{pickupLocation, dropLocation, pickupDate, returnDate, pickupTime,carId, estimatedFare, distance,effectiveDistance, duration});
+  console.log("All details are billing form",{pickupLocation, dropLocation, pickupDate, returnDate, pickupTime,carId, estimatedFare, distance,effectiveDistance, duration,service_type});
 
   const handleProceed=(e)=>{
     e.preventDefault()
@@ -43,13 +50,16 @@ export default function BillingForm() {
       estimatedFare,
       distance,
       effectiveDistance,
-      duration
+      duration,
+      service_type
     })
 
 
      const bookingDetails = {
+    carName,seatCapacity,
       name,
       email,
+      service_type,
       rentalType,
     pickupLocation,
     dropLocation,
@@ -65,10 +75,11 @@ export default function BillingForm() {
   };
 
   // Clear any existing data under the same key
-  localStorage.removeItem("bookingData");
+  let remo=localStorage.removeItem("bookingData");
 
   // Set new data
-  localStorage.setItem("bookingData", JSON.stringify(bookingDetails));
+ let setl= localStorage.setItem("bookingData", JSON.stringify(bookingDetails));
+ console.log("the remove",remo,"the set",setl)
   console.log("The items in the local storge are",bookingDetails)
 
   // Redirect to payment page
@@ -151,8 +162,9 @@ export default function BillingForm() {
 
         {   returnDate!=="Invalid Date" ?  <p><span className="font-medium">Return Date :</span> {returnDate}</p> : ""}
 
-              <p><span className="font-medium">Cab Type :</span> Wagon R or Equivalent</p>
+              <p><span className="font-medium">Cab Type :</span> {carName}</p>
               <p><span className="font-medium">Cab Facility :</span> AC</p>
+              <p><span className="font-medium">Seat Capacity :</span> {seatCapacity} + 1</p>
 {             rentalType===""?
 <>
  <p><span className="font-medium">KMs Included :</span> {effectiveDistance} km</p>
@@ -167,7 +179,7 @@ export default function BillingForm() {
 
             {/* Tabs */}
             <div className="bg-white shadow-md rounded-md">
-              <GSTDetailsTabs />
+              <GSTDetailsTabs car_extra_fare={car_extra_fare} km_limit={km_limit}/>
               
             
             </div>

@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { auth, RecaptchaVerifier, signInWithPhoneNumber } from "@/lib/firebase";
+import { auth } from "@/lib/firebase";
+import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { useAuth } from "@/context/AuthContext";
 
 export default function PhoneAuthForm({ onSuccess }) {
   const { setUser, setIsAuthenticated } = useAuth();
+
   const [phone, setPhone] = useState("");
   const [otp, setOtp] = useState("");
   const [confirmationResult, setConfirmationResult] = useState(null);
@@ -14,95 +16,122 @@ export default function PhoneAuthForm({ onSuccess }) {
 
   const recaptchaLoadedRef = useRef(false);
 
+  // ✅ Setup ReCAPTCHA correctly using modular SDK
   useEffect(() => {
-    if (!recaptchaLoadedRef.current && typeof window !== "undefined" && document.getElementById("recaptcha-container")) {
-      recaptchaLoadedRef.current = true;
+    if (
+      typeof window !== "undefined" &&
+      !window.recaptchaVerifier &&
+      document.getElementById("recaptcha-container")
+    ) {
+      try {
+        window.recaptchaVerifier = new RecaptchaVerifier(
+          auth,
+          "recaptcha-container",
+          {
+            size: "invisible",
+            callback: (response) => {
+              console.log("ReCAPTCHA solved");
+            },
+            "expired-callback": () => {
+              console.warn("ReCAPTCHA expired");
+              window.recaptchaVerifier?.clear();
+              window.recaptchaVerifier = null;
+            },
+          }
+        );
 
-      window.recaptchaVerifier = new RecaptchaVerifier(auth, "recaptcha-container", {
-        size: "invisible",
-        callback: (response) => {
-          // CAPTCHA solved
-        },
-        "expired-callback": () => {
-          window.recaptchaVerifier.clear();
-          window.recaptchaVerifier = null;
-        }
-      });
-
-      window.recaptchaVerifier.render().catch(console.error);
+        window.recaptchaVerifier.render().catch(console.error);
+        recaptchaLoadedRef.current = true;
+      } catch (err) {
+        console.error("Error initializing reCAPTCHA:", err);
+      }
     }
   }, []);
 
-  const sendOtp = async () => {
-    try {
-      if (!window.recaptchaVerifier) {
-        alert("ReCAPTCHA not ready yet. Please wait.");
-        return;
-      }
-
-      setIsSending(true);
-      const appVerifier = window.recaptchaVerifier;
-      const result = await signInWithPhoneNumber(auth, "+91" + phone, appVerifier);
-      setConfirmationResult(result);
-      alert("OTP sent!");
-    } catch (err) {
-      console.error(err);
-      alert("Failed to send OTP");
-      if (window.recaptchaVerifier) {
-        window.recaptchaVerifier.clear();
-        window.recaptchaVerifier = null;
-        recaptchaLoadedRef.current = false;
-      }
-    } finally {
-      setIsSending(false);
-    }
-  };
-
-  const verifyOtp = async () => {
+  // 🚀 Send OTP
+const sendOtp = async () => {
   try {
-    setIsVerifying(true);
-    const result = await confirmationResult.confirm(otp);
-    const user = result.user;
-    const idToken = await user.getIdToken();
-
-    const sessionRes = await fetch("/api/users/auth/session", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ token: idToken }),
-    });
-
-    if (!sessionRes.ok) throw new Error("Session creation failed");
-
-    const userRes = await fetch("/api/users/auth/me");
-    const userData = await userRes.json();
-
-    if (userRes.ok) {
-      setUser(userData);
-      setIsAuthenticated(true);
+    if (phone.length < 10) {
+      alert("Enter a valid 10-digit number.");
+      return;
     }
 
-    await fetch("/api/users/save", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ phone: user.phoneNumber }),
-    });
+    if (!window.recaptchaVerifier) {
+      alert("ReCAPTCHA not loaded. Please wait.");
+      return;
+    }
 
-    alert("Login successful!");
-    if (onSuccess) onSuccess(); // this should close modal or update UI
+    setIsSending(true);
+    const appVerifier = window.recaptchaVerifier;
 
+    const result = await signInWithPhoneNumber(auth, "+91" + phone, appVerifier);
+    setConfirmationResult(result);
+    alert("OTP sent successfully!");
   } catch (err) {
-    console.error(err);
-    alert("Invalid OTP or login failed");
+    console.error("OTP send error:", err);
+
+    if (err.code === "auth/invalid-app-credential") {
+      alert("Firebase credential error: Check your API key and domain setup.");
+    } else {
+      alert("Failed to send OTP. Refresh and try again.");
+    }
+
+    // Cleanup recaptcha
+    if (window.recaptchaVerifier) {
+      window.recaptchaVerifier.clear();
+      window.recaptchaVerifier = null;
+    }
   } finally {
-    setIsVerifying(false);
+    setIsSending(false);
   }
 };
 
+  // 🔐 Verify OTP
+  const verifyOtp = async () => {
+    try {
+      setIsVerifying(true);
+      const result = await confirmationResult.confirm(otp);
+      const user = result.user;
+      const idToken = await user.getIdToken();
+
+      // 🔐 Send token to backend to create session
+      const sessionRes = await fetch("/api/users/auth/session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token: idToken }),
+      });
+
+      if (!sessionRes.ok) throw new Error("Session creation failed");
+
+      const userRes = await fetch("/api/users/auth/me");
+      const userData = await userRes.json();
+      console.log("User data: verify otp", userData);
+      if (userRes.ok) {
+        setUser(userData);
+        setIsAuthenticated(true);
+      }
+
+      // 🧾 Save user to DB (optional)
+      await fetch("/api/users/save", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone: "+"+user.phoneNumber }),
+      });
+
+      alert("Login successful!");
+      if (onSuccess) onSuccess();
+    } catch (err) {
+      console.error("OTP verification failed:", err);
+      alert("Invalid OTP or verification failed.");
+    } finally {
+      setIsVerifying(false);
+    }
+  };
 
   return (
     <div className="p-4">
       <input
-        type="text"
+        type="tel"
         placeholder="Phone number"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
@@ -137,7 +166,7 @@ export default function PhoneAuthForm({ onSuccess }) {
         </div>
       )}
 
-      {/* 👇 make sure this is always rendered */}
+      {/* 🔐 Required for invisible reCAPTCHA */}
       <div id="recaptcha-container"></div>
     </div>
   );

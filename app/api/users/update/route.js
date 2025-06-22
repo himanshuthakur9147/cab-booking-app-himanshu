@@ -1,34 +1,38 @@
-// app/api/users/update/route.js
-import { authAdmin } from "@/lib/firebaseAdmin";
-import { cookies } from "next/headers";
-import  db  from "@/lib/db";
 import { NextResponse } from "next/server";
+import jwt from "jsonwebtoken";
+import db from "@/lib/db";
 import User from "@/models/User";
 
 export async function POST(req) {
-  const cookieStore =await cookies();
-  const sessionCookie = cookieStore.get("session")?.value;
-
-  if (!sessionCookie) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
   try {
-    const decoded = await authAdmin.verifySessionCookie(sessionCookie, true);
-    const phone = decoded.phone_number;
+   
 
-    const { name, email, allowWhatsapp } = await req.json();
-    await db()
-    const user=await User.findOneAndUpdate({ phone }, {
+  
+   
+    const { name, email, allowWhatsapp,phone } = await req.json();
+    console.log("Update route",name, email, allowWhatsapp,phone)
+    await db();
+
+    const user = await User.findOneAndUpdate(
+      { phone },
+      {
         $set: {
           name,
           email,
-          allowWhatsapp,
+          allow_whatsapp: allowWhatsapp, // match your DB field
         },
-      });
-  
+      },
+      { new: true }
+    );
 
-    return NextResponse.json({ success: true,message:"Profile updated successfully" });
+    if (!user) {
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: "Profile updated successfully",
+    });
   } catch (error) {
     console.error("Update error:", error);
     return NextResponse.json({ error: "Update failed" }, { status: 500 });

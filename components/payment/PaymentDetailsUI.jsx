@@ -1,24 +1,87 @@
 import React,{useState} from 'react'
-import { useAuth } from '@/context/AuthContext';
+import {useRouter} from 'next/navigation'
+import {loadRazorpayScript } from "@/components/razorpay/LoadScript"
+import RouteLoader from '../Loader/RouteLoader';
 // Car Id se details fetch karni hai
 // booking ka data after payment karne ke baad database me store karna hai
 // booking complete hone ke baad success page par redirect karna hai
 // razorpay payment gateway ka use karna hai 
-const PaymentDetailsUI = ({bd}) => {
+const PaymentDetailsUI = ({bd,user}) => {
     console.log("PaymentDetailsUI received booking details:", bd);
+    console.log("PaymentDetailsUI received User details:", user);
+    const router=useRouter()
+    const [loader, setLoader] = useState(false);
       const [selectedOption, setSelectedOption] = useState("25");
   const [gstChecked, setGstChecked] = useState(false);
-    const {user} = useAuth();
+ 
   const paymentOptions = [
-    { label: "₹0 now", value: "0", description: "₹2788 later" },
-    { label: "25%", value: "25", description: "₹697 now" },
-    { label: "50%", value: "50", description: "₹1394 now" },
-    { label: "100%", value: "100", description: "₹2788 now" },
+    { label: "₹0 now", value: "0", description: `₹ ${bd.estimatedFare} later` },
+    { label: "25% now", value: "25", description: "₹ "+bd.estimatedFare*0.25  },
+    { label: "50% now", value: "50", description: "₹ "+bd.estimatedFare*0.5  },
+    { label: "100%", value: "100", description: `₹ ${bd.estimatedFare} now` },
   ];
   console.log("Selected payment option:", selectedOption);
+
+
+  const handlePayment = async () => {
+     const res = await loadRazorpayScript();
+  if (!res) {
+    alert("Razorpay SDK failed to load. Are you online?");
+    return;
+  }
+
+  const amountToPay = (parseInt(selectedOption) / 100) * bd.estimatedFare;
+
+  const options = {
+    key: "rzp_test_FFAksMSNAXvP7A", // Test key
+    amount: Math.round(amountToPay * 100), // in paisa
+    currency: "INR",
+    name: "Yatra Travel India",
+    description: "Cab Booking Payment",
+    image: "/logo.webp", // optional logo
+   handler: async function (response) {
+    console.log("Payment Success...",response)
+  const paymentData = {
+    ...bd,
+    user_phone:user.user.phone,
+    paymentId: response.razorpay_payment_id,
+    paidAmount: amountToPay,
+    paymentStatus: "success",
+  
+  };
+  setLoader(true);
+
+  await fetch("/api/bookings", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(paymentData),
+  });
+
+    router.push("/booking/success")
+    setTimeout(() => {
+      setLoader(false);
+    }, 3000);
+}
+,
+    prefill: {
+      name: bd.name,
+      email: bd.email,
+      contact: user.user.phone,
+    },
+    theme: {
+      color: "#F97316",
+    },
+  };
+
+  const razor = new window.Razorpay(options);
+  razor.open();
+};
+
+
   return (
     <div>
-        { bd &&
+
+        {bd &&
 <div className="flex flex-col md:flex-row justify-center items-start gap-6 p-6">
       <div className="bg-white shadow-lg rounded-lg p-6 w-full md:w-1/2">
         <h2 className="text-lg font-semibold mb-4">PAYMENT DETAILS</h2>
@@ -66,9 +129,13 @@ const PaymentDetailsUI = ({bd}) => {
           I have a GST Number (Optional)
         </label>
 
-        <button className="w-full bg-orange-500 text-white py-2 rounded font-semibold">
-            {selectedOption === "0" ? "BOOK NOW" : "PAY NOW"}
-        </button>
+       <button
+  className="w-full bg-orange-500 text-white py-2 hover:bg-orange-600 cursor-pointer rounded font-semibold"
+  onClick={handlePayment}
+>
+  {selectedOption === "0" ? "BOOK NOW" : "PAY ₹" + Math.round((parseInt(selectedOption) / 100) * bd.estimatedFare)}
+</button>
+
       </div>
 
       <div className="bg-white shadow-lg rounded-lg p-6 w-full md:w-1/2">
@@ -81,22 +148,24 @@ const PaymentDetailsUI = ({bd}) => {
         {bd.dropLocation &&  <p><strong>Drop Address :</strong> {bd.dropLocation}</p>}
           <p><strong>Pickup Date :</strong> {bd.pickupDate} at {bd.pickupTime}</p>
           {bd.returnDate!=="Invalid Date" && <p><strong>Return Date :</strong> {bd.returnDate}</p>}
-          <p><strong>Car Type :</strong>{bd.carType}</p>
+          <p><strong>Car Type :</strong> {bd.carName}</p>
+          <p><strong>Seat Capacity :</strong> {bd.seatCapacity} + 1</p>
 {bd.dropLocation===""? 
 
     <p><strong>Rental Service :</strong>{bd.rentalType==="8hr_80km"?"8HR 80KM":"12HR 120KM"}</p>
 : <>
 
-    <p><strong>KMs Included :</strong>{bd.effectiveDistance} KM</p>
-        {bd.returnDate==="Invalid Date"?<p><strong>Duration :</strong>{bd.duration}</p>:""}
+    <p><strong>KMs Included :</strong> {bd.effectiveDistance} KM</p>
+        {bd.returnDate==="Invalid Date"?<p><strong>Duration :</strong> {bd.duration}</p>:""}
 </>    
           }
-          <p><strong>Total Fare :</strong> ₹{bd.estimatedFare}</p>
+          <p><strong>Total Fare :</strong> ₹ {bd.estimatedFare}</p>
         </div>
 
        
       </div>
     </div>}
+
     </div>
   )
 }

@@ -7,7 +7,7 @@ import Inclusions from "./Inclusions";
 import TermsAndConditions from "./TermsAndConditions";
 
 
-export default function GSTDetailsTabs() {
+export default function GSTDetailsTabs({car_extra_fare,km_limit}) {
   const [activeTab, setActiveTab] = useState("inclusions");
 
   const tabs = [
@@ -43,7 +43,7 @@ export default function GSTDetailsTabs() {
       {/* Form section with border around */}
       <div className=" p-4">
         {activeTab === "inclusions" &&  <Inclusions />}
-        {activeTab === "exclusions" && <Exclusions />}
+        {activeTab === "exclusions" && <Exclusions car_extra_fare={car_extra_fare} km_limit={km_limit}/>}
         {activeTab === "tc" && <TermsAndConditions />}
        
       </div>

@@ -1,7 +1,7 @@
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { AuthProvider } from "@/context/AuthContext";
+
 import { BookingProvider } from "@/context/BookingContext";
 import { PaymentProvider } from "@/context/PaymentContext";
 import { ReviewProvider } from "@/context/ReviewContext";
@@ -9,6 +9,7 @@ import { AdminProvider } from "@/context/AdminContext";
 import GoogleMapsWrapper from "@/components/googleComponents/GoogleMapsWrapper";
 import RouteLoader from "@/components/Loader/RouteLoader";
 import OfflineNotice from "@/components/offline/OfflineNotice";
+import { AuthProvider } from "@/context/AuthContext";
 
 
 const geistSans = Geist({
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
                   <GoogleMapsWrapper>
                     <RouteLoader />
                     <OfflineNotice/>
+         
                   {children}
                   </GoogleMapsWrapper>
                 </AdminProvider>

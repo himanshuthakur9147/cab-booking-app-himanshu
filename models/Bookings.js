@@ -6,20 +6,25 @@ const BookingSchema = new mongoose.Schema(
   {
     pickup_address:String,
     drop_address:String,
-    pickup_date:Date,
+    pickup_date:String,
     pickup_time:String,
-    return_date:Date,
-    pickup_address:String,
+    return_date:String,
+    name:String,
+    email:String,
+    rentalType:String,
     effective_distance:Number,
     duration:String,
+    paid_amount:Number,
     total_estimate_fare:Number,
     service_type:{type:String,default:"One Way"},
+    payment_id:String,
+    payment_status:String,
     booked_by:{
         type:mongoose.Schema.Types.ObjectId,
         ref:User,
         require:true
     },
-    car_type:{
+    cab_type:{
         type:mongoose.Schema.Types.ObjectId,
         ref:Cabs,
         required:true

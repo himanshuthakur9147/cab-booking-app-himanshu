@@ -26,7 +26,7 @@ export default function BookingTabs() {
           <button
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
-            className={`px-2 md:px-4 py-2 text-[7px] sm:text-xs md:text-sm  border-r cursor-pointer border-gray-400 last:border-r-0 font-bold uppercase
+            className={`px-2 md:px-4 py-2  text-[8px] sm:text-xs md:text-sm lg:text-base  border-r cursor-pointer border-gray-400 last:border-r-0 font-bold uppercase
               ${
                 activeTab === tab.key
                   ? "bg-dark-btn text-white  "

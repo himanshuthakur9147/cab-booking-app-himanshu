@@ -7,6 +7,8 @@
   --color-dark-btn: #37a1cb;
   --color-text-clr:#ffffff;
   --color-bg-clr:#1e0020;
+   --breakpoint-xxs: 375px ;
+   --breakpoint-xs: 425px ;
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

@@ -75,7 +75,7 @@ export default function AirportForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className=" flex items-center gap-x-10 gap-y-2 flex-wrap">
+    <form onSubmit={handleSubmit(onSubmit)} className=" flex items-center gap-x-6 gap-y-2 flex-wrap">
 
       <div className="input-form">
         <label className="block lg:text-xl text-base font-bold text-gray-800 uppercase">
