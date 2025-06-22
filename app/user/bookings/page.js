@@ -13,7 +13,7 @@ export default function MyBookingsPage() {
       const res = await fetch("/api/users/bookings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone: user.phoneNumber }),
+        body: JSON.stringify({ phone: user.user.phone }),
       });
 
       const data = await res.json();

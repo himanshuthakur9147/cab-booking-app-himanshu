@@ -41,7 +41,7 @@ export default function UserProfile() {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ phone: user.phoneNumber }),
+            body: JSON.stringify({ phone: user.user.phone }),
           });
 
           const data = await res.json();
