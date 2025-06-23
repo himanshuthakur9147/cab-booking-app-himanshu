@@ -33,7 +33,7 @@ const PaymentDetailsUI = ({bd,user}) => {
   const amountToPay = (parseInt(selectedOption) / 100) * bd.estimatedFare;
 
   const options = {
-    key: process.env.REAL_KEY_ID, // Test key
+    key: "rzp_live_rMwUmz5xkijA0B", // Real Payment key
     amount: Math.round(amountToPay * 100), // in paisa
     currency: "INR",
     name: "Yatra Travel India",
