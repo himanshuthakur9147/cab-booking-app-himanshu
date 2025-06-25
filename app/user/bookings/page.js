@@ -77,7 +77,7 @@ export default function MyBookingsPage() {
                     booking.service_type==="Cab Rental Service"?
                     <p><strong>Rental Type:</strong> {booking.rentalType==="8hr_80km"?"8HR 80KM":"12HR 120KM"}</p>:
                     <>
-                                      <p><strong>Distance:</strong> {booking.effective_distance} KM</p>
+                                      <p><strong>KMs Included:</strong> {booking.effective_distance} KM</p>
                   <p><strong>Duration:</strong> {booking.duration}</p>
                     
                     </>

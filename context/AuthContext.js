@@ -1,5 +1,6 @@
 "use client";
 
+import { trusted } from "mongoose";
 import { createContext, useState, useContext, useEffect } from "react";
 
 const AuthContext = createContext();
