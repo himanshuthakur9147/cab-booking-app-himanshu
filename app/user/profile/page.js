@@ -101,63 +101,64 @@ export default function UserProfile() {
   return (
     <>
       <Navbar />
-      {userData !== null ? (
-        <div className="container max-w-[30%] mx-auto py-12">
-          <h1 className="text-2xl font-bold mb-6">Personal Info</h1>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <input
-              type="text"
-              name="name"
-              value={userData.name || ""}
-              onChange={handleChange}
-              placeholder="Full Name"
-              className="border border-gray-500 w-full p-2 rounded"
-              required
-            />
+{userData !== null ? (
+  <div className="container max-w-[95%] sm:max-w-[80%] md:max-w-[60%] lg:max-w-[40%] xl:max-w-[30%] mx-auto py-12 px-4">
+    <h1 className="text-2xl font-bold mb-6">Personal Info</h1>
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <input
+        type="text"
+        name="name"
+        value={userData.name || ""}
+        onChange={handleChange}
+        placeholder="Full Name"
+        className="border border-gray-500 w-full p-2 rounded"
+        required
+      />
 
-            <input
-              type="email"
-              name="email"
-              value={userData.email || ""}
-              onChange={handleChange}
-              placeholder="Email"
-              className="border border-gray-500 w-full p-2 rounded"
-              required
-            />
+      <input
+        type="email"
+        name="email"
+        value={userData.email || ""}
+        onChange={handleChange}
+        placeholder="Email"
+        className="border border-gray-500 w-full p-2 rounded"
+        required
+      />
 
-            <input
-              type="text"
-              name="phone"
-              value={userData.phone || ""}
-              onChange={handleChange}
-              placeholder="Phone Number"
-              className="border border-gray-500 w-full p-2 rounded"
-              disabled
-            />
+      <input
+        type="text"
+        name="phone"
+        value={userData.phone || ""}
+        onChange={handleChange}
+        placeholder="Phone Number"
+        className="border border-gray-500 w-full p-2 rounded"
+        disabled
+      />
 
-            <label className="flex gap-2 text-xs">
-              <input
-                type="checkbox"
-                name="allowWhatsapp"
-                checked={userData.allowWhatsapp || false}
-                onChange={handleChange}
-                className="accent-green-600 w-4 h-4"
-              />
-              Allow Savaari to communicate over Whatsapp & SMS for Trip-related Details & Offers
-            </label>
+      <label className="flex gap-2 text-xs">
+        <input
+          type="checkbox"
+          name="allowWhatsapp"
+          checked={userData.allowWhatsapp || false}
+          onChange={handleChange}
+          className="accent-green-600 w-4 h-4"
+        />
+        Allow Savaari to communicate over Whatsapp & SMS for Trip-related Details & Offers
+      </label>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full bg-blue-600 cursor-pointer text-white py-2 rounded hover:bg-blue-700 disabled:opacity-50"
-            >
-              {loading ? "Saving..." : "Save"}
-            </button>
-          </form>
-        </div>
-      ) : (
-        <RouteLoader />
-      )}
+      <button
+        type="submit"
+        disabled={loading}
+        className="w-full bg-blue-600 cursor-pointer text-white py-2 rounded hover:bg-blue-700 disabled:opacity-50"
+      >
+        {loading ? "Saving..." : "Save"}
+      </button>
+    </form>
+  </div>
+) : (
+  <RouteLoader />
+)}
+
     </>
   );
 }

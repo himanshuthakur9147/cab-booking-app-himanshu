@@ -10,7 +10,7 @@ const Selector = ({ options, value, onChange, label }) => {
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full  border-none rounded-md border-b border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full  border  rounded-md border-b border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
        
         {options.map((opt, idx) => (

@@ -10,6 +10,8 @@ import BookingTabForm from "@/components/BookingTabForm";
 import RouteLoader from "@/components/Loader/RouteLoader";
 import Footer from "@/components/footer/Footer";
 import AuthInit from "@/components/login/AuthInit";
+import RentalServices from "@/components/home/RentalServices";
+import ExploreServices from "@/components/home/ExploreServices";
 
 export default function Home() {
   const {
@@ -63,8 +65,8 @@ const onSubmit = () => {
       <Navbar />
       {loader && <RouteLoader />}
 
-      <div className="main-section bg-[url('/bg.webp')] w-full bg-cover bg-center bg-no-repeat h-[115vh] md:h-[70vw] text-xs lg:text-base lg:h-[60vw] xl:h-[35vw]">
-        <h1 className="uppercase font-bold text-[18px] xs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[55px] text-text-clr text-center font-sans py-4 md:pt-8 md:pb-5">
+      <div className="main-section bg-[url('/bg.webp')] w-full bg-cover bg-center bg-no-repeat h-[85vh] md:h-[70vw] text-xs lg:text-base lg:h-[60vw] xl:h-[85vh]">
+        <h1 className="uppercase font-bold text-[18px] xs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[55px] text-white text-center font-sans py-4 md:pt-8 md:pb-5">
           Services across 2000+ cities
         </h1>
 
@@ -76,7 +78,7 @@ const onSubmit = () => {
           <div className="explore-cab-btn absolute bottom-0 left-[15%] xxs:left-[20%] xs:left-[22%] sm:left-[20%] md:left-[25%] lg:left-[30%] xl:left-[35%]">
             <button
               onClick={onSubmit}
-              className="bg-dark-btn hover:bg-sky-600 text-text-clr px-12 md:px-28 cursor-pointer py-3 rounded-md font-bold text-base md:text-xl transition duration-100"
+              className="bg-dark-btn hover:bg-light-btn text-white px-12 md:px-28  cursor-pointer py-3 rounded-md font-bold text-base md:text-xl transition duration-100"
             >
               Explore Cabs
             </button>
@@ -84,6 +86,8 @@ const onSubmit = () => {
         </div>
       </div>
 
+<RentalServices/>
+<ExploreServices/>
       <Footer />
     </>
   );

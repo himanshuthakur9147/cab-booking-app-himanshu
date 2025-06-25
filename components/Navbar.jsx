@@ -25,11 +25,11 @@ const Navbar = () => {
         <div className="left-logo">
           <Link href="/">
             <Image
-              src="/logo.webp"
+              src="/logo.jpeg"
               alt="Logo"
-              width={120}
+              width={240}
               height={100}
-              className="w-24 md:w-28 lg:w-32"
+              className="w-20 sm:w-24 "
             />
           </Link>
         </div>
@@ -57,10 +57,15 @@ const Navbar = () => {
 
         {/* === BUTTONS / LOGIN === */}
         <div className="buttons flex items-center gap-2">
-          <button className="bg-white text-black px-4 py-1 text-xs md:text-xs lg:text-base border rounded-full hover:text-slate-900 transition duration-300">
-            <span className="hidden sm:inline">Download</span>
-            <span> App</span>
-          </button>
+          <Link href={"/"}><button className="bg-white text-slate-900 hidden sm:inline px-4 uppercase py-1 font-semibold cursor-pointer   text-xs md:text-sm lg:text-base hover:text-black transition duration-300">
+          Home
+          </button></Link>
+          <Link href={"/about"}><button className="bg-white text-slate-900 hidden sm:inline px-4 uppercase py-1 font-semibold cursor-pointer   text-xs md:text-sm lg:text-base hover:text-black transition duration-300">
+          About Us
+          </button></Link>
+          <Link href={"/blogs"}><button className="bg-white text-slate-900 hidden sm:inline uppercase px-4 py-1  font-semibold cursor-pointer  text-xs md:text-sm lg:text-base hover:text-black transition duration-300">
+          blogs
+          </button></Link>
 
           {isAuthenticated ? (
             <div

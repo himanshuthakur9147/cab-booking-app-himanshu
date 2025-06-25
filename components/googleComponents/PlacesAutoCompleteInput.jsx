@@ -27,7 +27,7 @@ export default function PlacesAutocompleteInput({ value, onChange, onPlaceSelect
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
-      className="w-full border-b border-gray-400 text-gray-700 placeholder:text-gray-600 outline-none py-2 pl-2"
+      className="w-full border-b border-gray-400 text-gray-700  placeholder:text-gray-600 outline-none py-2 pl-2"
     />
   );
 }

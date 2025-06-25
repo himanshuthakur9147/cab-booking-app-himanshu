@@ -38,7 +38,7 @@ const PaymentDetailsUI = ({bd,user}) => {
     currency: "INR",
     name: "Yatra Travel India",
     description: "Cab Booking Payment",
-    image: "/logo.webp", // optional logo
+    image: "/logo.png", // optional logo
    handler: async function (response) {
     console.log("Payment Success...",response)
   const paymentData = {

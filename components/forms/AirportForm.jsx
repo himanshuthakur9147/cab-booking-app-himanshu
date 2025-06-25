@@ -77,11 +77,11 @@ export default function AirportForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className=" flex items-center gap-x-6 gap-y-2 flex-wrap">
 
-      <div className="input-form">
+      <div className="input-form w-full sm:auto">
         <label className="block lg:text-xl text-base font-bold text-gray-800 uppercase">
           trip
         </label>
-        <div className="input-box flex items-center gap-2  py-4">
+        <div className="input-box flex items-center gap-2  py-2 md:py-4">
 
   <div className="">
       <Selector
@@ -96,11 +96,11 @@ export default function AirportForm() {
         </div>
 
       </div>
-      <div className="input-form">
+      <div className="input-form w-full sm:w-auto md:w-full lg:w-auto">
         <label className="block lg:text-xl text-base font-bold text-gray-800 uppercase">
           pickup address
         </label>
-        <div className="input-box flex items-center gap-2 py-4">
+        <div className="input-box flex items-center gap-2 py-2 md:py-4">
 <FaMapMarkerAlt className="text-lg text-gray-700"/>
       <div className="w-full">
                  <PlacesAutocompleteInput
@@ -119,11 +119,11 @@ export default function AirportForm() {
         </div>
 
       </div>
-      <div className="input-form">
+      <div className="input-form w-full sm:w-auto md:w-full lg:w-auto">
         <label className="block lg:text-xl text-base font-bold text-gray-800 uppercase">
           drop address
         </label>
-        <div className="input-box flex items-center gap-2 py-4">
+        <div className="input-box flex items-center gap-2 py-2 md:py-4">
 <FaMapMarkerAlt className="text-lg text-gray-700"/>
     <div className="w-full">
                 <PlacesAutocompleteInput
@@ -145,13 +145,13 @@ export default function AirportForm() {
         <label className="block lg:text-xl text-base font-bold text-gray-800 uppercase">
           pickup date
         </label>
-        <div className="input-box flex items-center gap-0 py-4">
+        <div className="input-box flex items-center gap-2 py-2 md:py-4">
 <MdDateRange className="text-lg text-gray-700"/>
 <DatePicker
       selected={pickupDate}
       onChange={(date) => setPickupDate(date)}
       placeholderText="Enter the date"
-      className="border-b text-gray-700 w-32 placeholder:text-gray-700 outline-none pl-2 py-1"
+      className="border-b text-gray-700 w-[165px] xxs:w-[210px] xs:w-[240px] sm:w-full md:w-28 lg:w-full  placeholder:text-gray-700 outline-none pl-2 py-1"
       dateFormat="dd/MM/yyyy"
       showPopperArrow={false}
       minDate={today} // ✅ disables all past dates
@@ -165,7 +165,7 @@ export default function AirportForm() {
         <label className="block lg:text-xl text-base font-bold text-gray-800 uppercase">
           pickup time
         </label>
-        <div className="input-box flex items-center gap-2 py-4">
+        <div className="input-box flex items-center gap-2 py-2 md:py-4">
           <MdAccessTimeFilled className="text-lg text-gray-700" />
           <select
             value={pickupTime || ""}

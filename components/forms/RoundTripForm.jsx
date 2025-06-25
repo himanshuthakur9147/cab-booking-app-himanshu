@@ -64,15 +64,16 @@ export default function RoundTripForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className=" flex items-center gap-x-10 gap-y-2 flex-wrap">
-      <div className="input-form">
+    <form onSubmit={handleSubmit(onSubmit)} className=" flex items-center gap-x-10 gap-y-2 flex-wrap w-full">
+      <div className="input-form w-full sm:w-auto">
         <label className="block  text-sm lg:text-xl md:text-base font-bold text-gray-800 uppercase">
           from
         </label>
-        <div className="input-box flex items-center gap-2 py-4">
+        <div className="input-box flex w-full items-center gap-2  py-2 sm:py-2 md:py-4">
 <FaMapMarkerAlt className="text-lg text-gray-700"/>
       <div className="w-full">
                 <PlacesAutocompleteInput
+                className="w-full"
                   placeholder="Enter pickup location"
                   value={pickupLocation}
                   onChange={setPickupLocation}
@@ -88,11 +89,11 @@ export default function RoundTripForm() {
         </div>
 
       </div>
-      <div className="input-form">
+      <div className="input-form w-full sm:w-auto">
         <label className="block  text-sm lg:text-xl md:text-base font-bold text-gray-800 uppercase">
           to
         </label>
-        <div className="input-box flex items-center gap-2 py-4">
+        <div className="input-box flex items-center gap-2 w-full py-2 sm:py-2 md:py-4">
 <FaMapMarkerAlt className="text-lg text-gray-700"/>
        <div className="w-full">
                  <PlacesAutocompleteInput
@@ -114,13 +115,13 @@ export default function RoundTripForm() {
         <label className="block  text-sm lg:text-xl md:text-base font-bold text-gray-800 uppercase">
           pickup date
         </label>
-        <div className="input-box flex items-center gap-0 py-4">
+        <div className="input-box flex items-center gap-2 w-full py-2 md:py-4">
 <MdDateRange className="text-lg text-gray-700"/>
 <DatePicker
        selected={pickupDate}
             onChange={(date) => setPickupDate(date)}
             placeholderText="Enter date"
-            className="border-b text-gray-700 w-full md:w-28 placeholder:text-gray-700 outline-none pl-2 py-1"
+           className="border-b text-gray-700 w-[165px] xxs:w-[210px] xs:w-[240px] sm:w-full md:w-28 lg:w-full  placeholder:text-gray-700 outline-none pl-2 py-1"
             dateFormat="dd/MM/yyyy"
             showPopperArrow={false}
             minDate={today}
@@ -132,13 +133,13 @@ export default function RoundTripForm() {
         <label className="block  text-sm lg:text-xl md:text-base font-bold text-gray-800 uppercase">
           return date
         </label>
-        <div className="input-box flex items-center gap-0 py-4">
+        <div className="input-box flex items-center gap-2 py-2 md:py-4">
 <MdDateRange className="text-lg text-gray-700"/>
 <DatePicker
       selected={returnDate}
       onChange={(date) => setReturnDate(date)}
       placeholderText="Enter date"
-      className="border-b text-gray-700 w-full md:w-28 placeholder:text-gray-700 outline-none pl-2 py-1"
+      className="border-b text-gray-700 w-[165px] xxs:w-[210px] xs:w-[240px] sm:w-full md:w-28 lg:w-full  placeholder:text-gray-700 outline-none pl-2 py-1"
       dateFormat="dd/MM/yyyy"
       showPopperArrow={false}
       minDate={today} // ✅ disables all past dates
@@ -150,7 +151,7 @@ export default function RoundTripForm() {
              <label className="block  text-sm lg:text-xl md:text-base font-bold text-gray-800 uppercase">
                pickup time
              </label>
-             <div className="input-box flex items-center gap-2 py-4">
+             <div className="input-box flex items-center gap-2 py-2 md:py-4">
                <MdAccessTimeFilled className="text-lg text-gray-700" />
                <select
                  value={pickupTime || ""}

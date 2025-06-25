@@ -91,7 +91,7 @@ export default function MyBookingsPage() {
                 <div className="text-sm text-gray-500">
                   <p><strong>Booked By:</strong> {booking.name} ({booking.booked_by.phone})</p>
                   <p><strong>Booked At:</strong> {new Date(booking.booked_at).toDateString()} </p>
-                  <p><strong>Payment ID:</strong> {booking.payment_id || "N/A"}</p>
+                  {/* <p><strong>Payment ID:</strong> {booking.payment_id || "N/A"}</p> */}
                 </div>
 
                 <div className="flex gap-3">

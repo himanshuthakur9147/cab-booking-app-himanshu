@@ -9,7 +9,7 @@ export default function RouteLoader() {
 
   useEffect(() => {
     setLoading(true);
-    const timeout = setTimeout(() => setLoading(false), 500); // smooth UX
+    const timeout = setTimeout(() => setLoading(false), 2000); // smooth UX
     return () => clearTimeout(timeout);
   }, [pathname]);
 
