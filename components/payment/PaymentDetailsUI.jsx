@@ -38,7 +38,7 @@ const handlePayment = async () => {
   const orderRes = await fetch("/api/create-order", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ amount: finalAmount===0?1:finalAmount }), // Razorpay requires at least ₹1 for order creation
+    body: JSON.stringify({ amount: finalAmount<1?1:finalAmount }), // Razorpay requires at least ₹1 for order creation
   });
 
   const orderData = await orderRes.json();

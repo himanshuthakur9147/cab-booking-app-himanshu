@@ -8,6 +8,7 @@ const razorpay = new Razorpay({
 });
 
 export async function POST(req) {
+    console.log("Received request to create order",req.json());
   try {
     const body = await req.json();
     const { amount } = body;
