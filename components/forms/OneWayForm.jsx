@@ -127,7 +127,7 @@ export default function OneWayForm() {
             selected={pickupDate}
             onChange={(date) => setPickupDate(date)}
             placeholderText="Enter the date"
-            className="border-b text-gray-700 w-[165px] xxs:w-[230px] xs:w-[240px] sm:w-full md:w-28 lg:w-full  placeholder:text-gray-700 outline-none pl-2 py-1"
+            className="border-b text-gray-700 w-[165px] xxs:w-[210px] xs:w-[240px] sm:w-full md:w-28 lg:w-full  placeholder:text-gray-700 outline-none pl-2 py-1"
             dateFormat="dd/MM/yyyy"
             showPopperArrow={false}
             minDate={today}
