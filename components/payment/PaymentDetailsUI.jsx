@@ -23,46 +23,60 @@ const PaymentDetailsUI = ({bd,user}) => {
   console.log("Selected payment option:", selectedOption);
 
 
-  const handlePayment = async () => {
-     const res = await loadRazorpayScript();
+const handlePayment = async () => {
+  const res = await loadRazorpayScript();
   if (!res) {
     alert("Razorpay SDK failed to load. Are you online?");
     return;
   }
 
   const amountToPay = (parseInt(selectedOption) / 100) * bd.estimatedFare;
+  const finalAmount = Math.round(amountToPay * 100); // in paisa
+
+  // Step 1: Create Order on Backend
+  const orderRes = await fetch("/api/create-order", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ amount: finalAmount }),
+  });
+
+  const orderData = await orderRes.json();
+
+  if (!orderData.id) {
+    alert("Failed to create Razorpay order");
+    return;
+  }
 
   const options = {
-    key: "rzp_live_rMwUmz5xkijA0B", // Real Payment key
-    amount: Math.round(amountToPay * 100), // in paisa
+    key: "rzp_live_rMwUmz5xkijA0B",
+    amount: finalAmount,
     currency: "INR",
     name: "Yatra Travel India",
     description: "Cab Booking Payment",
-    image: "/logo.png", // optional logo
-   handler: async function (response) {
-    console.log("Payment Success...",response)
-  const paymentData = {
-    ...bd,
-    user_phone:user.user.phone,
-    paymentId: response.razorpay_payment_id,
-    paidAmount: amountToPay,
-    paymentStatus: "success",
-  
-  };
-  setLoader(true);
+    image: "/logo.png",
+    order_id: orderData.id, // 🔥 CRUCIAL FOR AUTO-CAPTURE
+    handler: async function (response) {
+      console.log("Payment Success:", response);
 
-  await fetch("/api/bookings", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(paymentData),
-  });
+      const paymentData = {
+        ...bd,
+        user_phone: user.user.phone,
+        paymentId: response.razorpay_payment_id,
+        orderId: response.razorpay_order_id,
+        paidAmount: amountToPay,
+        paymentStatus: "success",
+      };
 
-    router.push("/booking/success")
-    setTimeout(() => {
-      setLoader(false);
-    }, 3000);
-}
-,
+      setLoader(true);
+      await fetch("/api/bookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(paymentData),
+      });
+
+      router.push("/booking/success");
+      setTimeout(() => setLoader(false), 3000);
+    },
     prefill: {
       name: bd.name,
       email: bd.email,

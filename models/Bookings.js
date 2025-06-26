@@ -18,6 +18,7 @@ const BookingSchema = new mongoose.Schema(
     total_estimate_fare:Number,
     service_type:{type:String,default:"One Way"},
     payment_id:String,
+    order_id:String,
     payment_status:String,
     booked_by:{
         type:mongoose.Schema.Types.ObjectId,

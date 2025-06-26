@@ -9,6 +9,7 @@ const BookingCard = ({ booking }) => {
     phone,
     email,
     payment_id,
+    order_id,
     payment_status,
     pickup_address,
     drop_address,
@@ -40,6 +41,7 @@ const BookingCard = ({ booking }) => {
       <div className="text-sm text-gray-600 mt-2">
         <p>Email: {email}</p>
         <p>Payment ID: {payment_id || "N/A"}</p>
+        <p>Order ID: {order_id || "N/A"}</p>
         <p>Payment Status: <span className={`font-semibold ${payment_status === "success" ? "text-green-600" : "text-red-600"}`}>{payment_status}</span></p>
       </div>
 
