@@ -1,24 +1,22 @@
-// app/api/create-order/route.js
 import Razorpay from "razorpay";
 import { NextResponse } from "next/server";
 
 const razorpay = new Razorpay({
-  key_id: process.env.REAL_KEY_ID,
-  key_secret: process.env.REAL_KEY_SECRET,
+  key_id: process.env.RAZORPAY_KEY_ID,
+  key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
 export async function POST(req) {
-    console.log("Received request to create order",req.json());
   try {
     const body = await req.json();
     const { amount } = body;
-    console.log("Creating order with amount API:", amount);
-    if (!amount) {
-      return NextResponse.json({ error: "Amount is required" }, { status: 400 });
+
+    if (!amount || isNaN(amount) || amount < 1) {
+      return NextResponse.json({ error: "Amount must be at least ₹1" }, { status: 400 });
     }
 
     const options = {
-      amount: amount, // in paisa (₹1 = 100)
+      amount, // in paisa
       currency: "INR",
       receipt: `receipt_${Date.now()}`,
       payment_capture: 1, // auto-capture
@@ -30,9 +28,4 @@ export async function POST(req) {
     console.error("Order creation error:", error);
     return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
-}
-
-// Optional: handle other methods
-export function GET() {
-  return NextResponse.json({ error: "Method Not Allowed" }, { status: 405 });
 }
