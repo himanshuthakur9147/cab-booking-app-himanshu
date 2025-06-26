@@ -65,7 +65,7 @@ console.log("Order Request has been made");
         user_phone: user.user.phone,
         payment_id: response.razorpay_payment_id,
         order_id: response.razorpay_order_id,
-        paidAmount: finalAmount,
+        paidAmount: finalAmount/100,
         paymentStatus: "success",
       };
 
