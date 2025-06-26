@@ -32,6 +32,7 @@ const handlePayment = async () => {
 
   const amountToPay = (parseInt(selectedOption) / 100) * bd.estimatedFare;
   const finalAmount = Math.round(amountToPay * 100); // in paisa
+  console.log("Final Amount to Pay (in paisa):", finalAmount);
 
   // Step 1: Create Order on Backend
   const orderRes = await fetch("/api/create-order", {
@@ -41,7 +42,7 @@ const handlePayment = async () => {
   });
 
   const orderData = await orderRes.json();
-
+  console.log("Order Data:", orderData);
   if (!orderData.id) {
     alert("Failed to create Razorpay order");
     return;

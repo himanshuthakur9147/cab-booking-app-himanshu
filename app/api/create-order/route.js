@@ -11,7 +11,7 @@ export async function POST(req) {
   try {
     const body = await req.json();
     const { amount } = body;
-
+    console.log("Creating order with amount API:", amount);
     if (!amount) {
       return NextResponse.json({ error: "Amount is required" }, { status: 400 });
     }
