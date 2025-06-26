@@ -29,7 +29,7 @@ export async function POST(req) {
         service_type:data.service_type,
         booked_by:user,
         cab_type:car,
-        payment_id:data.paymentId,
+        payment_id:data.payment_id,
         order_id:data.order_id,
         payment_status:data.paymentStatus
         

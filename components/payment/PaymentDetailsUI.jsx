@@ -55,7 +55,7 @@ console.log("Order Request has been made");
     currency: "INR",
     name: "Yatra Travel India",
     description: "Cab Booking Payment",
-    image: "/logo.png",
+    image: "/logo.jpeg",
     order_id: orderData.id, // 🔥 CRUCIAL FOR AUTO-CAPTURE
     handler: async function (response) {
       console.log("Payment Success:", response);
@@ -63,9 +63,9 @@ console.log("Order Request has been made");
       const paymentData = {
         ...bd,
         user_phone: user.user.phone,
-        paymentId: response.razorpay_payment_id,
-        orderId: response.razorpay_order_id,
-        paidAmount: amountToPay,
+        payment_id: response.razorpay_payment_id,
+        order_id: response.razorpay_order_id,
+        paidAmount: finalAmount,
         paymentStatus: "success",
       };
 
