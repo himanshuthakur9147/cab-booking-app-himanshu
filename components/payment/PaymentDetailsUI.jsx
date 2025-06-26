@@ -30,15 +30,16 @@ const handlePayment = async () => {
     return;
   }
 
-  const amountToPay = (parseInt(selectedOption) / 100) * bd.estimatedFare;
-  const finalAmount = Math.round(amountToPay * 100); // in paisa
+const rawAmountToPay = (parseInt(selectedOption) / 100) * bd.estimatedFare;
+const finalAmount = Math.max(Math.round(rawAmountToPay * 100), 100); // 💥 Always at least ₹1 (i.e. 100 paisa)
+
   console.log("Final Amount to Pay (in paisa):", finalAmount);
 
   // Step 1: Create Order on Backend
   const orderRes = await fetch("/api/create-order", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ amount: finalAmount<1?1:finalAmount }), // Razorpay requires at least ₹1 for order creation
+    body: JSON.stringify({ amount: finalAmount }), // Razorpay requires at least ₹1 for order creation
   });
 console.log("Order Request has been made");
   const orderData = await orderRes.json();

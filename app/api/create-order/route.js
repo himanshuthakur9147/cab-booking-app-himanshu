@@ -11,7 +11,7 @@ export async function POST(req) {
     const body = await req.json();
     const { amount } = body;
 
-    if (!amount || isNaN(amount) || amount < 1) {
+    if (!amount || isNaN(amount) || amount < 100) {
       return NextResponse.json({ error: "Amount must be at least ₹1" }, { status: 400 });
     }
 
