@@ -40,7 +40,7 @@ const handlePayment = async () => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ amount: finalAmount<1?1:finalAmount }), // Razorpay requires at least ₹1 for order creation
   });
-
+console.log("Order Request has been made");
   const orderData = await orderRes.json();
   console.log("Order Data:", orderData);
   if (!orderData.id) {
