@@ -11,7 +11,14 @@ import Link from "next/link";
 import LoginModal from "./login/LoginModal";
 
 const Navbar = () => {
-  const { isAuthenticated, user, showModal, setShowModal } = useAuth();
+  const {
+    isAuthenticated,
+    user,
+    showModal,
+    setShowModal,
+    isAdmin,
+  } = useAuth();
+  
   const [open, setOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -79,6 +86,14 @@ const Navbar = () => {
             </button>
           </Link>
 
+          {isAdmin && (
+            <Link href="/admin/dashboard">
+              <button className="text-slate-900 px-4 uppercase py-1 font-semibold text-xs md:text-sm lg:text-base hover:text-black transition duration-300">
+                Admin Panel
+              </button>
+            </Link>
+          )}
+
           {isAuthenticated ? (
             <div
               ref={userBtnRef}
@@ -86,7 +101,7 @@ const Navbar = () => {
               className="ml-2 text-text-clr text-xs md:text-base bg-dark-btn py-1 px-3 rounded-lg cursor-pointer hover:bg-light-btn font-semibold flex items-center"
             >
               <CgProfile className="text-2xl mr-1" />
-              {user?.phone_number || "User"}
+              {user?.phone || "User"}
             </div>
           ) : (
             <button
@@ -114,7 +129,7 @@ const Navbar = () => {
 
       {/* MOBILE DROPDOWN MENU */}
       {menuOpen && (
-        <div className="absolute top-full right-0  w-fit bg-gray-100 shadow-md py-4 px-6  z-20">
+        <div className="absolute top-full right-0 w-fit bg-gray-100 shadow-md py-4 px-6 z-20">
           <ul className="flex flex-col space-y-3 text-sm text-gray-800 font-medium">
             <li>
               <Link href="/" onClick={() => setMenuOpen(false)}>
@@ -131,6 +146,13 @@ const Navbar = () => {
                 Blogs
               </Link>
             </li>
+            {isAdmin && (
+              <li>
+                <Link href="/admin/dashboard" onClick={() => setMenuOpen(false)}>
+                  Admin Panel
+                </Link>
+              </li>
+            )}
             <li>
               {isAuthenticated ? (
                 <div
@@ -141,7 +163,7 @@ const Navbar = () => {
                   className="cursor-pointer flex items-center gap-2"
                 >
                   <CgProfile className="text-xl" />
-                  {user?.phone_number || "User"}
+                  {user?.phone || "User"}
                 </div>
               ) : (
                 <button

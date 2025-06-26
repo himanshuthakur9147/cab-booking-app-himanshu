@@ -3,20 +3,19 @@ import { authAdmin } from "@/lib/firebaseAdmin";
 import { cookies } from "next/headers";
 
 export async function POST(req) {
-  const { token } = await req.json(); // this is the ID Token from client
+  const { token } = await req.json();
 
   try {
-    const expiresIn = 60 * 60 * 24 * 5 * 1000; // 5 days in ms
+    const expiresIn = 60 * 60 * 24 * 5 * 1000; // 5 days
 
-    // ✅ This creates the actual Session Cookie
     const sessionCookie = await authAdmin.createSessionCookie(token, { expiresIn });
 
-    // ✅ Set cookie using Next.js headers API
-    let cookie=await cookies();
-    cookie.set("session", sessionCookie, {
+    const cookieStore = cookies();
+    cookieStore.set("session", sessionCookie, {
       maxAge: expiresIn / 1000,
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
+      secure: process.env.NODE_ENV === "production" ? true : false,
+      sameSite: "lax",
       path: "/",
     });
 

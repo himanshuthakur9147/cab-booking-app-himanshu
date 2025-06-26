@@ -11,7 +11,7 @@ const Page = () => {
 
   useEffect(() => {
     const getUser = async () => {
-      if (isAuthenticated) {
+      if (isAuthenticated && user.role==="admin") {
       try {
           const res = await fetch("/api/users/get_user", {
             method: "POST",
@@ -50,7 +50,7 @@ const Page = () => {
 
 
   return <div>
-        <h1 className="text-xl text-center py-4 text-gray-800 font-bold">ADMIN PANEL</h1>
+        <h1 className="text-xl text-center py-4 text-gray-800 font-bold">ADMIN DASHBOARD</h1>
     <div className="max-w-5xl mx-auto px-4 py-6">
     {bookings.map((booking) => (
       <BookingCard key={booking._id} booking={booking} />

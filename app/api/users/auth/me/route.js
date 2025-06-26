@@ -30,6 +30,7 @@ export async function GET() {
         phone: decoded.phone_number,
         allowWhatsapp: user.allow_whatsapp || false,
         uid: decoded.uid,
+        role: user.role ,
       },
     });
   } catch (err) {

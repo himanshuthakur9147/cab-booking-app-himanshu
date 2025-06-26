@@ -100,13 +100,14 @@ const sendOtp = async () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token: idToken }),
       });
-
+      // Add a short delay (cookies take a tick to be usable)
+      await new Promise((res) => setTimeout(res, 300));
       if (!sessionRes.ok) throw new Error("Session creation failed");
 
       const userRes = await fetch("/api/users/auth/me");
       const userData = await userRes.json();
       console.log("User data: verify otp", userData);
-      if (userRes.ok) {
+      if (userData.loggedIn) {
         setUser(userData);
         setIsAuthenticated(true);
       }
