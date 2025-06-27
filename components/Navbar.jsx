@@ -18,13 +18,21 @@ const Navbar = () => {
     setShowModal,
     isAdmin,
   } = useAuth();
-  
+
   const [open, setOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const dropdownRef = useRef(null);
   const userBtnRef = useRef(null);
 
+  // ✅ Auto-close modal if user is authenticated
+  useEffect(() => {
+    if (isAuthenticated && showModal) {
+      setShowModal(false);
+    }
+  }, [isAuthenticated, showModal]);
+
+  // ✅ Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (
@@ -36,10 +44,11 @@ const Navbar = () => {
         setOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [open]);
+
+  const phoneDisplay = user?.phone || user?.phone_number || "User";
 
   return (
     <div className="bg-white relative z-50">
@@ -86,14 +95,6 @@ const Navbar = () => {
             </button>
           </Link>
 
-          {isAdmin && (
-            <Link href="/admin/dashboard">
-              <button className="text-slate-900 px-4 uppercase py-1 font-semibold text-xs md:text-sm lg:text-base hover:text-black transition duration-300">
-                Admin Panel
-              </button>
-            </Link>
-          )}
-
           {isAuthenticated ? (
             <div
               ref={userBtnRef}
@@ -101,7 +102,7 @@ const Navbar = () => {
               className="ml-2 text-text-clr text-xs md:text-base bg-dark-btn py-1 px-3 rounded-lg cursor-pointer hover:bg-light-btn font-semibold flex items-center"
             >
               <CgProfile className="text-2xl mr-1" />
-              {user?.phone || "User"}
+              {phoneDisplay}
             </div>
           ) : (
             <button
@@ -146,24 +147,17 @@ const Navbar = () => {
                 Blogs
               </Link>
             </li>
-            {isAdmin && (
-              <li>
-                <Link href="/admin/dashboard" onClick={() => setMenuOpen(false)}>
-                  Admin Panel
-                </Link>
-              </li>
-            )}
             <li>
               {isAuthenticated ? (
                 <div
                   onClick={() => {
-                    setOpen(!open);
+                    setOpen(true);
                     setMenuOpen(false);
                   }}
                   className="cursor-pointer flex items-center gap-2"
                 >
                   <CgProfile className="text-xl" />
-                  {user?.phone || "User"}
+                  {phoneDisplay}
                 </div>
               ) : (
                 <button
