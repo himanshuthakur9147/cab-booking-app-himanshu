@@ -100,13 +100,18 @@ export default function PhoneAuthForm({ onSuccess }) {
         setShowModal(false);
 
         // Optional: Save user to DB
-        await fetch("/api/users/save", {
+        console.log("")
+      const saveUser=  await fetch("/api/users/save", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ phone: "+" + firebaseUser.phoneNumber }),
+          body: JSON.stringify({ phone: "+91" + phone, user_id: firebaseUser.uid }),
         });
-
-        alert("Login successful!");
+        const saveUserData = await saveUser.json();
+        if(saveUserData.success){
+          setIsAuthenticated(true);
+          console.log("User saved successfully");
+          alert("Login successful!");
+        }
       }
     } catch (err) {
       console.error("OTP verification error:", err);

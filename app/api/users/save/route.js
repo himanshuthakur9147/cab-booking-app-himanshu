@@ -8,11 +8,10 @@ export async function POST(req) {
   try {
     const { phone, user_id } = await req.json();
 
-    const existing = await User.findOne({ user_id });
+    const existing = await User.findOne({ phone });
 
     if (!existing) {
       await User.create({
-        user_id,
         phone,
         createdAt: new Date(),
       });
