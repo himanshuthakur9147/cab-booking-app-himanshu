@@ -40,18 +40,18 @@ export const metadata = {
     "Affordable Cab Booking",
     "Yatra Taxi App",
   ],
-  authors: [{ name: "Yatra Travel India", url: "https://yourdomain.com" }],
+  authors: [{ name: "Yatra Travel India", url: `${process.env.DOMAIN_NAME}` }],
   openGraph: {
     title: "Yatra Travel India – Book Cabs Online",
     description:
       "Affordable, reliable and quick taxi booking services in 2000+ cities. No hidden charges. 24/7 support.",
-    url: "https://yourdomain.com",
+    url: `${process.env.DOMAIN_NAME}`,
     siteName: "Yatra Travel India",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://yourdomain.com/logo.png",
+        url: `${process.env.DOMAIN_NAME}/logo.jpeg`,
         width: 1200,
         height: 630,
         alt: "Yatra Travel India Cab Booking",
@@ -68,7 +68,7 @@ export const metadata = {
     site: "@YatraTravelIndia",
     title: "Yatra Travel India – Online Cab Booking",
     description: "Book taxis across India – One way, local & airport transfers.",
-    images: "https://yourdomain.com/logo.png",
+    images: `${process.env.DOMAIN_NAME}/logo.jpeg`,
   },
 };
 

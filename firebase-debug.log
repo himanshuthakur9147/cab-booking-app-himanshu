@@ -1,0 +1,225 @@
+[debug] [2025-06-27T12:00:59.305Z] ----------------------------------------------------------------------
+[debug] [2025-06-27T12:00:59.309Z] Command:       E:\Abhisha Chittod\NODE JS\node.exe C:\Users\abhay\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-06-27T12:00:59.310Z] CLI Version:   14.9.0
+[debug] [2025-06-27T12:00:59.310Z] Platform:      win32
+[debug] [2025-06-27T12:00:59.310Z] Node Version:  v22.15.0
+[debug] [2025-06-27T12:00:59.310Z] Time:          Fri Jun 27 2025 17:30:59 GMT+0530 (India Standard Time)
+[debug] [2025-06-27T12:00:59.311Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-27T12:00:59.319Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-27T12:00:59.320Z] > authorizing via signed-in user (himanshuthakur9147@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  F:\ABHISHA KUMAR CHITTORE\CODING JOURNEY 2025\FIVERR\cab-booking-app
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-06-27T12:01:14.530Z] Checked if tokens are valid: false, expires at: 1751020261273
+[debug] [2025-06-27T12:01:14.531Z] Checked if tokens are valid: false, expires at: 1751020261273
+[debug] [2025-06-27T12:01:14.531Z] > refreshing access token with scopes: []
+[debug] [2025-06-27T12:01:14.534Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-06-27T12:01:14.534Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-27T12:01:15.269Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-06-27T12:01:15.270Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-27T12:01:15.302Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2025-06-27T12:01:16.278Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-06-27T12:01:16.279Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project cab-booking-app-85ab5 (cab-booking-app) 
+[info] 
+=== App Hosting Setup
+[debug] [2025-06-27T12:01:17.719Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:17.720Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:17.720Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/cab-booking-app-85ab5/billingInfo [none]
+[debug] [2025-06-27T12:01:19.526Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/cab-booking-app-85ab5/billingInfo 200
+[debug] [2025-06-27T12:01:19.527Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/cab-booking-app-85ab5/billingInfo {"name":"projects/cab-booking-app-85ab5/billingInfo","projectId":"cab-booking-app-85ab5","billingAccountName":"billingAccounts/01985A-2D2DD7-DDA5DF","billingEnabled":true}
+[debug] [2025-06-27T12:01:19.529Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:19.529Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:19.529Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-06-27T12:01:19.529Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/cab-booking-app-85ab5
+[debug] [2025-06-27T12:01:21.536Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-06-27T12:01:21.536Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-06-27T12:01:21.537Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:21.537Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:21.537Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/firebaseapphosting.googleapis.com:enable [none]
+[debug] [2025-06-27T12:01:21.537Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/firebaseapphosting.googleapis.com:enable x-goog-quota-user=projects/cab-booking-app-85ab5
+[debug] [2025-06-27T12:01:22.228Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/firebaseapphosting.googleapis.com:enable 200
+[debug] [2025-06-27T12:01:22.228Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/firebaseapphosting.googleapis.com:enable [omitted]
+[debug] [2025-06-27T12:01:32.254Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:32.254Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:32.255Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:32.255Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:32.256Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:32.256Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:32.256Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:32.256Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:32.257Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:32.257Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:32.257Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:32.257Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:32.257Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/developerconnect.googleapis.com [none]
+[debug] [2025-06-27T12:01:32.258Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/developerconnect.googleapis.com x-goog-quota-user=projects/cab-booking-app-85ab5
+[debug] [2025-06-27T12:01:32.263Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/cloudbuild.googleapis.com [none]
+[debug] [2025-06-27T12:01:32.264Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/cloudbuild.googleapis.com x-goog-quota-user=projects/cab-booking-app-85ab5
+[debug] [2025-06-27T12:01:32.266Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/secretmanager.googleapis.com [none]
+[debug] [2025-06-27T12:01:32.266Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/secretmanager.googleapis.com x-goog-quota-user=projects/cab-booking-app-85ab5
+[debug] [2025-06-27T12:01:32.270Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/run.googleapis.com [none]
+[debug] [2025-06-27T12:01:32.270Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/run.googleapis.com x-goog-quota-user=projects/cab-booking-app-85ab5
+[debug] [2025-06-27T12:01:32.274Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/artifactregistry.googleapis.com [none]
+[debug] [2025-06-27T12:01:32.274Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/artifactregistry.googleapis.com x-goog-quota-user=projects/cab-booking-app-85ab5
+[debug] [2025-06-27T12:01:32.276Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/iam.googleapis.com [none]
+[debug] [2025-06-27T12:01:32.276Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/iam.googleapis.com x-goog-quota-user=projects/cab-booking-app-85ab5
+[debug] [2025-06-27T12:01:34.187Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/developerconnect.googleapis.com 200
+[debug] [2025-06-27T12:01:34.187Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/developerconnect.googleapis.com [omitted]
+[debug] [2025-06-27T12:01:34.187Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:34.187Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:34.187Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/developerconnect.googleapis.com:enable [none]
+[debug] [2025-06-27T12:01:34.187Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/developerconnect.googleapis.com:enable x-goog-quota-user=projects/cab-booking-app-85ab5
+[debug] [2025-06-27T12:01:34.200Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/iam.googleapis.com 200
+[debug] [2025-06-27T12:01:34.200Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/iam.googleapis.com [omitted]
+[debug] [2025-06-27T12:01:34.212Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/secretmanager.googleapis.com 200
+[debug] [2025-06-27T12:01:34.212Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/secretmanager.googleapis.com [omitted]
+[debug] [2025-06-27T12:01:34.232Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/artifactregistry.googleapis.com 200
+[debug] [2025-06-27T12:01:34.233Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/artifactregistry.googleapis.com [omitted]
+[debug] [2025-06-27T12:01:34.252Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/cloudbuild.googleapis.com 200
+[debug] [2025-06-27T12:01:34.253Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/cloudbuild.googleapis.com [omitted]
+[debug] [2025-06-27T12:01:34.279Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/run.googleapis.com 200
+[debug] [2025-06-27T12:01:34.280Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/run.googleapis.com [omitted]
+[debug] [2025-06-27T12:01:35.011Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/developerconnect.googleapis.com:enable 200
+[debug] [2025-06-27T12:01:35.012Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/cab-booking-app-85ab5/services/developerconnect.googleapis.com:enable [omitted]
+[debug] [2025-06-27T12:01:45.029Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:45.029Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:45.029Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/cab-booking-app-85ab5/serviceAccounts/firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-06-27T12:01:45.029Z] >>> [apiv2][(partial)header] POST https://iam.googleapis.com/v1/projects/cab-booking-app-85ab5/serviceAccounts/firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com:testIamPermissions x-goog-quota-user=projects/cab-booking-app-85ab5
+[debug] [2025-06-27T12:01:45.030Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/cab-booking-app-85ab5/serviceAccounts/firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-06-27T12:01:50.183Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/cab-booking-app-85ab5/serviceAccounts/firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com:testIamPermissions 404
+[debug] [2025-06-27T12:01:50.183Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/cab-booking-app-85ab5/serviceAccounts/firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com:testIamPermissions {"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}}
+[debug] [2025-06-27T12:01:50.184Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:50.185Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:50.185Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/cab-booking-app-85ab5/serviceAccounts [none]
+[debug] [2025-06-27T12:01:50.185Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/cab-booking-app-85ab5/serviceAccounts {"accountId":"firebase-app-hosting-compute","serviceAccount":{"displayName":"Firebase App Hosting compute service account","description":"Default service account used to run builds and deploys for Firebase App Hosting"}}
+[debug] [2025-06-27T12:01:52.340Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/cab-booking-app-85ab5/serviceAccounts 200
+[debug] [2025-06-27T12:01:52.340Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/cab-booking-app-85ab5/serviceAccounts [omitted]
+[debug] [2025-06-27T12:01:52.341Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:52.341Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:52.341Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/cab-booking-app-85ab5:getIamPolicy [none]
+[debug] [2025-06-27T12:01:54.143Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/cab-booking-app-85ab5:getIamPolicy 200
+[debug] [2025-06-27T12:01:54.143Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cab-booking-app-85ab5:getIamPolicy {"version":1,"etag":"BwY4jHBBYVg=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:605882340399@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-605882340399@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-605882340399@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:605882340399-compute@developer.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:service-605882340399@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-fbsvc@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-fbsvc@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-fbsvc@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:himanshuthakur9147@gmail.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-605882340399@serverless-robot-prod.iam.gserviceaccount.com"]}]}
+[debug] [2025-06-27T12:01:54.143Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:54.143Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:54.144Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/cab-booking-app-85ab5:setIamPolicy [none]
+[debug] [2025-06-27T12:01:54.144Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cab-booking-app-85ab5:setIamPolicy {"policy":{"version":1,"etag":"BwY4jHBBYVg=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:605882340399@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-605882340399@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-605882340399@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:605882340399-compute@developer.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:service-605882340399@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-fbsvc@cab-booking-app-85ab5.iam.gserviceaccount.com","serviceAccount:firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-fbsvc@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-fbsvc@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:himanshuthakur9147@gmail.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-605882340399@serverless-robot-prod.iam.gserviceaccount.com"]},{"role":"roles/firebaseapphosting.computeRunner","members":["serviceAccount:firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/developerconnect.readTokenAccessor","members":["serviceAccount:firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/storage.objectViewer","members":["serviceAccount:firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com"]}]},"updateMask":"bindings"}
+[debug] [2025-06-27T12:01:55.144Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/cab-booking-app-85ab5:setIamPolicy 200
+[debug] [2025-06-27T12:01:55.144Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cab-booking-app-85ab5:setIamPolicy {"version":1,"etag":"BwY4jHHOw6U=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:605882340399@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-605882340399@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-605882340399@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/developerconnect.readTokenAccessor","members":["serviceAccount:firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:605882340399-compute@developer.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:service-605882340399@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-fbsvc@cab-booking-app-85ab5.iam.gserviceaccount.com","serviceAccount:firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/firebaseapphosting.computeRunner","members":["serviceAccount:firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-fbsvc@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-fbsvc@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:himanshuthakur9147@gmail.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-605882340399@serverless-robot-prod.iam.gserviceaccount.com"]},{"role":"roles/storage.objectViewer","members":["serviceAccount:firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com"]}]}
+[debug] [2025-06-27T12:01:55.145Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:55.145Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:01:55.145Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/cab-booking-app-85ab5:getIamPolicy [none]
+[debug] [2025-06-27T12:01:55.636Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/cab-booking-app-85ab5:getIamPolicy 200
+[debug] [2025-06-27T12:01:55.636Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/cab-booking-app-85ab5:getIamPolicy {"version":1,"etag":"BwY4jHHOw6U=","bindings":[{"role":"roles/cloudbuild.builds.builder","members":["serviceAccount:605882340399@cloudbuild.gserviceaccount.com"]},{"role":"roles/cloudbuild.serviceAgent","members":["serviceAccount:service-605882340399@gcp-sa-cloudbuild.iam.gserviceaccount.com"]},{"role":"roles/containerregistry.ServiceAgent","members":["serviceAccount:service-605882340399@containerregistry.iam.gserviceaccount.com"]},{"role":"roles/developerconnect.readTokenAccessor","members":["serviceAccount:firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/editor","members":["serviceAccount:605882340399-compute@developer.gserviceaccount.com"]},{"role":"roles/firebase.managementServiceAgent","members":["serviceAccount:service-605882340399@gcp-sa-firebase.iam.gserviceaccount.com"]},{"role":"roles/firebase.sdkAdminServiceAgent","members":["serviceAccount:firebase-adminsdk-fbsvc@cab-booking-app-85ab5.iam.gserviceaccount.com","serviceAccount:firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/firebaseapphosting.computeRunner","members":["serviceAccount:firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/firebaseauth.admin","members":["serviceAccount:firebase-adminsdk-fbsvc@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/iam.serviceAccountTokenCreator","members":["serviceAccount:firebase-adminsdk-fbsvc@cab-booking-app-85ab5.iam.gserviceaccount.com"]},{"role":"roles/owner","members":["user:himanshuthakur9147@gmail.com"]},{"role":"roles/run.serviceAgent","members":["serviceAccount:service-605882340399@serverless-robot-prod.iam.gserviceaccount.com"]},{"role":"roles/storage.objectViewer","members":["serviceAccount:firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com"]}]}
+[info] i  This command links your local project to Firebase App Hosting. You will be able to deploy your web app with `firebase deploy` after setup. 
+[info] i  === Set up your backend 
+[debug] [2025-06-27T12:02:06.142Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:06.142Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:06.142Z] >>> [apiv2][query] GET https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations 
+[debug] [2025-06-27T12:02:08.207Z] <<< [apiv2][status] GET https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations 200
+[debug] [2025-06-27T12:02:08.208Z] <<< [apiv2][body] GET https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations {"locations":[{"name":"projects/cab-booking-app-85ab5/locations/asia-east1","locationId":"asia-east1","displayName":"Taiwan"},{"name":"projects/cab-booking-app-85ab5/locations/europe-west4","locationId":"europe-west4","displayName":"Netherlands"},{"name":"projects/cab-booking-app-85ab5/locations/us-central1","locationId":"us-central1","displayName":"Iowa"}]}
+[info] +  Location set to asia-east1.
+ 
+[debug] [2025-06-27T12:02:34.987Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:34.987Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:34.988Z] >>> [apiv2][query] GET https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/backends/cab-booking-app-backend [none]
+[debug] [2025-06-27T12:02:35.919Z] <<< [apiv2][status] GET https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/backends/cab-booking-app-backend 404
+[debug] [2025-06-27T12:02:35.919Z] <<< [apiv2][body] GET https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/backends/cab-booking-app-backend {"error":{"code":404,"message":"Resource 'projects/cab-booking-app-85ab5/locations/asia-east1/backends/cab-booking-app-backend' was not found","status":"NOT_FOUND","details":[{"@type":"type.googleapis.com/google.rpc.ResourceInfo","resourceName":"projects/cab-booking-app-85ab5/locations/asia-east1/backends/cab-booking-app-backend"}]}}
+[info] +  Name set to cab-booking-app-backend
+ 
+[debug] [2025-06-27T12:02:35.921Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:35.921Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:35.922Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/cab-booking-app-85ab5/webApps pageSize=100
+[debug] [2025-06-27T12:02:36.539Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/cab-booking-app-85ab5/webApps 200
+[debug] [2025-06-27T12:02:36.539Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/cab-booking-app-85ab5/webApps {"apps":[{"name":"projects/cab-booking-app-85ab5/webApps/1:605882340399:web:a90ccbe5fcf298b4ca62da","appId":"1:605882340399:web:a90ccbe5fcf298b4ca62da","displayName":"cab-booking-app","projectId":"cab-booking-app-85ab5","webId":"NTVhMWMzZjctMzc3Yy00YjliLThmNjgtZTIxNzY1MDFjYWVl","apiKeyId":"fdd4be92-c5f1-4bf2-aede-f9e86815f2b9","state":"ACTIVE","expireTime":"1970-01-01T00:00:00Z","etag":"1_4cc72d0c-3d2d-4839-a0c5-009a3b2b746f"}]}
+[debug] [2025-06-27T12:02:36.540Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:36.540Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:36.540Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/cab-booking-app-85ab5/webApps pageSize=100
+[debug] [2025-06-27T12:02:36.966Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/cab-booking-app-85ab5/webApps 200
+[debug] [2025-06-27T12:02:36.966Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/cab-booking-app-85ab5/webApps {"apps":[{"name":"projects/cab-booking-app-85ab5/webApps/1:605882340399:web:a90ccbe5fcf298b4ca62da","appId":"1:605882340399:web:a90ccbe5fcf298b4ca62da","displayName":"cab-booking-app","projectId":"cab-booking-app-85ab5","webId":"NTVhMWMzZjctMzc3Yy00YjliLThmNjgtZTIxNzY1MDFjYWVl","apiKeyId":"fdd4be92-c5f1-4bf2-aede-f9e86815f2b9","state":"ACTIVE","expireTime":"1970-01-01T00:00:00Z","etag":"1_4cc72d0c-3d2d-4839-a0c5-009a3b2b746f"}]}
+[debug] [2025-06-27T12:02:36.967Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:36.967Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:36.967Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/cab-booking-app-85ab5/webApps [none]
+[debug] [2025-06-27T12:02:36.968Z] >>> [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/cab-booking-app-85ab5/webApps {"displayName":"cab-booking-app-backend"}
+[debug] [2025-06-27T12:02:38.667Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/cab-booking-app-85ab5/webApps 200
+[debug] [2025-06-27T12:02:38.667Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/cab-booking-app-85ab5/webApps {"name":"operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4"}
+[debug] [2025-06-27T12:02:38.669Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:38.669Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:38.670Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4 [none]
+[debug] [2025-06-27T12:02:39.385Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4 200
+[debug] [2025-06-27T12:02:39.386Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4 {"name":"operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4"}
+[debug] [2025-06-27T12:02:39.901Z] [Create Web app Poller] Retrying task index 0
+[debug] [2025-06-27T12:02:39.901Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:39.901Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:39.901Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4 [none]
+[debug] [2025-06-27T12:02:40.463Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4 200
+[debug] [2025-06-27T12:02:40.463Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4 {"name":"operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4"}
+[debug] [2025-06-27T12:02:41.478Z] [Create Web app Poller] Retrying task index 0
+[debug] [2025-06-27T12:02:41.478Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:41.479Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:41.479Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4 [none]
+[debug] [2025-06-27T12:02:42.138Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4 200
+[debug] [2025-06-27T12:02:42.139Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4 {"name":"operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4"}
+[debug] [2025-06-27T12:02:44.150Z] [Create Web app Poller] Retrying task index 0
+[debug] [2025-06-27T12:02:44.150Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:44.151Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:44.151Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4 [none]
+[debug] [2025-06-27T12:02:45.034Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4 200
+[debug] [2025-06-27T12:02:45.035Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4 {"name":"operations/workflows/ZDgxZmRmZmMtYWQwMi00ZGM4LTg3OWQtMGY2OTY5MzFiNmY4","done":true,"response":{"@type":"type.googleapis.com/google.firebase.service.v1beta1.WebApp","name":"projects/cab-booking-app-85ab5/webApps/1:605882340399:web:91ee8b06479d4f73ca62da","appId":"1:605882340399:web:91ee8b06479d4f73ca62da","displayName":"cab-booking-app-backend","projectId":"cab-booking-app-85ab5","webId":"OGVjMjA3NzgtM2E3OC00MTExLTlmZmUtNTc2NzMwNmM5Nzdj","apiKeyId":"fdd4be92-c5f1-4bf2-aede-f9e86815f2b9","state":"ACTIVE","expireTime":"1970-01-01T00:00:00Z","etag":"1_c0393425-1a65-4832-89df-40050efa81c9"}}
+[info] +  Created a new Firebase web app named "cab-booking-app-backend" 
+[debug] [2025-06-27T12:02:45.037Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:45.037Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:45.037Z] >>> [apiv2][query] POST https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/backends backendId=cab-booking-app-backend
+[debug] [2025-06-27T12:02:45.037Z] >>> [apiv2][body] POST https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/backends {"servingLocality":"GLOBAL_ACCESS","labels":{"deployment-tool":"cli-firebase"},"serviceAccount":"firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com","appId":"1:605882340399:web:91ee8b06479d4f73ca62da"}
+[debug] [2025-06-27T12:02:47.653Z] <<< [apiv2][status] POST https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/backends 200
+[debug] [2025-06-27T12:02:47.653Z] <<< [apiv2][body] POST https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/backends {"name":"projects/cab-booking-app-85ab5/locations/asia-east1/operations/operation-1751025767088-6388c74d70081-930d8abf-4bac6510","metadata":{"@type":"type.googleapis.com/google.firebase.apphosting.v1beta.OperationMetadata","createTime":"2025-06-27T12:02:48.797013316Z","target":"projects/cab-booking-app-85ab5/locations/asia-east1/backends/cab-booking-app-backend","verb":"create","requestedCancellation":false,"apiVersion":"v1beta"},"done":false}
+[debug] [2025-06-27T12:02:47.653Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:47.653Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:47.654Z] >>> [apiv2][query] GET https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/operations/operation-1751025767088-6388c74d70081-930d8abf-4bac6510 [none]
+[debug] [2025-06-27T12:02:47.886Z] <<< [apiv2][status] GET https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/operations/operation-1751025767088-6388c74d70081-930d8abf-4bac6510 200
+[debug] [2025-06-27T12:02:47.887Z] <<< [apiv2][body] GET https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/operations/operation-1751025767088-6388c74d70081-930d8abf-4bac6510 {"name":"projects/cab-booking-app-85ab5/locations/asia-east1/operations/operation-1751025767088-6388c74d70081-930d8abf-4bac6510","metadata":{"@type":"type.googleapis.com/google.firebase.apphosting.v1beta.OperationMetadata","createTime":"2025-06-27T12:02:48.797013316Z","target":"projects/cab-booking-app-85ab5/locations/asia-east1/backends/cab-booking-app-backend","verb":"create","requestedCancellation":false,"apiVersion":"v1beta"},"done":false}
+[debug] [2025-06-27T12:02:48.400Z] [create-cab-booking-app-85ab5-asia-east1-cab-booking-app-backend] Retrying task index 0
+[debug] [2025-06-27T12:02:48.401Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:48.401Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:48.401Z] >>> [apiv2][query] GET https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/operations/operation-1751025767088-6388c74d70081-930d8abf-4bac6510 [none]
+[debug] [2025-06-27T12:02:48.606Z] <<< [apiv2][status] GET https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/operations/operation-1751025767088-6388c74d70081-930d8abf-4bac6510 200
+[debug] [2025-06-27T12:02:48.606Z] <<< [apiv2][body] GET https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/operations/operation-1751025767088-6388c74d70081-930d8abf-4bac6510 {"name":"projects/cab-booking-app-85ab5/locations/asia-east1/operations/operation-1751025767088-6388c74d70081-930d8abf-4bac6510","metadata":{"@type":"type.googleapis.com/google.firebase.apphosting.v1beta.OperationMetadata","createTime":"2025-06-27T12:02:48.797013316Z","target":"projects/cab-booking-app-85ab5/locations/asia-east1/backends/cab-booking-app-backend","verb":"create","requestedCancellation":false,"apiVersion":"v1beta"},"done":false}
+[debug] [2025-06-27T12:02:49.619Z] [create-cab-booking-app-85ab5-asia-east1-cab-booking-app-backend] Retrying task index 0
+[debug] [2025-06-27T12:02:49.619Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:49.619Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:02:49.620Z] >>> [apiv2][query] GET https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/operations/operation-1751025767088-6388c74d70081-930d8abf-4bac6510 [none]
+[debug] [2025-06-27T12:02:49.788Z] <<< [apiv2][status] GET https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/operations/operation-1751025767088-6388c74d70081-930d8abf-4bac6510 200
+[debug] [2025-06-27T12:02:49.788Z] <<< [apiv2][body] GET https://firebaseapphosting.googleapis.com/v1beta/projects/cab-booking-app-85ab5/locations/asia-east1/operations/operation-1751025767088-6388c74d70081-930d8abf-4bac6510 {"name":"projects/cab-booking-app-85ab5/locations/asia-east1/operations/operation-1751025767088-6388c74d70081-930d8abf-4bac6510","metadata":{"@type":"type.googleapis.com/google.firebase.apphosting.v1beta.OperationMetadata","createTime":"2025-06-27T12:02:48.797013316Z","endTime":"2025-06-27T12:02:50.187754092Z","target":"projects/cab-booking-app-85ab5/locations/asia-east1/backends/cab-booking-app-backend","verb":"create","requestedCancellation":false,"apiVersion":"v1beta"},"done":true,"response":{"@type":"type.googleapis.com/google.firebase.apphosting.v1beta.Backend","name":"projects/cab-booking-app-85ab5/locations/asia-east1/backends/cab-booking-app-backend","createTime":"2025-06-27T12:02:48.790848767Z","updateTime":"2025-06-27T12:02:50.064450Z","labels":{"deployment-tool":"cli-firebase"},"uri":"cab-booking-app-backend--cab-booking-app-85ab5.asia-east1.hosted.app","uid":"62ce152f-991e-421a-ba20-a80c0557b5ed","etag":"IhosNQa3ZH0qJDfssJvm7zl0g79f5VmHsm9Sihyq_PI","reconciling":false,"servingLocality":"GLOBAL_ACCESS","serviceAccount":"firebase-app-hosting-compute@cab-booking-app-85ab5.iam.gserviceaccount.com","appId":"1:605882340399:web:91ee8b06479d4f73ca62da"}}
+[info] i  === Deploy local source setup 
+[info] +  Wrote configuration info to firebase.json 
+[info] i  Writing default settings to apphosting.yaml... 
+[info] +  Wrote F:\ABHISHA KUMAR CHITTORE\CODING JOURNEY 2025\FIVERR\cab-booking-app\apphosting.yaml 
+[info] +  Firebase initialization complete! 
+[info] 
+=== Hosting Setup
+[debug] [2025-06-27T12:03:07.780Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:03:07.780Z] Checked if tokens are valid: true, expires at: 1751029274270
+[debug] [2025-06-27T12:03:07.781Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/cab-booking-app-85ab5 [none]
+[debug] [2025-06-27T12:03:08.362Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/cab-booking-app-85ab5 200
+[debug] [2025-06-27T12:03:08.362Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/cab-booking-app-85ab5 {"projectId":"cab-booking-app-85ab5","projectNumber":"605882340399","displayName":"cab-booking-app","name":"projects/cab-booking-app-85ab5","resources":{"hostingSite":"cab-booking-app-85ab5"},"state":"ACTIVE","etag":"1_1d2112b0-68f7-4457-a89f-f4383f7c7f31"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 

@@ -1,3 +1,16 @@
+export const metadata = {
+  title: "My Profile | Yatra Travel India",
+  description: "Manage your personal information, contact details, and preferences with Yatra Travel India's secure profile section.",
+  alternates: {
+    canonical: `${process.env.DOMAIN_NAME}/user/profile`,
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
+
 "use client";
 
 import Navbar from "@/components/Navbar";
