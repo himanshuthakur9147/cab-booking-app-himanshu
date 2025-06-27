@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import { Metadata } from "next";
 import { BookingProvider } from "@/context/BookingContext";
 import { PaymentProvider } from "@/context/PaymentContext";
 import { ReviewProvider } from "@/context/ReviewContext";
@@ -20,9 +20,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata  = {
  // Chiku Cab - Outstation Cab, Taxi & Car Rental Services in India
  //Reliable & Safe Cabs and Taxi Services at Affordable Prices
+  metadataBase: new URL(`${process.env.DOMAIN_NAME}`), // ✅ Your actual domain
   title: "Yatra Travel India – Online Cab, Taxi & Car Rental Services | Affordable Rides Across India",
   description:
     "Book cabs instantly with Yatra Travel India. One way, round trip, local rental & airport transfer services across 2000+ Indian cities.",

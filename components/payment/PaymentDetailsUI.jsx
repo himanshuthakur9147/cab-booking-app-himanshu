@@ -50,7 +50,7 @@ console.log("Order Request has been made");
   }
 
   const options = {
-    key: "rzp_live_rMwUmz5xkijA0B",
+    key: "rzp_live_A7ALQ0YIsAcCeK",
     amount: finalAmount,
     currency: "INR",
     name: "Yatra Travel India",
