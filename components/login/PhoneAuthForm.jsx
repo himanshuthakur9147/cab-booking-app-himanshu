@@ -6,7 +6,7 @@ import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { useAuth } from "@/context/AuthContext";
 
 export default function PhoneAuthForm({ onSuccess }) {
-  const { setUser, setIsAuthenticated } = useAuth();
+  const { setUser, setIsAuthenticated, setShowModal } = useAuth();
 
   const [phone, setPhone] = useState("");
   const [otp, setOtp] = useState("");
@@ -16,7 +16,6 @@ export default function PhoneAuthForm({ onSuccess }) {
 
   const recaptchaLoadedRef = useRef(false);
 
-  // ✅ Setup ReCAPTCHA correctly using modular SDK
   useEffect(() => {
     if (
       typeof window !== "undefined" &&
@@ -29,101 +28,89 @@ export default function PhoneAuthForm({ onSuccess }) {
           "recaptcha-container",
           {
             size: "invisible",
-            callback: (response) => {
-              console.log("ReCAPTCHA solved");
-            },
+            callback: () => console.log("ReCAPTCHA solved"),
             "expired-callback": () => {
-              console.warn("ReCAPTCHA expired");
               window.recaptchaVerifier?.clear();
               window.recaptchaVerifier = null;
             },
           }
         );
-
         window.recaptchaVerifier.render().catch(console.error);
         recaptchaLoadedRef.current = true;
       } catch (err) {
-        console.error("Error initializing reCAPTCHA:", err);
+        console.error("ReCAPTCHA error:", err);
       }
     }
   }, []);
 
-  // 🚀 Send OTP
-const sendOtp = async () => {
-  try {
-    if (phone.length < 10) {
-      alert("Enter a valid 10-digit number.");
-      return;
-    }
+  const sendOtp = async () => {
+    try {
+      if (phone.length < 10) {
+        alert("Enter a valid 10-digit number.");
+        return;
+      }
+      if (!window.recaptchaVerifier) {
+        alert("ReCAPTCHA not loaded. Please wait.");
+        return;
+      }
 
-    if (!window.recaptchaVerifier) {
-      alert("ReCAPTCHA not loaded. Please wait.");
-      return;
-    }
-
-    setIsSending(true);
-    const appVerifier = window.recaptchaVerifier;
-
-    const result = await signInWithPhoneNumber(auth, "+91" + phone, appVerifier);
-    setConfirmationResult(result);
-    alert("OTP sent successfully!");
-  } catch (err) {
-    console.error("OTP send error:", err);
-
-    if (err.code === "auth/invalid-app-credential") {
-      alert("Firebase credential error: Check your API key and domain setup.");
-    } else {
-      alert("Failed to send OTP. Refresh and try again.");
-    }
-
-    // Cleanup recaptcha
-    if (window.recaptchaVerifier) {
-      window.recaptchaVerifier.clear();
+      setIsSending(true);
+      const appVerifier = window.recaptchaVerifier;
+      const result = await signInWithPhoneNumber(auth, "+91" + phone, appVerifier);
+      setConfirmationResult(result);
+      alert("OTP sent successfully!");
+    } catch (err) {
+      console.error("OTP send error:", err);
+      alert("Failed to send OTP.");
+      window.recaptchaVerifier?.clear();
       window.recaptchaVerifier = null;
+    } finally {
+      setIsSending(false);
     }
-  } finally {
-    setIsSending(false);
-  }
-};
+  };
 
-  // 🔐 Verify OTP
   const verifyOtp = async () => {
     try {
       setIsVerifying(true);
       const result = await confirmationResult.confirm(otp);
-      const user = result.user;
-      const idToken = await user.getIdToken();
+      const firebaseUser = result.user;
+      const idToken = await firebaseUser.getIdToken();
 
-      // 🔐 Send token to backend to create session
+      // Send token to server to create session
       const sessionRes = await fetch("/api/users/auth/session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token: idToken }),
       });
-      // Add a short delay (cookies take a tick to be usable)
-      await new Promise((res) => setTimeout(res, 300));
+
       if (!sessionRes.ok) throw new Error("Session creation failed");
+
+      // Wait for cookie to be usable
+      await new Promise((res) => setTimeout(res, 300));
 
       const userRes = await fetch("/api/users/auth/me");
       const userData = await userRes.json();
-      console.log("User data: verify otp", userData);
+
       if (userData.loggedIn) {
-        setUser(userData);
+        setUser(userData.user || userData);
         setIsAuthenticated(true);
+
+        // Optionally close modal
+        if (onSuccess) onSuccess();
+        setShowModal(false);
+
+        // Optional: Save user to DB
+        await fetch("/api/users/save", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ phone: "+" + firebaseUser.phoneNumber }),
+        });
+
+        alert("Login successful!");
       }
-
-      // 🧾 Save user to DB (optional)
-      await fetch("/api/users/save", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone: "+"+user.phoneNumber }),
-      });
-
-      alert("Login successful!");
-      if (onSuccess) onSuccess();
     } catch (err) {
-      console.error("OTP verification failed:", err);
-      alert("Invalid OTP or verification failed.");
+      console.error("OTP verification error:", err);
+      alert("OTP verification failed.");
     } finally {
       setIsVerifying(false);
     }
@@ -142,7 +129,7 @@ const sendOtp = async () => {
       <button
         onClick={sendOtp}
         disabled={isSending || !phone}
-        className="mt-2 w-full font-semibold cursor-pointer rounded-md px-4 py-2 bg-dark-btn text-white disabled:opacity-60"
+        className="mt-2 w-full font-semibold rounded-md px-4 py-2 bg-dark-btn text-white disabled:opacity-60"
       >
         {isSending ? "Sending OTP..." : "Send OTP"}
       </button>
@@ -160,14 +147,13 @@ const sendOtp = async () => {
           <button
             onClick={verifyOtp}
             disabled={isVerifying || !otp}
-            className="mt-2 w-full px-4 py-2 cursor-pointer bg-green-600 font-semibold text-white disabled:opacity-60"
+            className="mt-2 w-full px-4 py-2 bg-green-600 font-semibold text-white disabled:opacity-60"
           >
             {isVerifying ? "Verifying..." : "Verify & Login"}
           </button>
         </div>
       )}
 
-      {/* 🔐 Required for invisible reCAPTCHA */}
       <div id="recaptcha-container"></div>
     </div>
   );

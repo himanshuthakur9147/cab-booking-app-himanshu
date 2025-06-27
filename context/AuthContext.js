@@ -1,8 +1,6 @@
 "use client";
 
 import { createContext, useState, useContext, useEffect } from "react";
-import { auth } from "@/lib/firebase";
-import { onAuthStateChanged } from "firebase/auth";
 
 const AuthContext = createContext();
 
@@ -13,35 +11,24 @@ export const AuthProvider = ({ children }) => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
-      if (firebaseUser) {
-        // Optional: get token and refresh session
-        const token = await firebaseUser.getIdToken();
-
-        try {
-          const res = await fetch("/api/users/auth/session", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ token }),
-          });
-
-          const me = await fetch("/api/users/auth/me");
-          const data = await me.json();
-
+    const fetchUserFromSession = async () => {
+      try {
+        const res = await fetch("/api/users/auth/me");
+        const data = await res.json();
+        if (data.loggedIn) {
           setUser(data);
           setIsAuthenticated(true);
           if (data.role === "admin") setIsAdmin(true);
-        } catch (err) {
-          console.error("Error restoring user session:", err);
+        } else {
+          setIsAuthenticated(false);
         }
-      } else {
-        setUser(null);
+      } catch (err) {
+        console.log("Session fetch failed:", err);
         setIsAuthenticated(false);
-        setIsAdmin(false);
       }
-    });
+    };
 
-    return () => unsubscribe(); // Cleanup
+    fetchUserFromSession();
   }, []);
 
   return (

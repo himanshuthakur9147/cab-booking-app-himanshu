@@ -27,10 +27,10 @@ const Navbar = () => {
 
   // ✅ Auto-close modal if user is authenticated
   useEffect(() => {
-    if (isAuthenticated && showModal) {
+    if (isAuthenticated) {
       setShowModal(false);
     }
-  }, [isAuthenticated, showModal]);
+  }, [isAuthenticated]);
 
   // ✅ Close dropdown on outside click
   useEffect(() => {
