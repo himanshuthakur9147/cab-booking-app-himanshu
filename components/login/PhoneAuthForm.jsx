@@ -91,13 +91,18 @@ export default function PhoneAuthForm({ onSuccess }) {
       const userRes = await fetch("/api/users/auth/me");
       const userData = await userRes.json();
 
-      if (userData.loggedIn) {
-        setUser(userData.user || userData);
-        setIsAuthenticated(true);
+    if(userData.loggedIn){
 
-        // Optionally close modal
-        if (onSuccess) onSuccess();
-        setShowModal(false);
+      setUser(userData);
+      setIsAuthenticated(true);
+      console.log("User authenticated: from /api/users/auth/me ", userData);
+      // Optionally close modal
+      if (onSuccess) onSuccess();
+      setShowModal(false);
+     alert("Login successful!");
+     return;
+    }
+
 
         // Optional: Save user to DB
         console.log("")
@@ -108,11 +113,12 @@ export default function PhoneAuthForm({ onSuccess }) {
         });
         const saveUserData = await saveUser.json();
         if(saveUserData.success){
+         
           setIsAuthenticated(true);
           console.log("User saved successfully");
           alert("Login successful!");
         }
-      }
+    
     } catch (err) {
       console.error("OTP verification error:", err);
       alert("OTP verification failed.");
