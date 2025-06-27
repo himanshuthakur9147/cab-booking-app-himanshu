@@ -6,7 +6,7 @@ import { useBooking } from "@/context/BookingContext";
 import { useAuth } from "@/context/AuthContext";
 import Navbar from "@/components/Navbar";
 import BookingTabs from "@/components/BookingTabs";
-import BookingTabForm from "@/components/BookingTabForm";
+
 import RouteLoader from "@/components/Loader/RouteLoader";
 import Footer from "@/components/footer/Footer";
 import AuthInit from "@/components/login/AuthInit";
