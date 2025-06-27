@@ -5,6 +5,7 @@ import { useState, useRef, useEffect } from "react";
 import { TiThList } from "react-icons/ti";
 import { MdOutlineAccountTree } from "react-icons/md";
 import { FaSignOutAlt } from "react-icons/fa";
+import { RiAdminLine } from "react-icons/ri";
 import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useAuth } from "@/context/AuthContext"; // if you're using context
@@ -90,8 +91,8 @@ const handleLogout = async () => {
             <MdOutlineAccountTree/> Account Settings
             </li></Link>
           { userData.role==="admin"?
-          <Link href={"/admin/panel"}> <li onClick={()=>setOpen(false)} className="flex items-center gap-2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
-            <MdOutlineAccountTree/> Admin Panel
+          <Link href={"/admin/dashboard"}> <li onClick={()=>setOpen(false)} className="flex items-center gap-2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+            <RiAdminLine/> Admin Dashboard
             </li></Link>:""}
             <li
                onClick={handleLogout}

@@ -80,17 +80,17 @@ const Navbar = () => {
         {/* DESKTOP BUTTONS */}
         <div className="buttons hidden md:flex items-center gap-2">
           <Link href="/">
-            <button className="text-slate-900 px-4 uppercase py-1 font-semibold text-xs md:text-sm lg:text-base hover:text-black transition duration-300">
+            <button className="text-slate-800 px-4 uppercase py-1 font-semibold cursor-pointer text-xs md:text-sm lg:text-base hover:text-black transition duration-300">
               Home
             </button>
           </Link>
           <Link href="/about">
-            <button className="text-slate-900 px-4 uppercase py-1 font-semibold text-xs md:text-sm lg:text-base hover:text-black transition duration-300">
+            <button className="text-slate-800 px-4 uppercase py-1 font-semibold cursor-pointer text-xs md:text-sm lg:text-base hover:text-black transition duration-300">
               About Us
             </button>
           </Link>
           <Link href="/blogs">
-            <button className="text-slate-900 uppercase px-4 py-1 font-semibold text-xs md:text-sm lg:text-base hover:text-black transition duration-300">
+            <button className="text-slate-800 uppercase px-4 py-1 font-semibold cursor-pointer text-xs md:text-sm lg:text-base hover:text-black transition duration-300">
               Blogs
             </button>
           </Link>
