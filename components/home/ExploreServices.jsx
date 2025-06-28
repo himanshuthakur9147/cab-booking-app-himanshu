@@ -58,19 +58,19 @@ export default function ExploreServices() {
         Our Car Rental Services
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
         {services.map((service, idx) => (
           <div
             key={idx}
-            className="bg-white p-4 rounded-lg shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+            className="bg-white p-4 rounded-lg shadow-lg border  border-gray-200 hover:shadow-xl transition-shadow duration-300 overflow-hidden"
           >
-            <div className="relative mb-6 h-44 w-full">
+            <div className="relative mb-20 xs:mb-32 md:mb-24 xl:mb-6 h-44 w-full">
               <Image
                 src={service.image}
                 alt={service.title}
                 width={340}
                 height={240}
-                className="object-cover w-[275px] rounded-lg h-[200px] object-top"
+                className="object-cover w-full h-[250px] xs:h-[300px] md:h-[275px] xl:w-[275px] rounded-lg xl:h-[200px] object-top"
               />
             </div>
             <div className="p-4">

@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt,FaHome } from "react-icons/fa";
+import { FaAustralSign } from "react-icons/fa6";
+import { LiaBlogSolid } from "react-icons/lia";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
 import Image from "next/image";
@@ -130,21 +132,21 @@ const Navbar = () => {
 
       {/* MOBILE DROPDOWN MENU */}
       {menuOpen && (
-        <div className="absolute top-full right-0 w-fit bg-gray-100 shadow-md py-4 px-6 z-20">
-          <ul className="flex flex-col space-y-3 text-sm text-gray-800 font-medium">
+        <div className="absolute top-full right-0 w-fit bg-gray-100 shadow-md py-4 px-10 z-20">
+          <ul className="flex flex-col space-y-3 text-base text-gray-800 font-medium">
             <li>
-              <Link href="/" onClick={() => setMenuOpen(false)}>
-                Home
+              <Link href="/" className="gap-x-3 flex items-center" onClick={() => setMenuOpen(false)}>
+               <FaHome/> Home
               </Link>
             </li>
             <li>
-              <Link href="/about" onClick={() => setMenuOpen(false)}>
-                About Us
+              <Link href="/about" className="gap-x-3 flex items-center" onClick={() => setMenuOpen(false)}>
+               <FaAustralSign/> About Us
               </Link>
             </li>
             <li>
-              <Link href="/blogs" onClick={() => setMenuOpen(false)}>
-                Blogs
+              <Link href="/blogs" className="gap-x-3 flex items-center" onClick={() => setMenuOpen(false)}>
+               <LiaBlogSolid/> Blogs
               </Link>
             </li>
             <li>
@@ -165,7 +167,7 @@ const Navbar = () => {
                     setShowModal(true);
                     setMenuOpen(false);
                   }}
-                  className="bg-dark-btn text-white px-3 py-1 rounded-full"
+                  className="bg-dark-btn text-white w-full px-3 py-1 rounded-full"
                 >
                   Login
                 </button>
