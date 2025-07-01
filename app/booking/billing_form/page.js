@@ -13,13 +13,13 @@ export const metadata = {
     "Yatra Travel India Booking",
   ],
   alternates: {
-    canonical: `${process.env.DOMAIN_NAME}/booking/billing_form`,
+    canonical: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/booking/billing_form`,
   },
   openGraph: {
     title: "Billing & Booking – Yatra Travel India",
     description:
       "Complete your booking by confirming pickup, drop and fare details for cabs across India. Trusted and fast taxi service.",
-    url: `${process.env.DOMAIN_NAME}/booking/billing_form`,
+    url: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/booking/billing_form`,
     siteName: "Yatra Travel India",
     type: "website",
     locale: "en_IN",

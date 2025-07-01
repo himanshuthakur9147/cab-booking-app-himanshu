@@ -1,0 +1,27 @@
+Customization for Yatra Travel India
+1. BG image change karna hai.
+2. Mobile no. BGc color change karna hai.
+3. Login button ==> Account name
+4. Services line remove
+5. one way <==> round trip swap the positions
+6. AC BG color change
+7. remove icons in carBooking and included GST => Fare Summary
+8. Included KM
+9. select ==> book option
+
+Home Page
+
+10. Our tempo traveller Services
+with ==> photo, key specification => card format
+
+11. Get Tempo Traveller on rent in your city
+some cities name with better layout and BG color 
+THEN
+Tempo traveller photos with some features => card format
+
+12. Why Choose Yatra Travel India 
+A. Easy booking     B. all types of vehicles availability   C. Affordable Rates     D. 24 x 7 customer support
+
+13. Cab from some cities to popular routes
+
+14. footer

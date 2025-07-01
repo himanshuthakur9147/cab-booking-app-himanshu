@@ -12,7 +12,7 @@ export const metadata = {
     "Customer care cab booking",
   ],
   alternates: {
-    canonical: `${process.env.DOMAIN_NAME}/contact`,
+    canonical: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/contact`,
   },
 };
 

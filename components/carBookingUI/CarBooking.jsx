@@ -8,6 +8,9 @@ import { calculateDynamicFare } from "@/components/carBookingUI/CalculateFare";
 import { useAuth } from "@/context/AuthContext";
 import CityLocalUI from "../CityLocal/CityLocalUI";
 import RouteLoader from "../Loader/RouteLoader";
+import FareSummaryModal from "@/components/carBookingUI/FareSummaryModal"
+import BookingSummaryModal from "@/components/carBookingUI/BookingSummaryModal";
+
 
 export default function CarBooking({ cabs, setCabs }) {
 
@@ -26,6 +29,9 @@ export default function CarBooking({ cabs, setCabs }) {
   const [distanceText, setDistanceText] = useState("");
   const [durationText, setDurationText] = useState("");
   const [cabsWithFare, setCabsWithFare] = useState([]);
+  const [selectedCar, setSelectedCar] = useState(null);
+   const [showFS, setShowFS] = useState(false);
+     const [bookingModal, setBookingModal] = useState(false);
   const [loader, setLoader] = useState(false);
   const router = useRouter();
 
@@ -75,9 +81,13 @@ useEffect(() => {
             return {
               ...car,
               estimatedFare: fare.total_fare,
+              total_amount: fare.total_amount,
+              tada: fare.tada,
+              dayCount: fare.dayCount,
               effectiveDistance: fare.netDistance,
               distance: result.distance.text,
               duration: result.duration.text,
+              gst: fare.gst,
             };
           });
 
@@ -94,7 +104,13 @@ useEffect(() => {
   runFareCalculation();
 }, [from, to, cabs, service_type]); // include service_type here
 
-  const handleSelectCar = (car, rental_type = "") => {
+
+const handleBookButton=(car)=>{
+  setSelectedCar(car)
+  setBookingModal(true);
+}
+
+  const handleBookNow = (car, rental_type = "") => {
     if (!isAuthenticated) {
       setShowModal(true) // redirect to AuthGear login flow
       return;
@@ -172,9 +188,10 @@ useEffect(() => {
             </>
           ):""}
         </div>
-
+          
         {city===false ? (
           <div className="space-y-4">
+
             {cabsWithFare.length > 0 ? (
               cabsWithFare.map((car, idx) => (
                 <div
@@ -202,37 +219,62 @@ useEffect(() => {
                   <div className="flex py-4 flex-row justify-between gap-2 xs:gap-4 md:gap-6  items-center text-sm text-center">
                     
                     <div className="my-2 md:my-0 flex flex-col items-center">
-                      <PiCertificateBold className="text-4xl text-sky-600" />
-                      <p className="text-gray-600 text-xs">Top Rated Cabs & Chauffeurs</p>
+                      
+                        <p className="text-gray-600 text-sm lg:text-base font-bold">
+                        {Math.round(car.effectiveDistance || 0)} KM
+                      </p>
+                        <p className="text-gray-600 text-xs px-8 font-semibold ">
+                       INCLUDED KMs
+                      </p>
                     </div>
-                    <div className="my-2 md:my-0 flex flex-col items-center">
-                      <Image
-                        src="/tax-svgrepo-com.png"
-                        alt="taxi"
-                        width={30}
-                        height={30}
-                        className="mb-2"
-                      />
-                      <p className="text-gray-600 text-xs">Includes GST</p>
-                    </div>
+                    
+                      <div
+            className="text-dark-btn  text-sm sm:text-base lg:text-lg font-bold hover:text-light-btn transition-all duration-100 cursor-pointer px-4 ease-in"
+            onClick={() => {
+              setSelectedCar({
+                car,
+                total: car.estimatedFare?.toFixed(0),
+                service_type,
+                rental_service:""
+              });
+              setShowFS(true);
+            }}
+          >
+            Fare Summary
+          </div>
+
+
+      {/* Conditional Modal */}
+      {showFS && selectedCar && (
+        <FareSummaryModal onClose={() => setShowFS(false)}  modalData={selectedCar} />
+      )}
                     <div className="my-2 md:my-0 text-center w-full md:fit">
-                      <p className="text-green-600 text-lg sm:text-base font-bold">
-                        ₹{car.estimatedFare?.toFixed(0) ?? "Calculating..."}
+                      <p className="text-green-600 text-lg sm:text-base lg:text-lg font-bold">
+                        ₹{car.total_amount.toFixed(0) ?? "Calculating..."}
                       </p>
-                      <p className="text-gray-600 text-sm">
-                        upto {Math.round(car.effectiveDistance || 0)} km
-                      </p>
+                    
                     </div>
                   </div>
                     <div className=" w-full md:w-fit">
 
                     <button
-                      onClick={() => handleSelectCar(car)}
+                      onClick={() => handleBookButton(car)}
                       className="bg-orange-500 font-semibold hover:bg-orange-600 w-full cursor-pointer  text-xs lg:text-base  rounded-md text-white px-6 py-2 mt-2 md:mt-0"
                     >
-                      Select
+                      Book
                     </button>
                     </div>
+                     {/* Booking Modal */}
+      {bookingModal && selectedCar && (
+        <BookingSummaryModal
+          onClose={() => {
+            setBookingModal(false);
+            setSelectedCar(null);
+          }}
+          bookingData={{car:selectedCar, pickupDate, returnDate, from, to, pickupTime,service_type}}
+          onBookNow={handleBookNow}
+        />
+      )}
                 </div>
               ))
             ) : (
@@ -240,7 +282,7 @@ useEffect(() => {
             )}
           </div>
         ) : (
-          <CityLocalUI cabs={cabs} handleSelectCar={handleSelectCar} />
+          <CityLocalUI cabs={cabs} handleBookButton={handleBookButton} showFS={showFS} bookingModal={bookingModal} setBookingModal={setBookingModal} pickupDate={pickupDate} returnDate={returnDate} from={from} to={to} pickupTime={pickupTime} setShowFS={setShowFS}  selectedCar={selectedCar} setSelectedCar={setSelectedCar} onBookNow={handleBookNow} />
         )}
       </div>
     </>

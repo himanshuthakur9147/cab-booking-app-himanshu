@@ -11,7 +11,7 @@ export const metadata = {
     "Taxi cancellation terms"
   ],
   alternates: {
-    canonical: `${process.env.DOMAIN_NAME}/refund-policy`,
+    canonical: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/refund-policy`,
   },
 };
 

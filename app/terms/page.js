@@ -17,10 +17,10 @@ export const metadata = {
     title: "Terms & Conditions | Yatra Travel India",
     description:
       "Learn about the guidelines, terms of use, and cab rental policies at Yatra Travel India.",
-    url: `${process.env.DOMAIN_NAME}/terms`,
+    url: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/terms`,
     images: [
       {
-        url: `${process.env.DOMAIN_NAME}/logo.jpeg`, // Optional OG image for this page
+        url: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/logo.jpeg`, // Optional OG image for this page
         width: 1200,
         height: 630,
         alt: "Terms and Conditions - Yatra Travel India",
@@ -28,7 +28,7 @@ export const metadata = {
     ],
   },
   alternates: {
-    canonical: `${process.env.DOMAIN_NAME}/terms`,
+    canonical: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/terms`,
   },
 };
 

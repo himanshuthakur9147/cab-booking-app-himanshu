@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 export const metadata  = {
  // Chiku Cab - Outstation Cab, Taxi & Car Rental Services in India
  //Reliable & Safe Cabs and Taxi Services at Affordable Prices
-  metadataBase: new URL(`${process.env.DOMAIN_NAME}`), // ✅ Your actual domain
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_DOMAIN_NAME}`), // ✅ Your actual domain
   title: "Yatra Travel India – Online Cab, Taxi & Car Rental Services | Affordable Rides Across India",
   description:
     "Book cabs instantly with Yatra Travel India. One way, round trip, local rental & airport transfer services across 2000+ Indian cities.",
@@ -41,18 +41,18 @@ export const metadata  = {
     "Affordable Cab Booking",
     "Yatra Taxi App",
   ],
-  authors: [{ name: "Yatra Travel India", url: `${process.env.DOMAIN_NAME}` }],
+  authors: [{ name: "Yatra Travel India", url: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}` }],
   openGraph: {
     title: "Yatra Travel India – Book Cabs Online",
     description:
       "Affordable, reliable and quick taxi booking services in 2000+ cities. No hidden charges. 24/7 support.",
-    url: `${process.env.DOMAIN_NAME}`,
+    url: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}`,
     siteName: "Yatra Travel India",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: `${process.env.DOMAIN_NAME}/logo.jpeg`,
+        url: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/logo.jpeg`,
         width: 1200,
         height: 630,
         alt: "Yatra Travel India Cab Booking",
@@ -69,7 +69,7 @@ export const metadata  = {
     site: "@YatraTravelIndia",
     title: "Yatra Travel India – Online Cab Booking",
     description: "Book taxis across India – One way, local & airport transfers.",
-    images: `${process.env.DOMAIN_NAME}/logo.jpeg`,
+    images: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/logo.jpeg`,
   },
 };
 

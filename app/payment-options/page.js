@@ -17,12 +17,12 @@ export const metadata = {
     title: "Payment Options | Yatra Travel India",
     description:
       "Choose from UPI, cards, net banking, EMI or pay later for your Yatra Travel cab reservations. Secure and convenient payments across 2000+ cities.",
-    url: `${process.env.DOMAIN_NAME}/payment-options`,
+    url: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/payment-options`,
     siteName: "Yatra Travel India",
     type: "website",
   },
   alternates: {
-    canonical: `${process.env.DOMAIN_NAME}/payment-options`,
+    canonical: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/payment-options`,
   },
 };
 

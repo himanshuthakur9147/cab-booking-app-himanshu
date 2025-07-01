@@ -5,7 +5,7 @@ import LocalCityService from "./LocalCityService";
 
 
 
-export default function CityLocalTabs({cabs,handleSelectCar}) {
+export default function CityLocalTabs({cabs,handleBookButton,selectedCar,setSelectedCar,onBookNow,showFS,setShowFS,pickupDate, returnDate, from, to, pickupTime,bookingModal,setBookingModal}) {
   const [activeTab, setActiveTab] = useState("8hr_80km");
 
   const tabs = [
@@ -39,8 +39,8 @@ export default function CityLocalTabs({cabs,handleSelectCar}) {
 
       {/* Form section with border around */}
       <div className=" p-4">
-        {activeTab === "8hr_80km" &&  <LocalCityService rental_service={"8hr_80km"} cabs={cabs} handleSelectCar={handleSelectCar}/>}
-        {activeTab === "12hr_120km" && <LocalCityService rental_service={"12hr_120km"} cabs={cabs} handleSelectCar={handleSelectCar}/>}
+        {activeTab === "8hr_80km" &&  <LocalCityService rental_service={"8hr_80km"} cabs={cabs} showFS={showFS} bookingModal={bookingModal} setBookingModal={setBookingModal} pickupDate={pickupDate} returnDate={returnDate} from={from} to={to} pickupTime={pickupTime} setShowFS={setShowFS} handleBookButton={handleBookButton} selectedCar={selectedCar} setSelectedCar={setSelectedCar} onBookNow={onBookNow}/>}
+        {activeTab === "12hr_120km" && <LocalCityService rental_service={"12hr_120km"} cabs={cabs} bookingModal={bookingModal} setBookingModal={setBookingModal} showFS={showFS} pickupDate={pickupDate} returnDate={returnDate} from={from} to={to} pickupTime={pickupTime} setShowFS={setShowFS} handleBookButton={handleBookButton} selectedCar={selectedCar} setSelectedCar={setSelectedCar} onBookNow={onBookNow}/>}
         
       </div>
     </div>

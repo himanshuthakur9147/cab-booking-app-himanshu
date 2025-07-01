@@ -11,8 +11,8 @@ export default function BookingTabs() {
   const [activeTab, setActiveTab] = useState("oneWay");
 
   const tabs = [
-    { key: "oneWay", label: "One Way" },
     { key: "roundTrip", label: "Round Trip" },
+    { key: "oneWay", label: "One Way" },
     { key: "local", label: "Local" },
     { key: "airport", label: "Airport" },
   ];

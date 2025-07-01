@@ -12,7 +12,7 @@ export const metadata = {
     "Car rental network",
   ],
   alternates: {
-    canonical: `${process.env.DOMAIN_NAME}/about`,
+    canonical: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/about`,
   },
 };
 

@@ -17,12 +17,12 @@ export const metadata = {
     title: "Privacy Policy | Yatra Travel India",
     description:
       "Your privacy is important to us. Learn how Yatra Travel India protects your data while you enjoy seamless cab booking services.",
-    url: `${process.env.DOMAIN_NAME}/privacy-policy`,
+    url: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/privacy-policy`,
     siteName: "Yatra Travel India",
     type: "article",
   },
   alternates: {
-    canonical: `${process.env.DOMAIN_NAME}/privacy-policy`,
+    canonical: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/privacy-policy`,
   },
   robots: {
     index: true,

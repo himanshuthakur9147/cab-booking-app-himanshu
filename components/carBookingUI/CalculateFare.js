@@ -31,7 +31,7 @@ export function calculateDynamicFare(km_limit, perKmFare, distanceInKm, pickup_d
       const total_amount = perKmFare * effectiveDistance + tada + night_charges;
       const gst = 0.05 * total_amount;
 
-      return {total_fare:Math.round(total_amount + gst),netDistance:effectiveDistance};
+      return {total_fare:Math.round(total_amount + gst),netDistance:effectiveDistance,gst,total_amount,tada,dayCount:1};
     } else {
       // Multi-day trip
       const timeDiff = returnDay.getTime() - pickupDay.getTime();
@@ -42,7 +42,7 @@ export function calculateDynamicFare(km_limit, perKmFare, distanceInKm, pickup_d
       const total_amount = perKmFare * netDistance + tada * dayCount + night_charges*(dayCount-1);
       const gst = 0.05 * total_amount;
 
-      return {total_fare:Math.round(total_amount + gst),netDistance};
+      return {total_fare:Math.round(total_amount + gst),netDistance,gst,total_amount,tada:tada*dayCount,dayCount};
     }
   } else {
     // If return date is invalid
@@ -50,6 +50,6 @@ export function calculateDynamicFare(km_limit, perKmFare, distanceInKm, pickup_d
     const total_amount = perKmFare * effectiveDistance + tada + night_charges;
     const gst = 0.05 * total_amount;
 
-      return {total_fare:Math.round(total_amount + gst),netDistance: effectiveDistance};
+      return {total_fare:Math.round(total_amount + gst),netDistance: effectiveDistance,gst,total_amount,tada,dayCount:1};
   }
 }

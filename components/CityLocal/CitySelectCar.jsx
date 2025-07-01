@@ -1,7 +1,9 @@
 import React from 'react'
 import {PiCertificateBold} from "react-icons/pi";
+import FareSummaryModal from "@/components/carBookingUI/FareSummaryModal"
+import BookingSummaryModal from "@/components/carBookingUI/BookingSummaryModal";
 import Image from 'next/image';
-const CitySelectCar = ({rental_service,cabs,handleSelectCar}) => {
+const CitySelectCar = ({rental_service,cabs,handleBookButton,selectedCar,setSelectedCar,onBookNow,showFS,setShowFS,pickupDate, returnDate, from, to, pickupTime,bookingModal,setBookingModal}) => {
   return (
     <div>
       <div className="space-y-4">
@@ -29,29 +31,49 @@ const CitySelectCar = ({rental_service,cabs,handleSelectCar}) => {
                   </div>
       
                   <div className="flex py-4 flex-row justify-between gap-2 xs:gap-4 md:gap-6  items-center text-sm text-center">
-                    <div className="my-2 md:my-0 flex flex-col items-center">
-                      <PiCertificateBold className="text-4xl text-dark-btn" />
-                      <p className="text-gray-600 text-xs">Top Rated Cabs & Chauffeurs</p>
-                    </div>
-                    <div className="my-2 md:my-0 flex flex-col items-center">
-                      <Image
-                        src="/tax-svgrepo-com.png"
-                        alt="taxi"
-                        width={30}
-                        height={30}
-                        className="mb-2"
-                      />
-                      <p className="text-gray-600 text-xs">Includes GST</p>
-                    </div>
+                    <div
+                               className="text-dark-btn text-lg font-bold hover:text-light-btn transition-all duration-100 cursor-pointer px-4 ease-in"
+                               onClick={() => {
+                                 setSelectedCar({
+                                   car,
+                                   total: Math.round(car.rental_service[rental_service]),
+                                   service_type:"Cab Rental Service",
+                                   rental_service
+                                 });
+                                 setShowFS(true);
+                               }}
+                             >
+                               Fare Summary
+                             </div>
+                   
+                         {/* Conditional Modal */}
+                         {showFS && selectedCar && (
+                           <FareSummaryModal onClose={() => setShowFS(false)}  modalData={selectedCar} />
+                         )}
                     <div className="my-2 md:my-0 text-center w-full md:fit">
-                      <p className="text-green-600 text-base font-bold">
+                      <p className="text-green-600 text-base lg:text-lg font-bold">
                         ₹{Math.round(car.rental_service[rental_service]+car.rental_service[rental_service]*0.05)}
                       </p>
-                      <p className="text-gray-600 text-sm">upto {Math.round(rental_service==="8hr_80km"?80 : 120)} km</p>
+                      <p className="text-gray-600 text-sm lg:text-base">upto {Math.round(rental_service==="8hr_80km"?80 : 120)} km</p>
                     </div>
-                    <button onClick={()=>handleSelectCar(car,rental_service)} className="bg-orange-500 font-semibold hover:bg-orange-600 w-full cursor-pointer  text-xs lg:text-base  rounded-md text-white px-6 py-2 mt-2 md:mt-0">
-                      Select
+                    <button
+                      onClick={() => handleBookButton(car)}
+                      className="bg-orange-500 font-semibold hover:bg-orange-600 w-full cursor-pointer  text-xs lg:text-base  rounded-md text-white px-6 py-2 mt-2 md:mt-0"
+                    >
+                      Book
                     </button>
+
+                        {/* Booking Modal */}
+                          {bookingModal && selectedCar && (
+                            <BookingSummaryModal
+                              onClose={() => {
+                                setBookingModal(false);
+                                setSelectedCar(null);
+                              }}
+                              bookingData={{car:selectedCar, pickupDate, returnDate, from, to, pickupTime, service_type:"Cab Rental Service",rental_service}}
+                              onBookNow={onBookNow}
+                            />
+                          )}
                   </div>
                 </div>
               ))}

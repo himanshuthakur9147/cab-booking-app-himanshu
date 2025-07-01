@@ -41,7 +41,7 @@ const Page = () => {
 
   const title = `Book Cab from ${from} to ${to} | Yatra Travel India`;
   const description = `Select the best cab options from ${from} to ${to}. Compare taxi fares, AC cars, and get instant booking with Yatra Travel India.`;
-  const canonical = `${process.env.DOMAIN_NAME}/select-car?pickup_location=${from}&drop_location=${to}`;
+  const canonical = `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/select-car?pickup_location=${from}&drop_location=${to}`;
 
   return (
     <>
@@ -54,12 +54,12 @@ const Page = () => {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={canonical} />
-        <meta property="og:image" content={`${process.env.DOMAIN_NAME}/logo.jpeg`} />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_DOMAIN_NAME}/logo.jpeg`} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={`${process.env.DOMAIN_NAME}/logo.jpeg`} />
+        <meta name="twitter:image" content={`${process.env.NEXT_PUBLIC_DOMAIN_NAME}/logo.jpeg`} />
 
         <script
           type="application/ld+json"
