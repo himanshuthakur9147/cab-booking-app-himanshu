@@ -6,7 +6,6 @@ const BookingCard = ({ booking }) => {
     booked_at,
     booked_by,
     name,
-    phone,
     email,
     payment_id,
     order_id,
