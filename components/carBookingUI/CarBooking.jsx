@@ -115,7 +115,7 @@ const handleBookButton=(car)=>{
       setShowModal(true) // redirect to AuthGear login flow
       return;
     }
-
+    
     setLoader(true);
     console.log("Selected Car in handleBookNow:", car);
     const fare = car.rental_service?.[rental_type]
