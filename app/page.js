@@ -67,7 +67,7 @@ export default function Home() {
       <Navbar />
       {loader && <RouteLoader />}
 
-      <div className="main-section bg-[url('/bg.jpg')] w-full bg-cover bg-center bg-no-repeat h-[85vh] md:h-[70vw] text-xs lg:text-base lg:h-[60vw] xl:h-[85vh]">
+      <div className="main-section bg-[url('/bg.jpg')] w-full bg-cover bg-gray-400 bg-center bg-no-repeat h-[85vh] md:h-[70vw] text-xs lg:text-base lg:h-[60vw] xl:h-[85vh]">
         <h1 className="uppercase font-bold text-[18px]  xs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[55px] text-white text-center font-sans py-4 md:pt-8 md:pb-5">
           Services Across 2000+ cities
         </h1>

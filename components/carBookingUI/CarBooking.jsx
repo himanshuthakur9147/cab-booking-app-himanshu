@@ -209,7 +209,7 @@ const handleBookButton=(car)=>{
                     <div className="">
                       <h3 className="text-lg uppercase font-bold">{car.name}</h3>
                       <p className="text-xs text-gray-500">or equivalent</p>
-                      <p className="md:text-sm">Seat Capacity : {car.seat_capacity} + 1</p>
+                      <p className="text-xs font-semibold py-1.5  md:text-sm">Seat Capacity : {car.seat_capacity} + 1</p>
                       <div className="bg-orange-600 text-white font-semibold px-4 py-1 text-xs w-fit my-1 rounded-full">
                         AC
                       </div>
@@ -223,13 +223,13 @@ const handleBookButton=(car)=>{
                         <p className="text-gray-600 text-sm lg:text-base font-bold">
                         {Math.round(car.effectiveDistance || 0)} KM
                       </p>
-                        <p className="text-gray-600 text-xs px-8 font-semibold ">
+                        <p className="text-gray-600 text-xs px-2 lg:px-8 font-semibold ">
                        INCLUDED KMs
                       </p>
                     </div>
                     
                       <div
-            className="text-dark-btn  text-sm sm:text-base lg:text-lg font-bold hover:text-light-btn transition-all duration-100 cursor-pointer px-4 ease-in"
+            className="text-dark-btn  text-sm sm:text-base lg:text-lg font-bold hover:text-light-btn transition-all duration-100 cursor-pointer px-0 lg:px-4 ease-in"
             onClick={() => {
               setSelectedCar({
                 car,
