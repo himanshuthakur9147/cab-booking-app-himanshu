@@ -77,7 +77,7 @@ export default function BookingSummaryModal({ onClose, bookingData, onBookNow })
 
           <button
             className="mt-4 w-full bg-orange-500 cursor-pointer text-white font-semibold py-2 rounded hover:bg-orange-600 transition"
-            onClick={onBookNow}
+            onClick={()=>onBookNow(bookingData.car,rental_service=service_type)}
           >
             Book Now
           </button>

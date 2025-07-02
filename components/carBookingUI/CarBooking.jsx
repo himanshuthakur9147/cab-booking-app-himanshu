@@ -117,11 +117,11 @@ const handleBookButton=(car)=>{
     }
 
     setLoader(true);
-
+    console.log("Selected Car in handleBookNow:", car);
     const fare = car.rental_service?.[rental_type]
       ? car.rental_service[rental_type] * 1.05
       : car.estimatedFare;
-
+    console.log("Fare in handleBookNow:", fare);
     const queryParams = new URLSearchParams({
       from,
       to,
@@ -140,7 +140,7 @@ const handleBookButton=(car)=>{
       service_type,
       effectiveDistance: Math.round(car.effectiveDistance || 0),
     }).toString();
-
+    console.log("Query Params in handleBookNow:", queryParams);
     router.push(`/booking/billing_form?${queryParams}`);
     setTimeout(() => setLoader(false), 2000);
   };

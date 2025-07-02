@@ -31,10 +31,10 @@ const BookingCard = ({ booking }) => {
 
     <div className="border rounded-lg shadow-sm p-4 bg-white mb-6">
       <div className="flex items-center justify-between">
-        <div className="text-lg font-bold text-gray-800">
+        <div className="text-sm lg:text-lg font-bold text-gray-800">
           {name} ({booked_by.phone})
         </div>
-        <div className="text-base text-gray-700 font-semibold">Booked At: {formattedBookedAt}</div>
+        <div className="text-base flex-col sm:flex-row flex items-center gap-x-2 text-gray-700 font-semibold">Booked At: <div>{formattedBookedAt}</div></div>
       </div>
 
       <div className="text-sm text-gray-600 mt-2">
@@ -92,7 +92,7 @@ const BookingCard = ({ booking }) => {
 
       {/* Cab Details */}
       <div className="mt-6 border-t pt-4">
-        <h3 className="text-base font-semibold text-gray-700 mb-2">Cab Details</h3>
+        <h3 className="text-sm lg:text-base font-semibold text-gray-700 mb-2">Cab Details</h3>
         <div className="flex items-center gap-4">
           <Image src={cab_type.image} alt={cab_type.name} width={100} height={60} className="object-contain rounded" />
           <div>
