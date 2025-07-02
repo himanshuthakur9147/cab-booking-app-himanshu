@@ -68,7 +68,7 @@ export default function BookingSummaryModal({ onClose, bookingData, onBookNow })
           </div>
           <div className="flex justify-between">
             <span className="font-semibold">KMs Included :</span>
-           {  bookingData.service_type==="Cab Rental Service"?<span>{bookingData.rental_service==="8hr_80km"?"80 KM":"120 KM"}</span>: <span>{bookingData.car.effectiveDistance} KM</span>}
+           {  bookingData.service_type==="Cab Rental Service"?<span>{bookingData.rental_service==="8hr_80km"?"80 KM":"120 KM"}</span>: <span>{Math.round(bookingData.car.effectiveDistance)} KM</span>}
           </div>
           <div className="flex justify-between text-lg font-bold">
             <span>Total Fare :</span>
@@ -77,7 +77,7 @@ export default function BookingSummaryModal({ onClose, bookingData, onBookNow })
 
           <button
             className="mt-4 w-full bg-orange-500 cursor-pointer text-white font-semibold py-2 rounded hover:bg-orange-600 transition"
-            onClick={()=>onBookNow(bookingData.car,rental_service=service_type)}
+            onClick={()=>onBookNow(bookingData.car,rental_service=bookingData.service_type)}
           >
             Book Now
           </button>

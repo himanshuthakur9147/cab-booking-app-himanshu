@@ -75,7 +75,7 @@ export default function FareSummaryContent({ onClose,modalData }) {
           </p>
           <div className="flex justify-between font-semibold">
             <span>Extra per km</span>
-         {service_type==="Cab Rental Service"?<span>₹{car.extra_charge_per_km} after  {rental_service==="8hr_80km"?"80 KM":"120 KM"} Km</span>:   <span>₹{car.extra_charge_per_km} after {car.effectiveDistance} Km</span>}
+         {service_type==="Cab Rental Service"?<span>₹{car.extra_charge_per_km} after  {rental_service==="8hr_80km"?"80 KM":"120 KM"} Km</span>:   <span>₹{car.extra_charge_per_km} after {Math.round(car.effectiveDistance)} Km</span>}
           </div>
         </div>
         </div>
