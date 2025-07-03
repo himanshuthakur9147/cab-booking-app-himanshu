@@ -1,4 +1,4 @@
-// models/User.js
+// models/Cabs.js
 import mongoose from "mongoose";
 
 const CabSchema = new mongoose.Schema(

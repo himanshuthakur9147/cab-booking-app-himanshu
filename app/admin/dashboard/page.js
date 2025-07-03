@@ -1,18 +1,32 @@
 "use client";
-import React, { useEffect,useState } from "react";
+
+import React, { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import BookingCard from "@/components/admin/BookingCard";
+import AddVehicle from "@/components/admin/AddVehicle";
+
+import UpdateVehicles from "@/components/admin/UpdateVehicles";
+import AllVehicles from "@/components/admin/AllVehicles";
 
 const Page = () => {
   const { user, isAuthenticated } = useAuth();
+  const router = useRouter();
+
   const [bookings, setBookings] = useState([]);
-    const router=useRouter()
+  const [activeTab, setActiveTab] = useState("bookings");
+
+  const tabs = [
+    { key: "add", label: "Add Vehicle" },
+    { key: "all", label: "All Vehicles" },
+    { key: "vehicles", label: "Update Vehicle" },
+    { key: "bookings", label: "All Bookings" },
+  ];
 
   useEffect(() => {
     const getUser = async () => {
-      if (isAuthenticated && user.role==="admin") {
-      try {
+      if (isAuthenticated && user.role === "admin") {
+        try {
           const res = await fetch("/api/users/get_user", {
             method: "POST",
             headers: {
@@ -22,41 +36,60 @@ const Page = () => {
           });
 
           const data = await res.json();
-          console.log("Response from get_user:", data.user.phone);
-          if ( data.user.role==="admin") {
-            console.log("User fetched from DB:", data.user);
-          } else {
-
-            router.push("/")
-          }
+          if (data.user.role !== "admin") router.push("/");
         } catch (err) {
           console.error("Request failed:", err);
-          router.push("/")
+          router.push("/");
         }
       }
     };
 
-    const fetchAllBookings=async()=>{
-      const a=await fetch("/api/bookings")
-      const b=await a.json()
-      console.log("All bookings:", b.bookings);
-      setBookings(b.bookings)
-    }
+    const fetchAllBookings = async () => {
+      const res = await fetch("/api/bookings");
+      const data = await res.json();
+      setBookings(data.bookings);
+    };
 
-    getUser();
+     getUser();
     fetchAllBookings();
   }, [isAuthenticated, user]);
 
+  return (
+    <div className="px-4 py-6 max-w-6xl mx-auto">
+      <h1 className="text-xl text-center pb-6 text-gray-800 font-bold">ADMIN DASHBOARD</h1>
 
+      {/* Tabs */}
+      <div className="flex justify-center mb-4">
+        <div className="border border-gray-400 rounded-md overflow-hidden flex flex-wrap">
+          {tabs.map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              className={`px-4 py-2 text-sm font-semibold cursor-pointer uppercase border-r border-gray-300 last:border-r-0 ${
+                activeTab === tab.key
+                  ? "bg-dark-btn text-white"
+                  : "bg-gray-100 hover:bg-gray-200 text-black"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      </div>
 
-  return <div>
-        <h1 className="text-xl text-center py-4 text-gray-800 font-bold">ADMIN DASHBOARD</h1>
-    <div className="max-w-5xl mx-auto px-4 py-6">
-    {bookings.map((booking) => (
-      <BookingCard key={booking._id} booking={booking} />
-    ))}
-  </div>
-  </div>;
+      {/* Tab Content */}
+      <div className="bg-white p-4  shadow rounded-md">
+        {activeTab === "add" && <AddVehicle />}
+     
+        {activeTab === "all" && <AllVehicles />}
+        {activeTab === "vehicles" && <UpdateVehicles />}
+        {activeTab === "bookings" &&
+          bookings.map((booking) => (
+            <BookingCard key={booking._id} booking={booking} />
+          ))}
+      </div>
+    </div>
+  );
 };
 
 export default Page;

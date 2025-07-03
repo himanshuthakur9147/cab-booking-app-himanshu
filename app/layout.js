@@ -9,6 +9,7 @@ import GoogleMapsWrapper from "@/components/googleComponents/GoogleMapsWrapper";
 import RouteLoader from "@/components/Loader/RouteLoader";
 import OfflineNotice from "@/components/offline/OfflineNotice";
 import { AuthProvider } from "@/context/AuthContext";
+import { ToastProvider } from "@/context/ToastContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -87,7 +88,10 @@ export default function RootLayout({ children }) {
                   <GoogleMapsWrapper>
                     <RouteLoader />
                     <OfflineNotice />
+                    <ToastProvider>
+
                     {children}
+                    </ToastProvider>
                   </GoogleMapsWrapper>
                 </AdminProvider>
               </ReviewProvider>
