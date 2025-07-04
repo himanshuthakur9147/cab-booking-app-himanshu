@@ -8,7 +8,7 @@ import AirportForm from "./forms/AirportForm";
 
 
 export default function BookingTabs() {
-  const [activeTab, setActiveTab] = useState("oneWay");
+  const [activeTab, setActiveTab] = useState("roundTrip");
 
   const tabs = [
     { key: "roundTrip", label: "Round Trip" },

@@ -6,7 +6,7 @@ import { useBooking } from "@/context/BookingContext";
 import { useAuth } from "@/context/AuthContext";
 import Navbar from "@/components/Navbar";
 import BookingTabs from "@/components/BookingTabs";
-import { FaCanadianMapleLeaf } from "react-icons/fa";
+import { FaMedal } from "react-icons/fa";
 import RouteLoader from "@/components/Loader/RouteLoader";
 import Footer from "@/components/footer/Footer";
 import AuthInit from "@/components/login/AuthInit";
@@ -67,8 +67,8 @@ export default function Home() {
       <Navbar />
       {loader && <RouteLoader />}
 
-      <div className="main-section bg-[url('/bg.jpg')] w-full bg-cover bg-gray-400 bg-center bg-no-repeat h-[85vh] md:h-[70vw] text-xs lg:text-base lg:h-[60vw] xl:h-[85vh]">
-        <h1 className="uppercase font-bold text-[18px]  xs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[55px] text-white text-center font-sans py-4 md:pt-8 md:pb-5">
+      <div className="main-section bg-[url('/bg.jpg')] w-full bg-cover bg-gray-400 bg-center bg-no-repeat h-[85vh] md:h-[70vw] text-xs lg:text-base lg:h-[60vw] xl:h-[90vh]">
+        <h1 className="uppercase font-bold text-[18px]  xs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[55px] text-white text-center font-sans py-4 md:pt-8 md:pb-5 xl:py-2">
           Services Across 2000+ cities
         </h1>
 
@@ -94,10 +94,10 @@ export default function Home() {
 
         {/* ⭐ New Section: Top Rated Service */}
         <div className="flex justify-center items-center mt-6">
-  <div className="flex items-center gap-2 px-4 py-1 rounded-md bg-black/60 text-white text-sm md:text-base lg:text-xl font-semibold">
-    <FaCanadianMapleLeaf/>
+  <div className="flex items-center gap-2 px-4 py-1 rounded-md bg-black/80 text-white text-sm md:text-base lg:text-xl font-semibold">
+    <FaMedal/>
     <span>India’s Top Rated Car Rental Service</span>
-    <FaCanadianMapleLeaf/>
+    <FaMedal/>
   </div>
 </div>
 

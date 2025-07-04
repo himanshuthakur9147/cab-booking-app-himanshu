@@ -7,8 +7,15 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdAccessTimeFilled, MdDateRange } from "react-icons/md";
 import { RxCrossCircled } from "react-icons/rx";
 import DatePicker from "react-datepicker";
-import PlacesAutocompleteInput from "../googleComponents/PlacesAutoCompleteInput";
+import dynamic from "next/dynamic";
+
+const PlacesAutocompleteInput = dynamic(
+  () => import("@/components/googleComponents/PlacesAutocompleteInput"),
+  { ssr: false } // disables server-side rendering
+);
+
 import "react-datepicker/dist/react-datepicker.css";
+
 
 // ✅ Helper to generate time slots
 function generateTimeSlots() {

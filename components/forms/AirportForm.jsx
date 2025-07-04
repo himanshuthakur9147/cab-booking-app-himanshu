@@ -2,14 +2,20 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useBooking } from "@/context/BookingContext";
-import PlacesAutocomplete from "./PlacesAutoComplete";
+
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
 import { MdAccessTimeFilled } from "react-icons/md";
 import { RxCrossCircled } from "react-icons/rx";
 import DatePicker from "react-datepicker";
 import Selector from "./SelectOptions";
-import PlacesAutocompleteInput from "../googleComponents/PlacesAutoCompleteInput";
+import dynamic from "next/dynamic";
+
+const PlacesAutocompleteInput = dynamic(
+  () => import("@/components/googleComponents/PlacesAutocompleteInput"),
+  { ssr: false } // disables server-side rendering
+);
+
 
 // ✅ Helper to generate time slots
 function generateTimeSlots() {

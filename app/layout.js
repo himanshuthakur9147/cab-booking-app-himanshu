@@ -5,7 +5,7 @@ import { BookingProvider } from "@/context/BookingContext";
 import { PaymentProvider } from "@/context/PaymentContext";
 import { ReviewProvider } from "@/context/ReviewContext";
 import { AdminProvider } from "@/context/AdminContext";
-import GoogleMapsWrapper from "@/components/googleComponents/GoogleMapsWrapper";
+
 import RouteLoader from "@/components/Loader/RouteLoader";
 import OfflineNotice from "@/components/offline/OfflineNotice";
 import { AuthProvider } from "@/context/AuthContext";
@@ -85,14 +85,14 @@ export default function RootLayout({ children }) {
             <PaymentProvider>
               <ReviewProvider>
                 <AdminProvider>
-                  <GoogleMapsWrapper>
+                
                     <RouteLoader />
                     <OfflineNotice />
                     <ToastProvider>
 
                     {children}
                     </ToastProvider>
-                  </GoogleMapsWrapper>
+                
                 </AdminProvider>
               </ReviewProvider>
             </PaymentProvider>
