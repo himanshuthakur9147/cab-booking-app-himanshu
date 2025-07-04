@@ -11,7 +11,7 @@ import DatePicker from "react-datepicker";
 import dynamic from "next/dynamic";
 
 const PlacesAutocompleteInput = dynamic(
-  () => import("@/components/googleComponents/PlacesAutocompleteInput"),
+  () => import("@/components/googleComponents/PlacesAutoCompleteInput"),
   { ssr: false } // disables server-side rendering
 );
 
