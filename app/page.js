@@ -15,6 +15,8 @@ import ExploreServices from "@/components/home/ExploreServices";
 import ExploreTempoServices from "@/components/home/ExploreTempoServices";
 import PopularRoutes from "@/components/home/PopularRoutes";
 import TempoTravellerCities from "@/components/home/TempoTravellerCities";
+import { TypewriterText } from "@/components/home/TypewriterText";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
 
 export default function Home() {
   const {
@@ -68,9 +70,12 @@ export default function Home() {
       {loader && <RouteLoader />}
 
       <div className="main-section bg-[url('/bg.jpg')] w-full bg-cover bg-gray-400 bg-center bg-no-repeat h-[85vh] md:h-[70vw] text-xs lg:text-base lg:h-[60vw] xl:h-[90vh]">
-        <h1 className="uppercase font-bold text-[18px]  xs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[55px] text-white text-center font-sans py-4 md:pt-8 md:pb-5 xl:py-2">
-          Services Across 2000+ cities
-        </h1>
+      <div className="text-center py-4 md:pt-8 md:pb-5 xl:py-2">
+  <h1 className="uppercase font-bold text-[18px] xs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[55px] text-white font-sans">
+    <TypewriterText />
+  </h1>
+</div>
+
 
         <div className="tabs max-w-[85%] m-auto rounded-lg py-4 mt-0 md:mt-6 relative">
           <div className="booking-start flex justify-center rounded-md bg-white relative w-full pb-6">
@@ -108,6 +113,7 @@ export default function Home() {
       <ExploreTempoServices />
       <TempoTravellerCities />
       <PopularRoutes />
+      <WhyChooseUs/>
 
       <Footer />
     </>
