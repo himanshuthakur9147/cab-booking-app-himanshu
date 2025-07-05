@@ -170,7 +170,7 @@ export default function RoundTripForm() {
             onChange={(e) => setPickupTime(e.target.value)}
             className="border-b w-full text-gray-700 outline-none pl-2 py-1"
           >
-            <option value="" disabled>Select time</option>
+           
             {generateTimeSlots().map((time, index) => (
               <option key={index} value={time}>
                 {time}
