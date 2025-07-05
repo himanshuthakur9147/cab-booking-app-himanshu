@@ -1,48 +1,21 @@
-import BillingForm from '@/components/billingForm/BillingForm'
-import React from 'react'
+import Navbar from "@/components/Navbar";
+import { Suspense } from "react";
+import BillingFormClient from "./BillingFormClient";
+
+import RouteLoader from "@/components/Loader/RouteLoader";
 
 export const metadata = {
-  title: "Billing & Booking Details | Yatra Travel India",
-  description:
-    "Confirm your cab booking by providing contact details and reviewing pickup, drop, and fare summary. Fast and secure online booking with Yatra Travel India.",
-  keywords: [
-    "Cab booking checkout",
-    "Cab billing form",
-    "Taxi booking India",
-    "Online taxi fare confirmation",
-    "Yatra Travel India Booking",
-  ],
-  alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/booking/billing_form`,
-  },
-  openGraph: {
-    title: "Billing & Booking – Yatra Travel India",
-    description:
-      "Complete your booking by confirming pickup, drop and fare details for cabs across India. Trusted and fast taxi service.",
-    url: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/booking/billing_form`,
-    siteName: "Yatra Travel India",
-    type: "website",
-    locale: "en_IN",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Billing & Booking | Yatra Travel India",
-    description:
-      "Fill contact and trip details to confirm your cab booking. Fast and easy billing form.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  title: "Billing Form | Yatra Travel India",
+  description: "Fill in your contact and booking details to proceed to payment.",
 };
 
-
-const billing = () => {
+export default function Page() {
   return (
-    <div>
-      <BillingForm/>
+    <div className="bg-gray-50 min-h-screen">
+      <Navbar />
+      <Suspense fallback={<RouteLoader />}>
+        <BillingFormClient />
+      </Suspense>
     </div>
-  )
+  );
 }
-
-export default billing
