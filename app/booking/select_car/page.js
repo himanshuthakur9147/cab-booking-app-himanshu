@@ -1,38 +1,48 @@
 import Navbar from "@/components/Navbar";
-import Head from "next/head";
 import dynamic from "next/dynamic";
 
 const SelectCarClient = dynamic(() => import("./SelectCarClient"), {
-  ssr: false, // disable SSR to avoid hydration issues
+  ssr: false,
 });
 
-const domain = process.env.NEXT_PUBLIC_DOMAIN_NAME || "https://yourdomain.com";
+// ✅ Use metadata API in App Router
+export const metadata = {
+  title: "Book Cab | Yatra Travel India",
+  description:
+    "Select the best cab options. Compare taxi fares, AC cars, and get instant booking with Yatra Travel India.",
+  keywords: [
+    "Cab booking",
+    "One way cab",
+    "Airport cab",
+    "Yatra Travel India",
+    "Online taxi booking",
+  ],
+  openGraph: {
+    title: "Book Cab | Yatra Travel India",
+    description:
+      "Affordable and reliable cab booking service in India. Instant confirmation. Trusted by 10,000+ customers.",
+    url: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/booking/select_car`,
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/logo.jpeg`,
+        width: 800,
+        height: 600,
+        alt: "Yatra Travel India",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book Cab | Yatra Travel India",
+    description:
+      "Affordable and reliable cab booking service across India with instant confirmation.",
+    images: [`${process.env.NEXT_PUBLIC_DOMAIN_NAME}/logo.jpeg`],
+  },
+};
 
 export default function Page() {
-  const title = "Book Cab | Yatra Travel India";
-  const description =
-    "Select the best cab options. Compare taxi fares, AC cars, and get instant booking with Yatra Travel India.";
-  const canonical = `${domain}/booking/select_car`;
-
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="keywords" content="Cab booking, One way cab, Airport cab, Yatra Travel India" />
-        <link rel="canonical" href={canonical} />
-
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content={canonical} />
-        <meta property="og:image" content={`${domain}/logo.jpeg`} />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={`${domain}/logo.jpeg`} />
-      </Head>
-
       <Navbar />
       <SelectCarClient />
     </>
