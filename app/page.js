@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useBooking } from "@/context/BookingContext";
-import { useAuth } from "@/context/AuthContext";
+
 import Navbar from "@/components/Navbar";
 import BookingTabs from "@/components/BookingTabs";
 import { FaMedal } from "react-icons/fa";
@@ -19,24 +19,16 @@ import { TypewriterText } from "@/components/home/TypewriterText";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 
 export default function Home() {
-  const {
-    login,
-    logout,
-    user,
-    isAuthenticated,
-  } = useAuth();
-
+ 
   const router = useRouter();
   const [loader, setLoader] = useState(false);
   const [serviceType, setServiceType] = useState("One Way");
 
   const {
     pickupLocation,
-    setPickupLocation,
+   
     dropLocation,
-    setDropLocation,
-    carType,
-    setCarType,
+  
     pickupDate,
     returnDate,
     pickupTime,

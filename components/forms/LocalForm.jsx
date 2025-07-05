@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+
 import { useForm } from "react-hook-form";
 import { useBooking } from "@/context/BookingContext";
 
@@ -47,11 +47,11 @@ export default function LocalForm() {
     carType,
     pickupDate,
     setPickupDate,
-    setReturnDate,
+   
     setPickupTime,
-    returnDate,
+   
     pickupTime,
-    setCarType,
+   
   } = useBooking();
 
   const onSubmit = () => {

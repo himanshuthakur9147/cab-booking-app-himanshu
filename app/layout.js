@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Metadata } from "next";
+
 import { BookingProvider } from "@/context/BookingContext";
 import { PaymentProvider } from "@/context/PaymentContext";
 import { ReviewProvider } from "@/context/ReviewContext";

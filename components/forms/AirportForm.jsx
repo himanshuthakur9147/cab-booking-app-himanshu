@@ -33,8 +33,7 @@ function generateTimeSlots() {
 
 export default function AirportForm() {
   const { register, handleSubmit } = useForm();
-    const [selectedDate, setSelectedDate] = useState(null);
-     const [selectedTime, setSelectedTime] = useState(null);
+  
  // Get today's date without time
   const today = new Date();
   today.setHours(0, 0, 0, 0); // Strip time
