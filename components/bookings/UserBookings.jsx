@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import Navbar from "@/components/Navbar";
+import Image from "next/image";
 
 export default function MyBookingsPage() {
   const { isAuthenticated, user } = useAuth();
@@ -59,7 +60,7 @@ export default function MyBookingsPage() {
                     </h2>
                     <p className="text-sm text-gray-600">{booking.service_type}</p>
                   </div>
-                  <img
+                  <Image placeholder="blur" width={280} height={180}
                     src={booking.cab_type.image}
                     alt="Cab"
                     className="w-full sm:w-28 h-20 object-cover rounded"

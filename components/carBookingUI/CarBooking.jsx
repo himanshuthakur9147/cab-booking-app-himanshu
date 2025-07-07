@@ -199,7 +199,7 @@ const handleBookButton=(car)=>{
                   className="flex justify-between flex-col md:flex-row items-center border rounded-md p-4 hover:shadow-md"
                 >
                   <div className="flex items-center gap-4">
-                    <Image
+                    <Image placeholder="blur"
                       src={car.image}
                       alt={car.name}
                       width={120}

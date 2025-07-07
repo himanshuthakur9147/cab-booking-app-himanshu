@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useBooking } from "@/context/BookingContext";
-
 import Navbar from "@/components/Navbar";
 import BookingTabs from "@/components/BookingTabs";
 import { FaMedal } from "react-icons/fa";
@@ -59,11 +58,10 @@ export default function Home() {
       <AuthInit />
       <Navbar />
       {loader && <RouteLoader />}
-  {/* bg-[url('/bg.jpg')] bg-cover */}
+
       {/* === Hero Section === */}
-      <div className="pt-2 
-    
-       bg-gray-400 bg-center bg-no-repeat text-xs lg:text-base">
+<div className="pt-2 bg-hero text-xs lg:text-base">
+
         <div className="text-center py-5 md:py-4">
           <h1 className="uppercase font-bold text-[18px] xs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[55px] text-white font-sans">
             <TypewriterText />

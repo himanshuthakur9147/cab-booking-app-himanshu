@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "react-datepicker/dist/react-datepicker.css";
+
 
 
 @theme {
@@ -11,9 +11,7 @@
   --color-bg-clr:#1e0020;
    --breakpoint-xxs: 375px ;
    --breakpoint-xs: 410px ;
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
 }
 
 /* Highlight time option on hover */
@@ -51,4 +49,15 @@
       transform: translateY(0);
     }
   }
+}
+
+/* In globals.css or Tailwind layer */
+.bg-hero {
+  background-image: image-set(
+    url('/bg.webp') type("image/webp"),
+    url('/bg.jpg') type("image/jpeg")
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
