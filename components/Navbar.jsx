@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { FaPhoneAlt,FaHome } from "react-icons/fa";
+import { FaPhoneAlt, FaHome } from "react-icons/fa";
 import { FaAustralSign } from "react-icons/fa6";
 import { LiaBlogSolid } from "react-icons/lia";
 import { CgProfile } from "react-icons/cg";
@@ -18,7 +18,6 @@ const Navbar = () => {
     user,
     showModal,
     setShowModal,
-    isAdmin,
   } = useAuth();
 
   const [open, setOpen] = useState(false);
@@ -27,14 +26,12 @@ const Navbar = () => {
   const dropdownRef = useRef(null);
   const userBtnRef = useRef(null);
 
-  // ✅ Auto-close modal if user is authenticated
   useEffect(() => {
     if (isAuthenticated) {
       setShowModal(false);
     }
   }, [isAuthenticated]);
 
-  // ✅ Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (
@@ -53,11 +50,11 @@ const Navbar = () => {
   const phoneDisplay = user?.phone || user?.phone_number || "User";
 
   return (
-    <div className="bg-white relative z-50">
-      {/* TOP NAV */}
-      <div className="flex justify-between items-center text-text-clr max-w-full text-sm lg:text-base lg:max-w-[80%] m-auto px-2 sm:px-4 py-3">
-        {/* LOGO */}
-        <div className="left-logo">
+    <div className="bg-white relative z-50 shadow-sm border-b">
+      {/* NAVBAR CONTAINER */}
+      <div className="flex justify-between items-center max-w-full px-4 py-3 text-sm lg:text-base lg:max-w-[80%] mx-auto">
+        {/* LEFT - Logo */}
+        <div className="flex items-center gap-3 flex-shrink-0">
           <Link href="/">
             <Image
               src="/logo.jpeg"
@@ -67,56 +64,68 @@ const Navbar = () => {
               className="w-20 sm:w-24"
             />
           </Link>
-        </div>
 
-        {/* PHONE */}
-        <div className="contact rounded-l-lg rounded-r-md border border-dark-btn">
-          <div className="flex items-center">
-            <FaPhoneAlt className="text-dark-btn ml-3" />
-            <div className="ml-2 py-1 px-2 rounded-r-md text-xs xs:text-xs md:text-base text-text-clr font-semibold bg-dark-btn">
-              +91 9876543210
-            </div>
+          {/* Phone for small screens */}
+          <div className="md:hidden flex items-center px-3 py-1 border border-gray-400 rounded-full text-xs sm:text-sm">
+            <FaPhoneAlt className="text-dark-btn mr-1" />
+            <span className="text-gray-700 font-medium">+91 9876543210</span>
           </div>
         </div>
 
-        {/* DESKTOP BUTTONS */}
-        <div className="buttons hidden md:flex items-center gap-2">
+        {/* CENTER - Nav links (Desktop only) */}
+        <div className="hidden md:flex items-center gap-6">
           <Link href="/">
-            <button className="text-slate-800 px-4 uppercase py-1 font-semibold cursor-pointer text-xs md:text-sm lg:text-base hover:text-black transition duration-300">
+            <button className="text-gray-800 font-semibold  cursor-pointer hover:text-black transition">
               Home
             </button>
           </Link>
           <Link href="/about">
-            <button className="text-slate-800 px-4 uppercase py-1 font-semibold cursor-pointer text-xs md:text-sm lg:text-base hover:text-black transition duration-300">
+            <button className="text-gray-800 font-semibold cursor-pointer hover:text-black transition">
               About Us
             </button>
           </Link>
           <Link href="/blogs">
-            <button className="text-slate-800 uppercase px-4 py-1 font-semibold cursor-pointer text-xs md:text-sm lg:text-base hover:text-black transition duration-300">
+            <button className="text-gray-800 font-semibold cursor-pointer hover:text-black transition">
               Blogs
             </button>
           </Link>
+        </div>
 
+        {/* RIGHT - Buttons (Desktop only) */}
+        <div className="hidden md:flex items-center gap-4">
+          {/* Phone (Desktop only) */}
+          <div className="hidden md:flex items-center px-3 py-1 border border-gray-400 rounded-full text-sm">
+            <FaPhoneAlt className="text-dark-btn mr-2" />
+            <span className="text-gray-700 font-medium">+91 9876543210</span>
+          </div>
+
+          {/* Login / Profile */}
           {isAuthenticated ? (
             <div
               ref={userBtnRef}
               onClick={() => setOpen(!open)}
-              className="ml-2 text-text-clr text-xs md:text-base bg-dark-btn py-1 px-3 rounded-lg cursor-pointer hover:bg-light-btn font-semibold flex items-center"
+              className="bg-dark-btn text-white text-sm rounded-full px-4 py-1 cursor-pointer hover:bg-light-btn transition flex items-center"
             >
-              <CgProfile className="text-2xl mr-1" />
+              <CgProfile className="text-xl mr-2" />
               {phoneDisplay}
             </div>
           ) : (
             <button
               onClick={() => setShowModal(true)}
-              className="bg-dark-btn text-text-clr cursor-pointer px-4 py-1 text-xs md:text-base rounded-full border border-dark-btn hover:border-light-btn hover:bg-light-btn transition duration-100 ml-2"
+              className="bg-dark-btn text-white text-sm rounded-full cursor-pointer px-4 py-1 hover:bg-light-btn transition"
             >
               Login
             </button>
           )}
+
+          <Link href="/">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-full px-4 py-1">
+              Book Now
+            </button>
+          </Link>
         </div>
 
-        {/* MOBILE MENU ICON */}
+        {/* RIGHT - Hamburger Menu (Mobile only) */}
         <div className="md:hidden">
           <button
             onClick={() => {
@@ -132,21 +141,21 @@ const Navbar = () => {
 
       {/* MOBILE DROPDOWN MENU */}
       {menuOpen && (
-        <div className="absolute top-full right-0 w-fit bg-gray-100 shadow-md py-4 px-10 z-20">
+        <div className="absolute top-full right-0 w-fit bg-gray-100 shadow-md py-4 px-10 z-20 md:hidden">
           <ul className="flex flex-col space-y-3 text-base text-gray-800 font-medium">
             <li>
-              <Link href="/" className="gap-x-3 flex items-center" onClick={() => setMenuOpen(false)}>
-               <FaHome/> Home
+              <Link href="/" onClick={() => setMenuOpen(false)} className="flex items-center gap-2">
+                <FaHome /> Home
               </Link>
             </li>
             <li>
-              <Link href="/about" className="gap-x-3 flex items-center" onClick={() => setMenuOpen(false)}>
-               <FaAustralSign/> About Us
+              <Link href="/about" onClick={() => setMenuOpen(false)} className="flex items-center gap-2">
+                <FaAustralSign /> About Us
               </Link>
             </li>
             <li>
-              <Link href="/blogs" className="gap-x-3 flex items-center" onClick={() => setMenuOpen(false)}>
-               <LiaBlogSolid/> Blogs
+              <Link href="/blogs" onClick={() => setMenuOpen(false)} className="flex items-center gap-2">
+                <LiaBlogSolid /> Blogs
               </Link>
             </li>
             <li>

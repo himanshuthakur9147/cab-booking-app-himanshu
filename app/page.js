@@ -19,16 +19,13 @@ import { TypewriterText } from "@/components/home/TypewriterText";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 
 export default function Home() {
- 
   const router = useRouter();
   const [loader, setLoader] = useState(false);
   const [serviceType, setServiceType] = useState("One Way");
 
   const {
     pickupLocation,
-   
     dropLocation,
-  
     pickupDate,
     returnDate,
     pickupTime,
@@ -47,7 +44,9 @@ export default function Home() {
     setServiceType(detectedServiceType);
 
     router.push(
-      `/booking/select_car?pickup_location=${pickupLocation}&service_type=${encodeURIComponent(detectedServiceType)}&drop_location=${dropLocation}&pickup_date=${pickupDate}&pickup_time=${pickupTime}&return_date=${returnDate}`
+      `/booking/select_car?pickup_location=${pickupLocation}&service_type=${encodeURIComponent(
+        detectedServiceType
+      )}&drop_location=${dropLocation}&pickup_date=${pickupDate}&pickup_time=${pickupTime}&return_date=${returnDate}`
     );
 
     setTimeout(() => {
@@ -60,53 +59,58 @@ export default function Home() {
       <AuthInit />
       <Navbar />
       {loader && <RouteLoader />}
+  {/* bg-[url('/bg.jpg')] bg-cover */}
+      {/* === Hero Section === */}
+      <div className="pt-2 
+    
+       bg-gray-400 bg-center bg-no-repeat text-xs lg:text-base">
+        <div className="text-center py-5 md:py-4">
+          <h1 className="uppercase font-bold text-[18px] xs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[55px] text-white font-sans">
+            <TypewriterText />
+          </h1>
+        </div>
 
-      <div className="main-section bg-[url('/bg.jpg')] w-full bg-cover bg-gray-400 bg-center bg-no-repeat h-[85vh] md:h-[70vw] text-xs lg:text-base lg:h-[60vw] xl:h-[90vh]">
-      <div className="text-center py-4 md:pt-8 md:pb-5 xl:py-2">
-  <h1 className="uppercase font-bold text-[18px] xs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[55px] text-white font-sans">
-    <TypewriterText />
-  </h1>
-</div>
-
-
-        <div className="tabs max-w-[85%] m-auto rounded-lg py-4 mt-0 md:mt-6 relative">
-          <div className="booking-start flex justify-center rounded-md bg-white relative w-full pb-6">
+        {/* === Booking Tabs === */}
+        <div className="max-w-[85%] mx-auto rounded-lg py-6  relative">
+          <div className="bg-white rounded-md shadow-md p-4">
             <BookingTabs />
           </div>
 
-          <div className="explore-cab-btn absolute bottom-0 left-[15%] xxs:left-[20%] xs:left-[22%] sm:left-[20%] md:left-[25%] lg:left-[30%] xl:left-[35%]">
+          {/* Explore Button */}
+          <div className="flex justify-center mt-6">
             <button
               onClick={onSubmit}
               disabled={!pickupLocation?.trim()}
-              className={`px-12 md:px-28 py-3 rounded-md font-bold text-base md:text-xl transition duration-100
-                ${!pickupLocation?.trim()
+              className={`px-12 md:px-28 py-3 rounded-md font-bold uppercase text-base md:text-xl transition duration-100 ${
+                !pickupLocation?.trim()
                   ? "bg-dark-btn text-white cursor-not-allowed"
                   : "bg-dark-btn hover:bg-light-btn text-white cursor-pointer"
-                }`}
+              }`}
             >
               Explore Cabs
             </button>
           </div>
         </div>
 
-        {/* ⭐ New Section: Top Rated Service */}
-        <div className="flex justify-center items-center mt-6">
-  <div className="flex items-center gap-2 px-4 py-1 rounded-md bg-black/80 text-white text-sm md:text-base lg:text-xl font-semibold">
-    <FaMedal/>
-    <span>India’s Top Rated Car Rental Service</span>
-    <FaMedal/>
-  </div>
-</div>
-
+        {/* Tagline */}
+        <div className="flex justify-center items-center mt-2 pb-8">
+          <div className="flex items-center gap-2 px-4 py-1 rounded-md bg-black/80 text-white text-sm md:text-base lg:text-xl font-semibold">
+            <FaMedal />
+            <span>India’s Most Trusted Cab Rental Platform</span>
+            <FaMedal />
+          </div>
+        </div>
       </div>
 
+      {/* === Service Sections === */}
       <RentalServices />
       <ExploreServices />
       <ExploreTempoServices />
       <TempoTravellerCities />
       <PopularRoutes />
-      <WhyChooseUs/>
+      <WhyChooseUs />
 
+      {/* === Footer === */}
       <Footer />
     </>
   );
