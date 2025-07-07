@@ -54,8 +54,7 @@
 /* In globals.css or Tailwind layer */
 .bg-hero {
   background-image: image-set(
-    url('/bg.webp') type("image/webp"),
-    url('/bg.jpg') type("image/jpeg")
+    url('/bg.webp') type("image/webp")
   );
   background-size: cover;
   background-repeat: no-repeat;
