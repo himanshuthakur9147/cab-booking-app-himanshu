@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import CarBooking from "@/components/carBookingUI/CarBooking";
+import Loader from "@/components/Loader/Loader";
 
 export default function SelectCarClient() {
   const [cabs, setCabs] = useState([]);
@@ -38,19 +39,9 @@ export default function SelectCarClient() {
 
   return (
     <>
-      <CarBooking cabs={cabs} setCabs={setCabs} />
+      {cabs.length>0?<CarBooking cabs={cabs} setCabs={setCabs} />:<Loader/>}
 
-      <section className="mt-10 px-4 max-w-5xl mx-auto text-gray-700 text-sm leading-relaxed">
-        <h2 className="text-lg font-semibold mb-2">
-          Why Book a Cab from {from} to {to} with Yatra Travel India?
-        </h2>
-        <p>
-          Traveling from <strong>{from}</strong> to <strong>{to}</strong>? Yatra Travel India
-          provides safe, affordable, and reliable cab options. Our top-rated chauffeurs and
-          flexible one-way or round trip packages make your journey smooth. Compare fares, choose
-          AC or SUV, and travel stress-free. No hidden charges – instant confirmation.
-        </p>
-      </section>
+  
     </>
   );
 }

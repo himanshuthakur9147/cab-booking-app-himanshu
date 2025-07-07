@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/Footer";
 import RefundPolicy from "@/components/RefundPolicy"
 
 export const metadata = {
@@ -19,6 +20,7 @@ const Refund = () => {
   return (
     <div>
       <RefundPolicy/>
+      <Footer/>
     </div>
   )
 }

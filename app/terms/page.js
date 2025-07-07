@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/Navbar"
 import Terms from "@/components/terms/Terms"
 import React from 'react'
@@ -37,6 +38,7 @@ const page = () => {
     <div>
         <Navbar/>
       <Terms/>
+      <Footer/>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import ContactUs from '@/components/ContactUs'
+import Footer from '@/components/footer/Footer';
 
 export const metadata = {
   title: "Contact Us | Yatra Travel India",
@@ -21,6 +22,7 @@ const Contact = () => {
     <div>
      
       <ContactUs/>
+      <Footer/>
     </div>
   )
 }

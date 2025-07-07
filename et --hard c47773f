@@ -1,0 +1,55 @@
+[33mc47773f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m bg image optimized
+[33m0c46e8a[m optimized code fixes
+[33mfffb67b[m bg-image-removed
+[33m18c9c2f[m code fixes
+[33mfb45048[m form fixes
+[33md3ad3b0[m homepage SEO fixes
+[33m299c942[m billing-form fixes
+[33mec09ded[m final fixes
+[33m76daa42[m error fixes
+[33m4c625a0[m useParams error fix
+[33mca32ca8[m typewriter feature
+[33m1a36d0f[m places input fixes
+[33mede3bdc[m homepage fixes
+[33m670b0a0[m admin dashboard
+[33m94facae[m handleBookNow function
+[33mbde4e30[m modal fixes
+[33m70f8826[m billing form fixes
+[33m6c35d51[m phone fixed
+[33m7fea55e[m phone fixes
+[33m245b654[m fare + booking modal
+[33ma6063e1[m homepage UI fixes
+[33ma1ed309[m payment access changes
+[33m37fcacd[m app page fixes
+[33m7021d4b[m seo optimized
+[33m95f82ed[m authentication account setup
+[33mb399e11[m local UI fixes
+[33mcc6f378[m navbar fixes
+[33m3f2cef7[m logic fixes
+[33m1ab228e[m login fixes
+[33m332a31f[m reopening login modal
+[33m823a70e[m mobile login fixes
+[33m91e3b0d[m authentication fixes
+[33mf181163[m amount error fixed
+[33m3442751[m saving bookings
+[33mde862b7[m amount fixes
+[33m29fb480[m api key rename
+[33m3c3b703[m amount fixes
+[33mb6d3185[m zero amount fixes
+[33m1258e9a[m amount handle
+[33mce10e6e[m order creation
+[33m2a8ffcf[m order generate
+[33ma7d0fc9[m variable fixes
+[33m5d57d55[m razorpay fixes
+[33m6ab44d5[m razorpay module
+[33mdc3f148[m capture payment api
+[33meebec7c[m create-razorpay-order
+[33m4330928[m user-bookings
+[33mcce36ed[m hamburger-menu
+[33m8919a0e[m homepage furnishing
+[33mf83a7c7[m payment key id
+[33mee073bc[m real payment api
+[33ma721509[m user object changes
+[33md88e6bd[m firebase + razorpay integration
+[33me800eba[m first commit
+[33m5aa8d95[m Initial commit from Create Next App

@@ -76,7 +76,7 @@ export default function TermsPage() {
       ]} />
 
       <TermsSection title="12. Contact Us" items={[
-        "📞 +91‑XXXXXXXXXX",
+        "📞 +91‑9876543210",
         "✉️ support@yatratravelindia.com",
         "🕘 Customer support: 9 AM to 9 PM IST",
       ]} />

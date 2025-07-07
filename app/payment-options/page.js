@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/Footer";
 import PaymentOptions from "@/components/PaymentOptions"
 
 export const metadata = {
@@ -30,6 +31,7 @@ const page = () => {
   return (
     <div>
     <PaymentOptions/>
+    <Footer/>
     </div>
   )
 }

@@ -4,9 +4,13 @@ import Image from "next/image";
 import { useAuth } from "@/context/AuthContext";
 import { useSearchParams, useRouter } from "next/navigation";
 import GSTDetailsTabs from "@/components/company_details/GSTDetailsTabs";
+import { useToast } from "@/context/ToastContext";
+
 
 export default function BillingFormClient() {
   const router = useRouter();
+  const { showToast } = useToast();
+
   const { isAuthenticated } = useAuth();
 
   const searchParams = useSearchParams();
@@ -31,33 +35,39 @@ export default function BillingFormClient() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleProceed = (e) => {
-    e.preventDefault();
+const handleProceed = (e) => {
+  e.preventDefault();
 
-    const bookingDetails = {
-      carName,
-      seatCapacity,
-      name,
-      email,
-      service_type,
-      rentalType,
-      pickupLocation,
-      dropLocation,
-      pickupDate,
-      returnDate,
-      pickupTime,
-      carId,
-      estimatedFare,
-      distance,
-      effectiveDistance,
-      duration,
-    };
+  if (name.trim() === "" || email.trim() === "") {
+    showToast("Please fill in all required fields.", "error");
+    return;
+  }
 
-    localStorage.removeItem("bookingData");
-    localStorage.setItem("bookingData", JSON.stringify(bookingDetails));
-
-    router.push("/booking/payment");
+  const bookingDetails = {
+    carName,
+    seatCapacity,
+    name,
+    email,
+    service_type,
+    rentalType,
+    pickupLocation,
+    dropLocation,
+    pickupDate,
+    returnDate,
+    pickupTime,
+    carId,
+    estimatedFare,
+    distance,
+    effectiveDistance,
+    duration,
   };
+
+  localStorage.removeItem("bookingData");
+  localStorage.setItem("bookingData", JSON.stringify(bookingDetails));
+
+  router.push("/booking/payment");
+};
+
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
