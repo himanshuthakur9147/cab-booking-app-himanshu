@@ -1,4 +1,5 @@
 import AboutUs from '@/components/aboutUs/AboutUs';
+import Footer from '@/components/footer/Footer';
 import Navbar from '@/components/Navbar';
 
 export const metadata = {
@@ -21,6 +22,7 @@ const AboutUsPage = () => {
     <div>
       <Navbar />
       <AboutUs />
+      <Footer/>
     </div>
   );
 };
