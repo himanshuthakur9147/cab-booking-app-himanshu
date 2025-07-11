@@ -33,108 +33,100 @@ const handlePayment = async () => {
   }
 
   const rawAmountToPay = (parseInt(selectedOption) / 100) * bd.estimatedFare;
-  const finalAmount = Math.max(Math.round(rawAmountToPay * 100), 100); // Min ₹1
+  const finalAmount = Math.max(Math.round(rawAmountToPay * 100), 1000); // ₹10 minimum recommended for UPI
 
   setLoader(true);
 
-  const orderRes = await fetch("/api/create-order", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ amount: finalAmount }),
-  });
+  try {
+    const orderRes = await fetch("/api/create-order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ amount: finalAmount }),
+    });
 
-  const orderData = await orderRes.json();
+    const orderData = await orderRes.json();
 
-  if (!orderData.id) {
-    showToast("Failed to create order. Try again later.", "error");
+    if (!orderData.id) {
+      showToast("Failed to create order. Try again later.", "error");
+      setLoader(false);
+      return;
+    }
+
+    const options = {
+      key: "rzp_live_A7ALQ0YIsAcCeK",
+      amount: finalAmount,
+      currency: "INR",
+      name: "Yatra Travel India",
+      description: "Cab Booking Payment",
+      image: "/logo.jpeg",
+      order_id: orderData.id,
+
+      handler: async (response) => {
+        try {
+          const paymentData = {
+            ...bd,
+            user_phone: user.user.phone,
+            payment_id: response.razorpay_payment_id,
+            order_id: response.razorpay_order_id,
+            paidAmount: finalAmount / 100,
+            paymentStatus: "success",
+          };
+
+          await fetch("/api/bookings", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(paymentData),
+          });
+
+          showToast("Payment Successful! Booking Confirmed.", "success");
+          router.push("/booking/success");
+        } catch (err) {
+          showToast("Payment succeeded but booking failed!", "error");
+        } finally {
+          setLoader(false);
+        }
+      },
+
+      modal: {
+        ondismiss: () => {
+          setLoader(false);
+          showToast("Payment cancelled or not completed.", "error");
+        },
+      },
+
+      prefill: {
+        name: bd.name,
+        email: bd.email,
+        contact: user.user.phone,
+      },
+
+      theme: {
+        color: "#F97316",
+      },
+
+      method: {
+        netbanking: true,
+        card: true,
+        upi: true,
+        wallet: true,
+      },
+
+      config: {
+        display: {
+          hide: [
+            { method: "upi", flow: "qr" } // ✅ Hides QR Code explicitly
+          ],
+        },
+      },
+    };
+
+    const razor = new window.Razorpay(options);
+    razor.open();
+  } catch (error) {
+    console.error("Payment error:", error);
+    showToast("Something went wrong during payment.", "error");
     setLoader(false);
-    return;
   }
-
-  const options = {
-    key: "rzp_live_A7ALQ0YIsAcCeK",
-    amount: finalAmount,
-    currency: "INR",
-    name: "Yatra Travel India",
-    description: "Cab Booking Payment",
-    image: "/logo.jpeg",
-    order_id: orderData.id,
-
-    handler: async function (response) {
-      try {
-        const paymentData = {
-          ...bd,
-          user_phone: user.user.phone,
-          payment_id: response.razorpay_payment_id,
-          order_id: response.razorpay_order_id,
-          paidAmount: finalAmount / 100,
-          paymentStatus: "success",
-        };
-
-        await fetch("/api/bookings", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(paymentData),
-        });
-
-        showToast("Payment Successful! Booking Confirmed.", "success");
-        router.push("/booking/success");
-      } catch (err) {
-        showToast("Payment succeeded but booking failed!", "error");
-      } finally {
-        setLoader(false);
-      }
-    },
-
-    modal: {
-      ondismiss: () => {
-        setLoader(false);
-        showToast("Payment cancelled or not completed.", "error");
-      },
-    },
-
-    prefill: {
-      name: bd.name,
-      email: bd.email,
-      contact: user.user.phone,
-    },
-
-    theme: {
-      color: "#F97316",
-    },
-
-    // ✅ Payment method preferences
-    method: {
-      netbanking: true,
-      card: true,
-      upi: true,
-      wallet: true,
-    },
-
-    // ✅ This forces Razorpay to use "collect" flow (UPI ID only) and NOT QR
-    config: {
-      display: {
-        blocks: {
-          upi_block: {
-            name: "Pay using UPI ID",
-            instruments: [
-              {
-                method: "upi",
-                flow: "collect",
-              },
-            ],
-          },
-        },
-        sequence: ["upi_block", "other"], // Show UPI ID input first, then rest
-        preferences: {
-          show_default_blocks: false, // hide QR and default blocks
-        },
-      },
-    },
-  };
-
-  const razor = new window.Razorpay(options);
-  razor.open();
 };
 
 
