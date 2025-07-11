@@ -2,11 +2,14 @@
 import { useRef, useEffect, useState } from "react";
 
 export default function PlacesAutocompleteInput({ value, onChange, onPlaceSelect, placeholder }) {
+
   const inputRef = useRef(null);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
+   
     const loadGoogleMaps = () => {
+    console.log("Loading Google Maps Places API...");
       if (window.google && window.google.maps && window.google.maps.places) {
         setLoaded(true);
         return;
@@ -27,6 +30,7 @@ export default function PlacesAutocompleteInput({ value, onChange, onPlaceSelect
   }, []);
 
   useEffect(() => {
+      
     if (!loaded || !inputRef.current || !window.google) return;
 
     const autocomplete = new window.google.maps.places.Autocomplete(inputRef.current, {
