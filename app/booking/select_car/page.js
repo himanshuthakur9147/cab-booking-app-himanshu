@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import { Suspense } from "react";
 import SelectCarClient from "./SelectCarClient";
@@ -46,6 +47,7 @@ export const metadata = {
 export default function Page() {
   return (
     <>
+   
       <Navbar />
 
       <Suspense fallback={<RouteLoader/>}>

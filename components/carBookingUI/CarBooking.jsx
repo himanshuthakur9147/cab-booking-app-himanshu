@@ -14,19 +14,7 @@ import BookingSummaryModal from "@/components/carBookingUI/BookingSummaryModal";
 
 export default function CarBooking({ cabs, setCabs }) {
 
-  const [mapsLoaded, setMapsLoaded] = useState(false);
-
-useEffect(() => {
-  const checkGoogleMaps = () => {
-    if (window.google?.maps?.DistanceMatrixService) {
-      setMapsLoaded(true);
-    } else {
-      setTimeout(checkGoogleMaps, 200); // retry until loaded
-    }
-  };
-
-  checkGoogleMaps();
-}, []);
+  
 
   const searchParams = useSearchParams();
 
@@ -60,9 +48,8 @@ useEffect(() => {
 
 useEffect(() => {
   const runFareCalculation = async () => {
-    if (!mapsLoaded) return;
-    if (service_type === "Cab Rental Service") return;
-    if (!from || !to || cabs.length === 0) return;
+    if (service_type === "Cab Rental Service") return; // skip if city local
+    if (!from || !to || !window?.google || cabs.length === 0) return;
 
     setLoader(true);
 
@@ -117,7 +104,7 @@ useEffect(() => {
   };
 
   runFareCalculation();
-}, [from, to, cabs, service_type, mapsLoaded]); // include mapsLoaded
+}, [from, to, cabs, service_type]); // include service_type here
 
 
 const handleBookButton=(car)=>{
@@ -214,7 +201,7 @@ const handleBookButton=(car)=>{
                   className="flex justify-between flex-col md:flex-row items-center border rounded-md p-4 hover:shadow-md"
                 >
                   <div className="flex items-center gap-4">
-                    <Image placeholder="blur"
+                    <Image 
                       src={car.image}
                       alt={car.name}
                       width={120}
