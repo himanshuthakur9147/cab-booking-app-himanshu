@@ -14,8 +14,22 @@ import BookingSummaryModal from "@/components/carBookingUI/BookingSummaryModal";
 
 export default function CarBooking({ cabs, setCabs }) {
 
+  const [mapsLoaded, setMapsLoaded] = useState(false);
+
+useEffect(() => {
+  const checkGoogleMaps = () => {
+    if (window.google?.maps?.DistanceMatrixService) {
+      setMapsLoaded(true);
+    } else {
+      setTimeout(checkGoogleMaps, 200); // retry until loaded
+    }
+  };
+
+  checkGoogleMaps();
+}, []);
 
   const searchParams = useSearchParams();
+
   const from = searchParams.get("pickup_location");
   const to = searchParams.get("drop_location");
   const pickupDate = new Date(searchParams.get("pickup_date")).toDateString();
@@ -46,8 +60,9 @@ useEffect(() => {
 
 useEffect(() => {
   const runFareCalculation = async () => {
-    if (service_type === "Cab Rental Service") return; // skip if city local
-    if (!from || !to || !window?.google || cabs.length === 0) return;
+    if (!mapsLoaded) return;
+    if (service_type === "Cab Rental Service") return;
+    if (!from || !to || cabs.length === 0) return;
 
     setLoader(true);
 
@@ -102,7 +117,7 @@ useEffect(() => {
   };
 
   runFareCalculation();
-}, [from, to, cabs, service_type]); // include service_type here
+}, [from, to, cabs, service_type, mapsLoaded]); // include mapsLoaded
 
 
 const handleBookButton=(car)=>{
