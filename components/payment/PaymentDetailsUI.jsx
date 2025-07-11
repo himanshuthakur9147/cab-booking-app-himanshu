@@ -33,7 +33,7 @@ const handlePayment = async () => {
   }
 
   const rawAmountToPay = (parseInt(selectedOption) / 100) * bd.estimatedFare;
-  const finalAmount = Math.max(Math.round(rawAmountToPay * 100), 1000); // ₹10 minimum recommended for UPI
+  const finalAmount = Math.max(Math.round(rawAmountToPay * 100), 1000); // ₹10 min
 
   setLoader(true);
 
@@ -111,11 +111,32 @@ const handlePayment = async () => {
         wallet: true,
       },
 
+      // ✅ This config ensures UPI ID field shows up and QR is hidden
       config: {
         display: {
-          hide: [
-            { method: "upi", flow: "qr" } // ✅ Hides QR Code explicitly
-          ],
+          blocks: {
+            upi_block: {
+              name: "Pay using UPI ID",
+              instruments: [
+                {
+                  method: "upi",
+                  flow: "collect", // ✅ UPI ID entry only
+                },
+              ],
+            },
+            other: {
+              name: "Other Payment Methods",
+              instruments: [
+                { method: "card" },
+                { method: "wallet" },
+                { method: "netbanking" },
+              ],
+            },
+          },
+          sequence: ["upi_block", "other"], // ✅ Show UPI ID first
+          preferences: {
+            show_default_blocks: false, // ✅ Hide default QR etc.
+          },
         },
       },
     };
