@@ -16,6 +16,7 @@ import PopularRoutes from "@/components/home/PopularRoutes";
 import TempoTravellerCities from "@/components/home/TempoTravellerCities";
 import { TypewriterText } from "@/components/home/TypewriterText";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
+import GoogleMapsScriptLoader from "@/components/googleComponents/GoogleMapsScriptLoader";
 
 export default function Home() {
   const router = useRouter();
@@ -55,6 +56,12 @@ export default function Home() {
 
   return (
     <>
+    <GoogleMapsScriptLoader
+  onLoad={() => {
+    console.log("🟢 Google Maps ready to use in app.");
+    // Optional: Set a global flag or state if needed
+  }}
+/>
       <AuthInit />
       <Navbar />
       {loader && <RouteLoader />}
