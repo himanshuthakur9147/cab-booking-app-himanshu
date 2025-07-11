@@ -24,19 +24,19 @@ const PaymentDetailsUI = ({bd,user}) => {
   ];
   console.log("Selected payment option:", selectedOption);
 
-
 const handlePayment = async () => {
   const res = await loadRazorpayScript();
   if (!res) {
-    showToast("Razorpay failed to load.", "error");
+    showToast("Razorpay failed to load. Please check your internet.", "error");
     return;
   }
 
   const rawAmountToPay = (parseInt(selectedOption) / 100) * bd.estimatedFare;
-  const finalAmount = Math.max(Math.round(rawAmountToPay * 100), 100); // Min ₹1
+  const finalAmount = Math.max(Math.round(rawAmountToPay * 100), 100); // Must be at least ₹1
 
   setLoader(true);
 
+  // 1️⃣ Create Razorpay order
   const orderRes = await fetch("/api/create-order", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -51,6 +51,7 @@ const handlePayment = async () => {
     return;
   }
 
+  // 2️⃣ Define Razorpay options
   const options = {
     key: "rzp_live_A7ALQ0YIsAcCeK",
     amount: finalAmount,
@@ -59,7 +60,9 @@ const handlePayment = async () => {
     description: "Cab Booking Payment",
     image: "/logo.jpeg",
     order_id: orderData.id,
+
     handler: async function (response) {
+      // 💸 Payment successful instantly (card/wallet, sometimes UPI)
       try {
         const paymentData = {
           ...bd,
@@ -84,49 +87,60 @@ const handlePayment = async () => {
         setLoader(false);
       }
     },
+
     modal: {
+      // 🧠 Fallback when user closes UPI QR
       ondismiss: async function () {
-        // fallback: check status if user closes QR
-        const res = await fetch("/api/verify-payment", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ order_id: orderData.id }),
-        });
+        let attempts = 0;
+        const maxAttempts = 10;
+        const interval = 3000;
 
-        const result = await res.json();
-
-        if (result.paymentStatus === "success") {
-          const paymentData = {
-            ...bd,
-            user_phone: user.user.phone,
-            payment_id: result.payment_id,
-            order_id: result.order_id,
-            paidAmount: finalAmount / 100,
-            paymentStatus: "success",
-          };
-
-          await fetch("/api/bookings", {
+        const pollInterval = setInterval(async () => {
+          attempts++;
+          const res = await fetch("/api/verify-payment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(paymentData),
+            body: JSON.stringify({ order_id: orderData.id }),
           });
 
-          showToast("Payment Verified! Booking Confirmed.", "success");
-          router.push("/booking/success");
-        } else if (result.paymentStatus === "failed") {
-          showToast("Payment Failed or Cancelled.", "error");
-        } else {
-          showToast("Payment not completed. Please try again.", "error");
-        }
+          const result = await res.json();
 
-        setLoader(false);
+          if (result.paymentStatus === "success") {
+            clearInterval(pollInterval);
+
+            const paymentData = {
+              ...bd,
+              user_phone: user.user.phone,
+              payment_id: result.payment_id,
+              order_id: result.order_id,
+              paidAmount: finalAmount / 100,
+              paymentStatus: "success",
+            };
+
+            await fetch("/api/bookings", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(paymentData),
+            });
+
+            showToast("UPI Verified! Booking Confirmed.", "success");
+            router.push("/booking/success");
+            setLoader(false);
+          } else if (attempts >= maxAttempts) {
+            clearInterval(pollInterval);
+            showToast("Payment not completed or failed. Please try again.", "error");
+            setLoader(false);
+          }
+        }, interval);
       },
     },
+
     prefill: {
       name: bd.name,
       email: bd.email,
       contact: user.user.phone,
     },
+
     theme: {
       color: "#F97316",
     },
