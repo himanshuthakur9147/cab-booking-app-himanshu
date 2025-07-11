@@ -23,7 +23,6 @@ const PaymentDetailsUI = ({bd,user}) => {
     { label: "100%", value: "100", description: `₹ ${bd.estimatedFare} now` },
   ];
   console.log("Selected payment option:", selectedOption);
-
   
 const handlePayment = async () => {
   const res = await loadRazorpayScript();
@@ -33,7 +32,7 @@ const handlePayment = async () => {
   }
 
   const rawAmountToPay = (parseInt(selectedOption) / 100) * bd.estimatedFare;
-  const finalAmount = Math.max(Math.round(rawAmountToPay * 100), 1000); // ₹10 min
+  const finalAmount = Math.max(Math.round(rawAmountToPay * 100), 1000); // ₹10 min for UPI
 
   setLoader(true);
 
@@ -61,7 +60,7 @@ const handlePayment = async () => {
       image: "/logo.jpeg",
       order_id: orderData.id,
 
-      handler: async (response) => {
+      handler: async function (response) {
         try {
           const paymentData = {
             ...bd,
@@ -104,40 +103,12 @@ const handlePayment = async () => {
         color: "#F97316",
       },
 
+      // ✅ Do NOT use display.blocks or hide – this causes Razorpay to fail if config is unsupported
       method: {
-        netbanking: true,
+        upi: true, // Enables UPI – Razorpay automatically shows "enter UPI ID" option
         card: true,
-        upi: true,
+        netbanking: true,
         wallet: true,
-      },
-
-      // ✅ This config ensures UPI ID field shows up and QR is hidden
-      config: {
-        display: {
-          blocks: {
-            upi_block: {
-              name: "Pay using UPI ID",
-              instruments: [
-                {
-                  method: "upi",
-                  flow: "collect", // ✅ UPI ID entry only
-                },
-              ],
-            },
-            other: {
-              name: "Other Payment Methods",
-              instruments: [
-                { method: "card" },
-                { method: "wallet" },
-                { method: "netbanking" },
-              ],
-            },
-          },
-          sequence: ["upi_block", "other"], // ✅ Show UPI ID first
-          preferences: {
-            show_default_blocks: false, // ✅ Hide default QR etc.
-          },
-        },
       },
     };
 
@@ -154,6 +125,12 @@ const handlePayment = async () => {
 
   return (
     <div>
+      {/* Desktop-only UPI tip banner */}
+<div className="hidden md:block w-full bg-yellow-100 border-l-4 border-yellow-500 text-yellow-900 px-4 py-3 mb-4 shadow-md rounded">
+  <p className="text-sm font-medium">
+    💡 <strong>Important:</strong> Please avoid using QR Code for payment. Enter your UPI ID manually in the Razorpay window for a smooth and secure transaction.
+  </p>
+</div>
 
         {bd &&
 <div className="flex flex-col md:flex-row justify-center items-start gap-6 p-6">
