@@ -23,6 +23,8 @@ const PaymentDetailsUI = ({bd,user}) => {
     { label: "100%", value: "100", description: `₹ ${bd.estimatedFare} now` },
   ];
   console.log("Selected payment option:", selectedOption);
+
+  
 const handlePayment = async () => {
   const res = await loadRazorpayScript();
   if (!res) {
@@ -85,9 +87,9 @@ const handlePayment = async () => {
     },
 
     modal: {
-      ondismiss: async function () {
+      ondismiss: () => {
         setLoader(false);
-        showToast("Payment popup closed. Try again if not completed.", "error");
+        showToast("Payment cancelled or not completed.", "error");
       },
     },
 
@@ -101,21 +103,40 @@ const handlePayment = async () => {
       color: "#F97316",
     },
 
-    // ✅ This disables QR and forces UPI ID entry while keeping all other methods enabled
+    // ✅ Payment method preferences
     method: {
-      upi: true,
-      card: true,
       netbanking: true,
+      card: true,
+      upi: true,
       wallet: true,
     },
-    upi: {
-      flow: "collect", // ← disables QR, enables UPI ID entry
+
+    // ✅ This forces Razorpay to use "collect" flow (UPI ID only) and NOT QR
+    config: {
+      display: {
+        blocks: {
+          upi_block: {
+            name: "Pay using UPI ID",
+            instruments: [
+              {
+                method: "upi",
+                flow: "collect",
+              },
+            ],
+          },
+        },
+        sequence: ["upi_block", "other"], // Show UPI ID input first, then rest
+        preferences: {
+          show_default_blocks: false, // hide QR and default blocks
+        },
+      },
     },
   };
 
   const razor = new window.Razorpay(options);
   razor.open();
 };
+
 
 
   return (
