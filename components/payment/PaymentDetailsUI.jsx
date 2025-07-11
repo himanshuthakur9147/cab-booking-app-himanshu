@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import {useRouter} from 'next/navigation'
 import {loadRazorpayScript } from "@/components/razorpay/LoadScript"
 import RouteLoader from '../Loader/RouteLoader';
+import { useToast } from "@/context/ToastContext"; // ⬅️ Adjust path if needed
 // Car Id se details fetch karni hai
 // booking ka data after payment karne ke baad database me store karna hai
 // booking complete hone ke baad success page par redirect karna hai
@@ -10,6 +11,7 @@ const PaymentDetailsUI = ({bd,user}) => {
     console.log("PaymentDetailsUI received booking details:", bd);
     console.log("PaymentDetailsUI received User details:", user);
     const router=useRouter()
+    const { showToast } = useToast();
     const [loader, setLoader] = useState(false);
       const [selectedOption, setSelectedOption] = useState("25");
   const [gstChecked, setGstChecked] = useState(false);
@@ -26,26 +28,26 @@ const PaymentDetailsUI = ({bd,user}) => {
 const handlePayment = async () => {
   const res = await loadRazorpayScript();
   if (!res) {
-    alert("Razorpay SDK failed to load. Are you online?");
+    showToast("Razorpay failed to load.", "error");
     return;
   }
 
-const rawAmountToPay = (parseInt(selectedOption) / 100) * bd.estimatedFare;
-const finalAmount = Math.max(Math.round(rawAmountToPay * 100), 100); // 💥 Always at least ₹1 (i.e. 100 paisa)
+  const rawAmountToPay = (parseInt(selectedOption) / 100) * bd.estimatedFare;
+  const finalAmount = Math.max(Math.round(rawAmountToPay * 100), 100); // Min ₹1
 
-  console.log("Final Amount to Pay (in paisa):", finalAmount);
+  setLoader(true);
 
-  // Step 1: Create Order on Backend
   const orderRes = await fetch("/api/create-order", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ amount: finalAmount }), // Razorpay requires at least ₹1 for order creation
+    body: JSON.stringify({ amount: finalAmount }),
   });
-console.log("Order Request has been made");
+
   const orderData = await orderRes.json();
-  console.log("Order Data:", orderData);
+
   if (!orderData.id) {
-    alert("Failed to create Razorpay order");
+    showToast("Failed to create order. Try again later.", "error");
+    setLoader(false);
     return;
   }
 
@@ -56,28 +58,69 @@ console.log("Order Request has been made");
     name: "Yatra Travel India",
     description: "Cab Booking Payment",
     image: "/logo.jpeg",
-    order_id: orderData.id, // 🔥 CRUCIAL FOR AUTO-CAPTURE
+    order_id: orderData.id,
     handler: async function (response) {
-      console.log("Payment Success:", response);
+      try {
+        const paymentData = {
+          ...bd,
+          user_phone: user.user.phone,
+          payment_id: response.razorpay_payment_id,
+          order_id: response.razorpay_order_id,
+          paidAmount: finalAmount / 100,
+          paymentStatus: "success",
+        };
 
-      const paymentData = {
-        ...bd,
-        user_phone: user.user.phone,
-        payment_id: response.razorpay_payment_id,
-        order_id: response.razorpay_order_id,
-        paidAmount: finalAmount/100,
-        paymentStatus: "success",
-      };
+        await fetch("/api/bookings", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(paymentData),
+        });
 
-      setLoader(true);
-      await fetch("/api/bookings", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(paymentData),
-      });
+        showToast("Payment Successful! Booking Confirmed.", "success");
+        router.push("/booking/success");
+      } catch (err) {
+        showToast("Payment succeeded but booking failed!", "error");
+      } finally {
+        setLoader(false);
+      }
+    },
+    modal: {
+      ondismiss: async function () {
+        // fallback: check status if user closes QR
+        const res = await fetch("/api/verify-payment", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ order_id: orderData.id }),
+        });
 
-      router.push("/booking/success");
-      setTimeout(() => setLoader(false), 3000);
+        const result = await res.json();
+
+        if (result.paymentStatus === "success") {
+          const paymentData = {
+            ...bd,
+            user_phone: user.user.phone,
+            payment_id: result.payment_id,
+            order_id: result.order_id,
+            paidAmount: finalAmount / 100,
+            paymentStatus: "success",
+          };
+
+          await fetch("/api/bookings", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(paymentData),
+          });
+
+          showToast("Payment Verified! Booking Confirmed.", "success");
+          router.push("/booking/success");
+        } else if (result.paymentStatus === "failed") {
+          showToast("Payment Failed or Cancelled.", "error");
+        } else {
+          showToast("Payment not completed. Please try again.", "error");
+        }
+
+        setLoader(false);
+      },
     },
     prefill: {
       name: bd.name,
@@ -130,11 +173,13 @@ console.log("Order Request has been made");
           You are one step away from booking a reliable cab
         </p>
 
-        <input
-          type="text"
-          placeholder="Coupon Code"
-          className="w-full border border-gray-300 rounded px-3 py-2 text-sm mb-4"
-        />
+       <input
+  type="text"
+  placeholder="Coupon Code"
+  disabled={loader}
+  className="w-full border border-gray-300 rounded px-3 py-2 text-sm mb-4"
+/>
+
 
         <label className="text-sm flex items-center gap-2 mb-4">
           <input
@@ -145,12 +190,16 @@ console.log("Order Request has been made");
           I have a GST Number (Optional)
         </label>
 
-       <button
-  className="w-full bg-orange-500 text-white py-2 hover:bg-orange-600 cursor-pointer rounded font-semibold"
+      <button
+  className={`w-full bg-orange-500 text-white py-2 hover:bg-orange-600 cursor-pointer rounded font-semibold ${
+    loader ? "opacity-50 cursor-not-allowed" : ""
+  }`}
   onClick={handlePayment}
+  disabled={loader}
 >
-  {selectedOption === "0" ? "BOOK NOW" : "PAY ₹" + Math.round((parseInt(selectedOption) / 100) * bd.estimatedFare)}
+  {loader ? "Processing..." : selectedOption === "0" ? "BOOK NOW" : "PAY ₹" + Math.round((parseInt(selectedOption) / 100) * bd.estimatedFare)}
 </button>
+
 
       </div>
 
