@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://yatratravelindia.com
+
+# Sitemaps
+Sitemap: https://yatratravelindia.com/sitemap.xml

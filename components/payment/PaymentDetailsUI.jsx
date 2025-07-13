@@ -17,9 +17,10 @@ const PaymentDetailsUI = ({bd,user}) => {
   const [gstChecked, setGstChecked] = useState(false);
  
   const paymentOptions = [
-    { label: "₹0 now", value: "0", description: `₹ ${bd.estimatedFare} later` },
+
     { label: "25% now", value: "25", description: "₹ "+bd.estimatedFare*0.25  },
     { label: "50% now", value: "50", description: "₹ "+bd.estimatedFare*0.5  },
+    { label: "75% now", value: "75", description: "₹ "+bd.estimatedFare*0.75  },
     { label: "100%", value: "100", description: `₹ ${bd.estimatedFare} now` },
   ];
   console.log("Selected payment option:", selectedOption);
@@ -165,22 +166,22 @@ const handlePayment = async () => {
           You are one step away from booking a reliable cab
         </p>
 
-       <input
+       {/* <input
   type="text"
   placeholder="Coupon Code"
   disabled={loader}
   className="w-full border border-gray-300 rounded px-3 py-2 text-sm mb-4"
-/>
+/> */}
 
 
-        <label className="text-sm flex items-center gap-2 mb-4">
+        {/* <label className="text-sm flex items-center gap-2 mb-4">
           <input
             type="checkbox"
             checked={gstChecked}
             onChange={(e) => setGstChecked(e.target.checked)}
           />
           I have a GST Number (Optional)
-        </label>
+        </label> */}
 
       <button
   className={`w-full bg-orange-500 text-white py-2 hover:bg-orange-600 cursor-pointer rounded font-semibold ${
