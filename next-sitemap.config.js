@@ -1,6 +1,9 @@
 // next-sitemap.config.js
 export default {
-  siteUrl: 'https://yatratravelindia.com', // 🔁 Replace with your actual domain
+  siteUrl: 'https://yatratravelindia.com',
   generateRobotsTxt: true,
-  sitemapSize: 5000,
+  exclude: [
+    '/admin/*',
+    '/user/*'
+  ],
 };
