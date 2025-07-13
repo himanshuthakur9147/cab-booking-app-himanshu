@@ -1,5 +1,5 @@
 "use client";
-
+import Head from "next/head";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useBooking } from "@/context/BookingContext";
@@ -56,6 +56,32 @@ export default function Home() {
 
   return (
     <>
+    <Head>
+  <title>Yatra Travel India – Cab & Taxi Booking</title>
+  <meta name="description" content="Book cabs across India instantly. Trusted and affordable car rentals for one way, round trip, or local rides." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yatratravelindia.com/" />
+
+  {/* JSON-LD Structured Data */}
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Yatra Travel India",
+        "url": "https://yatratravelindia.com",
+        "logo": "https://yatratravelindia.com/logo.jpeg",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-9876543210",
+          "contactType": "Customer Service"
+        },
+      }),
+    }}
+  />
+</Head>
+
     <GoogleMapsScriptLoader
   onLoad={() => {
     console.log("🟢 Google Maps ready to use in app.");
