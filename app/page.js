@@ -17,6 +17,7 @@ import TempoTravellerCities from "@/components/home/TempoTravellerCities";
 import { TypewriterText } from "@/components/home/TypewriterText";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import GoogleMapsScriptLoader from "@/components/googleComponents/GoogleMapsScriptLoader";
+import SEOJsonLD from "@/components/SEOJsonLD";
 
 export default function Home() {
   const router = useRouter();
@@ -81,7 +82,7 @@ export default function Home() {
     }}
   />
 </Head>
-
+<SEOJsonLD/>
     <GoogleMapsScriptLoader
   onLoad={() => {
     console.log("🟢 Google Maps ready to use in app.");
