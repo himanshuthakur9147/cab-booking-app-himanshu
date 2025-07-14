@@ -127,11 +127,11 @@ export default function UserProfile() {
               <input
                 type="checkbox"
                 name="allowWhatsapp"
-                checked={userData.allowWhatsapp || false}
+                checked={userData.allow_whatsapp || false}
                 onChange={handleChange}
                 className="accent-green-600 w-4 h-4"
               />
-              Allow Savaari to communicate over Whatsapp & SMS for Trip-related Details & Offers
+              Allow Yatra Travel India to communicate over Whatsapp & SMS for Trip-related Details & Offers
             </label>
 
             <button
