@@ -7,7 +7,7 @@ export default function PrivacyPolicyPage() {
     <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 text-gray-800">
       <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
 
-      <p className="text-sm text-gray-500 mb-2">Effective Date: [Insert Date]</p>
+      <p className="text-sm text-gray-500 mb-2">Effective Date: July 16,2025</p>
       <p className="text-sm text-gray-500 mb-6">Website: www.yatratravelindia.com</p>
       <p className="text-sm text-gray-500 mb-10">Company: Yatra Travel India</p>
 
@@ -100,8 +100,8 @@ export default function PrivacyPolicyPage() {
           <p>If you have any questions or concerns regarding this Privacy Policy, please contact us:</p>
           <ul className="list-disc pl-6 mt-2">
             <li>📧 Email: <a href="mailto:support@yatratravelindia.com" className="text-blue-500 underline">support@yatratravelindia.com</a></li>
-            <li>📞 Phone: [Insert Contact Number]</li>
-            <li>🏢 Address: [Insert Business Address]</li>
+            <li>📞 Phone: +91 9876543210</li>
+            <li>🏢 Address: Yatra Travel India, 60 Feet Rd, kareli, Prayagraj, Uttar Pradesh 211016</li>
           </ul>
         </div>
       </section>
