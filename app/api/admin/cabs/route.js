@@ -7,7 +7,7 @@ export async function GET() {
   try {
     await connectDB();
 
-    const cabs = await Cab.find().sort({ createdAt: -1 }); // latest first
+    const cabs = await Cab.find().sort({ priority: 1 });  // ascending priority: lowest (highest rank) first
     return NextResponse.json({ success: true, cabs });
   } catch (error) {
     console.error("Fetch Cabs Error:", error);

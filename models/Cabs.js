@@ -14,6 +14,7 @@ const CabSchema = new mongoose.Schema(
     rental_service:{"8hr_80km":Number,"12hr_120km":Number},
     extra_charge_per_km:Number,
     image:String,
+    priority: { type: Number, default: 0 }, // Optional: extend later
     createdAt: { type: Date, default: Date.now },
   },
   { timestamps: true }
