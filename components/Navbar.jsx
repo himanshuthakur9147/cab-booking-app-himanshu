@@ -66,10 +66,16 @@ const Navbar = () => {
           </Link>
 
           {/* Phone for small screens */}
-          <div className="md:hidden flex items-center px-3 py-1 border border-gray-400 rounded-full text-xs sm:text-sm">
-            <FaPhoneAlt className="text-dark-btn mr-1" />
-            <span className="text-gray-700 font-medium">+91 9876543210</span>
-          </div>
+         <a
+  href="https://wa.me/919044019511"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="md:hidden flex items-center px-3 py-1 border border-gray-400 rounded-full text-xs sm:text-sm"
+>
+  <FaPhoneAlt className="text-dark-btn mr-1" />
+  <span className="text-gray-700 font-medium">+91 9044019511</span>
+</a>
+
         </div>
 
         {/* CENTER - Nav links (Desktop only) */}
@@ -94,10 +100,16 @@ const Navbar = () => {
         {/* RIGHT - Buttons (Desktop only) */}
         <div className="hidden md:flex items-center gap-4">
           {/* Phone (Desktop only) */}
-          <div className="hidden md:flex items-center px-3 py-1 border border-gray-400 rounded-full text-sm">
-            <FaPhoneAlt className="text-dark-btn mr-2" />
-            <span className="text-gray-700 font-medium">+91 9876543210</span>
-          </div>
+        <a
+  href="https://wa.me/919044019511"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hidden md:flex items-center px-3 py-1 border border-gray-400 rounded-full text-sm"
+>
+  <FaPhoneAlt className="text-dark-btn mr-2" />
+  <span className="text-gray-700 font-medium">+91 9044019511</span>
+</a>
+
 
           {/* Login / Profile */}
           {isAuthenticated ? (
