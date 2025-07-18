@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useBooking } from "@/context/BookingContext";
 import Navbar from "@/components/Navbar";
 import BookingTabs from "@/components/BookingTabs";
-import { FaMedal } from "react-icons/fa";
+import { FaMedal,FaWhatsapp } from "react-icons/fa";
 import RouteLoader from "@/components/Loader/RouteLoader";
 import Footer from "@/components/footer/Footer";
 import AuthInit from "@/components/login/AuthInit";
@@ -141,6 +141,17 @@ export default function Home() {
       <TempoTravellerCities />
       <PopularRoutes />
       <WhyChooseUs />
+
+      
+{/* WhatsApp Floating Button */}
+<a
+  href="https://wa.me/919044019511"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-5 right-5 z-50 bg-green-500 p-3 rounded-full shadow-lg hover:scale-110 transition-transform"
+>
+  <FaWhatsapp size={32} color="#fff" />
+</a>
 
       {/* === Footer === */}
       <Footer />
