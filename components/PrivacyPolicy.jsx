@@ -100,7 +100,7 @@ export default function PrivacyPolicyPage() {
           <p>If you have any questions or concerns regarding this Privacy Policy, please contact us:</p>
           <ul className="list-disc pl-6 mt-2">
             <li>📧 Email: <a href="mailto:support@yatratravelindia.com" className="text-blue-500 underline">support@yatratravelindia.com</a></li>
-            <li>📞 Phone: +91 9876543210</li>
+            <li>📞 Phone: +91 9044019511</li>
             <li>🏢 Address: Yatra Travel India, 60 Feet Rd, kareli, Prayagraj, Uttar Pradesh 211016</li>
           </ul>
         </div>

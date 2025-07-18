@@ -62,7 +62,7 @@ export default function ContactUs() {
           <p>India</p>
 
           <h2 className="text-xl font-semibold mt-6 mb-2">☎️ Call Us</h2>
-          <p className="font-bold text-blue-700">+91-9876543210</p>
+          <p className="font-bold text-blue-700">+91-9044019511</p>
 
           <h2 className="text-xl font-semibold mt-6 mb-2">📧 Email Us</h2>
           <p>support@yatratravelindia.com</p>
