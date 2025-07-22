@@ -83,10 +83,19 @@ const Page = () => {
      
         {activeTab === "all" && <AllVehicles />}
         {activeTab === "vehicles" && <UpdateVehicles />}
-        {activeTab === "bookings" &&
-          bookings.map((booking) => (
-            <BookingCard key={booking._id} booking={booking} />
-          ))}
+        {activeTab === "bookings" && (
+  bookings.length === 0 ? (
+    <div className="text-center text-gray-500 py-12">
+      <h2 className="text-2xl font-semibold mb-2">No Bookings Available</h2>
+      <p className="text-sm">All bookings will appear here when available.</p>
+    </div>
+  ) : (
+    bookings.map((booking) => (
+      <BookingCard key={booking._id} booking={booking} />
+    ))
+  )
+)}
+
       </div>
     </div>
   );
