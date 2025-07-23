@@ -11,7 +11,7 @@ export default function BillingFormClient() {
   const router = useRouter();
   const { showToast } = useToast();
 
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated,user } = useAuth();
 
   const searchParams = useSearchParams();
 
@@ -34,6 +34,7 @@ export default function BillingFormClient() {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+
 
 const handleProceed = (e) => {
   e.preventDefault();
@@ -118,7 +119,7 @@ const handleProceed = (e) => {
               </label>
               <input
                 type="text"
-                value="+91 7455946877"
+                value={user.phone}
                 disabled
                 className="w-full border-b border-gray-500 outline-none px-4 py-2 text-sm"
               />
