@@ -23,7 +23,7 @@ export default function SelectCarClient() {
       try {
         const res = await fetch("/api/cabs");
         const data = await res.json();
-
+        console.log("Fetched cabs data:", data);
         if (service_type === "One Way") {
           const filtered = data.filter((cab) => cab.one_way);
           setCabs(filtered);
