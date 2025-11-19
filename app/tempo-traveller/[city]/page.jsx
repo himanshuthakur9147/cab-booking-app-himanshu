@@ -73,29 +73,36 @@ export default function Page() {
   return (
     <>
     <Head>
-  <title>Yatra Travel India – Cab & Taxi Booking</title>
-  <meta name="description" content="Book cabs across India instantly. Trusted and affordable car rentals for one way, round trip, or local rides." />
+  <title>Tempo Traveller in {cityname.toUpperCase()} | Starting @ Rs.22/Km – Yatra Travel India</title>
+  <meta name="description" content={`Book Tempo Traveller in ${cityname} for local sightseeing, outstation trips, weddings, and corporate travel. Choose 9, 12, 17, 20 and 26 seater AC tempo travellers at the best price. Clean vehicles, expert drivers, transparent fares, and 24×7 support. Rent a luxury Tempo Traveller in ${cityname} starting at affordable per-km rates.`} />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://yatratravelindia.com/" />
 
   {/* JSON-LD Structured Data */}
   <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Yatra Travel India",
-        "url": "https://yatratravelindia.com",
-        "logo": "https://yatratravelindia.com/logo.jpeg",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+91-9876543210",
-          "contactType": "Customer Service"
-        },
-      }),
-    }}
-  />
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Yatra Travel India",
+      "image": "https://yatratravelindia.com/logo.jpeg",
+      "url": `https://yatratravelindia.com/tempo-traveller-in-${cityname.toLowerCase()}`,
+      "description": `Tempo Traveller service in ${cityname}. 9–26 seater AC tempo travellers for local & outstation.`,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": cityname,
+        "addressRegion": cityname,
+        "addressCountry": "IN"
+      },
+      "telephone": "+91-9876543210",
+      "priceRange": "₹22/km onwards",
+      "areaServed": cityname
+    })
+  }}
+/>
+
+  
 </Head>
 <SEOJsonLD/>
     <GoogleMapsScriptLoader
