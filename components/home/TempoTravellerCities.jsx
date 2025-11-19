@@ -26,12 +26,12 @@ export default function TempoTravellerCityList() {
           {chunkedCities.map((column, colIdx) => (
             <ul key={colIdx} className="space-y-3">
               {column.map((city, idx) => (
-                <Link href={`/tempo-traveller/tempo-traveller-in-${city.toLowerCase()}`}><li
+               <li
                   key={idx}
                   className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition cursor-pointer text-sm sm:text-base"
                 >
-                  <span className="text-gray-400">›</span> Tempo Traveller in {city}
-                </li></Link>
+                   <Link href={`/tempo-traveller/tempo-traveller-in-${city.toLowerCase()}`}><span className="text-gray-400">›</span> Tempo Traveller in {city} </Link>
+                </li>
               ))}
             </ul>
           ))}
