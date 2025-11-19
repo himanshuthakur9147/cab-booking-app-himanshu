@@ -22,10 +22,10 @@ import FeatureCards from "@/components/tempo-traveller/FeatureCards";
 import HeaderSection from "@/components/tempo-traveller/HeaderSection";
 import TempoTableSection from "@/components/tempo-traveller/TempoTableSection";
 import TempoImageCards from "@/components/tempo-traveller/TempoImageCards";
-import TempoSeatConfig from "@/components/tempo-traveller/tempoSeatConfig";
+import TempoSeatConfig from "@/components/tempo-traveller/TempoSeatConfig";
 import WhyChooseYatra from "@/components/tempo-traveller/WhyChooseYatra";
 import PopularRoutesSection from "@/components/tempo-traveller/PopularRoutesSection";
-import FaqTempoTraveller from "@/components/tempo-traveller/FAQTempoTraveller";
+import FaqTempoTraveller from "@/components/tempo-traveller/FaqTempoTraveller";
 
 
 export default function Page() {
