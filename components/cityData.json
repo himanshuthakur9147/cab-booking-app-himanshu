@@ -50,6 +50,12 @@
         "description": "Quick, reliable, and convenient airport transfers for families, business travelers, and VIP guests. Travel stress-free with our tempo traveller hire in Lucknow, and experience smooth, punctual pickups and luxurious rides."
       }
     ]
+
+
+
+
+
+
    
    
   },
@@ -114,6 +120,79 @@
       "Need quick, reliable airport pickup or drop? Our tempo traveller booking in Hyderabad ensures timely service and comfortable transfers for families, VIPs, and corporate guests."
   }
     ]
+
+   
+   
+  },
+  "varanasi": {
+    "cityname":"Varanasi",
+    "title": "Tempo Traveller in Varanasi | Yatra Travel India",
+    "metaDescription": ["Planning a comfortable and affordable group trip from Varanasi? Looking for a reliable tempo traveller in Varanasi for your family tour, pilgrimage, office travel, or outstation journey?","Yatra Travel India offers the best tempo traveller hire in Varanasi with clean, air-conditioned, and luxury tempo travellers perfect for Kashi Darshan, Prayagraj, Ayodhya, Bodhgaya, and long-distance interstate trips. Whether you need a small 9-seater or a large 20-seater, we ensure safe, spacious, and premium group travel at the best price.","With multiple options like 9, 12, 16, and 20 seater tempo travellers in Varanasi, we cater to families, corporate teams, pilgrims, schools, colleges, and travel groups. Every vehicle is well-maintained, sanitized, and driven by professional, verified chauffeurs who know Varanasi routes and highway connections very well."],
+       
+   
+     "affordable":["9-seater tempo traveller in Varanasi – Best for small families and sightseeing","12 seater tempo traveller in Varanasi – Perfect for pilgrimages, weddings, and long routes","16-seater Urbania – Spacious, modern, and premium for mid-sized groups","20-seater tempo traveller in Varanasi – Ideal for colleges, corporates, and big family groups"],
+     "outstationPara":"Planning an outstation trip? Yatra Travel India offers the best tempo traveller for outstation in Varanasi with reliable drivers and well-maintained vehicles. Perfect for religious tours, family holidays, and multi-city travel across UP, Bihar, Jharkhand, and MP.",
+     "outstationRoutes":["Tempo traveller from Varanasi to Ayodhya – Ram Mandir Darshan trips","Tempo traveller from Varanasi to Prayagraj – Sangam & Triveni Darshan","Tempo traveller from Varanasi to Bodhgaya – Buddhist pilgrimage","Tempo traveller from Varanasi to Lucknow – Family or corporate travel","Tempo traveller from Varanasi to Patna – Weddings & events","Tempo traveller from Varanasi to Gorakhpur – Temple visits & transfers","Tempo traveller from Varanasi to Mirzapur / Vindhyachal – Day tours"],
+     "outstationLast":"Whether it's a wedding, corporate event, school trip, or group function, our tempo traveller booking in Varanasi is easy, quick, and available 24×7 through call or WhatsApp.",
+  
+   
+    "routesLine":"Travel comfortably with Yatra Travel India’s tempo traveller hire in Varanasi — perfect for pilgrimage tours, family trips, weekend getaways, corporate travel, and long-distance journeys. Our AC, luxury, and Maharaja tempo travellers in Varanasi ensure a smooth, safe, and premium travel experience for groups of every size.",
+    "routes": [
+      {
+    "from": "Varanasi → Ayodhya (Ram Mandir Darshan)",
+    "description":
+      "Book a tempo traveller from Varanasi to Ayodhya for a peaceful and spiritual journey to the Ram Mandir. Enjoy pushback seats, AC comfort, and verified drivers for a stress-free pilgrimage experience."
+  },
+  {
+    "from": "Varanasi → Prayagraj / Allahabad",
+    "description":
+      "Hire our tempo traveller in Varanasi for a comfortable trip to Prayagraj. Ideal for Sangam visits, Kumbh Mela, family tours, and student groups. Affordable pricing and reliable service guaranteed."
+  },
+  {
+    "from": "Varanasi → Bodhgaya (Gaya)",
+    "description":
+      "Perfect for Buddhist pilgrims and international tourists, our tempo traveller from Varanasi to Bodhgaya offers spacious seating, strong AC, and a smooth ride for long-distance travel."
+  },
+  {
+    "from": "Varanasi → Lucknow",
+    "description":
+      "Plan a hassle-free family or corporate trip with our tempo traveller hire in Varanasi for Lucknow. Enjoy clean interiors, trained drivers, and flexible booking options for one-way or round trips."
+  },
+  {
+    "from": "Varanasi → Gorakhpur",
+    "description":
+      "Choose our tempo traveller rental in Varanasi for a comfortable trip to Gorakhpur. Best suited for temple visits, family gatherings, or business travel. Safe, smooth, and affordable."
+  },
+  {
+    "from": "Varanasi → Patna",
+    "description":
+      "Travel stress-free from Varanasi to Patna with our premium AC tempo travellers. Ideal for weddings, business meetings, and group travel with ample luggage space and reliable drivers."
+  },
+  {
+    "from": "Varanasi → Mirzapur / Vindhyachal",
+    "description":
+      "Book a tempo traveller for outstation from Varanasi for Vindhyachal temple visits, waterfall tours, and family trips. Enjoy quick pickup, clean vehicles, and pocket-friendly pricing."
+  },
+  {
+    "from": "Varanasi → Sarnath",
+    "description":
+      "A popular short route for tourists and pilgrims. Our small and large tempo travellers in Varanasi provide quick, comfortable travel to Sarnath for sightseeing and heritage tours."
+  },
+  {
+    "from": "Varanasi → Deoria / Ballia / Ghazipur",
+    "description":
+      "Reliable and affordable tempo travellers for district-level travel. Perfect for weddings, family functions, or hometown visits with smooth ride quality."
+  },
+  {
+    "from": "Varanasi → Varanasi Airport Transfers",
+    "description":
+      "Need airport pickup or drop? Our tempo traveller booking in Varanasi provides timely and comfortable transfers for families, VIPs, NRIs, and corporate teams."
+  }
+    ]
+
+
+  
+
    
    
   }

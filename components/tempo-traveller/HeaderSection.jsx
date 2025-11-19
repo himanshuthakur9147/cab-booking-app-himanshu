@@ -11,13 +11,15 @@ export default function HeaderSection({cd}) {
       </h1>
 
       {/* Intro */}
-      <p className="text-lg leading-relaxed text-center mb-10">
-       {cd.metaDescription[0]}
-      </p>
+      {cd.metaDescription.map((para,i)=>(
 
-      <p className="text-lg leading-relaxed text-center mb-10">
-          {cd.metaDescription[1]}
-      </p>
+        <p key={i} className="text-lg leading-relaxed text-center mb-10">
+       {para}
+        </p>
+      ))}
+   
+
+     
 
       {/* Affordable Section */}
       <div className="space-y-6">

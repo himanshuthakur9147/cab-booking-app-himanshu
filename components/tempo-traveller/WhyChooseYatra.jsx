@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import { MdContactSupport } from "react-icons/md";
 import { SiTrustpilot } from "react-icons/si";
+import WhyChooseVaranasi from "./WhyChooseVaranasi";
 
 export default function WhyChooseYatra({cd}) {
   const points = [
@@ -109,7 +110,10 @@ export default function WhyChooseYatra({cd}) {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-16 text-gray-800">
+    <>
+  
+    {cd.cityname.toLowerCase()==="varanasi"?<WhyChooseVaranasi/>:
+      <section className="max-w-6xl mx-auto px-6 py-16 text-gray-800">
       {/* Heading */}
       <div className="text-center mb-14">
         <h2 className="text-3xl md:text-4xl font-extrabold text-[#2482c2] mb-4">
@@ -172,5 +176,8 @@ export default function WhyChooseYatra({cd}) {
         </div>
       </div>
     </section>
+      }
+
+        </>
   );
 }
