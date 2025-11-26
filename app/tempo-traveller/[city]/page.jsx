@@ -182,7 +182,9 @@ export default function Page() {
 
       {/* FAQs Section */}
       <FaqTempoTraveller cd={cityData}/>
-</div>}
+</div>
+
+}
 {/* WhatsApp Floating Button */}
 <a
   href="https://wa.me/919044019511"

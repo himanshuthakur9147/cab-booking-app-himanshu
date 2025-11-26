@@ -79,9 +79,12 @@ export default function HeaderSection({cd}) {
         <h2 className="text-2xl font-semibold text-[#2482c2]">
           Tempo Traveller for Outstation Trips from {cd.cityname}
         </h2>
-        <p>
-         {cd.outstationPara}
+         {cd.outstationPara.map((para,i)=>(
+            <p key={i}>
+         {para}
         </p>
+          ))}
+        
 
         <p className="font-medium mt-2">Top Outstation Routes:</p>
         <ul className="list-disc list-inside space-y-1 ml-4">

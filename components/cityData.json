@@ -6,7 +6,7 @@
     "affordable":["9-seater tempo traveller for small family groups","12-seater tempo traveller in Lucknow for weddings and long trips","Urbania 16-seater for medium-sized groups","Maharaja 12-seater for VIPs and luxury travellers"],
 
    
-    "outstationPara":"Plan your next trip from Lucknow to any destination in India with our tempo traveller for outstation in Lucknow service. We provide round-trip and one-way tempo traveller bookings from Lucknow to Varanasi, Ayodhya, Delhi, Agra, Jaipur, Haridwar, and more.",
+    "outstationPara":["Plan your next trip from Lucknow to any destination in India with our tempo traveller for outstation in Lucknow service. We provide round-trip and one-way tempo traveller bookings from Lucknow to Varanasi, Ayodhya, Delhi, Agra, Jaipur, Haridwar, and more."],
     "outstationRoutes":["Tempo traveller from Lucknow to Varanasi – for family tours and religious trips","Tempo traveller from Lucknow to Ayodhya – ideal for pilgrimages and temple visits","Lucknow to Delhi – corporate and business travel","Lucknow to Agra – sightseeing trips to the Taj Mahal","Lucknow to Gorakhpur / Allahabad – convenient group journeys"],
     "outstationLast":"Book your outstation tempo traveller easily through call, WhatsApp, or our online booking form and enjoy the most comfortable ride across North India.",
    
@@ -67,7 +67,7 @@
        
    
      "affordable":["9-seater tempo traveller in Hyderabad – Perfect for small families or office outings","12-seater tempo traveller in Hyderabad – Ideal for weddings and long-distance travel","16-seater Urbania – Spacious and luxurious for medium groups","20-seater tempo traveller in Hyderabad – For larger teams and big family gatherings"],
-     "outstationPara":"Planning an outstation trip? Our tempo traveller for outstation in Hyderabad service is perfect for group journeys to all nearby destinations. Enjoy seamless road trips with friends and family in spacious vehicles that make long drives truly comfortable.",
+     "outstationPara":["Planning an outstation trip? Our tempo traveller for outstation in Hyderabad service is perfect for group journeys to all nearby destinations. Enjoy seamless road trips with friends and family in spacious vehicles that make long drives truly comfortable."],
      "outstationRoutes":["Tempo traveller from Hyderabad to Tirupati – Ideal for temple visits and pilgrimages","Tempo traveller from Hyderabad to Bangalore – Perfect for business or family trips","Tempo traveller from Hyderabad to Srisailam – Safe, spiritual, and comfortable","Tempo traveller from Hyderabad to Vijayawada – Great for short weekend getaways","Tempo traveller from Hyderabad to Visakhapatnam (Vizag) – For beach holidays and family tours"],
      "outstationLast":"Our drivers are familiar with all major highways, ensuring timely arrivals and stress-free journeys. Choose Yatra Travel India for reliable, affordable, and premium tempo traveller hire in Hyderabad for outstation travel.",
   
@@ -131,7 +131,7 @@
        
    
      "affordable":["9-seater tempo traveller in Varanasi – Best for small families and sightseeing","12 seater tempo traveller in Varanasi – Perfect for pilgrimages, weddings, and long routes","16-seater Urbania – Spacious, modern, and premium for mid-sized groups","20-seater tempo traveller in Varanasi – Ideal for colleges, corporates, and big family groups"],
-     "outstationPara":"Planning an outstation trip? Yatra Travel India offers the best tempo traveller for outstation in Varanasi with reliable drivers and well-maintained vehicles. Perfect for religious tours, family holidays, and multi-city travel across UP, Bihar, Jharkhand, and MP.",
+     "outstationPara":["Planning an outstation trip? Yatra Travel India offers the best tempo traveller for outstation in Varanasi with reliable drivers and well-maintained vehicles. Perfect for religious tours, family holidays, and multi-city travel across UP, Bihar, Jharkhand, and MP."],
      "outstationRoutes":["Tempo traveller from Varanasi to Ayodhya – Ram Mandir Darshan trips","Tempo traveller from Varanasi to Prayagraj – Sangam & Triveni Darshan","Tempo traveller from Varanasi to Bodhgaya – Buddhist pilgrimage","Tempo traveller from Varanasi to Lucknow – Family or corporate travel","Tempo traveller from Varanasi to Patna – Weddings & events","Tempo traveller from Varanasi to Gorakhpur – Temple visits & transfers","Tempo traveller from Varanasi to Mirzapur / Vindhyachal – Day tours"],
      "outstationLast":"Whether it's a wedding, corporate event, school trip, or group function, our tempo traveller booking in Varanasi is easy, quick, and available 24×7 through call or WhatsApp.",
   
@@ -187,6 +187,87 @@
     "from": "Varanasi → Varanasi Airport Transfers",
     "description":
       "Need airport pickup or drop? Our tempo traveller booking in Varanasi provides timely and comfortable transfers for families, VIPs, NRIs, and corporate teams."
+  }
+    ]
+
+
+  
+
+   
+   
+  },
+  "chandigarh": {
+    "cityname":"Chandigarh",
+    "title": "Tempo Traveller in Chandigarh | Yatra Travel India",
+    "metaDescription": ["Planning a trip with your family, friends, office team, or wedding guests? Looking for a comfortable and affordable tempo traveller in Chandigarh for local sightseeing or outstation travel?","Yatra Travel India offers premium, safe, and budget-friendly tempo traveller hire in Chandigarh with a wide range of seating options, verified drivers, and 24/7 support.","Whether you're traveling within the city or heading to Shimla, Manali, Amritsar, Delhi, or Himachal, our tempo traveller rental in Chandigarh ensures a smooth and enjoyable journey. With clean interiors, AC comfort, pushback seats, and spacious legroom, we make every ride stress-free and comfortable.","We provide multiple options including 9 seater, 12 seater, 16 seater, 17 seater, and 20 seater tempo travellers in Chandigarh, suitable for families, corporates, tourists, students, and large groups."],
+       
+   
+     "affordable":["9 Seater Tempo Traveller – For small family and office trips","12 Seater Tempo Traveller in Chandigarh – Perfect for weddings and group travel","16 Seater Tempo Traveller – Ideal for corporate or school tours","20 Seater Tempo Traveller – Best for big groups and long holidays"],
+     "outstationPara":["Yatra Travel India specializes in tempo traveller for outstation in Chandigarh — ideal for hill stations, long-distance journeys, business trips, and religious tours.","Whether you’re traveling with your friends, family, office group, or students, our outstation tempo travellers make every journey smooth, safe, and enjoyable."],
+     "outstationRoutes":["Tempo Traveller from Chandigarh to Shimla","Tempo Traveller from Chandigarh to Manali","Tempo Traveller from Chandigarh to Dharamshala","Tempo Traveller from Chandigarh to Delhi","Tempo Traveller from Chandigarh to Amritsar","Tempo Traveller from Chandigarh to Katra (Vaishno Devi)","Tempo Traveller from Chandigarh to Jaipur","Tempo Traveller from Chandigarh to Jammu"],
+     "outstationLast":"Each outstation trip includes professional driver service, on-time pickup, clean interiors, and comfortable seating. We specialize in hill-route expert drivers, making your Himachal tour safe and worry-free",
+  
+   
+    "routesLine":"Travel comfortably across North India with Yatra Travel India’s tempo traveller in Chandigarh, designed for family trips, Himachal tours, corporate outings, weddings, and weekend getaways. Whether you choose a 12 seater tempo traveller in Chandigarh, a 16 seater Urbania, or a luxury tempo traveller in Chandigarh, we ensure safe, smooth, and spacious travel on every route.",
+    "routes": [
+  {
+    "from": "Chandigarh → Shimla",
+    "description": "One of the most popular routes, perfect for family vacations, honeymoon trips, and weekend tours. Book our tempo traveller hire in Chandigarh for a scenic and comfortable journey through the hills. Luxury and AC options available."
+  },
+  {
+    "from": "Chandigarh → Manali",
+    "description":
+      "Ideal for long trips with friends, office teams, and adventure lovers. Choose our 12 seater tempo traveller Chandigarh to Manali or 16 seater tempo traveller for outstation in Chandigarh for a relaxed mountain ride."
+  },
+  {
+    "from": "Chandigarh → Dharamshala / McLeodganj",
+    "description":
+      "Perfect for spiritual retreats, trekking groups, and student tours. Our luxury tempo traveller in Chandigarh makes long hill routes smooth and hassle-free."
+  },
+  {
+    "from": "Chandigarh → Dalhousie / Khajjiar",
+    "description":
+      "A favourite among tourists and families. Enjoy panoramic views with our AC tempo traveller rental in Chandigarh driven by hill-expert chauffeurs."
+  },
+  {
+    "from": "Chandigarh → Kasauli / Solan",
+    "description":
+      "Short, refreshing weekend getaways. Our 9 and 12 seater tempo traveller in Chandigarh is ideal for couples, small families, and office teammates."
+  },
+  {
+    "from": "Chandigarh → Amritsar",
+    "description":
+      "Perfect for trips to Golden Temple, Wagah Border, or shopping tours. Hire a tempo traveller Chandigarh to Amritsar for a smooth, safe, and enjoyable journey."
+  },
+  {
+    "from": "Chandigarh → Delhi / Gurgaon / Noida",
+    "description":
+      "Most booked for corporate travel, airport transfers, and family journeys. We offer tempo traveller booking in Chandigarh for both one-way and round-trip services."
+  },
+  {
+    "from": "Chandigarh → Jaipur",
+    "description":
+      "A great choice for heritage tours, weddings, and corporate events. Our luxury tempo traveller Chandigarh to Jaipur ensures a comfortable long-distance ride."
+  },
+  {
+    "from": "Chandigarh → Katra (Vaishno Devi) / Jammu",
+    "description":
+      "Most preferred for pilgrimage groups and family darshan trips. Choose a 17 or 20 seater tempo traveller from Chandigarh for a spacious, AC journey."
+  },
+  {
+    "from": "Chandigarh → Kasol / Manikaran",
+    "description":
+      "Perfect for adventure lovers, trekking groups, and friends’ trips. Book a tempo traveller for outstation Chandigarh and enjoy scenic mountain routes with maximum comfort."
+  },
+  {
+    "from": "Chandigarh → Mussoorie / Dehradun / Rishikesh",
+    "description":
+      "Ideal for family vacations, school trips, yoga retreats, and pilgrimages. Our tempo traveller rental in Chandigarh is comfortable, spacious, and perfectly maintained."
+  },
+  {
+    "from": "Chandigarh → Chandigarh Airport Transfers",
+    "description":
+      "We also offer reliable airport tempo traveller booking in Chandigarh for groups, business travellers, and VIP guests. Enjoy punctual pickup, clean interiors, and smooth travel always."
   }
     ]
 

@@ -1,7 +1,10 @@
 "use client";
 import React from 'react'
+import {whychoose} from './whychoose'
 
-function WhyChooseVaranasi() {
+function WhyChooseVaranasi({city}) {
+
+  const data= whychoose[city];
   return (
     <section className="max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-14 text-gray-800">
       

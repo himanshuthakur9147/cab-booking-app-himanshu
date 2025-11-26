@@ -1,0 +1,251 @@
+// /data/tempoTravellerFaqs.js
+
+export const tempoTravellerFaqs = {
+ lucknow:[
+  {
+    question: `How can I book a tempo traveller in lucknow?`,
+    answer:
+      `Booking a tempo traveller in lucknow is quick and easy. You can book online, call, or WhatsApp us. Share your trip details, pickup location, destination, travel date, and number of passengers. We’ll provide an instant quote for tempo traveller hire in lucknow and tempo traveller booking lucknow.`,
+  },
+  {
+    question: `Why should I choose Yatra Travel India for tempo traveller rentals in lucknow?`,
+    answer:
+      `We guarantee a safe, luxurious, and hassle-free journey. Our fleet includes 12 seater tempo traveller lucknow, luxury tempo traveller lucknow, Urbania 16-seaters, Maharaja 12-seaters, mini buses, and Volvo buses. Verified drivers, transparent tempo traveller price lucknow, and 24×7 support ensure complete peace of mind.`,
+  },
+  {
+    question: `Can I hire a tempo traveller from lucknow for outstation trips?`,
+    answer:
+      `Absolutely! Our tempo traveller for outstation lucknow service covers destinations like Varanasi, Ayodhya, Delhi, Agra, Jaipur, and Haridwar. Enjoy comfortable AC rides with spacious seating, perfect for families, corporate tours, or long-distance pilgrimages.`,
+  },
+  {
+    question: "Do you provide one-way bookings and airport transfers?",
+    answer:`Yes! We offer flexible one-way and round-trip tempo traveller booking in lucknow, including airport pickups and drops. Our drivers ensure punctual, safe journeys for families, VIPs, and business travelers.`,
+  },
+  {
+    question: `What seating options are available for tempo travellers in lucknow?`,
+    answer: (
+      <ul className="list-disc list-inside space-y-1 text-gray-700">
+        <li>9 Seater Tempo Traveller</li>
+        <li>12 Seater Tempo Traveller lucknow</li>
+        <li>15, 16, 17, 20 Seater Tempo Travellers</li>
+        <li>Luxury 12 Seater and Maharaja 12 Seater for VIP comfort</li>
+        <li>Mini buses (25–35 seater) and Volvo buses (45+ seater)</li>
+      </ul>
+    ),
+  },
+  {
+    question: `How much does it cost to rent a tempo traveller in lucknow?`,
+    answer:
+      `Our tempo traveller price lucknow is transparent and affordable. Fares start from ₹20–₹25 per km for 12 seater tempo traveller fare in lucknow, depending on vehicle type, route, and trip duration. Fuel, tolls, and driver allowances are included — no hidden charges.`,
+  },
+  {
+    question: "Are drivers experienced and trustworthy?",
+    answer:
+      `Yes! All drivers are professional, verified, and highly experienced. They are familiar with lucknow routes and highways, ensuring your tempo traveller for outstation lucknow or local trip is safe, smooth, and stress-free.`,
+  },
+  {
+    question: `Can I book a tempo traveller for weddings or corporate events in lucknow?`,
+    answer:
+      `Absolutely! We specialize in tempo traveller hire in lucknow and tempo traveller for wedding in lucknow, office outings, and group tours. We ensure the perfect vehicle, seating arrangement, and amenities for your special events.`,
+  },
+  {
+    question: `How early should I book a tempo traveller in lucknow?`,
+    answer:
+      `To secure availability, especially during weekends, festivals, and peak seasons, book your tempo traveller booking lucknow at least 3–5 days in advance.`,
+  },
+  {
+    question: "Can I customize my trip or stopovers?",
+    answer:
+      `Yes! Our flexible booking allows you to plan your own routes, stopovers, and schedule. Whether it’s a family outing, corporate trip, wedding, or pilgrimage, our tempo traveller in lucknow service is fully customizable to your needs.`,
+  },
+],
+ hyderabad:[
+  {
+    question: `How can I book a tempo traveller in hyderabad?`,
+    answer:
+      `Booking a tempo traveller in hyderabad is quick and easy. You can book online, call, or WhatsApp us. Share your trip details, pickup location, destination, travel date, and number of passengers. We’ll provide an instant quote for tempo traveller hire in hyderabad and tempo traveller booking hyderabad.`,
+  },
+  {
+    question: `Why should I choose Yatra Travel India for tempo traveller rentals in hyderabad?`,
+    answer:
+      `We guarantee a safe, luxurious, and hassle-free journey. Our fleet includes 12 seater tempo traveller hyderabad, luxury tempo traveller hyderabad, Urbania 16-seaters, Maharaja 12-seaters, mini buses, and Volvo buses. Verified drivers, transparent tempo traveller price hyderabad, and 24×7 support ensure complete peace of mind.`,
+  },
+  {
+    question: `Can I hire a tempo traveller from hyderabad for outstation trips?`,
+    answer:
+      `Absolutely! Our tempo traveller for outstation hyderabad service covers destinations like Varanasi, Ayodhya, Delhi, Agra, Jaipur, and Haridwar. Enjoy comfortable AC rides with spacious seating, perfect for families, corporate tours, or long-distance pilgrimages.`,
+  },
+  {
+    question: "Do you provide one-way bookings and airport transfers?",
+    answer:`Yes! We offer flexible one-way and round-trip tempo traveller booking in hyderabad, including airport pickups and drops. Our drivers ensure punctual, safe journeys for families, VIPs, and business travelers.`,
+  },
+  {
+    question: `What seating options are available for tempo travellers in hyderabad?`,
+    answer: (
+      <ul className="list-disc list-inside space-y-1 text-gray-700">
+        <li>9 Seater Tempo Traveller</li>
+        <li>12 Seater Tempo Traveller hyderabad</li>
+        <li>15, 16, 17, 20 Seater Tempo Travellers</li>
+        <li>Luxury 12 Seater and Maharaja 12 Seater for VIP comfort</li>
+        <li>Mini buses (25–35 seater) and Volvo buses (45+ seater)</li>
+      </ul>
+    ),
+  },
+  {
+    question: `How much does it cost to rent a tempo traveller in hyderabad?`,
+    answer:
+      `Our tempo traveller price hyderabad is transparent and affordable. Fares start from ₹20–₹25 per km for 12 seater tempo traveller fare in hyderabad, depending on vehicle type, route, and trip duration. Fuel, tolls, and driver allowances are included — no hidden charges.`,
+  },
+  {
+    question: "Are drivers experienced and trustworthy?",
+    answer:
+      `Yes! All drivers are professional, verified, and highly experienced. They are familiar with hyderabad routes and highways, ensuring your tempo traveller for outstation hyderabad or local trip is safe, smooth, and stress-free.`,
+  },
+  {
+    question: `Can I book a tempo traveller for weddings or corporate events in hyderabad?`,
+    answer:
+      `Absolutely! We specialize in tempo traveller hire in hyderabad and tempo traveller for wedding in hyderabad, office outings, and group tours. We ensure the perfect vehicle, seating arrangement, and amenities for your special events.`,
+  },
+  {
+    question: `How early should I book a tempo traveller in hyderabad?`,
+    answer:
+      `To secure availability, especially during weekends, festivals, and peak seasons, book your tempo traveller booking hyderabad at least 3–5 days in advance.`,
+  },
+  {
+    question: "Can I customize my trip or stopovers?",
+    answer:
+      `Yes! Our flexible booking allows you to plan your own routes, stopovers, and schedule. Whether it’s a family outing, corporate trip, wedding, or pilgrimage, our tempo traveller in hyderabad service is fully customizable to your needs.`,
+  },
+],
+
+ varanasi: [
+  {
+    question: `What is the cost of Tempo Traveller hire in varanasi?`,
+    answer: `The cost of Tempo Traveller hire in varanasi depends on the model (12 seater, 16 seater, 20 seater), trip duration, and total kilometers. Local sightseeing packages in varanasi start from ₹20/km to ₹25/km, while outstation travel begins at ₹18/km. Contact us for the best and most affordable varanasi Tempo Traveller prices.`,
+  },
+  {
+    question: `Which Tempo Traveller models are available in varanasi?`,
+    answer: (
+      <ul className="list-disc list-inside space-y-1 text-gray-700">
+        <li>12 Seater Tempo Traveller</li>
+        <li>14 Seater Tempo Traveller</li>
+        <li>17 Seater Tempo Traveller</li>
+        <li>20 Seater Tempo Traveller</li>
+        <li>Force Luxury Tempo Traveller</li>
+      </ul>
+    ),
+  },
+  {
+    question: `Is a Tempo Traveller suitable for varanasi local sightseeing?`,
+    answer: `Yes! Hiring a Tempo Traveller in varanasi is ideal for city tours like Kashi Vishwanath Temple, Sarnath, Assi Ghat, Dashashwamedh Ghat, and Kaal Bhairav Temple. It offers comfortable travel, especially for groups navigating the narrow lanes of varanasi.`,
+  },
+  {
+    question: `Can I book a Tempo Traveller for varanasi to Prayagraj or Bodh Gaya trips?`,
+    answer: `Absolutely! We offer outstation Tempo Traveller hire from varanasi to Prayagraj, Ayodhya, Bodh Gaya, Vindhyachal, Lucknow, and even Nepal border trips. All routes are managed by experienced drivers for a safe journey.`,
+  },
+  {
+    question: `How do I book a Tempo Traveller in varanasi?`,
+    answer: `Booking a Tempo Traveller in varanasi is simple—call us, WhatsApp us, or fill out our online booking form. Our team will confirm availability and provide instant fare details.`,
+  },
+  {
+    question: `Are Tempo Travellers comfortable for senior citizens in varanasi?`,
+    answer: `Yes. Our luxury Tempo Travellers in varanasi include pushback seats, AC, charging ports, smooth suspension, and spacious interiors—perfect for elderly passengers.`,
+  },
+  {
+    question: `Do you provide Tempo Traveller service for pilgrimage tours in varanasi?`,
+    answer: `Yes, we specialize in pilgrimage tour services in varanasi, including Kashi Darshan, Sarnath, Vindhyachal, Kaal Bhairav Darshan, Triveni Sangam, and Ayodhya Ram Janmabhoomi trips.`,
+  },
+  {
+    question: `Is AC available in all Tempo Travellers in varanasi?`,
+    answer: `Yes, all our Tempo Traveller rentals in varanasi come with AC. Choose from Standard AC, Luxury AC, and Premium Maharaja Tempo Travellers.`,
+  },
+  {
+    question: `Do you provide airport pickup and drop in varanasi?`,
+    answer: `Yes! We provide airport pickup and drop service from Lal Bahadur Shastri Airport with Tempo Travellers suitable for families, corporate groups, and tourists.`,
+  },
+  {
+    question: `What are the charges for Tempo Traveller parking and tolls in varanasi?`,
+    answer: `Parking, toll, and interstate taxes are usually extra and depend on the travel route. Our billing is fully transparent with no hidden charges.`,
+  },
+  {
+    question: `Can I hire a Tempo Traveller for weddings in varanasi?`,
+    answer: `Yes! We provide Tempo Travellers in varanasi for wedding guest transportation, pick-up/drop, baraat movement, and group travel.`,
+  },
+  {
+    question: `Do you provide experienced drivers familiar with varanasi routes?`,
+    answer: `Absolutely. All our drivers are trained, experienced, and well-versed with varanasi routes as well as nearby pilgrimage destinations.`,
+  },
+  {
+    question: `How early should I book a Tempo Traveller in varanasi during peak season?`,
+    answer: `During festivals like Mahashivratri, Dev Deepawali, and Kartik Purnima, booking your Tempo Traveller in varanasi at least 7–10 days in advance is recommended.`,
+  },
+  {
+    question: `Is there a minimum km limit for Tempo Traveller rentals in varanasi?`,
+    answer: `Yes, most services have a 250 km per day limit for outstation trips. Local sightseeing usually includes an 8-hour / 80 km package.`,
+  },
+  {
+    question: `Are Tempo Travellers safe for night travel from varanasi?`,
+    answer: `Yes. Our vehicles are GPS-enabled, well-maintained, and driven by trained drivers—making night travel safe for family and group tours from varanasi.`,
+  },
+],
+chandigarh: [
+  {
+    question: "What is the cost of tempo traveller hire in Chandigarh?",
+    answer:
+      "The tempo traveller price in Chandigarh starts from ₹22/km for a 9-seater and varies based on the seating capacity and destination. For example, the 12 seater tempo traveller fare in Chandigarh ranges between ₹23–₹25/km, while a 16 seater tempo traveller in Chandigarh may cost ₹26–₹28/km. Contact us for the best rates with no hidden charges.",
+  },
+  {
+    question: "How do I book a tempo traveller in Chandigarh?",
+    answer:
+      "You can easily book a tempo traveller in Chandigarh through WhatsApp or a quick phone call. Share your travel dates, pickup location, and group size, and our team will confirm your booking instantly.",
+  },
+  {
+    question: "Do you provide tempo traveller for outstation trips from Chandigarh?",
+    answer:
+      "Yes. We specialize in tempo traveller for outstation in Chandigarh with expert drivers. Popular routes include Chandigarh to Shimla, Manali, Amritsar, Delhi, Katra, Dharamshala, and Jaipur.",
+  },
+  {
+    question: "Which tempo traveller options are available in Chandigarh?",
+    answer:
+      "We offer multiple options including 9 seater, 12 seater, 16 seater, 17 seater, and 20 seater tempo traveller in Chandigarh. Luxury models like Maharaja and Urbania are also available for weddings, events, and corporate travel.",
+  },
+  {
+    question: "Do you offer luxury tempo traveller in Chandigarh?",
+    answer:
+      "Yes, we offer premium luxury tempo traveller in Chandigarh with features like leather seats, pushback seating, ambient lighting, AC, charging ports, and neat interiors — ideal for weddings, VIP travel, and corporate groups.",
+  },
+  {
+    question: "Are your tempo travellers safe for family trips?",
+    answer:
+      "Absolutely. Our tempo traveller hire in Chandigarh is family-friendly. All vehicles are well-maintained, sanitized, and driven by verified, experienced drivers for complete safety.",
+  },
+  {
+    question: "Do you provide tempo traveller for wedding in Chandigarh?",
+    answer:
+      "Yes. We offer well-decorated, clean, and professional tempo traveller for wedding in Chandigarh, suitable for guest transfers, baraat movement, and VIP transportation.",
+  },
+  {
+    question: "Can I book a tempo traveller from Chandigarh to Manali or Shimla?",
+    answer:
+      "Yes. We frequently provide tempo traveller from Chandigarh to Manali and tempo traveller from Chandigarh to Shimla. Our hill-expert drivers ensure a comfortable and safe journey.",
+  },
+  {
+    question: "Do you offer one-way tempo traveller rental in Chandigarh?",
+    answer:"Yes, based on availability. You can book a one-way tempo traveller in Chandigarh for routes like Chandigarh to Delhi, Amritsar, Ludhiana, or Shimla."
+  },
+  {
+    question: "What is included in the tempo traveller price in Chandigarh?",
+    answer:"The basic fare includes vehicle charges and driver service. Toll, parking, and state tax are extra and explained clearly while booking. We maintain full transparency in tempo traveller pricing in Chandigarh."
+  },
+  {
+    question: "Can I rent a 12 seater tempo traveller in Chandigarh for a long trip?",
+    answer:"Yes. Our 12 seater tempo traveller in Chandigarh is ideal for long-distance travel, Himachal tours, family vacations, and corporate outings."
+  },
+  {
+    question: "Are your drivers experienced with hill routes?",
+    answer:"Yes. Our drivers are experts in Himachal routes such as Manali, Shimla, Kasauli, Dharamshala, and Dalhousie. This makes your outstation tempo traveller hire in Chandigarh safe and comfortable."
+  }
+  ]
+
+  // add Chandigarh, Hyderabad, Agra, Delhi, etc
+};
