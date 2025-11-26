@@ -23,91 +23,91 @@ export default function WhyChooseYatra({cd}) {
     icon: <FaUsers />,
     title: "Expert in Tempo Traveller Services",
     content:
-      "We specialize in tempo traveller rent in Lucknow for families, corporates, wedding groups, and tourists alike."
+      `We specialize in tempo traveller rent in ${cd.cityname} for families, corporates, wedding groups, and tourists alike.`
   },
   {
     num: 2,
     icon: <FaShieldAlt />,
     title: "Comfort, Safety & Affordability Guaranteed",
     content:
-      "Looking for a tempo traveller in Lucknow that guarantees comfort, safety, and affordability? We are your trusted choice for tempo traveller hire, tempo traveller rent, and hassle-free tempo traveller booking in Lucknow."
+      `Looking for a tempo traveller in ${cd.cityname} that guarantees comfort, safety, and affordability? We are your trusted choice for tempo traveller hire, tempo traveller rent, and hassle-free tempo traveller booking in ${cd.cityname}.`
   },
   {
     num: 3,
     icon: <FaBusAlt />,
     title: "Wide Range of Vehicles",
     content:
-      "Choose from 9, 12, 15, 17, and 20-seater AC Tempo Travellers to luxury tempo travellers and 12-seater options. Perfect for family trips, corporate tours, and wedding transportation."
+      `Choose from 9, 12, 15, 17, and 20-seater AC Tempo Travellers to luxury tempo travellers and 12-seater options. Perfect for family trips, corporate tours, and wedding transportation.`
   },
   {
     num: 4,
     icon: <FaCheckCircle />,
     title: "Reliable Outstation Service",
     content:
-      "Planning a long-distance journey? Our outstation service covers popular routes like Lucknow to Varanasi and Lucknow to Ayodhya, ensuring safe, comfortable, and on-time travel."
+      `Planning a long-distance journey? Our outstation service covers popular routes like ${cd.cityname} to Varanasi and ${cd.cityname} to Ayodhya, ensuring safe, comfortable, and on-time travel.`
   },
   {
     num: 5,
     icon: <FaCaretSquareUp />,
     title: "Transparent Pricing",
     content:
-      "We offer clear, competitive tempo traveller prices in Lucknow with no hidden costs. All fares, including 12-seater tempo traveller fare, are disclosed upfront for easy budgeting."
+      `We offer clear, competitive tempo traveller prices in ${cd.cityname} with no hidden costs. All fares, including 12-seater tempo traveller fare, are disclosed upfront for easy budgeting.`
   },
   {
     num: 6,
     icon: <FaHeadset />,
     title: "Easy Booking & Instant Support",
     content:
-      "Book through call, WhatsApp, or online in seconds. Our support team is available 24×7 to answer queries and provide instant assistance."
+      `Book through call, WhatsApp, or online in seconds. Our support team is available 24×7 to answer queries and provide instant assistance.`
   },
   {
     num: 7,
     icon: <FaStar />,
     title: "Customer Satisfaction Guaranteed",
     content:
-      "From clean AC tempo travellers to punctual pickups and responsive support, we ensure a comfortable, safe, and memorable journey for every traveller."
+      `From clean AC tempo travellers to punctual pickups and responsive support, we ensure a comfortable, safe, and memorable journey for every traveller.`
   },
   {
     num: 8,
     icon: <FaBusAlt />,
     title: "Perfect Vehicle for Every Trip",
     content:
-      "Whether you need a 12-seater, luxury tempo traveller, 17-seater, or a 45+ seater Volvo bus, we offer ideal vehicles for every occasion."
+      `Whether you need a 12-seater, luxury tempo traveller, 17-seater, or a 45+ seater Volvo bus, we offer ideal vehicles for every occasion.`
   },
   {
     num: 9,
     icon: <FaUserCheck />,
     title: "Professional & Verified Drivers",
     content:
-      "Travel with experienced, polite, and trustworthy drivers who know Lucknow and major highways well. Perfect for local sightseeing and outstation trips."
+      `Travel with experienced, polite, and trustworthy drivers who know ${cd.cityname} and major highways well. Perfect for local sightseeing and outstation trips.`
   },
   {
     num: 10,
     icon: <FaCheckCircle />,
     title: "Ultimate Comfort & Luxury",
     content:
-      "Fully air-conditioned vehicles with spacious interiors, reclining seats, and premium features make long routes like Lucknow to Varanasi and Ayodhya comfortable and smooth."
+      `Fully air-conditioned vehicles with spacious interiors, reclining seats, and premium features make long routes like ${cd.cityname} to Varanasi and Ayodhya comfortable and smooth.`
   },
   {
     num: 11,
     icon: <FaHeadset />,
     title: "Flexible & Hassle-Free Booking",
     content:
-      "Get instant quotes and book instantly via call or WhatsApp—ideal for outstation trips, airport pickups, weddings, or local sightseeing."
+      `Get instant quotes and book instantly via call or WhatsApp—ideal for outstation trips, airport pickups, weddings, or local sightseeing.`
   },
   {
     num: 12,
     icon: <SiTrustpilot />,
     title: "Trusted by Hundreds of Happy Customers",
     content:
-      "Families, corporates, wedding groups, and tour organizers across Lucknow trust us for safe, punctual, and reliable tempo traveller services."
+      `Families, corporates, wedding groups, and tour organizers across ${cd.cityname} trust us for safe, punctual, and reliable tempo traveller services.`
   },
   {
     num: 13,
     icon: <MdContactSupport />,
     title: "24×7 Support & Assistance",
     content:
-      "Our team is available round-the-clock to assist with travel plans, provide guidance, and manage last-minute changes — giving you complete peace of mind."
+      `Our team is available round-the-clock to assist with travel plans, provide guidance, and manage last-minute changes — giving you complete peace of mind.`
   }
 ];
 
