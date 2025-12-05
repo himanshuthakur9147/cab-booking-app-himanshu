@@ -14,6 +14,7 @@ import { MdContactSupport } from "react-icons/md";
 import { SiTrustpilot } from "react-icons/si";
 import WhyChooseVaranasi from "./WhyChooseVaranasi";
 import WhyChooseChandigarh from "./WhyChooseChandigarh";
+import WhyChooseMumbai from "./WhyChooseMumbai";
 
 export default function WhyChooseYatra({cd}) {
  
@@ -248,6 +249,7 @@ export default function WhyChooseYatra({cd}) {
       }
       {cd.cityname.toLowerCase()==="varanasi" && <WhyChooseVaranasi/>}
       {cd.cityname.toLowerCase()==="chandigarh" && <WhyChooseChandigarh/>}
+      {cd.cityname.toLowerCase()==="mumbai" && <WhyChooseMumbai/>}
 
         </>
   );

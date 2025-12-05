@@ -245,7 +245,127 @@ chandigarh: [
     question: "Are your drivers experienced with hill routes?",
     answer:"Yes. Our drivers are experts in Himachal routes such as Manali, Shimla, Kasauli, Dharamshala, and Dalhousie. This makes your outstation tempo traveller hire in Chandigarh safe and comfortable."
   }
-  ]
+  ],
+mumbai: [
+  {
+    question: `What is the cost of tempo traveller hire in Mumbai?`,
+    answer: `The tempo traveller price in Mumbai starts from ₹24 per km for a 9-seater and goes up to ₹32 per 
+km for luxury Urbania and 20-seater models. Rates may vary depending on trip duration, outstation 
+routes, tolls, parking, and driver allowance. Yatra Travel India provides affordable tempo traveller 
+hire in Mumbai with transparent pricing and no hidden charges.`,
+  },
+  {
+    question: `What seating options do you offer for tempo traveller in Mumbai?`,
+    answer: (
+      <ul className="list-disc list-inside space-y-1 text-gray-700">
+        <li> 9-seater tempo traveller in Mumbai</li>
+        <li> 12-seater tempo traveller in Mumbai</li>
+        <li> 14-seater</li>
+        <li> 16-seater Urbania</li>
+        <li> 20-seater tempo traveller in Mumbai</li>
+      </ul>
+    ),
+  },
+  {
+    question: `Do you offer tempo traveller for outstation trips from Mumbai?`,
+    answer: (
+      <div>
+        <p>Yes, we provide outstation tempo traveller from Mumbai for all routes across Maharashtra, Gujarat, 
+Goa, and Karnataka. Popular outstation routes include:</p>
+        <ul className="list-disc list-inside space-y-1 text-gray-700 mt-2">
+          <li> Mumbai to Pune</li>
+          <li> Mumbai to Lonavala</li>
+          <li> Mumbai to Mahabaleshwar</li>
+          <li> Mumbai to Shirdi</li>
+          <li> Mumbai to Nashik</li>
+          <li> Mumbai to Goa</li>
+        </ul>
+        <p>We offer one-way, round-trip, and multi-day tour packages.</p>
+      </div>
+    ),
+  },
+ {
+  question: `Can I book a tempo traveller in Mumbai for local sightseeing?`,
+  answer:"Absolutely! Our tempo traveller for Mumbai local sightseeing is ideal for group visits to: Gateway of India • Marine Drive • Elephanta Caves • Juhu Beach • Film City • Siddhivinayak Temple • Colaba Market \n We offer half-day, full-day, and customizable Mumbai Darshan packages. "
+},
+  {
+    question: `Do you offer luxury tempo traveller in Mumbai?`,
+    answer: (
+      <div>
+        <p>Yes. Yatra Travel India provides luxury tempo traveller in Mumbai, including:</p>
+        <ul className="list-disc list-inside space-y-1 text-gray-700 mt-2">
+          <li> Maharaja tempo traveller</li>
+          <li> Premium 16-seater Urbania</li>
+          <li> Luxury 20-seater models</li>
+        </ul>
+        <p>Features include leather seats, ambient lighting, extra legroom, charging outlets, and premium 
+interiors — perfect for VIP travel, weddings, and corporate events.</p>
+      </div>
+    ),
+  },
+  {
+    question: `Can I book a tempo traveller in Mumbai for weddings or corporate events?`,
+    answer: `Yes. We specialize in tempo traveller for weddings in Mumbai and corporate travel services. 
+Whether it's transporting guests, staff, or VIPs, we provide clean, reliable, and comfortable tempo 
+travellers with uniformed professional drivers.`,
+  },
+  {
+    question: `How do I book a tempo traveller in Mumbai?`,
+    answer: `You can easily book a tempo traveller in Mumbai through our website, WhatsApp, or phone call. 
+Just share your travel date, passenger count, and destination — we’ll send you the best quote 
+instantly.`,
+  },
+  {
+    question: `Are your tempo traveller drivers experienced and verified?`,
+    answer: `Yes. All our drivers are verified, trained, and experienced on Mumbai city routes and major 
+outstation highways. Safety and punctuality are our top priorities.`,
+  },
+  {
+    question: `Do you provide Mumbai Airport pickup and drop?`,
+    answer: `Yes! We offer tempo traveller for Mumbai Airport pickup and drop (T2 & T1 terminals). Ideal for 
+large families, corporate teams, and international tourists arriving at Chhatrapati Shivaji Maharaj 
+International Airport.`,
+  },
+  {
+    question: `What is included in the tempo traveller rental package in Mumbai?`,
+    answer: (
+      <div>
+        <p>Our tempo traveller rental in Mumbai includes:</p>
+        <ul className="list-disc list-inside space-y-1 text-gray-700 mt-2">
+          <li> AC or Non-AC vehicle</li>
+          <li> Driver</li>
+          <li> Pushback seats</li>
+          <li> Luggage carrier</li>
+          <li> Basic entertainment system</li>
+        </ul>
+        <p>Additional charges may include tolls, parking, interstate taxes, and driver allowances depending on 
+the route.</p>
+      </div>
+    ),
+  },
+  {
+    question: `Can I get a tempo traveller at night or early morning in Mumbai?`,
+    answer: `Yes. We provide 24×7 tempo traveller booking in Mumbai, including early morning airport transfers, 
+night travels, and emergency bookings.`,
+  },
+  {
+    question: `Do you offer customized Maharashtra tour packages?`,
+    answer: (
+      <div>
+        <p>Yes! We arrange customized group tour packages covering:</p>
+        <ul className="list-disc list-inside space-y-1 text-gray-700 mt-2">
+          <li>Mumbai → Lonavala</li>
+          <li>Mumbai → Mahabaleshwar</li>
+          <li>Mumbai → Shirdi–Shani Shingnapur</li>
+          <li>Mumbai → Alibaug</li>
+          <li>Mumbai → Goa</li>
+        </ul>
+        <p>Ideal for families, students, corporates, and tourists.</p>
+      </div>
+    ),
+  },
+]
+
 
   // add Chandigarh, Hyderabad, Agra, Delhi, etc
 };

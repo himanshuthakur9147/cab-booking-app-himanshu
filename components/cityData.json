@@ -276,5 +276,71 @@
 
    
    
+  },
+  "mumbai": {
+    "cityname":"Mumbai",
+    "title": "Tempo Traveller in Mumbai | Yatra Travel India",
+    "metaDescription": ["Planning a group trip in Mumbai? Need a comfortable, safe, and affordable tempo traveller in Mumbai for sightseeing, corporate travel, Maharashtra tours, or airport pickup & drop? Yatra Travel India provides the best tempo traveller rental in Mumbai with multiple seating options — 9 seater, 12 seater, 16 seater, 20 seater, and luxury Urbania models to suit all group sizes. ","Whether you’re exploring the busy streets of South Mumbai or planning an outstation trip to Lonavala, Pune, Mahabaleshwar, or Goa — our clean, air-conditioned vehicles with professional, verified drivers guarantee a smooth and enjoyable travel experience.","Our tempo traveller hire in Mumbai is ideal for families, tourists, corporates, schools, colleges, and travel groups looking for a stress-free journey at the best price."],
+       
+   
+     "affordable":["9 Seater Tempo Traveller in Mumbai – Best for family trips & airport transfers","12 Seater Tempo Traveller in Mumbai – Ideal for weddings, corporate travel & Maharashtra tours ","16 Seater Tempo Traveller in Mumbai (Urbania) – Premium model with luxury interiors","20 Seater Tempo Traveller in Mumbai – For big groups, school trips & events "],
+     "outstationPara":["Yatra Travel India specializes in tempo traveller for outstation in Chandigarh — ideal for hill stations, long-distance journeys, business trips, and religious tours.","Whether you’re traveling with your friends, family, office group, or students, our outstation tempo travellers make every journey smooth, safe, and enjoyable."],
+     "outstationRoutes":["Tempo Traveller from Mumbai to Lonavala – Perfect for weekend relaxation","Tempo Traveller from Mumbai to Pune – Comfortable and convenient for business or family travel ","Tempo Traveller from Mumbai to Mahabaleshwar – Scenic and ideal for holidays","Tempo Traveller from Mumbai to Shirdi – Best for pilgrimage tours","Tempo Traveller from Mumbai to Goa – Luxury and spacious for long road trips ","Tempo Traveller from Mumbai to Nashik – Great for temple visits and wine tours","Tempo Traveller from Mumbai to Igatpuri – Ideal for monsoon trips and resort stays"],
+     "outstationLast":"Our drivers are well-trained, safe, and familiar with all major highways, ensuring timely travel and maximum comfort. \n Choose Yatra Travel India for the most reliable and affordable tempo traveller hire for outstation trips in Mumbai. ",
+  
+   
+    "routesLine":"Planning a family trip, weekend getaway, pilgrimage, or corporate outing from Mumbai? Yatra Travel India offers affordable and comfortable tempo traveller hire in Mumbai for all major outstation routes across Maharashtra, Gujarat, Goa, and Karnataka. Our AC tempo travellers, spacious seats, and professional drivers ensure a safe and relaxing journey—perfect for groups, families, and corporate teams.",
+   
+  "routes": [
+    {
+      "from": "Mumbai → Lonavala / Khandala",
+      "description": "Enjoy a scenic hill-station getaway with our tempo traveller from Mumbai to Lonavala. Ideal for day trips, picnics, office outings, and school tours. Comfortable ride, clean interiors, and ample luggage space."
+    },
+    {
+      "from": "Mumbai → Pune",
+      "description": "Book a tempo traveller from Mumbai to Pune for business trips, family functions, or airport transfers. Our drivers know the Mumbai–Pune Expressway perfectly to ensure a fast and safe journey."
+    },
+    {
+      "from": "Mumbai → Mahabaleshwar",
+      "description": "Hire our luxury tempo traveller in Mumbai for a cool and refreshing hill-station vacation. Perfect for weekend family trips and group holidays with premium comfort."
+    },
+    {
+      "from": "Mumbai → Shirdi",
+      "description": "Travel peacefully with our tempo traveller from Mumbai to Shirdi for Sai Baba Darshan. Spacious seating, AC comfort, and experienced drivers make your pilgrimage safe and stress-free."
+    },
+    {
+      "from": "Mumbai → Nashik / Trimbakeshwar",
+      "description": "Whether it’s wine tourism, temple visits, or group travel, our tempo traveller rental in Mumbai offers smooth journeys to Nashik and Trimbakeshwar at budget-friendly fares."
+    },
+    {
+      "from": "Mumbai → Goa",
+      "description": "Planning a beach holiday? Choose our Mumbai to Goa tempo traveller for long-distance comfort. Pushback seats, onboard entertainment (on request), and expert long-route drivers ensure a premium experience."
+    },
+    {
+      "from": "Mumbai → Alibaug",
+      "description": "Perfect for group vacations, corporate outings, and weddings. Our tempo traveller hire in Mumbai offers quick and comfortable travel to Alibaug beaches and resorts."
+    },
+    {
+      "from": "Mumbai → Igatpuri / Bhandardara",
+      "description": "Experience nature, trekking, and camping with our tempo traveller from Mumbai to Igatpuri or Bhandardara. Smooth ride, clean vehicles, and affordable rates."
+    },
+    {
+      "from": "Mumbai → Surat / Ahmedabad",
+      "description": "Ideal for business travelers and families. Book our tempo traveller from Mumbai to Gujarat for safe interstate travel with professional drivers."
+    },
+    {
+      "from": "Mumbai → Imagica Theme Park",
+      "description": "Perfect for kids, families, and school excursions. Our tempo traveller for Imagica trip from Mumbai ensures easy pickup, comfortable travel, and safe return."
+    },
+    {
+      "from": "Mumbai → Airport Transfers (T2 & Domestic)",
+      "description": "Need a large group transfer? Our tempo traveller for Mumbai airport pickup & drop is perfect for corporate teams, wedding guests, and families."
+    }
+  ]
+
+
+
+   
+   
   }
 }
