@@ -5,7 +5,7 @@ import { cookies } from "next/headers";
 export async function POST(req) {
   const { token } = await req.json();
 
-
+  try {
     const expiresIn = 60 * 60 * 24 * 5 * 1000; // 5 days
 
     const sessionCookie = await authAdmin.createSessionCookie(token, { expiresIn });
@@ -20,5 +20,10 @@ export async function POST(req) {
     });
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
- 
+  } catch (err) {
+    console.error("Session Cookie Creation Error:", err);
+    return new Response(JSON.stringify({ error: "Failed to create session cookie" }), {
+      status: 401,
+    });
+  }
 }
