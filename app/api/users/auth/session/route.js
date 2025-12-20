@@ -3,31 +3,22 @@ import { authAdmin } from "@/lib/firebaseAdmin";
 import { cookies } from "next/headers";
 
 export async function POST(req) {
-  try {
-    const { token } = await req.json();
+  const { token } = await req.json();
+
 
     const expiresIn = 60 * 60 * 24 * 5 * 1000; // 5 days
 
-    const sessionCookie = await authAdmin.createSessionCookie(token, {
-      expiresIn,
-    });
+    const sessionCookie = await authAdmin.createSessionCookie(token, { expiresIn });
 
-    cookies().set({
-      name: "session",
-      value: sessionCookie,
-      httpOnly: true,
-      secure: true,          // MUST be true in production
-      sameSite: "none",      // IMPORTANT
+    const cookieStore = cookies();
+    cookieStore.set("session", sessionCookie, {
       maxAge: expiresIn / 1000,
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production" ? true : false,
+      sameSite: "lax",
       path: "/",
     });
 
-    return Response.json({ success: true });
-  } catch (err) {
-    console.error("Session Cookie Creation Error:", err);
-    return Response.json(
-      { error: err.message },
-      { status: 401 }
-    );
-  }
+    return new Response(JSON.stringify({ success: true }), { status: 200 });
+ 
 }
