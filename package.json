@@ -13,6 +13,7 @@
     "@authgear/web": "^3.0.0",
     "@emailjs/browser": "^4.4.1",
     "@react-google-maps/api": "^2.20.6",
+    "cookie": "^1.1.1",
     "date-fns": "^4.1.0",
     "firebase": "^11.9.1",
     "firebase-admin": "^13.4.0",
