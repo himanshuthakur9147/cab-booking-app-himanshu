@@ -74,15 +74,16 @@ export default function PhoneAuthForm({ onSuccess }) {
       setIsVerifying(true);
       const result = await confirmationResult.confirm(otp);
       const firebaseUser = result.user;
-      const idToken = await firebaseUser.getIdToken();
-
+      console.log("The result in verifyOtp is ",result)
+      const idToken = await firebaseUser.getIdToken(true);
+      console.log("The idTokken is ",idToken);
       // Send token to server to create session
       const sessionRes = await fetch("/api/users/auth/session", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token: idToken }),
       });
-
+      console.log("sessionRes is giving ",sessionRes)
       if (!sessionRes.ok) throw new Error("Session creation failed");
 
       // Wait for cookie to be usable
