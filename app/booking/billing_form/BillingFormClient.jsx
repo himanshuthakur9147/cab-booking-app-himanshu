@@ -119,7 +119,7 @@ const handleProceed = (e) => {
               </label>
               <input
                 type="text"
-                value={user.phone}
+                value={user.user.phone}
                 disabled
                 className="w-full border-b border-gray-500 outline-none px-4 py-2 text-sm"
               />

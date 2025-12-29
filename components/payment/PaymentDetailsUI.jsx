@@ -53,7 +53,7 @@ const handlePayment = async () => {
     }
 
     const options = {
-      key: "rzp_live_A7ALQ0YIsAcCeK",
+      key: "rzp_live_RtS76XT7LqxoX4",
       amount: finalAmount,
       currency: "INR",
       name: "Yatra Travel India",
