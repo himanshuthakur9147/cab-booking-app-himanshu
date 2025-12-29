@@ -58,7 +58,7 @@ export default function ContactUs() {
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
               Contact Us | Yatra Travel India
             </h1>
-            <p className="mt-4 text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="mt-4 text-gray-600 max-w-3xl mx-auto font-bold leading-relaxed">
               Yatra Travel India is an independent travel agency offering reliable
               tempo traveller, cab, and bus rental services across India with
               transparent pricing and personalized customer support.
@@ -119,15 +119,15 @@ export default function ContactUs() {
 
             {/* Contact Details */}
             <div className="space-y-6">
-              <div>
-                <h2 className="text-xl font-semibold mb-2">About Us</h2>
-                <p className="text-gray-600 leading-relaxed">
+              <div className="font-bold">
+                <h2 className="text-xl font-bold mb-2">About Us</h2>
+                <p className="text-gray-600 font-semibold leading-relaxed">
                   Looking for reliable and affordable Tempo Traveller, Cab, or
                   Bus Rental Services across India? Get in touch with Yatra
                   Travel India today. We are here to help you plan a smooth,
                   safe, and comfortable journey.
                 </p>
-                <p className="text-gray-600 mt-3">
+                <p className="text-gray-600 font-semibold mt-3">
                   Whether it’s outstation trips, local sightseeing, pilgrimage
                   tours, weddings, or corporate travel, our team is available
                   <strong> 24×7</strong> to assist you.
@@ -135,23 +135,23 @@ export default function ContactUs() {
               </div>
               
               <div>
-                <h2 className="text-xl font-semibold mb-2">☎️ Phone</h2>
+                <h2 className="text-xl font-bold mb-2">For New Booking</h2>
                 <p className="font-semibold">We are always happy to hear from you</p>
                 <p>
                   <strong>New Booking:</strong>{" "}
-                  <span className="text-blue-600 font-bold">
+                  <span className="text-gray-900 font-bold">
                     +91 9044019511
                   </span>
                 </p>
                 <p>
                   <strong>Vendor Support:</strong>{" "}
-                  <span className="text-blue-600 font-bold">
+                  <span className="text-gray-900 font-bold">
                     +91 9119947931
                   </span>
                 </p>
               </div>
 <div>
-  <h2 className="text-xl font-semibold mb-2">📧 Email Us</h2>
+  <h2 className="text-xl font-bold mb-2"> Email Us</h2>
 
   <p>
     <strong>Customer Support:</strong>{" "}
@@ -184,19 +184,19 @@ export default function ContactUs() {
   </p>
 </div>
  <div>
-                <h2 className="text-xl font-semibold mb-2">🕒 Working Hours</h2>
+                <h2 className="text-xl font-bold mb-2"> Working Hours</h2>
                 <p>24×7 Support – Including weekends & holidays</p>
               </div>
 
               <div>
-                <h2 className="text-xl font-semibold mb-2">📍 Head Office</h2>
+                <h2 className="text-xl font-bold mb-2"> Head Office</h2>
                 <p>44A, Sardar Patel Marg</p>
                 <p>Civil Lines, Prayagraj</p>
                 <p>Uttar Pradesh – 211001</p>
               </div>
 
               <div>
-                <h2 className="text-xl font-semibold mb-2">📍 Bangalore Office</h2>
+                <h2 className="text-xl font-bold mb-2"> Bangalore Office</h2>
                 <p>114/7, Mahatma Gandhi Road</p>
                 <p>Ashok Nagar, Bengaluru</p>
                 <p>Karnataka – 560001</p>
