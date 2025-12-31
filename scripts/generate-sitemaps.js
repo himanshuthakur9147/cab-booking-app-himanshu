@@ -2,13 +2,10 @@ const cities = [
   "lucknow",
   "hyderabad",
   "varanasi",
-  "agra",
-  "bangalore",
-  "delhi",
   "mumbai",
   "chandigarh",
   "jaipur",
-  "pune",
+  "haridwar"
   // add more...
 ];
 
