@@ -364,8 +364,239 @@ night travels, and emergency bookings.`,
       </div>
     ),
   },
-]
+],
 
+haridwar: [
+  {
+    question: `What is the cost of hiring a tempo traveller in Haridwar?`,
+    answer: `The tempo traveller price in Haridwar starts from ₹18–₹22 per km depending on the 
+seating capacity, vehicle type, and trip duration. 
+Luxury Urbania tempo travellers may cost slightly higher.`,
+  },
+  {
+    question: `Do you provide tempo traveller for Char Dham Yatra from Haridwar?`,
+    answer: (
+      <div>
+        <p>
+          Yes. Yatra Travel India offers tempo traveller for Char Dham Yatra with experienced 
+          drivers who are familiar with mountain routes.
+        </p>
+        <p className="mt-2">You can book 12-seater, 17-seater, and 20-seater travellers for:</p>
+        <ul className="list-disc list-inside space-y-1 text-gray-700 mt-2">
+          <li>Yamunotri</li>
+          <li>Gangotri</li>
+          <li>Kedarnath</li>
+          <li>Badrinath</li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    question: `Which tempo traveller seats are available in Haridwar?`,
+    answer: (
+      <ul className="list-disc list-inside space-y-1 text-gray-700">
+        <li>9 Seater Tempo Traveller</li>
+        <li>12 Seater Tempo Traveller in Haridwar</li>
+        <li>17 Seater Tempo Traveller</li>
+        <li>20 Seater Tempo Traveller</li>
+        <li>Urbania Luxury Tempo Traveller</li>
+      </ul>
+    ),
+  },
+  {
+    question: `Can I book a tempo traveller from Haridwar to Kedarnath?`,
+    answer: `Absolutely. We offer tempo traveller from Haridwar to Kedarnath with comfortable 
+seating, AC, and expert hill drivers. 
+Pickup and drop can be arranged from Haridwar railway station, bus stand, or hotels.`,
+  },
+  {
+    question: `Is the tempo traveller safe for hill travel and mountain routes?`,
+    answer: `Yes. All our tempo travellers are hill-certified, GPS-enabled, and driven by experienced 
+drivers familiar with Uttarakhand mountain terrain.`,
+  },
+  {
+    question: `Do you provide tempo traveller for Rishikesh, Mussoorie, and Nainital?`,
+    answer: (
+      <div>
+        <p>
+          Yes. Our tempo traveller in Haridwar is ideal for weekend getaways and hill stations like:
+        </p>
+        <ul className="list-disc list-inside space-y-1 text-gray-700 mt-2">
+          <li>Haridwar to Rishikesh</li>
+          <li>Haridwar to Mussoorie</li>
+          <li>Haridwar to Nainital</li>
+          <li>Haridwar to Jim Corbett</li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    question: `How can I book a tempo traveller in Haridwar?`,
+    answer: (
+      <div>
+        <p>Booking is simple. You can contact us via:</p>
+        <ul className="list-disc list-inside space-y-1 text-gray-700 mt-2">
+          <li>Call / WhatsApp – 24×7 support</li>
+          <li>Simple enquiry form</li>
+          <li>Instant booking confirmation</li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    question: `Do you provide tempo traveller for weddings and corporate events in Haridwar?`,
+    answer: `Yes. We provide luxury tempo travellers for weddings, guest pickups, office tours, 
+corporate travel, and group transfers.`,
+  },
+  {
+    question: `What is included inside the tempo traveller?`,
+    answer: (
+      <ul className="list-disc list-inside space-y-1 text-gray-700">
+        <li>Pushback comfortable seats</li>
+        <li>Full AC/Heating</li>
+        <li>LED TV + Music system</li>
+        <li>Charging points</li>
+        <li>Ample luggage space</li>
+        <li>Clean interiors</li>
+      </ul>
+    ),
+  },
+  {
+    question: `Do you provide one-way tempo traveller from Haridwar?`,
+    answer: (
+      <div>
+        <p>Yes. We offer one-way tempo traveller services to:</p>
+        <ul className="list-disc list-inside space-y-1 text-gray-700 mt-2">
+          <li>Delhi</li>
+          <li>Dehradun</li>
+          <li>Rishikesh</li>
+          <li>Chandigarh</li>
+          <li>Jaipur</li>
+        </ul>
+      </div>
+    ),
+  },
+],
+jaipur: [
+  {
+    question: `What is the cost of tempo traveller hire in Jaipur?`,
+    answer: `The tempo traveller price in Jaipur starts from ₹22 per km for a 9-seater and goes up to 
+₹30 per km for larger models like the 20-seater and Urbania. Pricing may vary based on 
+distance, outstation trips, tolls, parking, and driver allowance. Yatra Travel India offers 
+affordable tempo traveller hire in Jaipur with transparent rates and no hidden charges.`,
+  },
+  {
+    question: `Which tempo traveller seating options are available in Jaipur?`,
+    answer: (
+      <ul className="list-disc list-inside space-y-1 text-gray-700">
+        <li>9 Seater Tempo Traveller in Jaipur</li>
+        <li>12 Seater Tempo Traveller in Jaipur</li>
+        <li>14 Seater Tempo Traveller</li>
+        <li>16 Seater Tempo Traveller</li>
+        <li>20 Seater Tempo Traveller</li>
+        <li>Luxury Urbania Tempo Traveller</li>
+      </ul>
+    ),
+  },
+  {
+    question: `Do you offer tempo traveller for outstation trips from Jaipur?`,
+    answer: (
+      <div>
+        <p>
+          Yes, we specialize in tempo traveller for outstation from Jaipur. Popular routes include:
+        </p>
+        <ul className="list-disc list-inside space-y-1 text-gray-700 mt-2">
+          <li>Jaipur to Udaipur</li>
+          <li>Jaipur to Jodhpur</li>
+          <li>Jaipur to Agra</li>
+          <li>Jaipur to Delhi</li>
+          <li>Jaipur to Mount Abu</li>
+          <li>Jaipur to Ranthambore</li>
+          <li>Ajmer – Pushkar</li>
+        </ul>
+        <p className="mt-2">
+          We provide one-way and round-trip packages with expert drivers familiar with Rajasthan
+          routes.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: `Is a tempo traveller suitable for Jaipur local sightseeing?`,
+    answer: `Absolutely! Our tempo traveller in Jaipur for local sightseeing is ideal for visiting 
+Amber Fort, Hawa Mahal, City Palace, Jal Mahal, Nahargarh Fort, and Jaipur markets. We offer 
+hourly, half-day, and full-day sightseeing packages based on your plan.`,
+  },
+  {
+    question: `Do you provide luxury tempo traveller in Jaipur?`,
+    answer: (
+      <div>
+        <p>Yes. We offer luxury and Maharaja tempo travellers in Jaipur including Urbania models with:</p>
+        <ul className="list-disc list-inside space-y-1 text-gray-700 mt-2">
+          <li>Leather seats</li>
+          <li>Ambient lighting</li>
+          <li>Extra legroom</li>
+          <li>Charging ports</li>
+          <li>Music system</li>
+          <li>Neat interiors</li>
+        </ul>
+        <p className="mt-2">
+          These vehicles are ideal for corporate travel, weddings, events, and VIP movement.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: `Can I book a tempo traveller in Jaipur for weddings and events?`,
+    answer: `Yes, Yatra Travel India provides tempo traveller services in Jaipur for weddings, guest 
+transportation, corporate events, school trips, Bharat Darshan tours, and family gatherings.`,
+  },
+  {
+    question: `How do I book a tempo traveller in Jaipur?`,
+    answer: `You can easily book a tempo traveller in Jaipur by calling 9044019511, WhatsApp, or 
+through our website. Share your trip date, destination, and group size to get the best 
+vehicle and price.`,
+  },
+  {
+    question: `Are your tempo traveller drivers experienced and verified?`,
+    answer: `Yes. All our drivers are trained, background-verified, and highly experienced in 
+Rajasthan and interstate routes. Safety and punctuality are our top priorities.`,
+  },
+  {
+    question: `Do you offer Jaipur Airport pickup and drop?`,
+    answer: `Yes. We provide tempo traveller services for Jaipur International Airport pickup and 
+drop for families, corporate groups, tourists, and VIP guests.`,
+  },
+  {
+    question: `What is included in a tempo traveller rental package in Jaipur?`,
+    answer: (
+      <div>
+        <p>Our tempo traveller rental in Jaipur generally includes:</p>
+        <ul className="list-disc list-inside space-y-1 text-gray-700 mt-2">
+          <li>Vehicle with driver</li>
+          <li>AC / Non-AC option</li>
+          <li>Pushback seats</li>
+          <li>Luggage space</li>
+          <li>Clean interiors</li>
+        </ul>
+        <p className="mt-2">
+          Additional charges may include tolls, parking, driver allowance, and interstate taxes.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: `Do you offer customized Rajasthan tour packages?`,
+    answer: `Yes. We provide customizable Rajasthan group tour packages covering Jaipur, Jodhpur, 
+Udaipur, Mount Abu, Bikaner, Chittorgarh, Ajmer, Pushkar, and more. Tempo traveller hire in 
+Jaipur is perfect for long heritage and cultural trips.`,
+  },
+  {
+    question: `Can I get a tempo traveller at night or early morning in Jaipur?`,
+    answer: `Yes. We offer 24×7 tempo traveller booking in Jaipur including night travel, early 
+morning departures, and airport pickups.`,
+  },
+]
 
   // add Chandigarh, Hyderabad, Agra, Delhi, etc
 };

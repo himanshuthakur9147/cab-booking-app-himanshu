@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import TempoTableSection from "@/components/tempo-traveller/TempoTableSection";
+import HaridwarHeader from "./HaridwarHeader";
 
 export default function HeaderSection({cd}) {
   return (
@@ -29,7 +30,7 @@ export default function HeaderSection({cd}) {
         <p>
           Yatra Travel India is known for offering affordable tempo traveller hire in {cd.cityname} with
           transparent pricing and top-notch service. Our pricing starts from just{" "}
-          <span className="font-semibold">₹22/km</span>, with no hidden charges. You’ll receive
+          <span className="font-semibold">₹20-22/km</span>, with no hidden charges. You’ll receive
           complete details upfront for tolls, parking, and driver allowances.
         </p>
 
@@ -40,9 +41,16 @@ export default function HeaderSection({cd}) {
           ))}
         
         </ul>
+        {cd.affordablePoints && <><p className="font-medium mt-2">Features Included :</p>
+        <ul className="list-disc list-inside space-y-1 ml-4">
+          { cd.affordablePoints && cd.affordablePoints.map((l,i)=>(
+            <li key={i}>{l}</li>
+          ))}
+        
+        </ul> </>}
+
         <p>
-          Each tempo traveller is maintained to the highest standards, offering a clean interior,
-          pushback seats, LED lighting, and ample luggage space.
+          {cd.affordableLastPara}
         </p>
       </div>
 
@@ -52,25 +60,21 @@ export default function HeaderSection({cd}) {
           Best 12 Seater & 16 Seater Tempo Traveller in {cd.cityname}
         </h2>
         <p>
-          If you’re searching for the best 12 seater tempo traveller in {cd.cityname},{" "}
-          <span className="font-semibold">Yatra Travel India</span> is your perfect travel partner.
-          Our luxury tempo traveller hire in {cd.cityname} options include the Urbania, Maharaja, and
-          premium AC models — ideal for corporate travel, wedding guests, or family vacations.
+         {cd.bestSeaterLine1}
         </p>
 
-        <p>All our tempo travellers come with:</p>
+        <p>{cd.bestSeaterPointsHeading}:</p>
         <ul className="list-disc list-inside space-y-1 ml-4">
-          <li>Pushback & reclining seats</li>
-          <li>Chilled air-conditioning</li>
-          <li>Sound system & LED screens (on request)</li>
-          <li>Neat interiors and large luggage space</li>
-          <li>Professional, verified drivers</li>
+         { cd.bestSeaterPoints.map((l,i)=>(
+            <li key={i}>{l}</li>
+          ))}
         </ul>
-        <p>
-          Whether you’re booking for local sightseeing or long-distance tours, we ensure your journey
-          is safe, comfortable, and unforgettable.
-        </p>
+        <div>
+     
+
+          </div>
       </div>
+      
 
       <TempoTableSection />
 
@@ -102,9 +106,11 @@ export default function HeaderSection({cd}) {
       </div>
 
       {/* Weddings / Corporate Section */}
+      {cd.cityname==="haridwar" && <HaridwarHeader/>
+     }
       <div className="space-y-6 mt-10">
         <h2 className="text-2xl font-semibold text-[#2482c2]">
-          Tempo Traveller for Weddings, Corporate Trips & Events
+          Tempo Traveller for Weddings, Corporate Trips & Events in {cd.cityname}
         </h2>
         <p>
           Need a tempo traveller for wedding in {cd.cityname} or corporate event transport? We specialize
@@ -146,19 +152,19 @@ export default function HeaderSection({cd}) {
             <tbody className="text-gray-700">
               <tr className="border-t">
                 <td className="px-4 py-2">9-seater</td>
-                <td className="px-4 py-2">₹22/km</td>
+                <td className="px-4 py-2">₹{cd.rates[0]}/km</td>
               </tr>
               <tr className="border-t">
                 <td className="px-4 py-2">12-seater tempo traveller</td>
-                <td className="px-4 py-2">₹23–₹25/km</td>
+                <td className="px-4 py-2">₹{cd.rates[1]}/km</td>
               </tr>
               <tr className="border-t">
                 <td className="px-4 py-2">16-seater (Urbania)</td>
-                <td className="px-4 py-2">₹26–₹28/km</td>
+                <td className="px-4 py-2">₹{cd.rates[2]}/km</td>
               </tr>
               <tr className="border-t">
                 <td className="px-4 py-2">20-seater</td>
-                <td className="px-4 py-2">₹30/km</td>
+                <td className="px-4 py-2">₹{cd.rates[3]}/km</td>
               </tr>
             </tbody>
           </table>

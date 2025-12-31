@@ -37,6 +37,8 @@ export default function Page() {
     const {city}= useParams();
     const cityname=city.replace("tempo-traveller-in-","");
     const cityData=data[cityname.toLowerCase()];
+  console.log("slug:", city);
+console.log("data:", data[city]);
 
   const {
     pickupLocation,
@@ -73,10 +75,15 @@ export default function Page() {
   return (
     <>
     <Head>
-  <title>Tempo Traveller in {cityname.toUpperCase()} | Starting @ Rs.22/Km – Yatra Travel India</title>
+  <title>Tempo Traveller in {cityname.toUpperCase()} - 9 to 26 Seater @ ₹22/Km | Yatra Travel India</title>
+
   <meta name="description" content={`Book Tempo Traveller in ${cityname} for local sightseeing, outstation trips, weddings, and corporate travel. Choose 9, 12, 17, 20 and 26 seater AC tempo travellers at the best price. Clean vehicles, expert drivers, transparent fares, and 24×7 support. Rent a luxury Tempo Traveller in ${cityname} starting at affordable per-km rates.`} />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://yatratravelindia.com/" />
+ <link
+  rel="canonical"
+  href={`https://yatratravelindia.com/tempo-traveller-in-${cityname.toLowerCase()}`}
+/>
+
 
   {/* JSON-LD Structured Data */}
   <script
@@ -95,7 +102,7 @@ export default function Page() {
         "addressRegion": cityname,
         "addressCountry": "IN"
       },
-      "telephone": "+91-9876543210",
+      "telephone": "+91-9044019511",
       "priceRange": "₹22/km onwards",
       "areaServed": cityname
     })

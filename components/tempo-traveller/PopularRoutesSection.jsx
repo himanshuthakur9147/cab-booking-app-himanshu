@@ -2,6 +2,7 @@
 
 import React from "react";
 import { FaBusAlt, FaCheckCircle } from "react-icons/fa";
+import HaridwarRoutes from "./HaridwarRoutes";
 
 const PopularRoutesSection = ({cd}) => {
 
@@ -29,7 +30,7 @@ const PopularRoutesSection = ({cd}) => {
 
         {/* Routes Grid */}
         <div className="grid md:grid-cols-2 gap-6">
-          {cd.routes.map((route, index) => (
+          {cd.routes && cd.routes.map((route, index) => (
             <div
               key={index}
               className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all p-6 border border-gray-100 hover:border-[#2482c2]/40"
@@ -42,14 +43,14 @@ const PopularRoutesSection = ({cd}) => {
             </div>
           ))}
         </div>
-
+{cd.cityname==="haridwar" && <HaridwarRoutes/>}
         {/* Highlights Section */}
         <div className="bg-white rounded-2xl shadow-md p-8 border border-gray-100">
           <h3 className="text-2xl font-semibold text-[#2482c2] mb-4 text-center">
             Why Customers Love These Routes
           </h3>
           <ul className="grid md:grid-cols-2 gap-3 mt-4">
-            {highlights.map((item, i) => (
+            {highlights && highlights.map((item, i) => (
               <li key={i} className="flex items-start gap-2 text-gray-700">
                 <FaCheckCircle className="text-[#2482c2] mt-1 w-4 h-4" />
                 <span>{item}</span>

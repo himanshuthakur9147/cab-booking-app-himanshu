@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <>
     <Head>
-  <title>Yatra Travel India – Cab & Taxi Booking</title>
+  <title>Yatra Travel India – Cab & Taxi Booking | Online Booking at ₹20/Km</title>
   <meta name="description" content="Book cabs across India instantly. Trusted and affordable car rentals for one way, round trip, or local rides." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://yatratravelindia.com/" />
@@ -75,7 +75,7 @@ export default function Home() {
         "logo": "https://yatratravelindia.com/logo.jpeg",
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+91-9876543210",
+          "telephone": "+91-9044019511",
           "contactType": "Customer Service"
         },
       }),

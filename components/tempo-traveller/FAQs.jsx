@@ -5,7 +5,7 @@ function FAQs({faqs}) {
   return (
      <div className="space-y-5">
        
-        {faqs.map((faq, index) => (
+        {faqs && faqs.map((faq, index) => (
           <div
             key={index}
             className="border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow bg-white"
