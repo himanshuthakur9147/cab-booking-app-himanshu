@@ -17,6 +17,7 @@ import WhyChooseChandigarh from "./WhyChooseChandigarh";
 import WhyChooseMumbai from "./WhyChooseMumbai";
 import WhyChooseHaridwar from "./WhyChooseHaridwar";
 import WhyChooseJaipur from "./WhyChooseJaipur";
+import WhyChooseDehradun from "./WhyChooseDehradun";
 
 export default function WhyChooseYatra({cd}) {
  
@@ -254,6 +255,7 @@ export default function WhyChooseYatra({cd}) {
       {cd.cityname.toLowerCase()==="mumbai" && <WhyChooseMumbai/>}
       {cd.cityname.toLowerCase()==="haridwar" && <WhyChooseHaridwar/>}
       {cd.cityname.toLowerCase()==="jaipur" && <WhyChooseJaipur/>}
+      {cd.cityname.toLowerCase()==="dehradun" && <WhyChooseDehradun/>}
 
         </>
   );

@@ -2,6 +2,7 @@
 import React from "react";
 import TempoTableSection from "@/components/tempo-traveller/TempoTableSection";
 import HaridwarHeader from "./HaridwarHeader";
+import DehradunHeader from "./DehradunHeader";
 
 export default function HeaderSection({cd}) {
   return (
@@ -54,6 +55,7 @@ export default function HeaderSection({cd}) {
         </p>
       </div>
 
+          {cd.cityname==="dehradun" && <DehradunHeader/>}
       {/* Best Seaters Section */}
       <div className="space-y-6 mt-10">
         <h2 className="text-2xl font-semibold text-[#2482c2]">

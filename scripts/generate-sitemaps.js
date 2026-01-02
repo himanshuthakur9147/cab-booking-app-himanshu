@@ -5,7 +5,8 @@ const cities = [
   "mumbai",
   "chandigarh",
   "jaipur",
-  "haridwar"
+  "haridwar",
+  "dehradun"
   // add more...
 ];
 

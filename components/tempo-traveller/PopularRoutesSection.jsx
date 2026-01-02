@@ -3,9 +3,10 @@
 import React from "react";
 import { FaBusAlt, FaCheckCircle } from "react-icons/fa";
 import HaridwarRoutes from "./HaridwarRoutes";
+import DehradunCharDham from "./DehradunCharDham";
 
 const PopularRoutesSection = ({cd}) => {
-
+  console.log("cd in PopularRoutesSection:", cd);
 
   const highlights = [
     "Fully AC, spacious, and comfortable tempo travellers",
@@ -16,6 +17,7 @@ const PopularRoutesSection = ({cd}) => {
   ];
 
   return (
+    <>
     <section className="bg-gray-50 py-16 px-6 text-gray-800">
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Header */}
@@ -43,7 +45,8 @@ const PopularRoutesSection = ({cd}) => {
             </div>
           ))}
         </div>
-{cd.cityname==="haridwar" && <HaridwarRoutes/>}
+{cd.cityname.toLowerCase() ==="haridwar" && <HaridwarRoutes/>}
+{cd.cityname.toLowerCase() ==="dehradun" && <DehradunCharDham/>}
         {/* Highlights Section */}
         <div className="bg-white rounded-2xl shadow-md p-8 border border-gray-100">
           <h3 className="text-2xl font-semibold text-[#2482c2] mb-4 text-center">
@@ -60,6 +63,8 @@ const PopularRoutesSection = ({cd}) => {
         </div>
       </div>
     </section>
+    
+    </>
   );
 };
 

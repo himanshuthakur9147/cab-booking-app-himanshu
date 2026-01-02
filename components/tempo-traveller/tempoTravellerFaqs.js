@@ -596,7 +596,81 @@ Jaipur is perfect for long heritage and cultural trips.`,
     answer: `Yes. We offer 24×7 tempo traveller booking in Jaipur including night travel, early 
 morning departures, and airport pickups.`,
   },
+],
+dehradun : [
+  {
+    question: `How can I book a tempo traveller in Dehradun?`,
+    answer: `Booking a tempo traveller in Dehradun is quick and hassle-free. You can book online, 
+call us, or WhatsApp our team. Simply share your pickup point, destination, travel dates, 
+and number of passengers. We’ll provide an instant quote for tempo traveller hire in 
+Dehradun with complete fare details.`,
+  },
+  {
+    question: `Why should I choose Yatra Travel India for tempo traveller rentals in Dehradun?`,
+    answer: `Yatra Travel India offers safe, comfortable, and reliable tempo traveller services 
+in Dehradun. Our fleet includes 12 seater tempo traveller Dehradun, luxury tempo traveller, 
+Urbania 16-seater, Maharaja models, mini buses, and Volvo buses. With verified hill drivers, 
+transparent pricing, and 24×7 support, we ensure a worry-free journey.`,
+  },
+  {
+    question: `Can I hire a tempo traveller from Dehradun for outstation and Char Dham trips?`,
+    answer: `Yes, absolutely. Our tempo traveller for outstation Dehradun service covers Char Dham 
+Yatra (Yamunotri, Gangotri, Kedarnath, and Badrinath), Haridwar, Rishikesh, Mussoorie, 
+Nainital, Delhi, Chandigarh, and more. This service is ideal for pilgrimage groups, 
+families, and long-distance tours.`,
+  },
+  {
+    question: `Do you provide one-way bookings and airport transfers in Dehradun?`,
+    answer: `Yes. We offer one-way and round-trip tempo traveller booking in Dehradun, including 
+Dehradun airport pickups and drops. Our drivers ensure punctual arrivals, safe driving 
+on hill routes, and smooth travel for families and corporate guests.`,
+  },
+  {
+    question: `What seating options are available for tempo travellers in Dehradun?`,
+    answer: (
+      <ul className="list-disc list-inside space-y-1 text-neutral-700">
+        <li>9 Seater Tempo Traveller</li>
+        <li>12 Seater Tempo Traveller Dehradun</li>
+        <li>15, 16, 17 & 20 Seater Tempo Travellers</li>
+        <li>Luxury & Maharaja 12 Seater Tempo Traveller</li>
+        <li>Mini Buses (25–35 Seater)</li>
+        <li>Volvo Buses (45+ Seater)</li>
+      </ul>
+    ),
+  },
+  {
+    question: `How much does it cost to rent a tempo traveller in Dehradun?`,
+    answer: `Our tempo traveller price in Dehradun is transparent and competitive. Fares generally 
+start from ₹22–₹28 per km depending on the vehicle type, route, and trip duration. For 
+Char Dham Yatra tempo traveller from Dehradun, we also offer customized package pricing 
+with no hidden charges.`,
+  },
+  {
+    question: `Are drivers experienced for hill and Char Dham routes?`,
+    answer: `Yes. All our drivers are experienced, verified, and specially trained for hill driving. 
+They are well-versed with Uttarakhand routes, weather conditions, and Char Dham travel 
+protocols, ensuring a safe and smooth journey.`,
+  },
+  {
+    question: `Can I book a tempo traveller in Dehradun for weddings or corporate events?`,
+    answer: `Absolutely. We provide tempo traveller hire in Dehradun for weddings, corporate 
+meetings, VIP transfers, team outings, and destination events. Multiple vehicles and 
+luxury options are available for smooth coordination.`,
+  },
+  {
+    question: `How early should I book a tempo traveller in Dehradun?`,
+    answer: `For peak seasons such as Char Dham Yatra, summer holidays, weekends, and festivals, 
+we recommend booking your tempo traveller in Dehradun at least 5–7 days in advance 
+to ensure availability and the best vehicle options.`,
+  },
+  {
+    question: `Can I customize my Char Dham or outstation trip itinerary?`,
+    answer: `Yes. Our tempo traveller rental in Dehradun is fully customizable. You can plan your 
+own routes, halts, sightseeing points, and travel duration—whether it’s a Char Dham 
+Yatra, family tour, corporate trip, or pilgrimage journey.`,
+  },
 ]
+
 
   // add Chandigarh, Hyderabad, Agra, Delhi, etc
 };
