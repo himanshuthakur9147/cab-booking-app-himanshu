@@ -81,7 +81,7 @@ console.log("data:", data[city]);
   <meta name="robots" content="index, follow" />
  <link
   rel="canonical"
-  href={`https://yatratravelindia.com/tempo-traveller-in-${cityname.toLowerCase()}`}
+  href={`https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-${cityname.toLowerCase()}`}
 />
 
 
@@ -93,8 +93,8 @@ console.log("data:", data[city]);
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Yatra Travel India",
-      "image": "https://yatratravelindia.com/logo.jpeg",
-      "url": `https://yatratravelindia.com/tempo-traveller-in-${cityname.toLowerCase()}`,
+      "image": "https://www.yatratravelindia.com/logo.jpeg",
+      "url": `https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-${cityname.toLowerCase()}`,
       "description": `Tempo Traveller service in ${cityname}. 9–26 seater AC tempo travellers for local & outstation.`,
       "address": {
         "@type": "PostalAddress",
