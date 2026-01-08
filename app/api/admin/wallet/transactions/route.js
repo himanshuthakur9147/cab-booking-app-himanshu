@@ -12,7 +12,7 @@ export async function GET(req) {
   const transactions = await Wallet.find()
     .populate("userId", "name phone email") // wallet owner
     .populate("doneBy", "name email")       // admin
-    .sort({ createdAt: 1 }); // chronological order
+    .sort({ createdAt: -1 }); // chronological order
 
   return NextResponse.json(transactions);
 }

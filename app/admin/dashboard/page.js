@@ -16,7 +16,7 @@ const Page = () => {
   const router = useRouter();
 
   const [bookings, setBookings] = useState([]);
-  const [activeTab, setActiveTab] = useState("all");
+  const [activeTab, setActiveTab] = useState("bookings");
 
   const tabs = [
     { key: "add", label: "Add Vehicle" },
