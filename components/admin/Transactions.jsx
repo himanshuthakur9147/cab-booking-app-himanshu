@@ -20,7 +20,7 @@ function Transactions() {
         );
 
         const data = await res.json();
-
+        console.log("Fetched Transactions:", data);
         if (!res.ok) {
           throw new Error(data.message || "Failed to fetch transactions");
         }

@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
-import  connectDB  from "@/lib/db";
+import connectDB from "@/lib/db";
 import Wallet from "@/models/Wallet";
+import User from "@/models/User"; // ✅ IMPORTANT
+
 
 
 export async function GET(req) {
