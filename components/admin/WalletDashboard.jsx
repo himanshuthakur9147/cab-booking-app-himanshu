@@ -18,7 +18,7 @@ const [phone, setPhone] = useState("");
 const [user, setUser] = useState("");
 
 
-const onSearch=async ()=>{
+const onSearch=async (phone)=>{
         console.log("Searching for phone:", phone);
       const res = await fetch("/api/users/get_user", {
         method: "POST",
@@ -41,7 +41,7 @@ const onSearch=async ()=>{
 
       const data = await res.json();
       const data2 = await res2.json();
-
+      console.log("User Data in onSearch():", data);
       if (data.status!==200) {
         showToast("No User Found with this data","error");
         setUser("");
