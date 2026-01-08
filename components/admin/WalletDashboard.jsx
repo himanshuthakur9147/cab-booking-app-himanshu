@@ -42,7 +42,7 @@ const onSearch=async (phone)=>{
       const data = await res.json();
       const data2 = await res2.json();
       console.log("User Data in onSearch():", data);
-      if (data.status!==200) {
+      if (!data.user) {
         showToast("No User Found with this data","error");
         setUser("");
         throw new Error(data.error || "No User Found with this data");
