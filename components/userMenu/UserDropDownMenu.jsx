@@ -90,6 +90,9 @@ const handleLogout = async () => {
            <Link href={"/user/profile"}> <li onClick={()=>setOpen(false)} className="flex items-center gap-2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
             <MdOutlineAccountTree/> Account Settings
             </li></Link>
+           <Link href={"/user/wallet"}> <li onClick={()=>setOpen(false)} className="flex items-center gap-2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+            <MdOutlineAccountTree/> My Wallet
+            </li></Link>
           { userData.role==="admin"?
           <Link href={"/admin/dashboard"}> <li onClick={()=>setOpen(false)} className="flex items-center gap-2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
             <RiAdminLine/> Admin Dashboard

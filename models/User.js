@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema(
     email: { type: String,default:"" }, // Optional: extend later
     allow_whatsapp: { type: Boolean }, // Optional: extend later
     role: { type: String, default:"customer" }, // Optional: extend later
-
+     walletBalance: { type: Number ,default:0 }, // Optional: extend later
     createdAt: { type: Date, default: Date.now },
   },
   { timestamps: true }
