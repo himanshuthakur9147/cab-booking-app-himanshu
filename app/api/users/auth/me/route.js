@@ -31,6 +31,7 @@ export async function GET() {
         allowWhatsapp: user.allow_whatsapp || false,
         uid: decoded.uid,
         role: user.role ,
+        walletBalance: user.walletBalance || 0,
       },
     });
   } catch (err) {
