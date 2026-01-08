@@ -6,9 +6,9 @@ import Wallet from "@/models/Wallet";
 
 export async function POST(req) {
   await connectDB();
-  const { userId, amount, type, reason,adminId } = await req.json();
+  const { userId, amount, type, reason,doneBy } = await req.json();
 
- const session = await User.findById(adminId);
+ const session = await User.findById(doneBy);
  if (!session || session.user.role !== "admin") {
    return NextResponse.json({ message: "Unauthorized" }, { status: 403 });
  }
@@ -44,7 +44,7 @@ export async function POST(req) {
     type,
     amount,
     reason,
-    doneBy: adminId,
+    doneBy,
   });
 
   return NextResponse.json({
