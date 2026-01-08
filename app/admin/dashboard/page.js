@@ -26,36 +26,33 @@ const Page = () => {
     { key: "transactions", label: "View Transactions" },
   ];
 
- // useEffect(() => {
- //   const getUser = async () => {
- //     if (isAuthenticated && user.role === "admin") {
- //       try {
- //         const res = await fetch("/api/users/get_user", {
- //           method: "POST",
- //           headers: {
- //             "Content-Type": "application/json",
- //           },
- //           body: JSON.stringify({ phone: user.phoneNumber }),
- //         });
-//
- //         const data = await res.json();
- //         if (data.user.role !== "admin") router.push("/");
- //       } catch (err) {
- //         console.error("Request failed:", err);
- //         router.push("/");
- //       }
- //     }
- //   };
-//
- //   const fetchAllBookings = async () => {
- //     const res = await fetch("/api/bookings");
- //     const data = await res.json();
- //     setBookings(data.bookings);
- //   };
-//
- //    getUser();
- //   fetchAllBookings();
- // }, [isAuthenticated, user]);
+ useEffect(() => {
+   const getUser = async () => {
+     if (isAuthenticated && user.role === "admin") {
+       try {
+         const res = await fetch("/api/users/get_user", {
+           method: "POST",
+           headers: {
+             "Content-Type": "application/json",
+           },
+           body: JSON.stringify({ phone: user.phoneNumber }),
+         });
+         const data = await res.json();
+         if (data.user.role !== "admin") router.push("/");
+       } catch (err) {
+         console.error("Request failed:", err);
+         router.push("/");
+       }
+     }
+   };
+   const fetchAllBookings = async () => {
+     const res = await fetch("/api/bookings");
+     const data = await res.json();
+     setBookings(data.bookings);
+   };
+    getUser();
+   fetchAllBookings();
+ }, [isAuthenticated, user]);
 
   return (
     <div className="px-4 py-6 max-w-6xl mx-auto">
