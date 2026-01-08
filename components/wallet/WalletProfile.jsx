@@ -19,7 +19,7 @@ export default function WalletProfile() {
     );
   }
 
-  const walletBalance = user?.user?.walletBalance ?? 0;
+  const walletBalance = user.user.walletBalance || 0;
 
   return (
     <>
