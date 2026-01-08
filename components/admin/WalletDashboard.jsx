@@ -19,14 +19,14 @@ const [user, setUser] = useState("");
 
 
 const onSearch=async ()=>{
-
+        console.log("Searching for phone:", phone);
       const res = await fetch("/api/users/get_user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-         phone
+         phone:"+91"+phone
         }),
       });
       const res2 = await fetch("/api/users/get_user", {
