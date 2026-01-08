@@ -9,13 +9,14 @@ import AddVehicle from "@/components/admin/AddVehicle";
 import UpdateVehicles from "@/components/admin/UpdateVehicles";
 import AllVehicles from "@/components/admin/AllVehicles";
 import WalletDashboard from "@/components/admin/WalletDashboard";
+import Transactions from "@/components/admin/Transactions";
 
 const Page = () => {
   const { user, isAuthenticated } = useAuth();
   const router = useRouter();
 
   const [bookings, setBookings] = useState([]);
-  const [activeTab, setActiveTab] = useState("bookings");
+  const [activeTab, setActiveTab] = useState("all");
 
   const tabs = [
     { key: "add", label: "Add Vehicle" },
