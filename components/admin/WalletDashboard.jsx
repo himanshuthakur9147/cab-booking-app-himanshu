@@ -42,7 +42,7 @@ const onSearch=async ()=>{
       const data = await res.json();
       const data2 = await res2.json();
 
-      if (!res.status===200) {
+      if (data.status!==200) {
         showToast("No User Found with this data","error");
         setUser("");
         throw new Error(data.error || "No User Found with this data");
