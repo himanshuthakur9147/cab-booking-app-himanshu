@@ -9,7 +9,7 @@ export async function POST(req) {
   const { userId, amount, type, reason,doneBy } = await req.json();
 
  const session = await User.findById(doneBy);
- if (!session || session.user.role !== "admin") {
+ if (!session || session.role !== "admin") {
    return NextResponse.json({ message: "Unauthorized" }, { status: 403 });
  }
 
