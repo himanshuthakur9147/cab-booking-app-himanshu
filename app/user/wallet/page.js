@@ -1,30 +1,26 @@
-"use client";
 
-import { FaWallet, FaRupeeSign } from "react-icons/fa";
-import { useAuth } from "@/context/AuthContext";
+import WalletProfile from '@/components/wallet/WalletProfile';
+import React from 'react'
 
-export default function Page() {
+export const metadata = {
+  title: "My Wallet | Yatra Travel India",
+  description: "Manage your wallet, view transactions, and add funds with Yatra Travel India's secure wallet section.",
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_DOMAIN_NAME}/user/wallet`,
+  },
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
-    const {  user } = useAuth();
+
+const page = () => {
   return (
-    <div className="max-w-sm w-full bg-white border rounded-lg shadow-sm p-5">
-      <div className="flex items-center gap-3 mb-3">
-        <FaWallet className="text-blue-600 text-xl" />
-        <h2 className="text-lg font-semibold text-gray-800">
-          Wallet Balance
-        </h2>
-      </div>
-
-      <div className="flex items-center gap-1">
-        <FaRupeeSign className="text-gray-700 text-lg" />
-        <span className="text-3xl font-bold text-gray-900">
-          {user.user.walletBalance.toLocaleString("en-IN")}
-        </span>
-      </div>
-
-      <p className="text-sm text-gray-500 mt-2">
-        Available balance
-      </p>
+    <div>
+      <WalletProfile/>
     </div>
-  );
+  )
 }
+
+export default page
