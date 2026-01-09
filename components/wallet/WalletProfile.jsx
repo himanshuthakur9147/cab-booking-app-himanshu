@@ -79,7 +79,7 @@ export default function WalletProfile() {
   }
 
   const walletBalance = user?.user?.walletBalance || 0;
-  const { name = "N/A", email = "N/A", mobile = "N/A" } = user.user;
+  const { name = "N/A", email = "N/A", phone = "N/A" } = user.user;
 
   return (
     <>
@@ -111,7 +111,7 @@ export default function WalletProfile() {
 
               <div className="space-y-3">
                 <InfoRow icon={<FaUser />} label="Name" value={name} />
-                <InfoRow icon={<FaPhone />} label="Mobile" value={mobile} />
+                <InfoRow icon={<FaPhone />} label="Mobile" value={phone} />
                 <InfoRow icon={<FaEnvelope />} label="Email" value={email} />
                 <InfoRow
                   icon={<FaCalendarAlt />}
