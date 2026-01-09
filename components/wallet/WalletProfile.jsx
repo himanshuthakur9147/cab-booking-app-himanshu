@@ -136,11 +136,11 @@ export default function WalletProfile() {
             </div>
 
             <ul className="space-y-3 text-sm text-gray-600 list-disc list-inside">
-              <li><strong>Validity:</strong> Wallet balance is valid for one year from the last credit date.</li>
-              <li><strong>Non-Transferable:</strong> No withdrawal to bank, UPI, or cash.</li>
-              <li><strong>Usage:</strong> Wallet can be used only for company services.</li>
-              <li><strong>Final Credit:</strong> Credits are non-reversible.</li>
-              <li><strong>Policy Updates:</strong> Wallet rules may change anytime.</li>
+              <li><strong>Validity:</strong> The wallet balance is valid for a period of one year from the date of credit. Any unused balance after the validity period will automatically expire and cannot be claimed.</li>
+              <li><strong>Non-Transferable & No Bank Withdrawal:</strong> Wallet balance cannot be transferred to any bank account, UPI, card, or withdrawn in cash under any circumstances.</li>
+              <li><strong>Usage Restriction:</strong> The wallet balance can be used only for the purpose of booking confirmation  payment of services offered by the company. It cannot be used for any other purpose.</li>
+              <li> Wallet credits once issued are final and subject to these Terms & Conditions.</li>
+            
             </ul>
           </div>
 
