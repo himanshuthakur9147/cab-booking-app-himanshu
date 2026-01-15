@@ -6,7 +6,15 @@ const cities = [
   "chandigarh",
   "jaipur",
   "haridwar",
-  "dehradun"
+  "dehradun",
+  "amritsar",
+  "prayagraj",
+  "delhi",
+  "patna",
+  "indore",
+  "bangalore",
+  "shimla",
+  
   // add more...
 ];
 

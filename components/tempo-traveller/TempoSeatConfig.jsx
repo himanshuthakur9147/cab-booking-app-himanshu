@@ -70,15 +70,15 @@ const vehicles = [
   },
 ];
 
-export default function TempoSeatConfig({cd}) {
+export default function TempoSeatConfig({city}) {
 
-  console.log("TempoSeatConfig",cd.cityname)
+  console.log("TempoSeatConfig",city)
   return (
     <section className="py-12 bg-gray-50 text-gray-800">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <h2 className="text-3xl font-bold text-center text-[#2482c2] mb-8">
-          Tempo Traveller & Mini Bus Options in {cd.cityname || ""}
+          Tempo Traveller & Mini Bus Options in {city.toUpperCase() || ""}
         </h2>
 
         {/* Table */}

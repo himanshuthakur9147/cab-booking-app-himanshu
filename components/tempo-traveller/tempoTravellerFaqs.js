@@ -672,5 +672,6 @@ Yatra, family tour, corporate trip, or pilgrimage journey.`,
 ]
 
 
+
   // add Chandigarh, Hyderabad, Agra, Delhi, etc
 };

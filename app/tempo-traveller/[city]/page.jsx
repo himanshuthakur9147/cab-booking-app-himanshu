@@ -13,6 +13,7 @@ import RentalServices from "@/components/home/RentalServices";
 import ExploreServices from "@/components/home/ExploreServices";
 import ExploreTempoServices from "@/components/home/ExploreTempoServices";
 import data from "@/components/cityData.json"
+import metaData from "@/components/tempo-traveller/metaData.json"
 import TempoTravellerCities from "@/components/home/TempoTravellerCities";
 import { TypewriterText } from "@/components/home/TypewriterText";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
@@ -26,6 +27,13 @@ import TempoSeatConfig from "@/components/tempo-traveller/TempoSeatConfig";
 import WhyChooseYatra from "@/components/tempo-traveller/WhyChooseYatra";
 import PopularRoutesSection from "@/components/tempo-traveller/PopularRoutesSection";
 import FaqTempoTraveller from "@/components/tempo-traveller/FaqTempoTraveller";
+import PrayagrajPage from "@/components/tempo-traveller/PrayagrajPage";
+import ShimlaPage from "@/components/tempo-traveller/ShimlaPage";
+import BangalorePage from "@/components/tempo-traveller/BangalorePage";
+import TempoTravellerAmritsar from "@/components/tempo-traveller/AmritsarPage";
+import IndorePage from "@/components/tempo-traveller/IndorePage";
+import PatnaPage from "@/components/tempo-traveller/PatnaPage";
+import DelhiPage from "@/components/tempo-traveller/DelhiPage";
 
 
 export default function Page() {
@@ -37,6 +45,7 @@ export default function Page() {
     const {city}= useParams();
     const cityname=city.replace("tempo-traveller-in-","");
     const cityData=data[cityname.toLowerCase()];
+    const dataMeta=metaData[cityname.toLowerCase()];
   console.log("slug:", city);
 console.log("data:", data[city]);
 
@@ -75,9 +84,9 @@ console.log("data:", data[city]);
   return (
     <>
     <Head>
-  <title>Tempo Traveller in {cityname.toUpperCase()} - 9 to 26 Seater @ ₹22/Km | Yatra Travel India</title>
+  <title>{dataMeta.title || "Tempo Traveller in {cityname.toUpperCase()} - 9 to 26 Seater @ ₹22/Km | Yatra Travel India"}</title>
 
-  <meta name="description" content={`Book Tempo Traveller in ${cityname} for local sightseeing, outstation trips, weddings, and corporate travel. Choose 9, 12, 17, 20 and 26 seater AC tempo travellers at the best price. Clean vehicles, expert drivers, transparent fares, and 24×7 support. Rent a luxury Tempo Traveller in ${cityname} starting at affordable per-km rates.`} />
+  <meta name="description" content={dataMeta.description || `Book Tempo Traveller in ${cityname} for local sightseeing, outstation trips, weddings, and corporate travel. Choose 9, 12, 17, 20 and 26 seater AC tempo travellers at the best price. Clean vehicles, expert drivers, transparent fares, and 24×7 support. Rent a luxury Tempo Traveller in ${cityname} starting at affordable per-km rates.`} />
   <meta name="robots" content="index, follow" />
  <link
   rel="canonical"
@@ -192,6 +201,15 @@ console.log("data:", data[city]);
 </div>
 
 }
+
+{cityname==="prayagraj" && <PrayagrajPage/> }
+{cityname==="shimla" && <ShimlaPage/> }
+{cityname==="bangalore" && <BangalorePage/> }
+{cityname==="amritsar" && <TempoTravellerAmritsar/> }
+{cityname==="indore" && <IndorePage/> }
+{cityname==="patna" && <PatnaPage/> }
+{cityname==="delhi" && <DelhiPage/> }
+
 {/* WhatsApp Floating Button */}
 <a
   href="https://wa.me/919044019511"
