@@ -3,6 +3,7 @@
 
 
 @theme {
+  
   /* --color-light-btn: #3c9c64;
   --color-dark-btn: #017d3f; */
   --color-light-btn: #063970;
@@ -14,6 +15,65 @@
 
 }
 
+/* Add this to app/globals.css */
+
+/* 1. Fixes the "Invisible Bullets" while typing */
+.tiptap ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important;
+  margin: 1rem 0 !important;
+}
+
+.tiptap ol {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem !important;
+  margin: 1rem 0 !important;
+}
+
+.tiptap li {
+  display: list-item !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* 2. Professional Link styling in the editor */
+.tiptap a {
+  color: #2563eb; /* Blue-600 */
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* 3. MS Word-like Placeholder */
+.tiptap p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+/* 4. Ensure the editor looks like a page */
+.tiptap {
+  outline: none !important;
+  min-height: 500px;
+}
+
+/* Customizing the TipTap Placeholder */
+
+
+/* MS Word-like spacing for the editor */
+.prose h1 { @apply text-4xl font-black mb-6 mt-10 text-gray-900; }
+.prose h2 { @apply text-3xl font-bold mb-4 mt-8 text-gray-800; }
+.prose p { @apply text-gray-700 leading-relaxed mb-4; }
+.prose blockquote { 
+  @apply border-l-4 border-orange-500 pl-4 italic text-gray-600 my-6; 
+}
+.prose ul { @apply list-disc pl-6 mb-4; }
+.prose ol { @apply list-decimal pl-6 mb-4; }
+
+/* Handling Image Layouts */
+.prose img {
+  @apply mx-auto transition-transform duration-300 hover:scale-[1.01];
+}
 
 /* Highlight time option on hover */
 .react-datepicker__time-list-item:hover {

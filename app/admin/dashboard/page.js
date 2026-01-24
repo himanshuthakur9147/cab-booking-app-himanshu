@@ -14,7 +14,8 @@ import Transactions from "@/components/admin/Transactions";
 const Page = () => {
   const { user, isAuthenticated } = useAuth();
   const router = useRouter();
-
+  console.log ("User in Admin Dashboard:", user);
+  console.log ("isAuthenticated in Admin Dashboard:", isAuthenticated);
   const [bookings, setBookings] = useState([]);
   const [activeTab, setActiveTab] = useState("bookings");
 
@@ -28,7 +29,12 @@ const Page = () => {
   ];
 
  useEffect(() => {
+  if(!isAuthenticated || !user || user.role !== "admin") {
+    router.push("/");
+    return;
+  }
    const getUser = async () => {
+    
      if (isAuthenticated && user.role === "admin") {
        try {
          const res = await fetch("/api/users/get_user", {
