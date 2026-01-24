@@ -35,11 +35,13 @@ export default function CreatePost() {
            body: JSON.stringify({ phone: user.phoneNumber }),
          });
          const data = await res.json();
-         if (data.user.role !== "admin") router.push("/");
          setCheckingAuth(false);
+         if (data.user.role !== "admin") router.push("/");
        } catch (err) {
          console.error("Request failed:", err);
          router.push("/");
+       } finally {
+         setCheckingAuth(false);
        }
      }
    };
