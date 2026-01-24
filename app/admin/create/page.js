@@ -16,7 +16,7 @@ export default function CreatePost() {
   const [metaDescription, setMetaDescription] = useState('');
   const [content, setContent] = useState(null);
   const [isPublishing, setIsPublishing] = useState(false);
-  const [checkingAuth, setCheckingAuth] = useState(true); // Prevention flicker
+
 
   // --- PROTECTION LOGIC ---
  useEffect(() => {
@@ -35,14 +35,12 @@ export default function CreatePost() {
            body: JSON.stringify({ phone: user.phoneNumber }),
          });
          const data = await res.json();
-         setCheckingAuth(false);
+        
          if (data.user.role !== "admin") router.push("/");
        } catch (err) {
          console.error("Request failed:", err);
          router.push("/");
-       } finally {
-         setCheckingAuth(false);
-       }
+       } 
      }
    };
  
@@ -79,14 +77,7 @@ export default function CreatePost() {
     }
   };
 
-  // Show nothing or a spinner while checking permissions
-  if (checkingAuth) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
-      </div>
-    );
-  }
+ 
 
   return (
     <div className="max-w-4xl mx-auto p-10 pb-20">
