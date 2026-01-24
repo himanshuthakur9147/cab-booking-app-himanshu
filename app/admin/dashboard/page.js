@@ -29,12 +29,7 @@ const Page = () => {
   ];
 
  useEffect(() => {
-  if(!isAuthenticated || !user || user.role !== "admin") {
-    router.push("/");
-    return;
-  }
    const getUser = async () => {
-    
      if (isAuthenticated && user.role === "admin") {
        try {
          const res = await fetch("/api/users/get_user", {
