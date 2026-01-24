@@ -19,42 +19,34 @@ export default function CreatePost() {
   const [checkingAuth, setCheckingAuth] = useState(true); // Prevention flicker
 
   // --- PROTECTION LOGIC ---
-useEffect(() => {
-  // 1. If isAuthenticated is null, we are still loading. DO NOTHING.
-  if (isAuthenticated === null) return;
-
-  const checkAdmin = async () => {
-    // 2. Safely check if the user exists and has the role
-    // Using user?.role prevents the "Cannot read property of null" crash
-    const currentRole = user?.role || user?.user?.role;
-
-    if (isAuthenticated === false || !user || currentRole !== "admin") {
-      console.log("Not an admin. Redirecting to home...");
-      router.replace("/"); // Go home, not /login
-      return;
-    }
-
-    // 3. Optional: Double check with DB
-    try {
-      const res = await fetch("/api/users/get_user", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone: user.phoneNumber || user.phone }),
-      });
-      const data = await res.json();
-      
-      if (data?.user?.role === "admin") {
-        setCheckingAuth(false);
-      } else {
+ useEffect(() => {
+   const getUser = async () => {
+      if(!isAuthenticated){
         router.replace("/");
+        return;
       }
-    } catch (err) {
-      router.replace("/");
-    }
-  };
+     if (isAuthenticated && user.role === "admin") {
+       try {
+         const res = await fetch("/api/users/get_user", {
+           method: "POST",
+           headers: {
+             "Content-Type": "application/json",
+           },
+           body: JSON.stringify({ phone: user.phoneNumber }),
+         });
+         const data = await res.json();
+         if (data.user.role !== "admin") router.push("/");
+         setCheckingAuth(false);
+       } catch (err) {
+         console.error("Request failed:", err);
+         router.push("/");
+       }
+     }
+   };
+ 
+    getUser();
 
-  checkAdmin();
-}, [isAuthenticated, user, router]);
+ }, [isAuthenticated, user]);
 
 
 
