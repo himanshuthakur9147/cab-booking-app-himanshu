@@ -83,7 +83,7 @@ export default function CreatePost() {
     <div className="max-w-4xl mx-auto p-10 pb-20">
       <div className="flex justify-between items-center mb-10">
         <h1 className="text-xl font-bold text-gray-800 uppercase tracking-widest">Editor Mode</h1>
-        <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold">Admin Verified</span>
+        <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold">{user.user.role.toUpperCase() || ""} Verified</span>
       </div>
 
       {/* Cover Image URL */}
