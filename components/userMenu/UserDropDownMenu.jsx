@@ -100,9 +100,9 @@ const handleLogout = async () => {
             <RiAdminLine/> Admin Dashboard
             </li></Link>
 
-            <Link href={"/admin/create"}> <li onClick={()=>setOpen(false)} className="flex items-center gap-2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+           {user.role==="admin" || user.role==="member" ? <Link href={"/admin/create"}> <li onClick={()=>setOpen(false)} className="flex items-center gap-2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
             <FaEdit/> Blog Editor
-            </li></Link>
+            </li></Link> : ""}
             </>
             
             
