@@ -25,7 +25,7 @@ export default function CreatePost() {
         router.replace("/");
         return;
       }
-     if (isAuthenticated && user.role === "admin") {
+     if (isAuthenticated && (user.role === "admin" || user.role==="member")) {
        try {
          const res = await fetch("/api/users/get_user", {
            method: "POST",
@@ -36,7 +36,7 @@ export default function CreatePost() {
          });
          const data = await res.json();
         
-         if (data.user.role !== "admin") router.push("/");
+         if (data.user.role !== "admin" && data.user.role !== "member") router.push("/");
        } catch (err) {
          console.error("Request failed:", err);
          router.push("/");
