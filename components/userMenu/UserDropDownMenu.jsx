@@ -95,20 +95,14 @@ const handleLogout = async () => {
             <FaWallet/> My Wallet
             </li></Link>
           { userData.role==="admin"?
-          <>
+      
           <Link href={"/admin/dashboard"}> <li onClick={()=>setOpen(false)} className="flex items-center gap-2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
             <RiAdminLine/> Admin Dashboard
-            </li></Link>
+            </li></Link> :""}
 
-           {user.role==="admin" || user.role==="member" ? <Link href={"/admin/create"}> <li onClick={()=>setOpen(false)} className="flex items-center gap-2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
+  {user.role==="admin" || user.role==="member" ? <Link href={"/admin/create"}> <li onClick={()=>setOpen(false)} className="flex items-center gap-2 px-4 py-2 hover:bg-gray-300 cursor-pointer">
             <FaEdit/> Blog Editor
             </li></Link> : ""}
-            </>
-            
-            
-            :""}
-
-
             <li
                onClick={handleLogout}
               className="flex items-center gap-2 px-4 py-2 text-red-600 hover:bg-gray-300 cursor-pointer"
