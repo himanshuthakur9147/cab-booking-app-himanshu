@@ -17,7 +17,7 @@ export default function AdminActions({ blogId }) {
   // - Not authenticated
   // - User data hasn't loaded yet
   // - User is neither an admin nor a member
-  const userRole = user?.role;
+  const userRole = user?.user.role;
   const hasAccess = isAuthenticated && (userRole === "admin" || userRole === "member");
 
   if (!hasAccess) return null;

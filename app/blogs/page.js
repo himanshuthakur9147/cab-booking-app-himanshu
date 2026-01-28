@@ -49,7 +49,7 @@ export default async function BlogListPage() {
       name: 'Yatra Travel India',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://yatratravelindia.com/logo.png'
+        url: 'https://yatratravelindia.com/logo.jpeg'
       }
     }
   };
