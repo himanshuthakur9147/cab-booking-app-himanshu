@@ -75,7 +75,10 @@ export default async function BlogListPage() {
           ) : (
             <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
               {blogs.map((blog) => (
-                <article key={blog._id} className="relative group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col">
+              <article 
+  key={blog._id} 
+  className="relative group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col"
+>
                   
                   {/* ADMIN CONTROLS: Only visible to logged-in admins */}
                   <AdminActions blogId={blog._id} />

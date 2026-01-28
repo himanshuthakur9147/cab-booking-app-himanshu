@@ -41,48 +41,62 @@ export default function AdminActions({ blogId }) {
   };
 
   return (
-    <div className="absolute top-4 right-4 flex gap-2 z-20">
-      <button 
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          router.push(`/admin/edit/${blogId}`);
-        }}
-        className="bg-white/90 p-2 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white transition-all shadow-md"
-      >
-        <FaPencilAlt size={14} />
-      </button>
+    <>
+  {/* 1. HOVER BUTTONS: Hidden by default (opacity-0), shown on card hover */}
+      <div className="absolute top-4 right-4 flex gap-2 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <button 
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            router.push(`/admin/edit/${blogId}`);
+          }}
+          className="bg-white/90 backdrop-blur-md p-2.5 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white transition-all shadow-xl border border-white/20"
+        >
+          <FaPencilAlt size={14} />
+        </button>
 
-      <button 
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          setShowConfirm(true);
-        }}
-        className="bg-white/90 p-2 rounded-full text-red-600 hover:bg-red-600 hover:text-white transition-all shadow-md"
-      >
-        <FaTrash size={14} />
-      </button>
+        <button 
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setShowConfirm(true);
+          }}
+          className="bg-white/90 backdrop-blur-md p-2.5 rounded-full text-red-600 hover:bg-red-600 hover:text-white transition-all shadow-xl border border-white/20"
+        >
+          <FaTrash size={14} />
+        </button>
+      </div>
 
+      {/* 2. ENHANCED MODAL: Higher z-index and darker backdrop */}
       {showConfirm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[100] backdrop-blur-sm p-4">
-          <div className="bg-white p-8 rounded-3xl shadow-2xl max-w-sm w-full text-center">
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Are you sure?</h3>
-            <p className="text-gray-500 mb-6 text-sm">
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-[9999] backdrop-blur-md p-4">
+          <div 
+            className="bg-white p-8 rounded-[2rem] shadow-2xl max-w-sm w-full text-center animate-in fade-in zoom-in duration-200"
+            onClick={(e) => e.stopPropagation()} // Prevents clicking through modal
+          >
+            <div className="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+               <FaTrash size={24} />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Are you sure?</h3>
+            <p className="text-gray-500 mb-8 text-sm leading-relaxed">
               This will permanently delete this blog post. This action cannot be undone.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <button 
                 disabled={isDeleting}
-                onClick={() => setShowConfirm(false)}
-                className="flex-1 px-4 py-2 border border-gray-200 rounded-full font-semibold hover:bg-gray-50"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setShowConfirm(false);
+                }}
+                className="flex-1 px-6 py-3 border border-gray-200 rounded-2xl font-bold text-gray-600 hover:bg-gray-50 transition-colors"
               >
                 Cancel
               </button>
               <button 
                 disabled={isDeleting}
                 onClick={handleDelete}
-                className="flex-1 px-4 py-2 bg-red-600 text-white rounded-full font-semibold hover:bg-red-700 disabled:bg-gray-400"
+                className="flex-1 px-6 py-3 bg-red-600 text-white rounded-2xl font-bold hover:bg-red-700 shadow-lg shadow-red-200 transition-all disabled:bg-gray-400"
               >
                 {isDeleting ? 'Deleting...' : 'Delete'}
               </button>
@@ -90,6 +104,6 @@ export default function AdminActions({ blogId }) {
           </div>
         </div>
       )}
-    </div>
+      </>
   );
 }
