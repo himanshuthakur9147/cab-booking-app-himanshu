@@ -6,19 +6,30 @@ import { useRouter } from 'next/navigation';
 import { FaPencilAlt, FaTrash } from 'react-icons/fa';
 
 export default function AdminActions({ blogId }) {
-  const { isAdmin,user,isAuthenticated } = useAuth();
+  // Use optional chaining and default values to be safe
+  const { user, isAuthenticated } = useAuth();
   const [showConfirm, setShowConfirm] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const router = useRouter();
 
-  if (!isAuthenticated && (user.role!=="admin" || user.role !=="member")) return null; // Hide completely for non-admins
+  // SAFETY CHECK: 
+  // We return null if:
+  // - Not authenticated
+  // - User data hasn't loaded yet
+  // - User is neither an admin nor a member
+  const userRole = user?.role;
+  const hasAccess = isAuthenticated && (userRole === "admin" || userRole === "member");
 
-  const handleDelete = async () => {
+  if (!hasAccess) return null;
+
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
     setIsDeleting(true);
     try {
       const res = await fetch(`/api/blogs/${blogId}`, { method: 'DELETE' });
       if (res.ok) {
-        // Refresh the page data without a full reload
         router.refresh(); 
       }
     } catch (err) {
@@ -31,10 +42,10 @@ export default function AdminActions({ blogId }) {
 
   return (
     <div className="absolute top-4 right-4 flex gap-2 z-20">
-      {/* Edit Icon */}
       <button 
         onClick={(e) => {
-          e.preventDefault(); // Stop Link from firing
+          e.preventDefault();
+          e.stopPropagation();
           router.push(`/admin/edit/${blogId}`);
         }}
         className="bg-white/90 p-2 rounded-full text-blue-600 hover:bg-blue-600 hover:text-white transition-all shadow-md"
@@ -42,10 +53,10 @@ export default function AdminActions({ blogId }) {
         <FaPencilAlt size={14} />
       </button>
 
-      {/* Delete Icon */}
       <button 
         onClick={(e) => {
           e.preventDefault();
+          e.stopPropagation();
           setShowConfirm(true);
         }}
         className="bg-white/90 p-2 rounded-full text-red-600 hover:bg-red-600 hover:text-white transition-all shadow-md"
@@ -53,7 +64,6 @@ export default function AdminActions({ blogId }) {
         <FaTrash size={14} />
       </button>
 
-      {/* Confirmation Modal */}
       {showConfirm && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[100] backdrop-blur-sm p-4">
           <div className="bg-white p-8 rounded-3xl shadow-2xl max-w-sm w-full text-center">
