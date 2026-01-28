@@ -38,7 +38,7 @@ export default function EditBlogPage() {
           setLoading(false);
         } else {
           showToast("Blog not found", "error");
-          router.push("/admin/dashboard");
+          router.push("/blogs");
         }
       } catch (err) {
         console.error("Fetch error:", err);

@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 export async function GET(req, { params }) {
   try {
     await dbConnect();
-    const { id } = params;
+    const { id } = await params;
     
     const blog = await Blog.findById(id);
     
