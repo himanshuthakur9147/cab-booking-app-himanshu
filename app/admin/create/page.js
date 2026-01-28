@@ -25,7 +25,7 @@ export default function CreatePost() {
         router.replace("/");
         return;
       }
-     if (isAuthenticated && (user.role === "admin" || user.role==="member")) {
+     if (isAuthenticated && (user && user.role === "admin" || user.role==="member")) {
        try {
          const res = await fetch("/api/users/get_user", {
            method: "POST",
