@@ -12,7 +12,7 @@ export default async function sitemap() {
     url: `${baseUrl}/blogs/${blog.slug}`,
     lastModified: new Date(blog.createdAt),
     changeFrequency: 'daily',
-    priority: 0.7,
+    priority: 0.8,
   }));
 
   // 2. City Pages (from your cities array)
@@ -22,7 +22,7 @@ export default async function sitemap() {
     url: `${baseUrl}/tempo-traveller/tempo-traveller-in-${city}`,
     lastModified: new Date(),
     changeFrequency: 'daily',
-    priority: 0.8,
+    priority: 0.9,
   }));
 
   // 3. Static Pages
@@ -37,7 +37,7 @@ export default async function sitemap() {
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly',
+    changeFrequency: 'weekly',
     priority: 1.0,
   }));
 

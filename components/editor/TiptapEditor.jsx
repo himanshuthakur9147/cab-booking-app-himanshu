@@ -1,8 +1,9 @@
 'use client';
+
+import React, { useEffect } from 'react'; // Grouped with React
 import { useEditor, EditorContent } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-// Alias to avoid conflict with native window.Image
-import { Image as TiptapImage } from '@tiptap/extension-image'; 
+import { Image as TiptapImage } from '@tiptap/extension-image';
 import { Link } from '@tiptap/extension-link';
 import { Underline } from '@tiptap/extension-underline';
 import { TextStyle } from '@tiptap/extension-text-style';
@@ -20,7 +21,6 @@ const TiptapEditor = ({ onChange, initialContent }) => {
         bulletList: { keepMarks: true },
         orderedList: { keepMarks: true },
       }),
-      // Use the aliased name here
       TiptapImage.configure({
         allowBase64: true,
         HTMLAttributes: {
@@ -40,11 +40,12 @@ const TiptapEditor = ({ onChange, initialContent }) => {
         },
       }),
       Placeholder.configure({
-        placeholder: 'If you’re wondering which city offers the best Christmas...',
+        placeholder: 'Start writing your travel story here...',
       }),
     ],
     content: initialContent || '',
     onUpdate: ({ editor }) => {
+      // Send the JSON content back to the parent state
       onChange(editor.getJSON());
     },
     editorProps: {
@@ -52,17 +53,36 @@ const TiptapEditor = ({ onChange, initialContent }) => {
         class: 'tiptap prose prose-lg max-w-none p-8 focus:outline-none bg-white min-h-[500px]',
       },
     },
-    immediatelyRender: false,
+    immediatelyRender: false, // Important for Next.js hydration
   });
 
+  // CRITICAL: This effect syncs the editor with data fetched from your API
+  useEffect(() => {
+    if (editor && initialContent) {
+      // We only set content if the editor is currently empty 
+      // This prevents the editor from resetting while the user is typing
+      const isEditorEmpty = editor.isEmpty;
+      if (isEditorEmpty) {
+        editor.commands.setContent(initialContent);
+      }
+    }
+  }, [editor, initialContent]);
+
+  // If the editor hasn't initialized yet, show a placeholder/loader
+  if (!editor) {
+    return <div className="p-8 border border-gray-200 rounded-xl bg-gray-50 animate-pulse">Loading Editor...</div>;
+  }
+
   return (
-   <div className="relative border border-gray-300 rounded-xl bg-white shadow-lg">
-    <EditorToolbar editor={editor} />
-    {/* Notice we removed overflow-hidden from the main wrapper */}
-    <div className="min-h-[600px]">
-      <EditorContent editor={editor} />
+    <div className="relative border border-gray-300 rounded-xl bg-white shadow-lg overflow-hidden">
+      {/* 1. The Toolbar (Controls) */}
+      <EditorToolbar editor={editor} />
+
+      {/* 2. The Editable Area */}
+      <div className="min-h-[600px] cursor-text">
+        <EditorContent editor={editor} />
+      </div>
     </div>
-  </div>
   );
 };
 

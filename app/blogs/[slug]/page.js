@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation';
 import BlogRenderer from '@/components/editor/BlogRenderer';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/footer/Footer';
+import AuthorCard from '@/components/editor/AuthorCard';
+import Image from 'next/image';
 
 // --- NEW: SEO METADATA GENERATOR ---
 export async function generateMetadata({ params }) {
@@ -18,6 +20,7 @@ export async function generateMetadata({ params }) {
   return {
     title: `${blog.title} | Yatra Travel India`,
     description: blog.metaDescription || "Explore India's hidden gems with Yatra Travel.",
+    author: blog.author || "Yatra Travel India",
     alternates: {
       canonical: `${baseUrl}/blogs/${slug}`,
     },
@@ -97,11 +100,11 @@ export default async function PublicBlogPage({ params }) {
                 Travel Guide
              </span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
             {blog.title}
           </h1>
-          <div className="flex items-center justify-center gap-4 text-gray-500 text-sm italic">
-            <span>By Yatra Travel India</span>
+          <div className="flex items-center justify-center gap-4 text-gray-600 font-semibold text-sm italic">
+            <span>By {blog.author || "Yatra Travel India"}</span>
             <span>•</span>
             <span>{new Date(blog.createdAt).toLocaleDateString('en-IN', {
               day: 'numeric',
@@ -117,7 +120,42 @@ export default async function PublicBlogPage({ params }) {
             <BlogRenderer content={blog.content} />
           </div>
         </main>
+        <AuthorCard author={blog.author} authorDesc={blog.authorDesc} authorImg={blog.authorImg} />
       </article>
+          <div className="max-w-6xl mx-auto my-10 px-4 py-8 border-t border-gray-200 flex flex-col md:flex-row items-start gap-6 font-sans">
+      
+      {/* Simple Logo Container */}
+      <div className="flex-shrink-0 w-32 sm:w-40 pt-1">
+        <Image
+          width={400} height={600}
+          src={"/logo.jpeg"}
+          alt="Yatra Travel India Logo"
+          className="w-24 h-auto object-contain"
+        />
+      </div>
+
+      {/* Description Section */}
+      <div className="text-gray-800 text-[15px] sm:text-base leading-relaxed">
+        <p className="mb-2">
+          <span className="font-bold">Yatra Travel India</span> is a leading travel 
+          information and guide provider in India. We strive to make your travel 
+          planning an easy and comfortable experience through our comprehensive 
+          destination insights. Yatra Travel India is also a growing platform for 
+          curating unique holiday experiences.
+        </p>
+        
+        {/* Navigation Links */}
+        <div className="text-sky-600 font-medium">
+          One can explore{' '}
+          <a href="#" className="hover:underline">Popular Destinations</a>,{' '}
+          <a href="#" className="hover:underline">Hill Stations</a>,{' '}
+          <a href="#" className="hover:underline">Religious Sites</a>,{' '}
+          <a href="#" className="hover:underline">Beach Holidays</a> and{' '}
+          <a href="#" className="hover:underline">Travel Tips</a>{' '}
+          at Yatra Travel India website and mobile app.
+        </div>
+      </div>
+    </div>
       <Footer />
     </>
   );

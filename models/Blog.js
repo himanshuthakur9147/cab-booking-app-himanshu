@@ -12,6 +12,11 @@ const BlogSchema = new mongoose.Schema({
     required: [true, 'Meta description is required for SEO'],
     maxLength: 160 
   },
+  author: { 
+    type: String, 
+    required: [true, 'Author is required for SEO'],
+    maxLength: 100 
+  },
   // Added for the Blog List thumbnails
   coverImage: { 
     type: String, 
