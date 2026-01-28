@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/footer/Footer';
 import AuthorCard from '@/components/editor/AuthorCard';
 import Image from 'next/image';
+import Script from 'next/script';
 
 // --- NEW: SEO METADATA GENERATOR ---
 export async function generateMetadata({ params }) {
@@ -85,7 +86,8 @@ export default async function PublicBlogPage({ params }) {
   return (
     <>
       {/* Add JSON-LD to help Google understand the content type */}
-      <script
+      <Script
+        id={`blog-posting-schema-${blog._id}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
