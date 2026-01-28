@@ -24,11 +24,7 @@ export default function EditBlogPage() {
   // 1. PROTECTION & DATA FETCHING
   useEffect(() => {
     // Redirect if definitely not an admin or member
-    if (isAuthenticated === false || (user && user.role !== "admin" && user.role !== "member")) {
-      router.push("/");
-      return;
-    }
-
+   
     const fetchBlogData = async () => {
       try {
         const res = await fetch(`/api/blogs/${id}`);
