@@ -1,9 +1,10 @@
 'use client';
+
 import { useState, useEffect } from 'react';
 import TiptapEditor from '@/components/editor/TiptapEditor';
 import { useToast } from '@/context/ToastContext';
 import { useRouter } from 'next/navigation';
-import { useAuth } from "@/context/AuthContext"; // Import Auth
+import { useAuth } from "@/context/AuthContext"; 
 import { FaImage } from 'react-icons/fa';
 
 export default function CreatePost() {
@@ -17,38 +18,37 @@ export default function CreatePost() {
   const [content, setContent] = useState(null);
   const [isPublishing, setIsPublishing] = useState(false);
 
-
-  // --- PROTECTION LOGIC ---
- useEffect(() => {
-   const getUser = async () => {
-      if(!isAuthenticated){
+  useEffect(() => {
+    const checkAccess = async () => {
+      // 1. Wait until Auth is initialized
+      if (isAuthenticated === false) {
         router.replace("/");
         return;
       }
-     if (isAuthenticated && (user && user.role === "admin" || user.role==="member")) {
-       try {
-         const res = await fetch("/api/users/get_user", {
-           method: "POST",
-           headers: {
-             "Content-Type": "application/json",
-           },
-           body: JSON.stringify({ phone: user.phoneNumber }),
-         });
-         const data = await res.json();
-        
-         if (data.user.role !== "admin" && data.user.role !== "member") router.push("/");
-       } catch (err) {
-         console.error("Request failed:", err);
-         router.push("/");
-       } 
-     }
-   };
- 
-    getUser();
 
- }, [isAuthenticated, user]);
+      // 2. If authenticated, check roles
+      if (isAuthenticated && user) {
+        try {
+          const res = await fetch("/api/users/get_user", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ phone: user.phoneNumber }),
+          });
+          const data = await res.json();
+          
+          // Verify if user is still an admin/member in the DB
+          if (data.user?.role !== "admin" && data.user?.role !== "member") {
+            router.push("/");
+          }
+        } catch (err) {
+          console.error("Request failed:", err);
+          router.push("/");
+        } 
+      }
+    };
 
-
+    checkAccess();
+  }, [isAuthenticated, user, router]);
 
   const saveBlog = async () => {
     if (!title || !metaDescription || !content || !coverImage) {
@@ -77,13 +77,23 @@ export default function CreatePost() {
     }
   };
 
- 
+  // 3. IMPORTANT: Prevent crash during build/loading
+  if (!isAuthenticated || !user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-orange-500"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl mx-auto p-10 pb-20">
       <div className="flex justify-between items-center mb-10">
         <h1 className="text-xl font-bold text-gray-800 uppercase tracking-widest">Editor Mode</h1>
-        <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold">{user.user.role.toUpperCase() || ""} Verified</span>
+        <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold">
+          {/* Use optional chaining and ensure property path is correct */}
+          {(user?.role || "USER").toUpperCase()} Verified
+        </span>
       </div>
 
       {/* Cover Image URL */}
