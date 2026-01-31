@@ -25,22 +25,14 @@ export default function CreatePost() {
 
       // 2. If authenticated, check roles
       if (isAuthenticated && user) {
-        try {
-          const res = await fetch("/api/users/get_user", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ phone: user.phoneNumber }),
-          });
-          const data = await res.json();
-          
+       
           // Verify if user is still an admin/member in the DB
-          if (data.user?.role !== "admin" && data.user?.role !== "member") {
-            router.push("/");
+          if (user?.user.role !== "admin" && user?.user.role !== "member") {
+            showToast("Access successful. Redirecting...", "success");
           }
-        } catch (err) {
-          console.error("Request failed:", err);
-          router.push("/");
-        } 
+      } else {
+        showToast("Access denied. Redirecting...", "error");
+        router.push("/");
       }
     };
 
