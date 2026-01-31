@@ -83,42 +83,89 @@ console.log("data:", data[city]);
   console.log("cityData",cityData)
   return (
     <>
-    <Head>
-  <title>{dataMeta.title || "Tempo Traveller in {cityname.toUpperCase()} - 9 to 26 Seater @ ₹22/Km | Yatra Travel India"}</title>
+  <Head>
+  {/* Title and Description */}
+  <title>{dataMeta.title || `Tempo Traveller in ${cityname.toUpperCase()} - 9 to 26 Seater @ ₹22/Km | Yatra Travel India`}</title>
+  <meta name="description" content={dataMeta.description || `Book Tempo Traveller in ${cityname} for local sightseeing, outstation trips, weddings, and corporate travel. Choose 9, 12, 17, 20 and 26 seater AC tempo travellers at the best price.`} />
 
-  <meta name="description" content={dataMeta.description || `Book Tempo Traveller in ${cityname} for local sightseeing, outstation trips, weddings, and corporate travel. Choose 9, 12, 17, 20 and 26 seater AC tempo travellers at the best price. Clean vehicles, expert drivers, transparent fares, and 24×7 support. Rent a luxury Tempo Traveller in ${cityname} starting at affordable per-km rates.`} />
+  {/* Keywords - Dynamic from your JSON */}
+  <meta name="keywords" content={dataMeta.keywords || `tempo traveller in ${cityname}, ${cityname} tempo traveller rental, hire tempo traveller ${cityname}`} />
+
+  {/* Author & Publisher */}
+  <meta name="author" content={dataMeta.author || "Yatra Travel"} />
+  <meta name="publisher" content={dataMeta.publisher || "Yatra Travel India"} />
+
+  {/* Robots and Canonical */}
   <meta name="robots" content="index, follow" />
- <link
-  rel="canonical"
-  href={`https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-${cityname.toLowerCase()}`}
-/>
+  <link
+    rel="canonical"
+    href={dataMeta.canonical || `https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-${cityname.toLowerCase()}`}
+  />
 
+  {/* Language Alternates - Mapping your English/Hindi requirement */}
+  <link rel="alternate" hrefLang="en" href={`https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-${cityname.toLowerCase()}`} />
+  <link rel="alternate" hrefLang="hi" href={`https://www.yatratravelindia.com/hi/tempo-traveller/tempo-traveller-in-${cityname.toLowerCase()}`} />
+  <link rel="alternate" hrefLang="x-default" href={`https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-${cityname.toLowerCase()}`} />
 
   {/* JSON-LD Structured Data */}
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Yatra Travel India",
+        "image": "https://www.yatratravelindia.com/logo.jpeg",
+        "url": `https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-${cityname.toLowerCase()}`,
+        "description": dataMeta.description || `Tempo Traveller service in ${cityname}. 9–26 seater AC tempo travellers for local & outstation.`,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": cityname,
+          "addressRegion": cityname,
+          "addressCountry": "IN"
+        },
+        "telephone": "+91-9044019511",
+        "priceRange": "₹22/km onwards",
+        "areaServed": cityname
+      })
+    }}
+  />
+
+  {/* NEW: Dynamic Service Schema for the specific City */}
+ {dataMeta && (
   <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
     __html: JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Yatra Travel India",
-      "image": "https://www.yatratravelindia.com/logo.jpeg",
-      "url": `https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-${cityname.toLowerCase()}`,
-      "description": `Tempo Traveller service in ${cityname}. 9–26 seater AC tempo travellers for local & outstation.`,
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": cityname,
-        "addressRegion": cityname,
-        "addressCountry": "IN"
+      "@type": "Service",
+      "@id": `https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-${cityname.toLowerCase()}#service`,
+      "name": `Tempo Traveller Rental in ${cityname.charAt(0).toUpperCase() + cityname.slice(1)}`,
+      "description": dataMeta.description || `Book tempo traveller rental in ${cityname} with Yatra Travel India for tours, weddings, and outstation trips.`,
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Yatra Travel India",
+        "telephone": "+91-9044019511",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": cityname.charAt(0).toUpperCase() + cityname.slice(1),
+          "addressRegion": dataMeta.region || cityname.charAt(0).toUpperCase() + cityname.slice(1),
+          "addressCountry": "IN"
+        }
       },
-      "telephone": "+91-9044019511",
-      "priceRange": "₹22/km onwards",
-      "areaServed": cityname
+      "areaServed": {
+        "@type": "AdministrativeArea", // Better for SEO as it covers the whole city/region
+        "name": cityname.charAt(0).toUpperCase() + cityname.slice(1)
+      },
+      "serviceType": "Tempo Traveller Rental Service",
+      "keywords": dataMeta.keywords || `tempo traveller in ${cityname}, ${cityname} tempo traveller rental`,
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "servicePhone": "+91-9044019511"
+      }
     })
   }}
-/>
-
-  
+/>)}
 </Head>
 <SEOJsonLD/>
     <GoogleMapsScriptLoader

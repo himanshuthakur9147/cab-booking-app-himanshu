@@ -18,6 +18,7 @@ import { TypewriterText } from "@/components/home/TypewriterText";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import GoogleMapsScriptLoader from "@/components/googleComponents/GoogleMapsScriptLoader";
 import SEOJsonLD from "@/components/SEOJsonLD";
+import Script from "next/script";
 
 export default function Home() {
   const router = useRouter();
@@ -58,13 +59,29 @@ export default function Home() {
   return (
     <>
     <Head>
-  <title>Yatra Travel India – Cab & Taxi Booking | Online Booking at ₹20/Km</title>
-  <meta name="description" content="Book cabs across India instantly. Trusted and affordable car rentals for one way, round trip, or local rides." />
+ <title>Online Cab, Taxi & Tempo Traveler Booking | Yatra Travel India</title>
+  <meta name="description" content="Yatra Travel India offers online cab, taxi & tempo traveler rental across India. Book one-way, round trip, airport & outstation travel at best prices." />
+  
+  {/* 1. Added Keywords */}
+  <meta name="keywords" content="cab booking India, taxi service India, tempo traveller booking, car rental India, outstation cab India, airport taxi service, Yatra Travel India, book cab online India" />
+
+  {/* 2. Added Author & Publisher */}
+  <meta name="author" content="Yatra Travel India" />
+  <meta name="publisher" content="Yatra Travel India" />
+
+  {/* 3. Added Language Alternates (Hreflang) */}
+  {/* These tell Google you have versions in English and Hindi */}
+  <link rel="alternate" href="https://yatratravelindia.com/" hrefLang="en" />
+  <link rel="alternate" href="https://yatratravelindia.com/" hrefLang="hi" />
+  <link rel="alternate" href="https://yatratravelindia.com/" hrefLang="x-default" />
+
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://yatratravelindia.com/" />
-
   {/* JSON-LD Structured Data */}
-  <script
+ 
+</Head>
+ <Script
+  id="json-ld-organization"
     type="application/ld+json"
     dangerouslySetInnerHTML={{
       __html: JSON.stringify({
@@ -81,7 +98,6 @@ export default function Home() {
       }),
     }}
   />
-</Head>
 <SEOJsonLD/>
     <GoogleMapsScriptLoader
   onLoad={() => {

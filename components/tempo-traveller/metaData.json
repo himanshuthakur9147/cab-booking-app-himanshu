@@ -1,75 +1,137 @@
 {
-
-    "prayagraj": {
-        "title": "Tempo Traveller Rental in Prayagraj - Yatra Travel India",
-        "description": "Book Tempo Traveller in Prayagraj with Yatra Travel India for comfortable group travel. Ideal for family trips, pilgrimages, and corporate tours. Enjoy spacious seating, luggage space, and professional drivers. Reserve your vehicle now for a hassle-free journey!"
-    },
-
-    "lucknow": {
-        "title": "Tempo Traveller Rental in Lucknow - Yatra Travel India",
-        "description": "Book Tempo Traveller in Lucknow with Yatra Travel India for comfortable group travel. Ideal for family trips, pilgrimages, and corporate tours. Enjoy spacious seating, luggage space, and professional drivers. Reserve your vehicle now for a hassle-free journey!"
-    },
-     "hyderabad": {
-    "title": "Hyderabad Tempo Traveller from @23/Km | Book with Yatra Travel India",
-    "description": "Hire Tempo Traveller in Hyderabad with Yatra Travel India. Choose from 9, 12, and 16 seater AC & Non-AC vehicles including Deluxe and Maharaja models. Fares start from ₹23 per km with premium-brand vehicles ideal for long-distance group travel."
-  },
-
-  "varanasi": {
-    "title": "Rent Luxury Tempo Traveller in Varanasi Starting @22/Km | Yatra Travel India",
-    "description": "Book Tempo Traveller in Varanasi at affordable rates starting from ₹22/km. Ideal for temple visits, airport transfers, and outstation trips. Travel comfortably with AC, luxury, and well-maintained tempo travellers from Yatra Travel India."
-  },
-
-  "dehradun": {
-    "title": "Dehradun Tempo Traveller Hire from @24/Km | Yatra Travel India",
-    "description": "Rent Tempo Traveller in Dehradun with 9, 12, or 16 seater options at affordable rates starting from ₹22/km. Choose from Non-AC, AC, Deluxe, and Maharaja Tempo Travellers from trusted vehicle brands for smooth group travel."
-  },
-
-  "haridwar": {
-    "title": "Budget Friendly Tempo Traveller Rental Haridwar | Yatra Travel India",
-    "description": "Hire Tempo Traveller in Haridwar with 9, 12, and 16 seater options at flexible fares starting from ₹22/km. Available in AC, Non-AC, Deluxe, and Maharaja variants, maintained with premium vehicles for safe and comfortable group travel."
-  },
-
-  "chandigarh": {
-    "title": "Best Tempo Traveller Hire in Chandigarh | Yatra Travel India",
-    "description": "Book Tempo Traveller in Chandigarh with 9, 12, and 16 seating capacities at economical rates from ₹21/km onwards. Choose Maharaja luxury, Deluxe, AC, or Non-AC vehicles from reputed manufacturers for reliable group travel."
-  },
-
-  "mumbai": {
-    "title": "Mumbai Tempo Traveller Rental from @20/Km | Yatra Travel India",
-    "description": "Book Tempo Traveller in Mumbai starting from ₹20/km with Yatra Travel India. Choose from 9, 12, 16, 17, or 20 seater AC and luxury models for airport transfers, weddings, corporate travel, and outstation trips. Travel comfortably with reliable service."
-  },
-
-  "jaipur": {
-    "title": "Jaipur Tempo Traveller Rental @ ₹24/Km | AC & Luxury Group Travel",
-    "description": "Hire Tempo Traveller in Jaipur with clean AC vehicles, experienced drivers, and flexible seating options from 9 to 20 seater. Ideal for families, corporate groups, sightseeing, and destination weddings with easy booking and reliable service."
-  },
   "delhi": {
-    "title": "Book Tempo Traveller in Delhi | 15% OFF – Yatra Travel India",
-    "description": "Book luxury or standard tempo traveller in Delhi with Yatra Travel India. Choose from 12, 16, and 20 seater AC vehicles for airport transfers, outstation trips, weddings, corporate tours, and local sightseeing. Transparent pricing, verified drivers, and 24/7 customer support."
+    "title": "Book Tempo Traveller in Delhi | Yatra Travel India",
+    "description": "Book tempo traveller rental in Delhi with Yatra Travel India. AC luxury travellers for tours, weddings & outstation trips. Call +91 9044019511",
+    "keywords": "tempo traveller in delhi, delhi tempo traveller rental, tempo traveller hire delhi, tempo traveller booking delhi",
+    "canonical": "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-delhi",
+    "author": "Yatra Travel",
+    "publisher": "Yatra Travel",
+    "languages": "English, Hindi"
   },
-
-  "patna": {
-    "title": "Rent AC Tempo Traveller in Patna | Yatra Travel India",
-    "description": "Experience smooth and reliable group travel in Patna with Tempo Traveller rental from Yatra Travel India at rates starting from ₹20/km. Book luxury or standard 12 to 20 seater vehicles for group tours, outstation trips, and family travel with professional drivers."
+  "mumbai": {
+    "title": "Online Tempo Traveller in Mumbai | Yatra Travel India",
+    "description": "Hire tempo traveller rental in Mumbai with Yatra Travel India for group travel, tours & outstation trips. Call +91 9044019511",
+    "keywords": "tempo traveller in mumbai, mumbai tempo traveller rental, tempo traveller hire mumbai, luxury tempo traveller mumbai",
+    "canonical": "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-mumbai",
+    "author": "Yatra Travel",
+    "publisher": "Yatra Travel",
+    "languages": "English, Hindi"
   },
-
+  "jaipur": {
+    "title": "Tempo Traveller in Jaipur | Yatra Travel India",
+    "description": "Book tempo traveller rental in Jaipur for sightseeing & Rajasthan tours with Yatra Travel India. Call +91 9044019511",
+    "keywords": "tempo traveller in jaipur, jaipur tempo traveller rental, tempo traveller hire jaipur, tempo traveller rajasthan",
+    "canonical": "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-jaipur",
+    "author": "Yatra Travel",
+    "publisher": "Yatra Travel",
+    "languages": "English, Hindi"
+  },
+  "lucknow": {
+    "title": "Book Tempo Traveller in Lucknow | Yatra Travel India",
+    "description": "Book tempo traveller rental in Lucknow with Yatra Travel India for tours, weddings & outstation travel in AC luxury travellers. Call +91 9044019511",
+    "keywords": "tempo traveller in lucknow, lucknow tempo traveller rental, tempo traveller hire lucknow, tempo traveller booking lucknow",
+    "canonical": "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-lucknow",
+    "author": "Yatra Travel",
+    "publisher": "Yatra Travel",
+    "languages": "English, Hindi"
+  },
+  "chandigarh": {
+    "title": "Tempo Traveller in Chandigarh | Yatra Travel India",
+    "description": "Hire tempo traveller rental in Chandigarh with Yatra Travel India for group tours & outstation trips in AC luxury travellers. Call +91 9044019511",
+    "keywords": "tempo traveller in chandigarh, chandigarh tempo traveller rental, tempo traveller hire chandigarh, tempo traveller booking chandigarh",
+    "canonical": "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-chandigarh",
+    "author": "Yatra Travel",
+    "publisher": "Yatra Travel",
+    "languages": "English, Hindi"
+  },
   "indore": {
-    "title": "Hire Tempo Traveller in Indore for Outstation & Local Trips | Yatra Travel India",
-    "description": "Rent a tempo traveller in Indore starting at ₹23/km for Ujjain, Omkareshwar, weddings, corporate travel, and local sightseeing. Enjoy transparent pricing, verified drivers, well-maintained AC vehicles, and 24×7 support with Yatra Travel India."
+    "title": "Online Tempo Traveller in Indore | Yatra Travel India",
+    "description": "Book tempo traveller rental in Indore with Yatra Travel India for group travel, tours & outstation journeys. Call +91 9044019511",
+    "keywords": "tempo traveller in indore, indore tempo traveller rental, tempo traveller hire indore, tempo traveller booking indore",
+    "canonical": "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-indore",
+    "author": "Yatra Travel",
+    "publisher": "Yatra Travel",
+    "languages": "English, Hindi"
   },
-
+  "patna": {
+    "title": "Book Online Tempo Traveller in Patna | Yatra Travel India",
+    "description": "Hire tempo traveller rental in Patna with Yatra Travel India for group travel, tours & outstation trips in comfort. Call +91 9044019511",
+    "keywords": "tempo traveller in patna, patna tempo traveller rental, tempo traveller hire patna, tempo traveller booking patna",
+    "canonical": "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-patna",
+    "author": "Yatra Travel",
+    "publisher": "Yatra Travel",
+    "languages": "English, Hindi"
+  },
+  "varanasi": {
+    "title": "Book Traveller in Varanasi | Yatra Travel India",
+    "description": "Hire tempo traveller rental in Varanasi for spiritual & group travel with Yatra Travel India. Call +91 9044019511",
+    "keywords": "tempo traveller in varanasi, varanasi tempo traveller rental, tempo traveller hire varanasi, kashi tempo traveller",
+    "canonical": "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-varanasi",
+    "author": "Yatra Travel",
+    "publisher": "Yatra Travel",
+    "languages": "English, Hindi"
+  },
+  "haridwar": {
+    "title": "Tempo Traveller in Haridwar | Yatra Travel India",
+    "description": "Book tempo traveller rental in Haridwar for Char Dham & Uttarakhand tours with Yatra Travel India. Call +91 9044019511",
+    "keywords": "tempo traveller in haridwar, haridwar tempo traveller rental, tempo traveller hire haridwar, uttarakhand tempo traveller",
+    "canonical": "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-haridwar",
+    "author": "Yatra Travel",
+    "publisher": "Yatra Travel",
+    "languages": "English, Hindi"
+  },
   "amritsar": {
-    "title": "Luxury Tempo Traveller Hire in Amritsar | 20% Discount – Yatra Travel India",
-    "description": "Book tempo traveller in Amritsar with Yatra Travel India for sightseeing, religious tours, and group travel. Choose luxury AC tempo travellers at budget-friendly rates starting from ₹24 per km with reliable service and experienced drivers."
+    "title": "Hire Online Tempo Traveller in Amritsar | Yatra Travel India",
+    "description": "Book tempo traveller rental in Amritsar with Yatra Travel India for tours, weddings & outstation travel. Call +91 9044019511",
+    "keywords": "tempo traveller in amritsar, amritsar tempo traveller rental, tempo traveller hire amritsar, tempo traveller booking amritsar",
+    "canonical": "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-amritsar",
+    "author": "Yatra Travel",
+    "publisher": "Yatra Travel",
+    "languages": "English, Hindi"
   },
-
-  "bangalore": {
-    "title": "Rent Tempo Traveller in Bangalore at Lowest Price | Yatra Travel India",
-    "description": "Hire tempo traveller in Bangalore starting from ₹20/km with professional drivers. Ideal for family trips, office outings, weddings, and long-distance tours. Choose from 9 to 20 seater AC vehicles with no hidden charges."
-  },
-
   "shimla": {
-    "title": "Luxury & Budget Tempo Traveller Hire in Shimla | Yatra Travel India",
-    "description": "Hire a tempo traveller in Shimla at ₹21/km or book a bus in Shimla with Yatra Travel India. We offer luxury and budget group travel options with AC vehicles, experienced drivers, and complete safety for hill travel."
+    "title": "Online Tempo Traveller in Shimla | Yatra Travel India",
+    "description": "Hire tempo traveller rental in Shimla for hill trips & group tours with Yatra Travel India. Call +91 9044019511",
+    "keywords": "tempo traveller in shimla, shimla tempo traveller rental, tempo traveller hire shimla, himachal tempo traveller",
+    "canonical": "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-shimla",
+    "author": "Yatra Travel",
+    "publisher": "Yatra Travel",
+    "languages": "English, Hindi"
+  },
+  "prayagraj": {
+    "title": "Book Tempo Traveller in Prayagraj | Yatra Travel India",
+    "description": "Book tempo traveller rental in Prayagraj with Yatra Travel India for Sangam tours, weddings & group travel. Call +91 9044019511",
+    "keywords": "tempo traveller in prayagraj, prayagraj tempo traveller rental, tempo traveller hire prayagraj, tempo traveller booking prayagraj",
+    "canonical": "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-prayagraj",
+    "author": "Yatra Travel",
+    "publisher": "Yatra Travel",
+    "languages": "English, Hindi"
+  },
+  "hyderabad": {
+    "title": "Online Tempo Traveller in Hyderabad | Yatra Travel India",
+    "description": "Hire tempo traveller rental in Hyderabad with Yatra Travel India for group tours & outstation trips. Call +91 9044019511",
+    "keywords": "tempo traveller in hyderabad, hyderabad tempo traveller rental, tempo traveller hire hyderabad, tempo traveller booking hyderabad",
+    "canonical": "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-hyderabad",
+    "author": "Yatra Travel",
+    "publisher": "Yatra Travel",
+    "languages": "English, Hindi"
+  },
+  "dehradun": {
+    "title": "Tempo Traveller in Dehradun | Yatra Travel India",
+    "description": "Book tempo traveller rental in Dehradun for hill trips & Uttarakhand group tours with Yatra Travel India. Call +91 9044019511",
+    "keywords": "tempo traveller in dehradun, dehradun tempo traveller rental, tempo traveller hire dehradun, uttarakhand tempo traveller",
+    "canonical": "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-dehradun",
+    "author": "Yatra Travel",
+    "publisher": "Yatra Travel",
+    "languages": "English, Hindi"
+  },
+  "bangalore": {
+    "title": "Online Tempo Traveller in Bangalore | Yatra Travel India",
+    "description": "Hire tempo traveller rental in Bangalore with Yatra Travel India for group travel, tours & outstation trips. Call +91 9044019511",
+    "keywords": "tempo traveller in bangalore, bangalore tempo traveller rental, tempo traveller hire bangalore, tempo traveller booking bangalore",
+    "canonical": "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-bangalore",
+    "author": "Yatra Travel",
+    "publisher": "Yatra Travel",
+    "languages": "English, Hindi"
   }
 }
