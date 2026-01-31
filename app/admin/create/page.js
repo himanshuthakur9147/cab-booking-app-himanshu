@@ -21,10 +21,7 @@ export default function CreatePost() {
   useEffect(() => {
     const checkAccess = async () => {
       // 1. Wait until Auth is initialized
-      if (isAuthenticated === false) {
-        router.replace("/");
-        return;
-      }
+     
 
       // 2. If authenticated, check roles
       if (isAuthenticated && user) {
