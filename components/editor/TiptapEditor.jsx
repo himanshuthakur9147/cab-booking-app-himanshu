@@ -14,6 +14,15 @@ import { Placeholder } from '@tiptap/extension-placeholder';
 
 import EditorToolbar from './EditorToolbar';
 
+// Helper function inside the component
+async function uploadImageToCloudinary(file) {
+  const formData = new FormData();
+  formData.append('file', file);
+  const res = await fetch('/api/blogs/upload', { method: 'POST', body: formData });
+  const data = await res.json();
+  return data.url;
+}
+
 const TiptapEditor = ({ onChange, initialContent }) => {
   const editor = useEditor({
     extensions: [
@@ -21,6 +30,7 @@ const TiptapEditor = ({ onChange, initialContent }) => {
         bulletList: { keepMarks: true },
         orderedList: { keepMarks: true },
       }),
+    
       TiptapImage.configure({
         allowBase64: true,
         HTMLAttributes: {
@@ -52,6 +62,21 @@ const TiptapEditor = ({ onChange, initialContent }) => {
       attributes: {
         class: 'tiptap prose prose-lg max-w-none p-8 focus:outline-none bg-white min-h-[500px]',
       },
+    },
+    handleDrop: function(view, event, slice, moved) {
+      if (!moved && event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files[0]) {
+        const file = event.dataTransfer.files[0];
+        
+        // Custom upload function
+        uploadImageToCloudinary(file).then(url => {
+          const { schema } = view.state;
+          const node = schema.nodes.image.create({ src: url });
+          const transaction = view.state.tr.replaceSelectionWith(node);
+          view.dispatch(transaction);
+        });
+        return true; 
+      }
+      return false;
     },
     immediatelyRender: false, // Important for Next.js hydration
   });

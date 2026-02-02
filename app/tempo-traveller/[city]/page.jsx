@@ -34,6 +34,7 @@ import TempoTravellerAmritsar from "@/components/tempo-traveller/AmritsarPage";
 import IndorePage from "@/components/tempo-traveller/IndorePage";
 import PatnaPage from "@/components/tempo-traveller/PatnaPage";
 import DelhiPage from "@/components/tempo-traveller/DelhiPage";
+import Script from "next/script";
 
 
 export default function Page() {
@@ -107,33 +108,16 @@ console.log("data:", data[city]);
   <link rel="alternate" hrefLang="hi" href={`https://www.yatratravelindia.com/hi/tempo-traveller/tempo-traveller-in-${cityname.toLowerCase()}`} />
   <link rel="alternate" hrefLang="x-default" href={`https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-${cityname.toLowerCase()}`} />
 
-  {/* JSON-LD Structured Data */}
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Yatra Travel India",
-        "image": "https://www.yatratravelindia.com/logo.jpeg",
-        "url": `https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-${cityname.toLowerCase()}`,
-        "description": dataMeta.description || `Tempo Traveller service in ${cityname}. 9–26 seater AC tempo travellers for local & outstation.`,
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": cityname,
-          "addressRegion": cityname,
-          "addressCountry": "IN"
-        },
-        "telephone": "+91-9044019511",
-        "priceRange": "₹22/km onwards",
-        "areaServed": cityname
-      })
-    }}
-  />
+ 
+
+</Head>
+
+ 
 
   {/* NEW: Dynamic Service Schema for the specific City */}
  {dataMeta && (
-  <script
+  <Script
+  id={ `service-schema-${cityname.toLowerCase()}`}
   type="application/ld+json"
   dangerouslySetInnerHTML={{
     __html: JSON.stringify({
@@ -166,7 +150,6 @@ console.log("data:", data[city]);
     })
   }}
 />)}
-</Head>
 <SEOJsonLD/>
     <GoogleMapsScriptLoader
   onLoad={() => {
