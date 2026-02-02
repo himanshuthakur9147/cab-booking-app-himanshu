@@ -22,26 +22,26 @@ export default function CreatePost() {
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef(null);
   console.log("User in CreatePost:", user);
- // useEffect(() => {
- //   const checkAccess = async () => {
- //     // 1. Wait until Auth is initialized
- //    
-//
- //     // 2. If authenticated, check roles
- //     if (isAuthenticated && user) {
- //      
- //         // Verify if user is still an admin/member in the DB
- //         if (user?.user.role !== "admin" && user?.user.role !== "member") {
- //           showToast("Access successful. Redirecting...", "success");
- //         }
- //     } else {
- //       showToast("Access denied. Redirecting...", "error");
- //       router.push("/");
- //     }
- //   };
-//
- //   checkAccess();
- // }, [isAuthenticated, user, router]);
+  useEffect(() => {
+    const checkAccess = async () => {
+      // 1. Wait until Auth is initialized
+     
+
+      // 2. If authenticated, check roles
+      if (isAuthenticated && user) {
+       
+          // Verify if user is still an admin/member in the DB
+          if (user?.user.role !== "admin" && user?.user.role !== "member") {
+            showToast("Access successful. Redirecting...", "success");
+          }
+      } else {
+        showToast("Access denied. Redirecting...", "error");
+        router.push("/");
+      }
+    };
+
+    checkAccess();
+  }, [isAuthenticated, user, router]);
 
 
   // --- IMAGE UPLOAD LOGIC ---
@@ -121,13 +121,13 @@ export default function CreatePost() {
   };
 
   // 3. IMPORTANT: Prevent crash during build/loading
- // if (!isAuthenticated || !user) {
- //   return (
- //     <div className="min-h-screen flex items-center justify-center">
- //       <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-orange-500"></div>
- //     </div>
- //   );
- // }
+  if (!isAuthenticated || !user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-orange-500"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl mx-auto p-10 pb-20">
