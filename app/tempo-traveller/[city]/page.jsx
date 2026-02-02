@@ -49,6 +49,7 @@ export default function Page() {
     const dataMeta=metaData[cityname.toLowerCase()];
   console.log("slug:", city);
 console.log("data:", data[city]);
+console.log("cityname",cityname)
 
   const {
     pickupLocation,

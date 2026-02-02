@@ -2,7 +2,7 @@ import dbConnect from '@/lib/db';
 import Blog from '@/models/Blog';
 
 export default async function sitemap() {
-  const baseUrl = 'https://yatratravelindia.com';
+  const baseUrl = 'https://www.yatratravelindia.com';
 
   // 1. Fetch Blogs from MongoDB
   await dbConnect();

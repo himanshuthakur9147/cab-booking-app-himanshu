@@ -71,12 +71,12 @@ export default function Home() {
 
   {/* 3. Added Language Alternates (Hreflang) */}
   {/* These tell Google you have versions in English and Hindi */}
-  <link rel="alternate" href="https://yatratravelindia.com/" hrefLang="en" />
-  <link rel="alternate" href="https://yatratravelindia.com/" hrefLang="hi" />
-  <link rel="alternate" href="https://yatratravelindia.com/" hrefLang="x-default" />
+  <link rel="alternate" href="https://www.yatratravelindia.com/" hrefLang="en" />
+  <link rel="alternate" href="https://www.yatratravelindia.com/" hrefLang="hi" />
+  <link rel="alternate" href="https://www.yatratravelindia.com/" hrefLang="x-default" />
 
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://yatratravelindia.com/" />
+  <link rel="canonical" href="https://www.yatratravelindia.com/" />
   {/* JSON-LD Structured Data */}
  
 </Head>
@@ -88,8 +88,8 @@ export default function Home() {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Yatra Travel India",
-        "url": "https://yatratravelindia.com",
-        "logo": "https://yatratravelindia.com/logo.jpeg",
+        "url": "https://www.yatratravelindia.com",
+        "logo": "https://www.yatratravelindia.com/logo.jpeg",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+91-9044019511",
