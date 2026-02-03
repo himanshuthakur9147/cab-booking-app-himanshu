@@ -15,6 +15,17 @@ const { city } = await params; // Await params for Next.js 15 compatibility
   return {
     title: title,
     description: description,
+    // 1. ADD KEYWORDS
+    keywords: `Tempo Traveller in ${city}, Hire ${city} Tempo Traveller, Luxury Tempo Traveller ${city}, Yatra Travel India`,
+    
+    // 2. ADD AUTHOR & PUBLISHER
+    authors: [{ name: 'Yatra Travel India', url: 'https://www.yatratravelindia.com' }],
+    publisher: 'Yatra Travel India',
+
+    // 3. ADD LANGUAGE & REGION
+    other: {
+      'content-language': 'en', // Defines the language
+    },
     alternates: {
       canonical: `https://www.yatratravelindia.com/tempo-traveller/${city}`,
       languages: {
@@ -22,13 +33,26 @@ const { city } = await params; // Await params for Next.js 15 compatibility
         'hi-IN': `https://www.yatratravelindia.com/tempo-traveller/${city}`,
       },
     },
-    robots: "index, follow",
+   // 4. IMPROVED ROBOTS (for Google Discover)
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+
     openGraph: {
       title: title,
       description: description,
       url: `https://www.yatratravelindia.com/tempo-traveller/${city}`,
       siteName: 'Yatra Travel India',
       type: 'website',
+      locale: 'en_IN', // Best for Indian audience
     },
   };
 }

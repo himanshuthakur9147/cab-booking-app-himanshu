@@ -10,6 +10,7 @@ import RouteLoader from "@/components/Loader/RouteLoader";
 import OfflineNotice from "@/components/offline/OfflineNotice";
 import { AuthProvider } from "@/context/AuthContext";
 import { ToastProvider } from "@/context/ToastContext";
+import Script from "next/script";
 
 
 const geistSans = Geist({
@@ -40,7 +41,10 @@ export default function RootLayout({ children }) {
                     <RouteLoader />
                     <OfflineNotice />
                     <ToastProvider>
-
+                      <Script 
+          src="https://upload-widget.cloudinary.com/global/all.js" 
+          strategy="beforeInteractive" 
+        />
                     {children}
                     </ToastProvider>
                 

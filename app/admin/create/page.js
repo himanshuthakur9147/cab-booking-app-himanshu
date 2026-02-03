@@ -1,41 +1,48 @@
 'use client';
 
-import { useState, useEffect,useRef } from 'react';
+import { useState, useEffect } from 'react';
 import TiptapEditor from '@/components/editor/TiptapEditor';
 import { useToast } from '@/context/ToastContext';
 import { useRouter } from 'next/navigation';
 import { useAuth } from "@/context/AuthContext"; 
-import { FaImage,FaCloudUploadAlt,FaTimes } from 'react-icons/fa';
+import { FaCloudUploadAlt, FaTimes, FaCamera } from 'react-icons/fa';
 
 export default function CreatePost() {
   const { user, isAuthenticated } = useAuth();
   const router = useRouter();
   const { showToast } = useToast();
 
+  // --- Form States ---
   const [title, setTitle] = useState('');
-  const [coverImage, setCoverImage] = useState('');
   const [metaDescription, setMetaDescription] = useState('');
+  const [coverImage, setCoverImage] = useState('');
   const [content, setContent] = useState(null);
+  
+  // Author States
+  const [author, setAuthor] = useState('');
+  const [authorDesc, setAuthorDesc] = useState('');
+  const [authorImg, setAuthorImg] = useState('');
+
   const [isPublishing, setIsPublishing] = useState(false);
-  // New State for Uploading
   const [isUploading, setIsUploading] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-  const fileInputRef = useRef(null);
-  console.log("User in CreatePost:", user);
+
+  // --- AUTH PROTECTION LOGIC (Exactly as requested) ---
   useEffect(() => {
     const checkAccess = async () => {
-      // 1. Wait until Auth is initialized
-     
-
-      // 2. If authenticated, check roles
-      if (isAuthenticated && user) {
-       
-          // Verify if user is still an admin/member in the DB
-          if (user?.user.role !== "admin" && user?.user.role !== "member") {
-            showToast("Access successful. Redirecting...", "success");
-          }
-      } else {
+      // 1. Wait until Auth is initialized (checking if we have user data)
+      if (!isAuthenticated || !user) {
         showToast("Access denied. Redirecting...", "error");
+        router.push("/");
+        return;
+      }
+
+      // 2. Check roles: Allow only 'admin' or 'member'
+      const userRole = user?.user?.role || user?.role;
+      
+      if (userRole === "admin" || userRole === "member") {
+        showToast("Access successful. Welcome back!", "success");
+      } else {
+        showToast("Access denied. Insufficient permissions.", "error");
         router.push("/");
       }
     };
@@ -43,59 +50,69 @@ export default function CreatePost() {
     checkAccess();
   }, [isAuthenticated, user, router]);
 
+  // --- AUTHOR AUTO-LOAD LOGIC ---
+  useEffect(() => {
+    const userPhone = user?.user?.phone || user?.phone;
+    if (isAuthenticated && userPhone) {
+      const savedData = localStorage.getItem(`author_${userPhone}`);
+      if (savedData) {
+        const parsed = JSON.parse(savedData);
+        setAuthor(parsed.name || '');
+        setAuthorDesc(parsed.desc || '');
+        setAuthorImg(parsed.img || '');
+      }
+    }
+  }, [isAuthenticated, user]);
 
-  // --- IMAGE UPLOAD LOGIC ---
-  const handleFileUpload = async (file) => {
-    if (!file) return;
-    
-    // Validate file type
-    if (!file.type.startsWith('image/')) {
-      showToast("Please upload an image file", "error");
+  const saveAuthorLocally = () => {
+    const userPhone = user?.user?.phone || user?.phone;
+    if (!author || !authorDesc || !authorImg || !userPhone) {
+      showToast("Please fill all author details before saving profile", "error");
       return;
     }
+    const authorData = {
+      name: author,
+      desc: authorDesc,
+      img: authorImg,
+      phone: userPhone
+    };
+    localStorage.setItem(`author_${userPhone}`, JSON.stringify(authorData));
+    showToast("Profile remembered for this account!", "success");
+  };
+
+  // --- CLOUDINARY LOGIC ---
+  const handleUpload = (type) => {
+    if (isUploading) return;
+    const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || "dhaae7rgr";
+    const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET || "yatra_blogs";
 
     setIsUploading(true);
-    const formData = new FormData();
-    formData.append('file', file);
-
-    try {
-      // Replace '/api/upload' with your actual upload endpoint (Cloudinary/S3/etc)
-      const res = await fetch('/api/blogs/upload', {
-        method: 'POST',
-        body: formData,
-      });
-
-      const data = await res.json();
-      if (res.ok) {
-        setCoverImage(data.url); // Set the returned URL to state
-        showToast("Image uploaded successfully", "success");
-      } else {
-        showToast("Upload failed", "error");
+    const myWidget = window.cloudinary.createUploadWidget(
+      {
+        cloudName,
+        uploadPreset,
+        sources: ['local', 'url', 'camera'],
+        multiple: false,
+        cropping: type === 'author',
+        croppingAspectRatio: type === 'author' ? 1 : null,
+        folder: 'yatra_blogs',
+      },
+      (error, result) => {
+        if (result.event === "close") setIsUploading(false);
+        if (!error && result && result.event === "success") {
+          if (type === 'cover') setCoverImage(result.info.secure_url);
+          if (type === 'author') setAuthorImg(result.info.secure_url);
+          setIsUploading(false);
+          showToast(`${type} image uploaded!`, "success");
+        }
       }
-    } catch (error) {
-      showToast("Error uploading image", "error");
-    } finally {
-      setIsUploading(false);
-    }
-  };
-
-  const onDragOver = (e) => {
-    e.preventDefault();
-    setIsDragging(true);
-  };
-
-  const onDragLeave = () => setIsDragging(false);
-
-  const onDrop = (e) => {
-    e.preventDefault();
-    setIsDragging(false);
-    const file = e.dataTransfer.files[0];
-    handleFileUpload(file);
+    );
+    myWidget.open();
   };
 
   const saveBlog = async () => {
-    if (!title || !metaDescription || !content || !coverImage) {
-      showToast("Please fill in all fields", "error");
+    if (!title || !metaDescription || !content || !coverImage || !author || !authorDesc || !authorImg) {
+      showToast("All fields are required!", "error");
       return;
     }
 
@@ -104,7 +121,7 @@ export default function CreatePost() {
       const res = await fetch('/api/blogs', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, coverImage, metaDescription, content }),
+        body: JSON.stringify({ title, metaDescription, author, authorDesc, coverImage, authorImg, content }),
       });
 
       if (res.ok) {
@@ -120,7 +137,7 @@ export default function CreatePost() {
     }
   };
 
-  // 3. IMPORTANT: Prevent crash during build/loading
+  // Loading state while auth is being verified
   if (!isAuthenticated || !user) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -130,114 +147,121 @@ export default function CreatePost() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-10 pb-20">
-      <div className="flex justify-between items-center mb-10">
-        <h1 className="text-xl font-bold text-gray-800 uppercase tracking-widest">Editor Mode</h1>
-        <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold">
-          {/* Use optional chaining and ensure property path is correct */}
-          {(user?.user.role || "USER").toUpperCase()} Verified
-        </span>
+    <div className="max-w-4xl mx-auto p-6 md:p-10 pb-20">
+      <div className="flex justify-between items-center mb-10 border-b pb-5">
+        <h1 className="text-xl font-bold text-gray-800 uppercase tracking-widest">Create New Blog</h1>
+        <div className="text-right">
+           <span className="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold uppercase">
+             { (user?.user?.role || "USER") } Verified
+           </span>
+        </div>
       </div>
 
-     {/* --- REPLACED COVER IMAGE SECTION --- */}
-      <div className="mb-8 group">
-        <label className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2 block">
-          Cover Image
-        </label>
-        
+      {/* --- 1. COVER IMAGE --- */}
+      <div className="mb-8">
+        <label className="text-xs font-bold uppercase text-gray-400 mb-2 block">Blog Cover Image</label>
         {!coverImage ? (
-          <div
-            onDragOver={onDragOver}
-            onDragLeave={onDragLeave}
-            onDrop={onDrop}
-            onClick={() => fileInputRef.current.click()}
-            className={`relative border-2 border-dashed rounded-2xl p-12 transition-all cursor-pointer flex flex-col items-center justify-center gap-4
-              ${isDragging ? "border-orange-500 bg-orange-50" : "border-gray-200 bg-gray-50 hover:border-orange-300 hover:bg-white"}
-              ${isUploading ? "opacity-50 pointer-events-none" : ""}`}
-          >
-            <input 
-              type="file" 
-              ref={fileInputRef} 
-              className="hidden" 
-              onChange={(e) => handleFileUpload(e.target.files[0])}
-              accept="image/*"
-            />
-            
-            {isUploading ? (
-              <div className="flex flex-col items-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-orange-500 mb-2"></div>
-                <p className="text-sm text-gray-500 font-medium">Uploading high-quality image...</p>
-              </div>
-            ) : (
-              <>
-                <div className="w-16 h-16 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center text-2xl">
-                  <FaCloudUploadAlt />
-                </div>
-                <div className="text-center">
-                  <p className="text-sm font-bold text-gray-700">Click or drag & drop</p>
-                  <p className="text-xs text-gray-400 mt-1">PNG, JPG or WebP (Recommended 1600x900)</p>
-                </div>
-              </>
-            )}
-          </div>
+          <button onClick={() => handleUpload('cover')} disabled={isUploading} type="button" className="w-full border-2 border-dashed rounded-2xl p-12 transition-all flex flex-col items-center gap-4 border-gray-200 bg-gray-50 hover:bg-white hover:border-orange-500">
+            <FaCloudUploadAlt className="text-4xl text-orange-500" />
+            <p className="text-sm font-bold text-gray-700">Upload Main Banner</p>
+          </button>
         ) : (
-          <div className="relative rounded-2xl overflow-hidden aspect-[16/7] border border-gray-200 shadow-lg group">
-            <img src={coverImage} alt="Preview" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <button 
-                onClick={() => setCoverImage('')}
-                className="bg-white/20 hover:bg-red-500 text-white p-3 rounded-full backdrop-blur-md transition-all"
-              >
-                <FaTimes />
-              </button>
-            </div>
-            <div className="absolute bottom-4 left-4 right-4">
-               <input 
-                type="text" 
-                className="w-full px-3 py-2 bg-white/90 backdrop-blur-sm rounded-lg text-[10px] text-gray-500 outline-none border-none shadow-sm"
-                value={coverImage}
-                readOnly
-              />
-            </div>
+          <div className="relative rounded-2xl overflow-hidden aspect-[16/8] border-4 border-white shadow-xl">
+            <img src={coverImage} className="w-full h-full object-cover" alt="Cover" />
+            <button onClick={() => setCoverImage('')} className="absolute top-4 right-4 bg-white text-red-500 p-2 rounded-full shadow-lg"><FaTimes /></button>
           </div>
         )}
       </div>
 
-      {/* Title */}
+      {/* --- 2. TITLE --- */}
       <input 
         type="text" 
         placeholder="Blog Title..." 
-        className="text-4xl font-bold w-full mb-6 outline-none border-b-2 border-transparent focus:border-orange-200 transition-colors py-2"
+        className="text-4xl font-bold w-full mb-6 outline-none border-b-2 border-transparent focus:border-orange-200 py-2"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
 
-      {/* Meta Description */}
+      {/* --- 3. SEO DESCRIPTION --- */}
       <div className="mb-8">
-        <label className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2 block">SEO Meta Description ({metaDescription.length}/160)</label>
+        <label className="text-xs font-bold uppercase text-gray-400 mb-2 block">SEO Meta Description ({metaDescription.length}/160)</label>
         <textarea
-          placeholder="SEO description..."
-          className="w-full p-4 bg-gray-50 rounded-xl border border-gray-200 outline-none text-sm italic"
+          placeholder="Brief summary for Google search results..."
+          className="w-full p-4 bg-gray-50 rounded-xl border outline-none text-sm"
           rows={2}
           maxLength={160}
           value={metaDescription}
           onChange={(e) => setMetaDescription(e.target.value)}
         />
       </div>
+
+      {/* --- 4. AUTHOR DETAILS SECTION --- */}
+      <div className="mb-10 p-6 bg-orange-50/50 rounded-2xl border border-orange-100 shadow-sm">
+        <div className="flex justify-between items-center mb-6">
+          <label className="text-xs font-bold uppercase text-orange-600">Author Profile</label>
+          <button 
+            onClick={saveAuthorLocally} 
+            type="button" 
+            className="text-[10px] bg-orange-500 text-white px-4 py-2 rounded-full font-bold hover:bg-orange-600 shadow-md transition-all active:scale-95"
+          >
+            Save as My Default Profile
+          </button>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="md:col-span-1 flex flex-col items-center justify-center border-r border-orange-100 pr-4">
+             <label className="text-[10px] font-bold uppercase text-orange-400 mb-2">Author Image</label>
+             {!authorImg ? (
+               <button onClick={() => handleUpload('author')} className="w-24 h-24 rounded-full border-2 border-dashed border-orange-300 flex items-center justify-center bg-white text-orange-400 hover:text-orange-600">
+                 <FaCamera size={24} />
+               </button>
+             ) : (
+               <div className="relative">
+                  <img src={authorImg} className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md" alt="Author" />
+                  <button onClick={() => setAuthorImg('')} className="absolute -top-1 -right-1 bg-red-500 text-white p-1 rounded-full text-[10px] shadow-sm"><FaTimes /></button>
+               </div>
+             )}
+          </div>
+
+          <div className="md:col-span-2 space-y-4">
+            <div>
+              <label className="text-[10px] font-bold uppercase text-orange-400 mb-1 block">Author Name</label>
+              <input 
+                type="text" 
+                placeholder="Name shown on blog" 
+                className="w-full bg-white p-2 rounded border border-orange-100 outline-none text-sm focus:border-orange-400"
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
+              />
+            </div>
+            <div>
+              <label className="text-[10px] font-bold uppercase text-orange-400 mb-1 block">Author Bio ({authorDesc.length}/160)</label>
+              <textarea 
+                placeholder="A short bio about you..." 
+                className="w-full bg-white p-2 rounded border border-orange-100 outline-none text-sm focus:border-orange-400"
+                rows={2}
+                maxLength={160}
+                value={authorDesc}
+                onChange={(e) => setAuthorDesc(e.target.value)}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       
-      {/* Editor */}
+      {/* --- 5. EDITOR --- */}
       <div className="mb-10">
-        <label className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2 block">Content</label>
+        <label className="text-xs font-bold uppercase text-gray-400 mb-2 block">Blog Content</label>
         <TiptapEditor onChange={setContent} />
       </div>
       
-      {/* Publish Button */}
+      {/* --- 6. PUBLISH --- */}
       <div className="flex justify-end">
         <button 
           onClick={saveBlog}
-          disabled={isPublishing}
+          disabled={isPublishing || isUploading}
           className={`px-12 py-4 rounded-full font-bold text-white shadow-xl transition-all flex items-center gap-3 text-lg
-            ${isPublishing ? "bg-gray-400" : "bg-orange-500 hover:bg-orange-600 active:scale-95"}`}
+            ${(isPublishing || isUploading) ? "bg-gray-400 cursor-not-allowed" : "bg-orange-500 hover:bg-orange-600 active:scale-95"}`}
         >
           {isPublishing ? "Publishing..." : "Publish Blog"}
         </button>
