@@ -131,7 +131,7 @@ export default async function PublicBlogPage({ params }) {
 
   {/* --- NEW: Hero Cover Image --- */}
   {blog.coverImage && (
-    <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-xl overflow-hidden shadow-xl">
+    <div className="relative w-full rounded-xl overflow-hidden shadow-xl">
       <img 
         src={blog.coverImage} 
         alt={blog.title} 
