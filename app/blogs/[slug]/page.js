@@ -95,26 +95,53 @@ export default async function PublicBlogPage({ params }) {
       <Navbar />
       <article className="min-h-screen bg-white">
         {/* Hero Section */}
-        <header className="max-w-4xl mx-auto pt-16 pb-8 px-4 text-center">
-          <div className="mb-4">
-             {/* Small Category Tag */}
-             <span className="bg-orange-100 text-orange-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
-                Travel Guide
-             </span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-            {blog.title}
-          </h1>
-          <div className="flex items-center justify-center gap-4 text-gray-600 font-semibold text-sm italic">
-            <span>By {blog.author || "Yatra Travel India"}</span>
-            <span>•</span>
-            <span>{new Date(blog.createdAt).toLocaleDateString('en-IN', {
-              day: 'numeric',
-              month: 'long',
-              year: 'numeric'
-            })}</span>
-          </div>
-        </header>
+     {/* Hero Section */}
+<header className="max-w-4xl mx-auto pt-16 pb-8 px-4">
+  <div className="text-center">
+    <div className="mb-4">
+      {/* Small Category Tag */}
+      <span className="bg-orange-100 text-orange-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+        Travel Guide
+      </span>
+    </div>
+    
+    <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+      {blog.title}
+    </h1>
+
+    <div className="flex items-center justify-center gap-4 text-gray-600 font-semibold text-sm italic mb-10">
+      <div className="flex items-center gap-2">
+        {blog.authorImg && (
+          <img 
+            src={blog.authorImg} 
+            alt={blog.author} 
+            className="w-6 h-6 rounded-full object-cover border border-orange-200"
+          />
+        )}
+        <span>By {blog.author || "Yatra Travel India"}</span>
+      </div>
+      <span>•</span>
+      <span>{new Date(blog.createdAt).toLocaleDateString('en-IN', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      })}</span>
+    </div>
+  </div>
+
+  {/* --- NEW: Hero Cover Image --- */}
+  {blog.coverImage && (
+    <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden shadow-2xl mb-12">
+      <img 
+        src={blog.coverImage} 
+        alt={blog.title} 
+        className="w-full h-full object-cover"
+      />
+      {/* Subtle overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+    </div>
+  )}
+</header>
 
         {/* Main Content Area */}
         <main className="max-w-4xl mx-auto px-4 pb-20">
