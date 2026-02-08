@@ -18,23 +18,45 @@ const EditorToolbar = ({ editor }) => {
     if (url) editor.chain().focus().setLink({ href: url }).run();
   };
 
- const addImage = () => {
-  const url = window.prompt('Enter Image URL');
-  
-  if (url) {
-    // Standard command
-    if (editor.commands.setImage) {
-      editor.chain().focus().setImage({ src: url }).run();
-    } 
-    // "Pro" Fallback - Works directly with the schema
-    else {
-      editor.chain().focus().insertContent({
-        type: 'image',
-        attrs: { src: url }
-      }).run();
+  // --- UPDATED: Cloudinary Integration for Editor Body ---
+  const addImage = () => {
+    const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || "dhaae7rgr";
+    const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET || "yatra_blogs";
+
+    if (!window.cloudinary) {
+      alert("Cloudinary library not loaded yet.");
+      return;
     }
-  }
-};
+
+    const myWidget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: cloudName,
+        uploadPreset: uploadPreset,
+        sources: ['local', 'url', 'camera'],
+        multiple: false,
+        folder: 'blog_content_images', // Different folder to organize inner blog images
+        clientAllowedFormats: ['png', 'jpeg', 'webp'],
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          const url = result.info.secure_url;
+          
+          // Insert into Tiptap
+          if (editor.commands.setImage) {
+            editor.chain().focus().setImage({ src: url, alt: 'Blog Image' }).run();
+          } else {
+            // Fallback for custom schemas
+            editor.chain().focus().insertContent({
+              type: 'image',
+              attrs: { src: url, alt: 'Blog Image' }
+            }).run();
+          }
+        }
+      }
+    );
+
+    myWidget.open();
+  };
 
   // Professional Color Palette
   const colors = [
@@ -46,9 +68,7 @@ const EditorToolbar = ({ editor }) => {
   ];
 
   return (
-    // STICKY CLASSES ADDED HERE
     <div className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm flex flex-col">
-      {/* Primary Actions Row */}
       <div className="flex flex-wrap items-center gap-1 p-2 border-b border-gray-100">
         <button onClick={() => editor.chain().focus().undo().run()} className={btnClass()}><FaUndo size={14} /></button>
         <button onClick={() => editor.chain().focus().redo().run()} className={btnClass()}><FaRedo size={14} /></button>
@@ -63,31 +83,16 @@ const EditorToolbar = ({ editor }) => {
         <button onClick={() => editor.chain().focus().setTextAlign('left').run()} className={btnClass(editor.isActive({ textAlign: 'left' }))}><FaAlignLeft size={14} /></button>
         <button onClick={() => editor.chain().focus().setTextAlign('center').run()} className={btnClass(editor.isActive({ textAlign: 'center' }))}><FaAlignCenter size={14} /></button>
         <button onClick={() => editor.chain().focus().setTextAlign('right').run()} className={btnClass(editor.isActive({ textAlign: 'right' }))}><FaAlignRight size={14} /></button>
-    {/* // Inside EditorToolbar.jsx (simplified snippet) */}
-<button 
-  onClick={() => editor.chain().focus().toggleBulletList().run()} 
-  className={btnClass(editor.isActive('bulletList'))}
->
-  <FaListUl />
-</button>
 
-<button 
-  onClick={() => editor.chain().focus().toggleOrderedList().run()} 
-  className={btnClass(editor.isActive('orderedList'))}
->
-  <FaListOl />
-</button>
+        <button onClick={() => editor.chain().focus().toggleBulletList().run()} className={btnClass(editor.isActive('bulletList'))}><FaListUl /></button>
+        <button onClick={() => editor.chain().focus().toggleOrderedList().run()} className={btnClass(editor.isActive('orderedList'))}><FaListOl /></button>
+        
         <div className="w-px h-6 bg-gray-200 mx-1" />
         
         <button onClick={setLink} className={btnClass(editor.isActive('link'))}><FaLink size={14} /></button>
         <button onClick={addImage} className={btnClass()}><FaImage size={14} /></button>
-
-        
       </div>
 
-
-
-      {/* MS Word Formatting Row (Colors & Highlights) */}
       <div className="flex flex-wrap items-center gap-2 p-2 bg-gray-50/50">
         <div className="flex items-center gap-1 mr-4">
           <MdFormatColorText className="text-gray-400 mr-1" size={18} />
@@ -102,16 +107,9 @@ const EditorToolbar = ({ editor }) => {
               style={{ backgroundColor: color.hex }}
             />
           ))}
-          <button 
-            onClick={() => editor.chain().focus().unsetColor().run()}
-            className="text-[10px] ml-1 text-gray-400 hover:underline uppercase font-bold"
-          >
-            Clear
-          </button>
+          <button onClick={() => editor.chain().focus().unsetColor().run()} className="text-[10px] ml-1 text-gray-400 hover:underline uppercase font-bold">Clear</button>
         </div>
-
         <div className="w-px h-6 bg-gray-200 mx-1" />
-
         <button 
           onClick={() => editor.chain().focus().toggleHighlight({ color: '#fef08a' }).run()} 
           className={`flex items-center gap-1 px-2 py-1 rounded text-xs font-medium transition-all ${
