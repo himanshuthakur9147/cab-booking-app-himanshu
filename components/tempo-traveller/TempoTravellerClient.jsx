@@ -35,6 +35,12 @@ import IndorePage from "@/components/tempo-traveller/IndorePage";
 import PatnaPage from "@/components/tempo-traveller/PatnaPage";
 import DelhiPage from "@/components/tempo-traveller/DelhiPage";
 import Script from "next/script";
+import SuratPage from "./SuratPage";
+import BhopalPage from "./BhopalPage";
+import AgraPage from "./AgraPage";
+import PunePage from "./PunePage";
+import KolkataPage from "./KolkataPage";
+import RanchiPage from "./RanchiPage";
 
 
 export default function TempoTravellerClient({cityData, cityname, city}) {
@@ -168,6 +174,12 @@ export default function TempoTravellerClient({cityData, cityname, city}) {
 {cityname==="indore" && <IndorePage/> }
 {cityname==="patna" && <PatnaPage/> }
 {cityname==="delhi" && <DelhiPage/> }
+{cityname==="surat" && <SuratPage/> }
+{cityname==="bhopal" && <BhopalPage/> }
+{cityname==="agra" && <AgraPage/> }
+{cityname==="pune" && <PunePage/> }
+{cityname==="kolkata" && <KolkataPage/> }
+{cityname==="ranchi" && <RanchiPage/> }
 
 {/* WhatsApp Floating Button */}
 <a

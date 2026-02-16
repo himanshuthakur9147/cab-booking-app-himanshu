@@ -77,11 +77,12 @@ export default async function Page({ params }) {
            "@context": "https://schema.org",
            "@type": "Service",
            "@id": `https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-${cityname.toLowerCase()}#service`,
-           "name": `Tempo Traveller Rental in ${cityname.charAt(0).toUpperCase() + cityname.slice(1)}`,
+           "name": `Tempo Traveller Rental in ${cityname.charAt(0).toUpperCase() + cityname.slice(1)} | Yatra Travel India`,
            "description": dataMeta.description || `Book tempo traveller rental in ${cityname} with Yatra Travel India for tours, weddings, and outstation trips.`,
            "provider": {
              "@type": "LocalBusiness",
              "name": "Yatra Travel India",
+             "url": `https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-${cityname.toLowerCase()}`,
              "telephone": "+91-9044019511",
              "address": {
                "@type": "PostalAddress",
