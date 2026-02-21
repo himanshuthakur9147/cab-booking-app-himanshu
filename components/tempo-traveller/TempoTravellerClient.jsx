@@ -41,6 +41,13 @@ import AgraPage from "./AgraPage";
 import PunePage from "./PunePage";
 import KolkataPage from "./KolkataPage";
 import RanchiPage from "./RanchiPage";
+import GurgaonPage from "./GurgaonPage";
+import NoidaPage from "./NoidaPage";
+import AhmedabadPage from "./AhmedabadPage";
+import MaduraiPage from "./MaduraiPage";
+import TirupatiPage from "./TirupatiPage";
+import JabalpurPage from "./JabalpurPage";
+import RishikeshPage from "./RishikeshPage";
 
 
 export default function TempoTravellerClient({cityData, cityname, city}) {
@@ -180,6 +187,14 @@ export default function TempoTravellerClient({cityData, cityname, city}) {
 {cityname==="pune" && <PunePage/> }
 {cityname==="kolkata" && <KolkataPage/> }
 {cityname==="ranchi" && <RanchiPage/> }
+{/* 21-02-2026 new pages added */}
+{cityname==="gurgaon" && <GurgaonPage/> }
+{cityname==="noida" && <NoidaPage/> }
+{cityname==="ahmedabad" && <AhmedabadPage/> }
+{cityname==="madurai" && <MaduraiPage/> }
+{cityname==="tirupati" && <TirupatiPage/> }
+{cityname==="jabalpur" && <JabalpurPage/> }
+{cityname==="rishikesh" && <RishikeshPage/> }
 
 {/* WhatsApp Floating Button */}
 <a

@@ -16,7 +16,7 @@ export default async function sitemap() {
   }));
 
   // 2. City Pages (from your cities array)
-  const cities = ["lucknow", "hyderabad", "varanasi", "mumbai", "chandigarh", "jaipur", "haridwar", "dehradun", "amritsar", "prayagraj", "delhi", "patna", "indore", "bangalore", "shimla","surat", "bhopal", "agra", "pune", "kolkata", "ranchi"];
+  const cities = ["lucknow", "hyderabad", "varanasi", "mumbai", "chandigarh", "jaipur", "haridwar", "dehradun", "amritsar", "prayagraj", "delhi", "patna", "indore", "bangalore", "shimla","surat", "bhopal", "agra", "pune", "kolkata", "ranchi","gurgaon", "noida", "ahmedabad", "madurai", "tirupati", "jabalpur", "rishikesh"];
   
   const cityUrls = cities.map((city) => ({
     url: `${baseUrl}/tempo-traveller/tempo-traveller-in-${city}`,
