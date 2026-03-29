@@ -5,68 +5,59 @@ import OneWayForm from "./forms/OneWayForm";
 import RoundTripForm from "./forms/RoundTripForm";
 import LocalForm from "./forms/LocalForm";
 import AirportForm from "./forms/AirportForm";
-import {
-  MdLoop,
-  MdFlightTakeoff,
-  MdLocationCity,
-  MdLocalAirport,
-} from "react-icons/md";
+import { MdLoop, MdFlightTakeoff, MdLocationCity, MdLocalAirport } from "react-icons/md";
 
 export default function BookingTabs() {
   const [activeTab, setActiveTab] = useState("roundTrip");
 
   const tabs = [
-    {
-      key: "roundTrip",
-      label: "Round Trip",
-      icon: <MdLoop className="text-sm sm:text-base mr-1" />,
-    },
-    {
-      key: "oneWay",
-      label: "One Way",
-      icon: <MdFlightTakeoff className="text-sm sm:text-base mr-1" />,
-    },
-    {
-      key: "local",
-      label: "Local",
-      icon: <MdLocationCity className="text-sm sm:text-base mr-1" />,
-    },
-    {
-      key: "airport",
-      label: "Airport",
-      icon: <MdLocalAirport className="text-sm sm:text-base mr-1" />,
-    },
+    { key: "roundTrip", label: "Round Trip", icon: <MdLoop /> },
+    { key: "oneWay", label: "One Way", icon: <MdFlightTakeoff /> },
+    { key: "local", label: "Local", icon: <MdLocationCity /> },
+    { key: "airport", label: "Airport", icon: <MdLocalAirport /> },
   ];
 
   return (
-    <div className="max-w-full mx-auto p-4">
-      {/* Tabs */}
-      <div className="w-full flex justify-center">
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 border border-gray-400 p-2 rounded-md bg-white shadow-sm">
+    <div className="w-full max-w-2xl mx-auto px-4 pb-12">
+      <div className="relative pt-12 pb-8 px-6 md:px-10">
+        
+      
+
+        {/* HEADER TEXT */}
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#1e293b]  uppercase ">
+            BOOK YOUR YATRA <br />
+            TRAVELS, SAFE AND SIMPLE
+          </h2>
+          <p className="text-gray-600 text-sm font-medium mt-3">Secure Your Ride Today</p>
+        </div>
+
+        {/* TABS */}
+        <div className="flex items-center justify-between bg-[#F1F5F9] rounded-lg border border-gray-300 mb-8">
           {tabs.map((tab) => (
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
-              className={`flex items-center gap-1 px-3 py-2 text-xs sm:text-sm font-semibold rounded-md uppercase transition
-                ${
-                  activeTab === tab.key
-                    ? "bg-dark-btn text-white"
-                    : "bg-gray-100 text-black hover:bg-gray-200"
-                }`}
+              className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-2  transition-all text-[11px] md:text-xs font-bold uppercase ${
+                activeTab === tab.key
+                  ? "bg-[#254997] text-white rounded-md shadow-md"
+                  : "text-gray-900 hover:bg-gray-300 bg-gray-200"
+              }`}
             >
-              {tab.icon}
+              <span className="text-lg">{tab.icon}</span>
               {tab.label}
             </button>
           ))}
         </div>
-      </div>
 
-      {/* Form section */}
-      <div className="mt-4">
-        {activeTab === "oneWay" && <OneWayForm />}
-        {activeTab === "roundTrip" && <RoundTripForm />}
-        {activeTab === "local" && <LocalForm />}
-        {activeTab === "airport" && <AirportForm />}
+        {/* FORM CONTENT */}
+        <div className="transition-opacity duration-300">
+           {activeTab === "oneWay" && <OneWayForm />}
+            {activeTab === "roundTrip" && <RoundTripForm />}
+            {activeTab === "local" && <LocalForm />}
+            {activeTab === "airport" && <AirportForm />}
+          {/* Add other forms here */}
+        </div>
       </div>
     </div>
   );

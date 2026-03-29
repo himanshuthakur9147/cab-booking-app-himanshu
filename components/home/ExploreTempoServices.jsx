@@ -85,7 +85,7 @@ export default function TempoTravellerSection() {
 
             <div className="mt-6 bg-blue-50 border-l-4 border-blue-400 p-4 rounded-md">
               <p className="text-blue-800 text-lg font-medium">
-                <FaPhoneAlt className="inline mr-2" /> Book via WhatsApp or Call: <strong>+91-9876543210</strong>
+                <FaPhoneAlt className="inline mr-2" /> Book via WhatsApp or Call: <strong>+91-9044019511</strong>
               </p>
               <p className="text-gray-600">24x7 Support · Transparent Pricing · Easy Booking</p>
             </div>

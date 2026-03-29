@@ -1,48 +1,32 @@
 "use client";
 
 import { useMemo } from "react";
-import { useForm } from "react-hook-form";
 import { useBooking } from "@/context/BookingContext";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { MdAccessTimeFilled, MdDateRange } from "react-icons/md";
+import { FaMapMarkerAlt, FaCalendarAlt, FaClock, FaChevronDown } from "react-icons/fa";
 import { RxCrossCircled } from "react-icons/rx";
 import dynamic from "next/dynamic";
+import "react-datepicker/dist/react-datepicker.css";
 
-// ✅ Lazy-load react-datepicker and its CSS (only on client)
-const DatePicker = dynamic(() => import("react-datepicker"), {
-  ssr: false,
-});
-if (typeof window !== "undefined") {
-  import("react-datepicker/dist/react-datepicker.css");
-}
-
-// ✅ Lazy-load Google Places input
-const PlacesAutocompleteInput = dynamic(
-  () => import("@/components/googleComponents/PlacesAutoCompleteInput"),
-  { ssr: false }
-);
+const DatePicker = dynamic(() => import("react-datepicker"), { ssr: false });
+const PlacesAutocompleteInput = dynamic(() => import("@/components/googleComponents/PlacesAutoCompleteInput"), { ssr: false });
 
 export default function RoundTripForm() {
-  const { register, handleSubmit } = useForm();
+  const {
+    pickupLocation, setPickupLocation,
+    dropLocation, setDropLocation,
+    pickupDate, setPickupDate,
+    returnDate, setReturnDate,
+    pickupTime, setPickupTime,
+  } = useBooking();
+
+  // Logic restored: today's date for minDate
   const today = useMemo(() => {
     const d = new Date();
     d.setHours(0, 0, 0, 0);
     return d;
   }, []);
 
-  const {
-    pickupLocation,
-    setPickupLocation,
-    dropLocation,
-    setDropLocation,
-    pickupDate,
-    setPickupDate,
-    returnDate,
-    setReturnDate,
-    pickupTime,
-    setPickupTime,
-  } = useBooking();
-
+  // Logic restored: time slots generator
   const timeSlots = useMemo(() => {
     const slots = [];
     for (let hour = 0; hour < 24; hour++) {
@@ -56,146 +40,111 @@ export default function RoundTripForm() {
     return slots;
   }, []);
 
-  const onSubmit = () => {
-    console.log({
-      pickupLocation,
-      dropLocation,
-      pickupDate,
-      returnDate,
-      pickupTime,
-    });
-  };
-
   const cancelLocation = (type) => {
     if (type === "pickup") setPickupLocation("");
     if (type === "drop") setDropLocation("");
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-wrap gap-4 md:gap-6 lg:gap-10 items-start w-full"
-    >
-      {/* Pickup Location */}
-      <div className="w-full sm:w-[48%] lg:flex-1 min-w-[240px]">
-        <label htmlFor="pickup-location" className="block text-sm md:text-base lg:text-lg font-bold text-gray-800 uppercase">
-          From
-        </label>
-        <div className="flex items-center gap-2 py-2 w-full">
-          <FaMapMarkerAlt className="text-lg text-gray-700" />
-          <div className="flex-1">
+    <div className="space-y-4">
+      {/* GRID 1: LOCATIONS */}
+      <div className="grid grid-cols-1 gap-4">
+        {/* Pickup Location */}
+        <div className="space-y-2">
+          <label className="text-sm py-1 font-bold text-[#001D3D] uppercase tracking-wide ml-0.5">Where you from</label>
+          <div className="flex items-center bg-[#F9FAFB] border border-gray-300 rounded-md px-3 py-0.3 shadow-sm">
+            <FaMapMarkerAlt className="text-[#001D3D] text-sm shrink-0 mr-2" />
             <PlacesAutocompleteInput
-              id="pickup-location"
-              placeholder="Enter pickup location"
               value={pickupLocation}
               onChange={setPickupLocation}
               onPlaceSelect={(place) => setPickupLocation(place.formatted_address)}
+              placeholder="Select City"
+              className="bg-transparent w-full outline-none font-bold text-gray-700 text-[13px]"
             />
+            <RxCrossCircled
+              onClick={() => cancelLocation("pickup")}
+              className="text-gray-400 cursor-pointer hover:text-red-500 mr-2"
+            />
+            <FaChevronDown className="text-gray-400 text-[10px]" />
           </div>
-          <RxCrossCircled
-            onClick={() => cancelLocation("pickup")}
-            className="text-base text-gray-700 cursor-pointer"
-          />
         </div>
-      </div>
 
-      {/* Drop Location */}
-      <div className="w-full sm:w-[48%] lg:flex-1 min-w-[240px]">
-        <label htmlFor="drop-location" className="block text-sm md:text-base lg:text-lg font-bold text-gray-800 uppercase">
-          To
-        </label>
-        <div className="flex items-center gap-2 py-2 w-full">
-          <FaMapMarkerAlt className="text-lg text-gray-700" />
-          <div className="flex-1">
+        {/* Drop Location */}
+        <div className="space-y-2">
+          <label className="text-sm py-1 font-bold text-[#001D3D] uppercase tracking-wide ml-0.5">Where you going</label>
+          <div className="flex items-center bg-[#F9FAFB] border border-gray-300 rounded-md px-3 py-0.3 shadow-sm">
+            <FaMapMarkerAlt className="text-[#001D3D] text-sm shrink-0 mr-2" />
             <PlacesAutocompleteInput
-              id="drop-location"
-              placeholder="Enter drop location"
               value={dropLocation}
               onChange={setDropLocation}
               onPlaceSelect={(place) => setDropLocation(place.formatted_address)}
+              placeholder="Select City"
+              className="bg-transparent w-full outline-none font-bold text-gray-700 text-[13px]"
             />
+            <RxCrossCircled
+              onClick={() => cancelLocation("drop")}
+              className="text-gray-400 cursor-pointer hover:text-red-500 mr-2"
+            />
+            <FaChevronDown className="text-gray-400 text-[10px]" />
           </div>
-          <RxCrossCircled
-            onClick={() => cancelLocation("drop")}
-            className="text-base text-gray-700 cursor-pointer"
-          />
         </div>
       </div>
 
-      {/* Pickup Date */}
-      <div className="w-full sm:w-[48%] lg:w-[20%] min-w-[200px]">
-        <label htmlFor="pickup-date" className="block text-sm md:text-base lg:text-lg font-bold text-gray-800 uppercase">
-          Pickup Date
-        </label>
-        <div className="flex items-center gap-2 py-2 w-full">
-          <MdDateRange className="text-lg text-gray-700" />
-          <DatePicker
-            id="pickup-date"
-            selected={pickupDate}
-            onChange={(date) => setPickupDate(date)}
-            placeholderText="Enter date"
-            className="border-b w-full text-gray-700 placeholder:text-gray-700 outline-none pl-2 py-1"
-            dateFormat="dd/MM/yyyy"
-            showPopperArrow={false}
-            minDate={today}
-          />
-          <RxCrossCircled
-            onClick={() => setPickupDate(null)}
-            className="text-base text-gray-700 cursor-pointer"
-          />
+      {/* GRID 2: DATE & TIME */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="space-y-2">
+          <label className="text-sm font-bold text-[#001D3D] uppercase tracking-wide ml-0.5">Pickup Date</label>
+          <div className="flex items-center bg-[#F9FAFB] border border-gray-300 rounded-md px-3 py-2 shadow-sm">
+            <FaCalendarAlt className="text-gray-400 text-sm shrink-0 mr-2" />
+            <DatePicker
+              selected={pickupDate}
+              onChange={(date) => setPickupDate(date)}
+              dateFormat="dd/MM/yyyy"
+              minDate={today}
+              placeholderText="Enter date"
+              wrapperClassName="w-full"
+              className="bg-transparent w-full outline-none font-bold text-gray-700 text-[13px] cursor-pointer"
+            />
+            <FaChevronDown className="text-gray-400 text-[10px] ml-1" />
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <label className="text-sm font-bold text-[#001D3D] uppercase tracking-wide ml-0.5">Pickup Time</label>
+          <div className="flex items-center bg-[#F9FAFB] border border-gray-300 rounded-md px-3 py-2.5 shadow-sm">
+            <FaClock className="text-gray-400 text-sm shrink-0 mr-2" />
+            <select
+              value={pickupTime || ""}
+              onChange={(e) => setPickupTime(e.target.value)}
+              className="bg-transparent w-full outline-none font-bold text-gray-700 text-[13px] cursor-pointer appearance-none"
+            >
+              <option value="">Select time</option>
+              {timeSlots.map((time, index) => (
+                <option key={index} value={time}>{time}</option>
+              ))}
+            </select>
+            <FaChevronDown className="text-gray-400 text-[10px] ml-1" />
+          </div>
         </div>
       </div>
 
-      {/* Return Date */}
-      <div className="w-full sm:w-[48%] lg:w-[20%] min-w-[200px]">
-        <label htmlFor="return-date" className="block text-sm md:text-base lg:text-lg font-bold text-gray-800 uppercase">
-          Return Date
-        </label>
-        <div className="flex items-center gap-2 py-2 w-full">
-          <MdDateRange className="text-lg text-gray-700" />
+      {/* RETURN DATE */}
+      <div className="space-y-2">
+        <label className="text-sm font-bold text-[#001D3D] uppercase tracking-wide ml-0.5">Return Date</label>
+        <div className="flex items-center bg-[#F9FAFB] border border-gray-300 rounded-md px-3 py-2 shadow-sm">
+          <FaCalendarAlt className="text-gray-400 text-sm shrink-0 mr-2" />
           <DatePicker
-            id="return-date"
             selected={returnDate}
             onChange={(date) => setReturnDate(date)}
-            placeholderText="Enter date"
-            className="border-b w-full text-gray-700 placeholder:text-gray-700 outline-none pl-2 py-1"
             dateFormat="dd/MM/yyyy"
-            showPopperArrow={false}
-            minDate={today}
+            minDate={pickupDate || today}
+            placeholderText="Enter date"
+            wrapperClassName="w-full"
+            className="bg-transparent w-full outline-none font-bold text-gray-700 text-[13px] cursor-pointer"
           />
-          <RxCrossCircled
-            onClick={() => setReturnDate(null)}
-            className="text-base text-gray-700 cursor-pointer"
-          />
+          <FaChevronDown className="text-gray-400 text-[10px] ml-1" />
         </div>
       </div>
-
-      {/* Pickup Time */}
-      <div className="w-full sm:w-[48%] lg:w-[20%] min-w-[200px]">
-        <label htmlFor="pickup-time" className="block text-sm md:text-base lg:text-lg font-bold text-gray-800 uppercase">
-          Pickup Time
-        </label>
-        <div className="flex items-center gap-2 py-2 w-full">
-          <MdAccessTimeFilled className="text-lg text-gray-700" />
-          <select
-            id="pickup-time"
-            value={pickupTime || ""}
-            onChange={(e) => setPickupTime(e.target.value)}
-            className="border-b w-full text-gray-700 outline-none pl-2 py-1"
-          >
-            <option value="">Select time</option>
-            {timeSlots.map((time, index) => (
-              <option key={index} value={time}>
-                {time}
-              </option>
-            ))}
-          </select>
-          <RxCrossCircled
-            onClick={() => setPickupTime(null)}
-            className="text-base text-gray-700 cursor-pointer"
-          />
-        </div>
-      </div>
-    </form>
+    </div>
   );
 }

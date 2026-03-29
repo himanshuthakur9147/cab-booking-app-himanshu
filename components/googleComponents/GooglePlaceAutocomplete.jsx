@@ -36,7 +36,7 @@ export default function GooglePlaceAutocomplete({ placeholder, onPlaceSelect }) 
       <input
         ref={inputRef}
         placeholder={placeholder}
-        className="w-full border-b text-gray-700 placeholder:text-gray-500 border-gray-400 outline-none pl-2 py-1"
+        className="w-full  text-gray-700 placeholder:text-gray-500 outline-none pl-2 py-1"
       />
       {/* Inject Autocomplete dropdown inside this container */}
       <div ref={containerRef} className="absolute left-0 top-full w-full z-50" />

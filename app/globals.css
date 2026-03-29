@@ -95,6 +95,12 @@
   font-size: 14px !important;
 }
 
+/* This forces the Google Autocomplete input to NEVER have a border */
+.pac-target-input {
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
 @layer utilities {
   .animate-fade-in {
     animation: fadeIn 0.2s ease-out;

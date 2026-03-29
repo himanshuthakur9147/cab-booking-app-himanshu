@@ -1,32 +1,37 @@
 "use client";
+
 import { useMemo, useState } from "react";
-import { useForm } from "react-hook-form";
 import { useBooking } from "@/context/BookingContext";
-import dynamic from "next/dynamic";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { MdDateRange, MdAccessTimeFilled } from "react-icons/md";
+import { FaMapMarkerAlt, FaCalendarAlt, FaClock, FaChevronDown } from "react-icons/fa";
 import { RxCrossCircled } from "react-icons/rx";
+import dynamic from "next/dynamic";
 import Selector from "./SelectOptions";
+import "react-datepicker/dist/react-datepicker.css";
 
 const DatePicker = dynamic(() => import("react-datepicker"), { ssr: false });
-if (typeof window !== "undefined") {
-  import("react-datepicker/dist/react-datepicker.css");
-}
-
 const PlacesAutocompleteInput = dynamic(
   () => import("@/components/googleComponents/PlacesAutoCompleteInput"),
   { ssr: false }
 );
 
 export default function AirportForm() {
-  const { register, handleSubmit } = useForm();
+  const {
+    pickupLocation, setPickupLocation,
+    dropLocation, setDropLocation,
+    pickupDate, setPickupDate,
+    pickupTime, setPickupTime,
+  } = useBooking();
 
+  const [selectedCity, setSelectedCity] = useState("pickup");
+
+  // Logic restored: today's date for minDate
   const today = useMemo(() => {
     const d = new Date();
     d.setHours(0, 0, 0, 0);
     return d;
   }, []);
 
+  // Logic restored: time slots generator
   const timeSlots = useMemo(() => {
     const slots = [];
     for (let hour = 0; hour < 24; hour++) {
@@ -40,170 +45,114 @@ export default function AirportForm() {
     return slots;
   }, []);
 
-  const [selectedCity, setSelectedCity] = useState("pickup_from_airport");
-  const options = [
-    { value: "pickup_from_airport", label: "Pickup from Airport" },
-    { value: "drop_to_airport", label: "Drop to Airport" },
-  ];
-
-  const {
-    pickupLocation,
-    setPickupLocation,
-    dropLocation,
-    setDropLocation,
-    carType,
-    pickupDate,
-    setPickupDate,
-    pickupTime,
-    setPickupTime,
-  } = useBooking();
-
-  const onSubmit = () => {
-    console.log({
-      pickupLocation,
-      dropLocation,
-      carType,
-      pickupDate,
-      pickupTime,
-    });
+  const cancelLocation = (type) => {
+    if (type === "pickup") setPickupLocation("");
+    else setDropLocation("");
   };
 
-const cancelLocation = (type) => {
-  if (type === "pickup") setPickupLocation("");
-  else setDropLocation("");
-};
-
-
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-wrap gap-x-8 gap-y-4 items-start w-full"
-    >
-      <div className="w-full sm:w-[48%] min-w-[240px]">
-        <label
-          htmlFor="trip"
-          className="block text-sm md:text-base lg:text-lg font-bold text-gray-800 uppercase"
-        >
-          Trip
-        </label>
-        <div className="flex py-2">
-          <Selector
-            id="trip"
-            options={options}
-            value={selectedCity}
-            onChange={setSelectedCity}
-          />
-        </div>
+    <div className="space-y-4">
+      {/* Trip Type Selector */}
+      <div className="space-y-1">
+        <label className="text-sm font-bold text-[#001D3D] uppercase ml-1">Trip Type</label>
+        <Selector
+          options={[
+            { value: "pickup", label: "Pickup from Airport" },
+            { value: "drop", label: "Drop to Airport" }
+          ]}
+          value={selectedCity}
+          onChange={setSelectedCity}
+          className="w-full bg-[#F8FAFC] border border-gray-300 rounded-md text-sm font-bold"
+        />
       </div>
 
-      <div className="w-full sm:w-[48%] min-w-[240px]">
-        <label
-          htmlFor="pickup-address"
-          className="block text-sm md:text-base lg:text-lg font-bold text-gray-800 uppercase"
-        >
-          Pickup Address
-        </label>
-        <div className="flex items-center gap-2 py-2">
-          <FaMapMarkerAlt className="text-lg text-gray-700" />
-          <div className="flex-1">
+      {/* Address Inputs */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        {/* Pickup Address */}
+        <div className="space-y-1">
+          <label className="text-sm font-bold text-[#001D3D] uppercase ml-1">Pickup Address</label>
+          <div className="flex items-center bg-[#F9FAFB] border border-gray-300 rounded-md px-3 py-0.3 shadow-sm">
+            <FaMapMarkerAlt className="text-blue-900 text-sm shrink-0 mr-2" />
             <PlacesAutocompleteInput
-              id="pickup-address"
-              placeholder="Enter pickup location"
               value={pickupLocation}
               onChange={setPickupLocation}
-              onPlaceSelect={(place) =>
-                setPickupLocation(place.formatted_address)
-              }
+              onPlaceSelect={(place) => setPickupLocation(place.formatted_address)}
+              placeholder="Enter Address"
+              className="bg-transparent w-full outline-none font-bold text-gray-700 text-sm"
+            />
+            <RxCrossCircled
+              onClick={() => cancelLocation("pickup")}
+              className="text-gray-400 cursor-pointer hover:text-red-500 mr-2"
             />
           </div>
-          <RxCrossCircled
-            onClick={() => cancelLocation("pickup")}
-            className="text-base text-gray-700 cursor-pointer"
-          />
         </div>
-      </div>
 
-      <div className="w-full sm:w-[48%] min-w-[240px]">
-        <label
-          htmlFor="drop-address"
-          className="block text-sm md:text-base lg:text-lg font-bold text-gray-800 uppercase"
-        >
-          Drop Address
-        </label>
-        <div className="flex items-center gap-2 py-2">
-          <FaMapMarkerAlt className="text-lg text-gray-700" />
-          <div className="flex-1">
+        {/* Drop Address */}
+        <div className="space-y-1">
+          <label className="text-sm font-bold text-[#001D3D] uppercase ml-1">Drop Address</label>
+          <div className="flex items-center bg-[#F9FAFB] border border-gray-300 rounded-md px-3 py-0.3 shadow-sm">
+            <FaMapMarkerAlt className="text-blue-900 text-sm shrink-0 mr-2" />
             <PlacesAutocompleteInput
-              id="drop-address"
-              placeholder="Enter drop location"
               value={dropLocation}
               onChange={setDropLocation}
-              onPlaceSelect={(place) =>
-                setDropLocation(place.formatted_address)
-              }
+              onPlaceSelect={(place) => setDropLocation(place.formatted_address)}
+              placeholder="Enter Address"
+              className="bg-transparent w-full outline-none font-bold text-gray-700 text-sm"
+            />
+            <RxCrossCircled
+              onClick={() => cancelLocation("drop")}
+              className="text-gray-400 cursor-pointer hover:text-red-500 mr-2"
             />
           </div>
-          <RxCrossCircled
-            onClick={() => cancelLocation("drop")}
-            className="text-base text-gray-700 cursor-pointer"
-          />
         </div>
       </div>
 
-      <div className="w-full sm:w-[48%] min-w-[200px]">
-        <label
-          htmlFor="pickup-date"
-          className="block text-sm md:text-base lg:text-lg font-bold text-gray-800 uppercase"
-        >
-          Pickup Date
-        </label>
-        <div className="flex items-center gap-2 py-2">
-          <MdDateRange className="text-lg text-gray-700" />
-          <DatePicker
-            id="pickup-date"
-            selected={pickupDate}
-            onChange={(date) => setPickupDate(date)}
-            placeholderText="Enter the date"
-            className="border-b w-full text-gray-700 placeholder:text-gray-700 outline-none pl-2 py-1"
-            dateFormat="dd/MM/yyyy"
-            showPopperArrow={false}
-            minDate={today}
-          />
-          <RxCrossCircled
-            onClick={() => setPickupDate(null)}
-            className="text-base text-gray-700 cursor-pointer"
-          />
+      {/* Date & Time Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Date Selection */}
+        <div className="space-y-1">
+          <label className="text-sm font-bold text-[#001D3D] uppercase ml-1">Date</label>
+          <div className="flex items-center gap-3 bg-[#F8FAFC] border border-gray-300 rounded-md px-4 py-2 shadow-sm">
+            <FaCalendarAlt className="text-gray-400 text-sm shrink-0" />
+            <DatePicker
+              selected={pickupDate}
+              onChange={(date) => setPickupDate(date)}
+              dateFormat="dd/MM/yyyy"
+              minDate={today}
+              placeholderText="Enter date"
+              wrapperClassName="w-full"
+              className="bg-transparent w-full outline-none font-bold text-gray-700 text-sm cursor-pointer"
+            />
+            <RxCrossCircled
+              onClick={() => setPickupDate(null)}
+              className="text-gray-400 cursor-pointer hover:text-red-500"
+            />
+          </div>
         </div>
-      </div>
 
-      <div className="w-full sm:w-[48%] min-w-[200px]">
-        <label
-          htmlFor="pickup-time"
-          className="block text-sm md:text-base lg:text-lg font-bold text-gray-800 uppercase"
-        >
-          Pickup Time
-        </label>
-        <div className="flex items-center gap-2 py-2">
-          <MdAccessTimeFilled className="text-lg text-gray-700" />
-          <select
-            id="pickup-time"
-            value={pickupTime || ""}
-            onChange={(e) => setPickupTime(e.target.value)}
-            className="border-b w-full text-gray-700 outline-none pl-2 py-1"
-          >
-            <option value="">Select time</option>
-            {timeSlots.map((time, index) => (
-              <option key={index} value={time}>
-                {time}
-              </option>
-            ))}
-          </select>
-          <RxCrossCircled
-            onClick={() => setPickupTime(null)}
-            className="text-base text-gray-700 cursor-pointer"
-          />
+        {/* Time Selection */}
+        <div className="space-y-1">
+          <label className="text-sm font-bold text-[#001D3D] uppercase ml-1">Time</label>
+          <div className="flex items-center gap-3 bg-[#F8FAFC] border border-gray-300 rounded-md px-4 py-2.5 shadow-sm">
+            <FaClock className="text-gray-400 text-sm shrink-0" />
+            <select
+              value={pickupTime || ""}
+              onChange={(e) => setPickupTime(e.target.value)}
+              className="bg-transparent w-full outline-none font-bold text-gray-700 text-sm cursor-pointer appearance-none"
+            >
+              <option value="">Select time</option>
+              {timeSlots.map((time, index) => (
+                <option key={index} value={time}>{time}</option>
+              ))}
+            </select>
+            <RxCrossCircled
+              onClick={() => setPickupTime(null)}
+              className="text-gray-400 cursor-pointer hover:text-red-500"
+            />
+            <FaChevronDown className="text-gray-400 text-[10px]" />
+          </div>
         </div>
       </div>
-    </form>
+    </div>
   );
 }
