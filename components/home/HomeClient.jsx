@@ -91,7 +91,7 @@ export default function HomeClient() {
       {loader && <RouteLoader />}
 
      {/* === HERO SECTION WITH DYNAMIC BACKGROUND === */}
-      <div className="relative min-h-screen flex flex-col items-center justify-start pt-20 pb-20 px-4">
+      <div className="relative min-h-screen flex flex-col items-center justify-start pt-6 md:pt-20 pb-20 px-4">
         {/* Optimized Background Image with Overlay */}
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -659,39 +659,40 @@ const AboutAgency = () => {
 
 const NewsletterSubscription = () => {
   return (
-    <div className="w-full bg-[#001D3D] py-12 px-6 rounded-2xl shadow-xl">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+    <div className="w-full bg-[#001D3D] py-10 md:py-16 px-4 md:px-12 rounded-3xl shadow-2xl">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
         
         {/* Left Side: Content & Icon */}
-        <div className="flex items-center gap-6 text-center md:text-left">
-          {/* Animated Email Icon */}
+        <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+          {/* Animated Email Icon - Visible from md up */}
           <div className="relative shrink-0 hidden md:block">
-            <div className="w-16 h-16 bg-[#0056b3] rounded-full flex items-center justify-center text-white text-2xl animate-pulse">
+            <div className="w-16 h-16 bg-[#0056b3] rounded-full flex items-center justify-center text-white text-2xl animate-pulse z-10 relative">
               <FaPaperPlane />
             </div>
-            {/* Pulsing rings for effect */}
+            {/* Pulsing rings */}
             <div className="absolute top-0 left-0 w-16 h-16 bg-[#0056b3] rounded-full animate-ping opacity-25"></div>
           </div>
           
-          <div>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
+          <div className="max-w-md">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">
               Your Travel Journey Starts Here
             </h3>
-            <p className="text-gray-200 mt-2 text-base md:text-lg font-medium opacity-90">
+            <p className="text-gray-300 mt-2 text-sm md:text-lg font-medium opacity-90">
               Sign up and we’ll send the best deals to you
             </p>
           </div>
         </div>
 
         {/* Right Side: Input and Button */}
-        <div className="w-full md:w-auto flex flex-col sm:flex-row items-center gap-4 bg-white/10 p-2 rounded-full backdrop-blur-sm">
+        {/* Fix: removed 'rounded-full' from the container on mobile to prevent distortion */}
+        <div className="w-full lg:w-auto flex flex-col sm:flex-row items-center gap-3 sm:gap-0 bg-transparent sm:bg-white/10 sm:p-1.5 sm:rounded-full sm:backdrop-blur-md border border-white/10 sm:border-none p-4 rounded-2xl">
           <input 
             type="email" 
             placeholder="Your Email" 
-            className="w-full sm:w-[350px] px-6 py-4 rounded-full border border-white/20 bg-white/5 text-white placeholder:text-gray-300 outline-none focus:ring-2 focus:ring-[#0056b3] transition-all font-semibold"
+            className="w-full sm:w-[300px] md:w-[350px] px-6 py-4 rounded-full sm:rounded-l-full sm:rounded-r-none border-none bg-white/10 sm:bg-transparent text-white placeholder:text-gray-400 outline-none focus:ring-0 transition-all font-semibold"
           />
-          <button className="w-full sm:w-auto px-10 py-4 bg-[#0056b3] text-white rounded-full font-bold text-lg hover:bg-[#004494] transition-colors shadow-lg active:scale-95">
-            Send
+          <button className="w-full sm:w-auto px-8 py-4 bg-[#0056b3] text-white rounded-full font-bold text-base md:text-lg hover:bg-[#004494] transition-all shadow-lg active:scale-95 whitespace-nowrap">
+            Subscribe Now
           </button>
         </div>
 
@@ -699,7 +700,6 @@ const NewsletterSubscription = () => {
     </div>
   );
 };
-
 
 const WhyChooseUsCards = () => {
   const features = [

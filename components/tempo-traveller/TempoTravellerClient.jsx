@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { useBooking } from "@/context/BookingContext";
 import Navbar from "@/components/Navbar";
 import BookingTabs from "@/components/BookingTabs";
-import { FaMedal,FaWhatsapp } from "react-icons/fa";
+import { FaClock, FaMedal,FaShieldAlt,FaUserCheck,FaWhatsapp } from "react-icons/fa";
 import RouteLoader from "@/components/Loader/RouteLoader";
 import Footer from "@/components/footer/Footer";
 import AuthInit from "@/components/login/AuthInit";
@@ -48,6 +48,7 @@ import MaduraiPage from "./MaduraiPage";
 import TirupatiPage from "./TirupatiPage";
 import JabalpurPage from "./JabalpurPage";
 import RishikeshPage from "./RishikeshPage";
+import { HiArrowRight } from "react-icons/hi";
 
 
 export default function TempoTravellerClient({cityData, cityname, city}) {
@@ -104,44 +105,83 @@ export default function TempoTravellerClient({cityData, cityname, city}) {
       {loader && <RouteLoader />}
 
       {/* === Hero Section === */}
-<div className="pt-2 bg-hero text-xs lg:text-base">
-
-        <div className="text-center py-5 md:py-4">
-          <h1 className="uppercase font-bold text-[18px] xs:text-[24px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[55px] text-white font-sans">
+  {/* === HERO SECTION WITH DYNAMIC BACKGROUND === */}
+      <div className="relative min-h-screen flex flex-col items-center justify-start pt-20 pb-20 px-4">
+        {/* Optimized Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: `url('/bg.webp')`,
+          }}
+        >
+         
+        </div>
+        
+        {/* Headline Section */}
+        <div className="text-center z-10 mb-6 mt-4">
+          <h1 className="uppercase font-black text-3xl md:text-6xl text-white tracking-tighter drop-shadow-2xl">
             <TypewriterText />
           </h1>
+       
         </div>
 
-        {/* === Booking Tabs === */}
-        <div className="max-w-[85%] mx-auto rounded-lg py-6  relative">
-          <div className="bg-white rounded-md shadow-md p-4">
-            <BookingTabs />
-          </div>
+        {/* === THE BOOKING ENGINE (The Card from the image) === */}
+        <div className="w-[80%] md:w-[50%] max-w-3xl z-10 ">
+          <div className="bg-white rounded-xl shadow-2xl border border-gray-100  w-full pb-12">
 
-          {/* Explore Button */}
-          <div className="flex justify-center mt-6">
+         
+           <BookingTabs />
+           {/* THE IMPORTANT EXPLORE BUTTON (Restored & Enhanced) */}
+          <div className="flex justify-center -mt-10 relative z-30">
             <button
               onClick={onSubmit}
               disabled={!pickupLocation?.trim()}
-              className={`px-12 md:px-28 py-3 rounded-md font-bold uppercase text-base md:text-xl transition duration-100 ${
+              className={`group flex items-center gap-4 px-12 md:px-20 py-3 md:py-4 rounded-2xl font-black uppercase text-xl md:text-3xl transition-all duration-300 shadow-[0_20px_50px_rgba(37,99,235,0.3)] transform active:scale-95 ${
                 !pickupLocation?.trim()
-                  ? "bg-dark-btn text-white cursor-not-allowed"
-                  : "bg-dark-btn hover:bg-light-btn text-white cursor-pointer"
+                  ? "bg-slate-700 text-slate-400 cursor-not-allowed"
+                  : "bg-[#254997] hover:bg-orange-500 text-white hover:shadow-orange-500/40"
               }`}
             >
-              Explore Cabs
+              Search Cabs
+              <HiArrowRight className="group-hover:translate-x-3 transition-transform duration-300" />
             </button>
           </div>
+           </div>
+         
         </div>
 
-        {/* Tagline */}
-        <div className="flex justify-center items-center mt-2 pb-8">
-          <div className="flex items-center gap-2 px-4 py-1 rounded-md bg-black/80 text-white text-sm md:text-base lg:text-xl font-semibold">
-            <FaMedal />
-            <span>India’s Most Trusted Cab Rental Platform</span>
-            <FaMedal />
-          </div>
-        </div>
+          {/* TEXT WRITTEN AFTER THE FORM (Trust Strip from reference image) */}
+           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 w-[80%] md:w-[65%]">
+              <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10 flex items-center gap-4 group hover:bg-white/20 transition-all">
+                <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center text-white text-xl shadow-lg">
+                  <FaShieldAlt />
+                </div>
+                <div>
+                  <h4 className="text-white font-bold text-sm">Safe & Secure</h4>
+                  <p className="text-gray-300 text-[10px] uppercase font-medium">Verified Drivers & Vehicles</p>
+                </div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10 flex items-center gap-4 group hover:bg-white/20 transition-all">
+                <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center text-white text-xl shadow-lg">
+                  <FaUserCheck />
+                </div>
+                <div>
+                  <h4 className="text-white font-bold text-sm">Expert Chauffeurs</h4>
+                  <p className="text-gray-300 text-[10px] uppercase font-medium">Professional & Punctual</p>
+                </div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10 flex items-center gap-4 group hover:bg-white/20 transition-all">
+                <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center text-white text-xl shadow-lg">
+                  <FaClock />
+                </div>
+                <div>
+                  <h4 className="text-white font-bold text-sm">24/7 Support</h4>
+                  <p className="text-gray-300 text-[10px] uppercase font-medium">We are always here for you</p>
+                </div>
+              </div>
+           </div>
       </div>
 
      {/* Feature Icons */}

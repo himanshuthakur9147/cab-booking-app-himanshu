@@ -2,6 +2,7 @@ import metaData from "@/components/tempo-traveller/metaData.json";
 import cityDataFile from "@/components/cityData.json";
 import TempoTravellerClient from "@/components/tempo-traveller/TempoTravellerClient";
 import Script from "next/script";
+import { redirect } from "next/navigation";
 
 // 1. DYNAMIC METADATA (This replaces <Head>)
 export async function generateMetadata({ params }) {
@@ -60,11 +61,19 @@ const { city } = await params; // Await params for Next.js 15 compatibility
 export default async function Page({ params }) {
  
 // We MUST extract these variables again inside the Page function
-  const { city } = await params;
-  const cityname = city.replace("tempo-traveller-in-", "");
-  const cityData = cityDataFile[cityname.toLowerCase()] || null;
-  const dataMeta = metaData[cityname.toLowerCase()] || {};
- 
+ const { city } = await params;
+  const cityname = city.replace("tempo-traveller-in-", "").toLowerCase();
+
+  // 2. EXISTENCE CHECK & REDIRECT
+  // Check if the city exists in your cityData.json keys
+  const cityExists = Object.keys(metaData).includes(cityname);
+
+  if (!cityExists) {
+    redirect("/"); // Redirects to homepage if city is not in your data
+  }
+
+  const cityData = cityDataFile[cityname];
+  const dataMeta = metaData[cityname] || {};
 
   return (
     <>
