@@ -70,12 +70,12 @@ const Navbar = () => {
             className="flex items-center text-green-600 group  border rounded-md p-2"
           >
             <FaWhatsapp className="text-xl" />
-            <span className="text-sm space-x-1 font-bold text-gray-700 tracking-tighter whitespace-nowrap">+91 9044019511</span>
+            <span className="text-sm space-x-1 font-bold text-gray-700   tracking-tighter whitespace-nowrap">+91 9044019511</span>
           </a>
         </div>
 
         {/* 3. CENTER (Desktop Only): Nav Links */}
-        <div className="hidden lg:flex items-center gap-6 text-[14px] uppercase font-bold text-slate-700 ml-16">
+        <div className="hidden lg:flex items-center gap-6 lg:gap-3 xl:gap-6 text-xs xl:text-[14px] uppercase font-bold text-slate-700 ml-6 xl:ml-16">
           <Link href="/" className="hover:text-blue-600 transition">Home</Link>
           <Link href="/about" className="hover:text-blue-600 transition">About Us</Link>
           
@@ -112,9 +112,12 @@ const Navbar = () => {
           
           {/* Desktop WhatsApp (Visible only on MD+) */}
           <div className="hidden md:flex flex-col items-end border-r border-gray-200 pr-4 mr-2">
-            <span className="text-[9px] uppercase font-bold text-gray-400">24/7 Support</span>
-            <a href="https://wa.me/919044019511" className="text-sm font-black text-slate-800 flex items-center gap-1">
+            <span className="text-[9px] uppercase font-bold lg:hidden xl:inline text-gray-400">24/7 Support</span>
+            <a href="https://wa.me/919044019511" className=" lg:hidden xl:inline text-sm font-black text-slate-800 flex items-center gap-1">
               <FaWhatsapp className="text-green-500 text-lg" /> +91 9044019511
+            </a>
+             <a href="https://wa.me/919044019511" className=" hidden lg:flex xl:hidden text-sm font-black text-slate-800  items-center gap-1">
+              <FaWhatsapp className="text-green-500 text-xl" />
             </a>
           </div>
 
@@ -141,8 +144,8 @@ const Navbar = () => {
 
           {/* Book Now Button */}
           <Link href="/">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-black text-[9px] sm:text-[11px] md:text-xs px-2 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2.5 rounded-lg md:rounded-full uppercase transition-all shadow-sm active:scale-95">
-              Book<span className="hidden sm:inline"> Now</span>
+            <button className="hidden md:inline bg-orange-500 hover:bg-orange-600 text-white font-black text-[9px] sm:text-[11px] md:text-xs px-2 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2.5 rounded-lg md:rounded-full uppercase transition-all shadow-sm active:scale-95">
+              Book {" "}<span className="hidden sm:inline"> Now</span>
             </button>
           </Link>
 
