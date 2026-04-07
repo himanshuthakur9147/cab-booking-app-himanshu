@@ -261,7 +261,7 @@ export default function KanpurTempoPage() {
     bookingRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [])
 
-  const handleSelectVehicle = useCallback((title: string) => {
+  const handleSelectVehicle = useCallback((title) => {
     setSelectedVehicle(title)
     scrollToBooking()
     showToast(`${title} selected. Enter destination to continue.`)
