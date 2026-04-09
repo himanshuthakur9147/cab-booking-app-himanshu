@@ -13,6 +13,7 @@ const VEHICLES = [
   {
     badge: "12 Seater",
     title: "12 Seater Tempo Traveller in Kanpur",
+      img: "/images/12seater.jpg"
     specs: [
       { label: "Seating Capacity", value: "12 Passengers + 1 Driver" },
       { label: "Starting Fare",    value: "₹23/km" },
@@ -25,6 +26,7 @@ const VEHICLES = [
   {
     badge: "14 Seater",
     title: "14 Seater Tempo Traveller in Kanpur",
+     img: "/images/14seater.jpg",
     specs: [
       { label: "Seating Capacity", value: "14 Passengers + 1 Driver" },
       { label: "Starting Fare",    value: "₹24/km" },
@@ -37,6 +39,7 @@ const VEHICLES = [
   {
     badge: "16 Seater",
     title: "16 Seater Tempo Traveller in Kanpur",
+     img: "/images/16seater.jpg",
     specs: [
       { label: "Seating Capacity", value: "16 Passengers + 1 Driver" },
       { label: "Starting Fare",    value: "₹26/km" },
@@ -49,6 +52,7 @@ const VEHICLES = [
   {
     badge: "18 Seater",
     title: "18 Seater Tempo Traveller in Kanpur",
+     img: "/images/18seater.jpg",
     specs: [
       { label: "Seating Capacity", value: "18 Passengers + 1 Driver" },
       { label: "Starting Fare",    value: "₹28/km" },
@@ -61,6 +65,7 @@ const VEHICLES = [
   {
     badge: "20 Seater",
     title: "20 Seater Tempo Traveller in Kanpur",
+     img: "/images/20seater.jpg",
     specs: [
       { label: "Seating Capacity", value: "20 Passengers + 1 Driver" },
       { label: "Starting Fare",    value: "₹30/km" },
@@ -73,6 +78,7 @@ const VEHICLES = [
   {
     badge: "24 Seater",
     title: "24 Seater Tempo Traveller in Kanpur",
+     img: "/images/24seater.jpg",
     specs: [
       { label: "Seating Capacity", value: "24 Passengers + 1 Driver" },
       { label: "Starting Fare",    value: "₹35/km" },
@@ -85,6 +91,7 @@ const VEHICLES = [
   {
     badge: "Luxury",
     title: "Luxury Tempo Traveller in Kanpur",
+     img: "/images/luxury.jpg",
     specs: [
       { label: "Seating Capacity", value: "9–16 Passengers + 1 Driver" },
       { label: "Starting Fare",    value: "On Request" },
@@ -97,6 +104,7 @@ const VEHICLES = [
   {
     badge: "Maharaja",
     title: "Maharaja Tempo Traveller in Kanpur",
+     img: "/images/maharaja.jpg",
     specs: [
       { label: "Seating Capacity", value: "9–16 Passengers + 1 Driver" },
       { label: "Starting Fare",    value: "On Request" },
@@ -651,13 +659,23 @@ function VehicleCard({ vehicle, onSelect }) {
   return (
     <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:border-[#0f6ec8] hover:shadow-md transition-all">
       {/* Image */}
-      <div className="bg-gradient-to-br from-blue-50 to-blue-100 relative flex flex-col items-center justify-center py-7 gap-2">
-        <FaBus className="text-[#0f6ec8] opacity-25 text-5xl" />
-        <span className="text-[11px] font-semibold text-gray-400 text-center px-4">{vehicle.title}</span>
-        <span className="absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full bg-[#0f6ec8]">
-          {vehicle.badge}
-        </span>
-      </div>
+<div className="relative h-44 overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100">
+  {vehicle.img ? (
+    <img
+      src={vehicle.img}
+      alt={vehicle.title}
+      className="w-full h-full object-cover"
+    />
+  ) : (
+    <div className="w-full h-full flex flex-col items-center justify-center gap-2">
+      <FaBus className="text-[#0f6ec8] opacity-25 text-5xl" />
+      <span className="text-[11px] font-semibold text-gray-400 text-center px-4">{vehicle.title}</span>
+    </div>
+  )}
+  <span className="absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full bg-[#0f6ec8]">
+    {vehicle.badge}
+  </span>
+</div>
 
       {/* Body */}
       <div className="p-5">
