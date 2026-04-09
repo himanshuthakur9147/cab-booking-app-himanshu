@@ -523,40 +523,26 @@ export default function TempoTravellerKanpur() {
           ))}
         </div>
 
-        {/* INCLUSIONS / EXCLUSIONS */}
-        <h2 className="text-xl font-bold text-gray-900 mb-5 pl-4 border-l-4 border-[#0f6ec8]">Fare Inclusions and Exclusions</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
-          {/* Included */}
-          <div className="border border-green-200 rounded-xl overflow-hidden">
-            <div className="bg-green-600 flex items-center gap-2 px-5 py-3">
-              <FaCheckCircle className="text-white text-sm" />
-              <span className="text-white font-bold text-sm tracking-wider uppercase">Included</span>
+          {/* ── INCLUSIONS / EXCLUSIONS ── */}
+          <h2 className="section-title">Fare Inclusions and Exclusions</h2>
+          <div className="ei-split">
+            <div className="ei-box">
+              <div className="ei-box-header">
+                <span>INCLUDED</span>
+              </div>
+              <ul>
+                {INCLUDED.map(item => <li key={item}>{item}</li>)}
+              </ul>
             </div>
-            <ul className="p-5 space-y-3">
-              {INCLUDED.map((item) => (
-                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-700">
-                  <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" size={14} />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          {/* Excluded */}
-          <div className="border border-red-200 rounded-xl overflow-hidden">
-            <div className="bg-red-500 flex items-center gap-2 px-5 py-3">
-              <FaTimesCircle className="text-white text-sm" />
-              <span className="text-white font-bold text-sm tracking-wider uppercase">Excluded</span>
+            <div className="ei-box">
+              <div className="ei-box-header excl">
+                <span>EXCLUDED</span>
+              </div>
+              <ul>
+                {EXCLUDED.map(item => <li key={item}>{item}</li>)}
+              </ul>
             </div>
-            <ul className="p-5 space-y-3">
-              {EXCLUDED.map((item) => (
-                <li key={item} className="flex items-start gap-2.5 text-sm text-gray-700">
-                  <FaTimesCircle className="text-red-400 mt-0.5 flex-shrink-0" size={14} />
-                  {item}
-                </li>
-              ))}
-            </ul>
           </div>
-        </div>
 
         {/* WEDDING SECTION */}
         <h2 className="text-xl font-bold text-gray-900 mb-4 pl-4 border-l-4 border-[#0f6ec8]">Luxury Tempo Traveller in Kanpur for Weddings and VIP Guests</h2>
