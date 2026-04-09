@@ -308,8 +308,26 @@ export default function TempoTravellerKanpur() {
                 <li key={item} className={`px-5 py-3 text-sm font-semibold text-gray-700 border-b border-blue-100 last:border-0 ${i % 2 === 0 ? "bg-[#f9fafb]" : "bg-white"}`}>{item}</li>
               ))}
             </ul>
+          {/* ── INCLUSIONS / EXCLUSIONS ── */}
+          <h2 className="section-title">Fare Inclusions and Exclusions</h2>
+          <div className="ei-split">
+            <div className="ei-box">
+              <div className="ei-box-header">
+                <span>INCLUDED</span>
+              </div>
+              <ul>
+                {INCLUDED.map(item => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+            <div className="ei-box">
+              <div className="ei-box-header excl">
+                <span>EXCLUDED</span>
+              </div>
+              <ul>
+                {EXCLUDED.map(item => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
           </div>
-        </div>
 
         <SectionTitle>Luxury Tempo Traveller in Kanpur for Weddings and VIP Guests</SectionTitle>
         <div className="bg-gray-50 border border-gray-200 rounded-xl p-7 mb-10">
