@@ -370,7 +370,7 @@ export default function TempoTravellerKanpur() {
 
         {/* INTRO */}
         <div className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-[#0f6ec8] mb-5 pl-4 border-l-4 border-[#ff6b35]">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-5 pl-4 border-l-4 border-[#ff6b35]">
             Tempo Traveller on Rent in Kanpur — Comfortable Group Travel for Every Occasion
           </h2>
           <p className="text-[15px] text-gray-600 leading-relaxed mb-4">
@@ -382,7 +382,7 @@ export default function TempoTravellerKanpur() {
         </div>
 
         {/* VEHICLE CARDS */}
-        <h2 className="text-xl font-bold text-[#0f6ec8] mb-6 pl-4 border-l-4 border-[#0f6ec8]" id="services">
+        <h2 className="text-xl font-bold text-gray-900 mb-6 pl-4 border-l-4 border-[#0f6ec8]" id="services">
           Tempo Traveller Options in Kanpur
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
@@ -392,7 +392,7 @@ export default function TempoTravellerKanpur() {
         </div>
 
         {/* OPTIONS TABLE */}
-        <h2 className="text-xl font-bold text-[#0f6ec8] mb-4 pl-4 border-l-4 border-[#0f6ec8]">
+        <h2 className="text-xl font-bold text-gray-900 mb-4 pl-4 border-l-4 border-[#0f6ec8]">
           Tempo Traveller Options in Kanpur — Full Comparison
         </h2>
         <div className="overflow-x-auto rounded-xl border border-gray-200 mb-10">
@@ -461,7 +461,7 @@ export default function TempoTravellerKanpur() {
         </div>
 
         {/* LUXURY SECTION */}
-        <h2 className="text-xl font-bold text-[#0f6ec8] mb-4 pl-4 border-l-4 border-[#0f6ec8]">Luxury Tempo Traveller in Kanpur</h2>
+        <h2 className="text-xl font-bold text-gray-900 mb-4 pl-4 border-l-4 border-[#0f6ec8]">Luxury Tempo Traveller in Kanpur</h2>
         <div className="bg-gray-50 border border-gray-200 rounded-xl p-7 mb-10">
           <p className="text-[15px] text-gray-600 leading-relaxed mb-4">If you want comfort with a premium touch, booking a luxury tempo traveller in Kanpur is the perfect choice. It is ideal for wedding guests, corporate travel, VIP movement, family tours, and long outstation trips. A luxury tempo traveller gives you more space, better seating, and a smooth travel experience compared to regular vehicles.</p>
           <p className="text-[15px] text-gray-600 leading-relaxed mb-4">Our luxury tempo traveller on rent in Kanpur comes with fully air-conditioned interiors, soft pushback seats, extra legroom, and stylish lighting. The interiors are clean, modern, and designed to make long journeys relaxing. There is enough luggage space, making it suitable for airport transfers and multi-day trips.</p>
@@ -469,7 +469,7 @@ export default function TempoTravellerKanpur() {
         </div>
 
         {/* FEATURES */}
-        <h2 className="text-xl font-bold text-[#0f6ec8] mb-6 pl-4 border-l-4 border-[#0f6ec8]">Features of Luxury Tempo Traveller in Kanpur</h2>
+        <h2 className="text-xl font-bold text-gray-900 mb-6 pl-4 border-l-4 border-[#0f6ec8]">Features of Luxury Tempo Traveller in Kanpur</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           {FEATURES.map((f) => (
             <div key={f.title} className="bg-[#f8faff] border border-blue-100 rounded-xl p-6 text-center">
@@ -485,7 +485,7 @@ export default function TempoTravellerKanpur() {
         </div>
 
         {/* INCLUSIONS / EXCLUSIONS — NO SYMBOLS, BLUE THEME */}
-        <h2 className="text-xl font-bold text-[#0f6ec8] mb-5 pl-4 border-l-4 border-[#0f6ec8]">Fare Inclusions and Exclusions</h2>
+        <h2 className="text-xl font-bold text-gray-900 mb-5 pl-4 border-l-4 border-[#0f6ec8]">Fare Inclusions and Exclusions</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
           <div className="border border-blue-200 rounded-xl overflow-hidden">
             <div className="bg-[#1e40af] px-5 py-3">
@@ -514,7 +514,7 @@ export default function TempoTravellerKanpur() {
         </div>
 
         {/* WEDDING SECTION */}
-        <h2 className="text-xl font-bold text-[#0f6ec8] mb-4 pl-4 border-l-4 border-[#0f6ec8]">Luxury Tempo Traveller in Kanpur for Weddings and VIP Guests</h2>
+        <h2 className="text-xl font-bold text-gray-900 mb-4 pl-4 border-l-4 border-[#0f6ec8]">Luxury Tempo Traveller in Kanpur for Weddings and VIP Guests</h2>
         <div className="bg-gray-50 border border-gray-200 rounded-xl p-7 mb-10">
           <p className="text-[15px] text-gray-600 leading-relaxed mb-4">Kanpur has a strong VIP and grand wedding culture. From big family weddings to high-profile business events, people in Kanpur prefer classy, well-managed, and comfortable travel. Whether it is a large wedding at a banquet hall, a destination wedding, or a VIP guest arrival, travel arrangements play a big role in making the event smooth and impressive.</p>
           <p className="text-[15px] text-gray-600 leading-relaxed mb-4">A luxury tempo traveller in Kanpur is a perfect choice for wedding guests and VIP movement. These vehicles are designed for premium travel, offering stylish interiors, soft pushback seats, extra legroom, and full air conditioning. Guests can travel together comfortably, without the rush and confusion of multiple cars.</p>
@@ -522,7 +522,7 @@ export default function TempoTravellerKanpur() {
         </div>
 
         {/* BENEFITS */}
-        <h2 className="text-xl font-bold text-[#0f6ec8] mb-6 pl-4 border-l-4 border-[#0f6ec8]">Why Luxury Tempo Travellers Are Popular for Weddings in Kanpur</h2>
+        <h2 className="text-xl font-bold text-gray-900 mb-6 pl-4 border-l-4 border-[#0f6ec8]">Why Luxury Tempo Travellers Are Popular for Weddings in Kanpur</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
           {BENEFITS.map((b) => (
             <div key={b.title} className="bg-[#f8faff] border border-blue-100 rounded-xl p-6 hover:border-[#0f6ec8] hover:shadow-md transition-all">
@@ -549,7 +549,7 @@ export default function TempoTravellerKanpur() {
         </div>
 
         {/* WHY US */}
-        <h2 className="text-xl font-bold text-[#0f6ec8] mb-6 pl-4 border-l-4 border-[#0f6ec8]">Why Book a Tempo Traveller with Yatra Travel India in Kanpur</h2>
+        <h2 className="text-xl font-bold text-gray-900 mb-6 pl-4 border-l-4 border-[#0f6ec8]">Why Book a Tempo Traveller with Yatra Travel India in Kanpur</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
           {WHY_CARDS.map((w) => (
             <div key={w.title} className="bg-white border border-gray-200 rounded-xl p-5 flex items-start gap-4 hover:border-[#0f6ec8] transition-colors">
@@ -576,7 +576,7 @@ export default function TempoTravellerKanpur() {
         </div>
 
         {/* FAQ */}
-        <h2 className="text-xl font-bold text-[#0f6ec8] mb-6 pl-4 border-l-4 border-[#0f6ec8]">Frequently Asked Questions — Tempo Traveller in Kanpur</h2>
+        <h2 className="text-xl font-bold text-gray-900 mb-6 pl-4 border-l-4 border-[#0f6ec8]">Frequently Asked Questions — Tempo Traveller in Kanpur</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
           {FAQS.map((faq, i) => (
             <div key={i} className="bg-gray-50 border border-gray-200 rounded-xl p-5">
@@ -603,7 +603,7 @@ export default function TempoTravellerKanpur() {
         </div>
 
         {/* NETWORK */}
-        <h2 className="text-xl font-bold text-[#0f6ec8] mb-4 pl-4 border-l-4 border-[#0f6ec8]">Our Pan-India Tempo Traveller Network</h2>
+        <h2 className="text-xl font-bold text-gray-900 mb-4 pl-4 border-l-4 border-[#0f6ec8]">Our Pan-India Tempo Traveller Network</h2>
         <p className="text-sm text-gray-500 mb-5">Connecting India&apos;s major cities with premium group travel services.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
           {NETWORK_LINKS.map((n) => (
