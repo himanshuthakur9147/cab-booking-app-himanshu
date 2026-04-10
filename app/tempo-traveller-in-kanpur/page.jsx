@@ -26,7 +26,7 @@ const VEHICLES = [
   {
     badge: "14 Seater",
     title: "14 Seater Tempo Traveller in Kanpur",
-     // img: "/images/14seater.jpg",
+     img: "/images/14seater.jpg",
     specs: [
       { label: "Seating Capacity", value: "14 Passengers + 1 Driver" },
       { label: "Starting Fare",    value: "₹24/km" },
@@ -39,7 +39,7 @@ const VEHICLES = [
   {
     badge: "16 Seater",
     title: "16 Seater Tempo Traveller in Kanpur",
-     // img: "/images/16seater.jpg",
+     img: "/images/16seater.jpg",
     specs: [
       { label: "Seating Capacity", value: "16 Passengers + 1 Driver" },
       { label: "Starting Fare",    value: "₹26/km" },
@@ -78,7 +78,7 @@ const VEHICLES = [
   {
     badge: "24 Seater",
     title: "24 Seater Tempo Traveller in Kanpur",
-     // img: "/images/24seater.jpg",
+     img: "/images/24seater.jpg",
     specs: [
       { label: "Seating Capacity", value: "24 Passengers + 1 Driver" },
       { label: "Starting Fare",    value: "₹35/km" },
@@ -91,7 +91,7 @@ const VEHICLES = [
   {
     badge: "Luxury",
     title: "Luxury Tempo Traveller in Kanpur",
-     // img: "/images/luxury.jpg",
+     img: "/images/luxury.jpg",
     specs: [
       { label: "Seating Capacity", value: "9–16 Passengers + 1 Driver" },
       { label: "Starting Fare",    value: "On Request" },
@@ -104,7 +104,7 @@ const VEHICLES = [
   {
     badge: "Maharaja",
     title: "Maharaja Tempo Traveller in Kanpur",
-     // img: "/images/maharaja.jpg",
+     img: "/images/maharaja.jpg",
     specs: [
       { label: "Seating Capacity", value: "9–16 Passengers + 1 Driver" },
       { label: "Starting Fare",    value: "On Request" },
