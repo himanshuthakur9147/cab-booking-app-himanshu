@@ -658,10 +658,15 @@ export default function TempoTravellerKanpur() {
 function VehicleCard({ vehicle, onSelect }) {
   return (
     <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:border-[#0f6ec8] hover:shadow-md transition-all">
-      {/* Image */}
-      <div className="bg-gradient-to-br from-blue-50 to-blue-100 relative flex flex-col items-center justify-center py-7 gap-2">
-        <FaBus className="text-[#0f6ec8] opacity-25 text-5xl" />
-        <span className="text-[11px] font-semibold text-gray-400 text-center px-4">{vehicle.title}</span>
+      
+      {/* IMAGE */}
+      <div className="relative h-44 overflow-hidden bg-gray-100">
+        <img
+          src={vehicle.img}
+          alt={vehicle.title}
+          className="w-full h-full object-cover"
+        />
+
         <span className="absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full bg-[#0f6ec8]">
           {vehicle.badge}
         </span>
@@ -671,7 +676,6 @@ function VehicleCard({ vehicle, onSelect }) {
       <div className="p-5">
         <h3 className="font-bold text-gray-900 text-sm mb-4 leading-snug">{vehicle.title}</h3>
 
-        {/* Specs — Label: Value */}
         <div className="bg-[#f8faff] rounded-lg p-4 mb-4 space-y-2">
           {vehicle.specs.map((s) => (
             <p key={s.label} className="text-[12.5px] text-gray-700 leading-relaxed">
@@ -680,7 +684,6 @@ function VehicleCard({ vehicle, onSelect }) {
           ))}
         </div>
 
-        {/* Tags */}
         <div className="flex flex-wrap gap-1.5 mb-4">
           {vehicle.tags.map((tag) => (
             <span key={tag} className="text-[11px] font-semibold px-2.5 py-1 rounded-full border bg-blue-50 text-[#0f6ec8] border-blue-200">
@@ -689,7 +692,6 @@ function VehicleCard({ vehicle, onSelect }) {
           ))}
         </div>
 
-        {/* Button — always blue */}
         <button
           onClick={() => onSelect(vehicle.title)}
           className="w-full py-3 text-sm font-bold text-white rounded-lg transition-colors bg-[#0f6ec8] hover:bg-[#0a4a8f]"
