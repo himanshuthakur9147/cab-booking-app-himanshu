@@ -296,7 +296,7 @@ export default function TempoTravellerKanpur() {
             </tbody>
           </table>
         </div>
-        <p className="text-xs text-gray-400 mb-12 pt-2">* Fares depend on vehicle size and trip duration. Call 9044019511 for an exact quote.</p>
+        {/* <p className="text-xs text-gray-400 mb-12 pt-2">* Fares depend on vehicle size and trip duration. Call 9044019511 for an exact quote.</p> */}
 
         <ST border="border-[#ff6b35]">Perfect For</ST>
         <div className="flex flex-wrap gap-2 mb-12">
