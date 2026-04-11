@@ -188,9 +188,14 @@ export default function TempoTravellerAyodhya() {
         </div>
 
         <div className="mb-12">
-          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#ff6b35]">Tempo Traveller in Ayodhya — Comfortable Group Travel for Pilgrimage and Tours</h2>
-          <p className="text-base text-gray-600 leading-relaxed mb-3">Ayodhya is one of India&apos;s most sacred cities — the birthplace of Lord Shri Ram and home to the magnificent Ram Mandir, Hanuman Garhi, Kanak Bhawan, and dozens of ancient temples. Millions of devotees, families, and pilgrims visit Ayodhya every year for darshan, spiritual peace, and religious tours. Travelling in multiple autos or cars can be exhausting and disorganised. A tempo traveller in Ayodhya keeps your entire group together, comfortable, and on time.</p>
-          <p className="text-base text-gray-600 leading-relaxed">Yatra Travel India provides tempo traveller hire in Ayodhya with fully air-conditioned vehicles, comfortable pushback seats, ample luggage space, and experienced local drivers. Whether you are planning a short Ram Mandir darshan circuit, a multi-temple pilgrimage, an airport transfer, or a long-distance outstation trip to Varanasi, Lucknow, or Delhi — our tempo travellers make every journey smooth, safe, and affordable.</p>
+          <h1 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#ff6b35]">Why Millions of Tourists and Pilgrims Visit Ayodhya Every Year</h1>
+          <p className="text-base text-gray-600 leading-relaxed mb-3">Ayodhya is popular among visitors because it holds a deep spiritual, cultural, and historical significance that touches the hearts of millions of people across India and the world. Known as the birthplace of Lord Shri Ram, Ayodhya is one of the most important pilgrimage destinations in Hinduism.</p>
+          <p className="text-base text-gray-600 leading-relaxed">One of the biggest reasons people visit Ayodhya is the Shri Ram Janmabhoomi (Ram Mandir). Devotees come here to seek blessings, offer prayers, and experience the peaceful and devotional atmosphere. The temple has become a symbol of faith and devotion, attracting pilgrims throughout the year.</p>
+          <p className="text-base text-gray-600 leading-relaxed">Ayodhya is also home to many other sacred temples such as Hanuman Garhi, Kanak Bhawan, Nageshwarnath Temple, and Dashrath Mahal, making it a perfect place for a complete spiritual journey. Visitors often spend days exploring these holy sites and participating in religious rituals.</p>
+          <p className="text-base text-gray-600 leading-relaxed">Apart from its religious importance, Ayodhya has a rich mythological and historical background. The city is closely linked to the Ramayana, which makes it special for those interested in Indian culture, traditions, and ancient stories. Walking through the ghats, temples, and old streets gives visitors a glimpse into India’s timeless heritage.</p>
+          <p className="text-base text-gray-600 leading-relaxed">Another reason Ayodhya is popular is its calm and spiritual environment. Many people visit not just for worship, but also to find peace, meditate, and take a break from busy city life. The evening aarti on the Sarayu River is a beautiful experience that leaves a lasting impression on visitors.</p>
+          <p className="text-base text-gray-600 leading-relaxed">With better roads, railway connectivity, and improved tourism facilities, Ayodhya has become easier to reach, making it a preferred destination for families, senior citizens, and group travelers.</p>
+          <p className="text-base text-gray-600 leading-relaxed">In simple words, Ayodhya is popular because it offers a unique mix of faith, history, culture, and inner peace, making every visit meaningful and memorable.</p>
         </div>
 
         <ST id="services">Tempo Traveller Options in Ayodhya</ST>
@@ -255,9 +260,10 @@ export default function TempoTravellerAyodhya() {
 
         <ST>Tempo Traveller for Ram Mandir Darshan in Ayodhya</ST>
         <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-10">
-          <p className="text-base text-gray-600 leading-relaxed mb-4">Planning to visit Shri Ram Mandir in Ayodhya with your family or group? Travel comfortably with our tempo traveller for Ram Mandir darshan in Ayodhya. Whether you are visiting for the first time or returning for a spiritual retreat, our clean AC tempo travellers ensure you arrive fresh, relaxed, and on time for your prayers.</p>
-          <p className="text-base text-gray-600 leading-relaxed mb-4">Our trained and local drivers know the routes around Ram Mandir, Hanuman Garhi, Kanak Bhawan, Saryu Ghat, and all major temples in Ayodhya. They ensure on-time pickup, smooth drop, and safe travel, so you can focus entirely on your darshan and spiritual experience without worrying about traffic or parking.</p>
-          <p className="text-base text-gray-600 leading-relaxed">We provide different vehicle options like 9 seater, 12 seater, 16 seater, and luxury tempo traveller in Ayodhya, making it easy to choose the right vehicle based on your group size and comfort preference. Book by call or WhatsApp on 9044019511 for instant confirmation.</p>
+          <p className="text-base text-gray-600 leading-relaxed mb-4">Planning to visit Shri Ram Mandir in Ayodhya with your family or group? Travel comfortably with our tempo traveller for Ram Mandir darshan in Ayodhya. Yatra Travel India offers clean, comfortable, and affordable tempo traveller hire in Ayodhya for temple visits, pilgrimage tours, and group travel.</p>
+          <p className="text-base text-gray-600 leading-relaxed mb-4">Our AC tempo travellers in Ayodhya are perfect for short city trips and full-day darshan tours. Every vehicle comes with comfortable pushback seats, good legroom, and enough space for luggage so that everyone can enjoy a relaxed journey.</p>
+          <p className="text-base text-gray-600 leading-relaxed">We provide different vehicle options like 12 seater tempo traveller Ayodhya, 16 seater tempo traveller Ayodhya, and luxury tempo traveller Ayodhya, making it easy to choose the right vehicle based on your group size.</p>
+          <p className="text-base text-gray-600 leading-relaxed">Our trained and local drivers know the routes around Ram Mandir very well. They ensure on-time pickup, smooth drop, and safe travel, so you can focus only on your darshan and prayers.</p>
         </div>
 
         <ST>Features of Our Tempo Travellers in Ayodhya</ST>
@@ -278,7 +284,7 @@ export default function TempoTravellerAyodhya() {
             <ul className="list-none m-0 p-0">{INCLUDED.map((item, i) => <li key={item} className={"px-5 py-4 text-base font-semibold text-[#1e40af] border-b border-blue-100 last:border-0 " + (i % 2 === 0 ? "bg-[#f0f5ff]" : "bg-white")}>{item}</li>)}</ul>
           </div>
           <div className="border border-blue-200 rounded-xl overflow-hidden">
-            <div className="bg-[#0a4a8f] px-5 py-3"><span className="text-white font-bold text-sm tracking-widest uppercase">Excluded</span></div>
+            <div className="bg-[#1e40af] px-5 py-3"><span className="text-white font-bold text-sm tracking-widest uppercase">Excluded</span></div>
             <ul className="list-none m-0 p-0">{EXCLUDED.map((item, i) => <li key={item} className={"px-5 py-4 text-base font-semibold text-[#1e40af] border-b border-blue-100 last:border-0 " + (i % 2 === 0 ? "bg-[#f0f5ff]" : "bg-white")}>{item}</li>)}</ul>
           </div>
         </div>
