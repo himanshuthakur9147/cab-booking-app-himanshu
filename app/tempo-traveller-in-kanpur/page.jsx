@@ -91,14 +91,14 @@ const FAQS = [
   { q: "Is AC available in tempo travellers in Kanpur?",                    a: "Yes, AC tempo travellers are easily available and are actually the most preferred option, especially in summer. They make a big difference in comfort during long journeys." },
 ];
 
-const NETWORK_LINKS = [
-  { href: "/tempo-traveller/delhi",     city: "Tempo Traveller in Delhi",     type: "Corporate Travel, Weddings & Outstation" },
-  { href: "/tempo-traveller/lucknow",   city: "Tempo Traveller in Lucknow",   type: "Family Travel & Religious Tours" },
-  { href: "/tempo-traveller/varanasi",  city: "Tempo Traveller in Varanasi",  type: "Pilgrimage Groups & Cultural Tours" },
-  { href: "/tempo-traveller/jaipur",    city: "Tempo Traveller in Jaipur",    type: "Weddings, Tourism & Destination Events" },
-  { href: "/tempo-traveller/agra",      city: "Tempo Traveller in Agra",      type: "Heritage Tours & Group Travel" },
-  { href: "/tempo-traveller/prayagraj", city: "Tempo Traveller in Prayagraj", type: "Kumbh, Pilgrimages & City Tours" },
-  { href: "/tempo-traveller-in-ayodhya",   city: "Tempo Traveller in Ayodhya",   type: "Pilgrimage & Darshan Tours" },
+const NETWORK = [
+  { href: "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-mumbai",    city: "Tempo Traveller in Mumbai",    type: "Weddings, VIP Travel & Outstation" },
+  { href: "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-delhi",   city: "Tempo Traveller in Delhi",   type: "Family Travel & Religious Tours" },
+  { href: "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-varanasi",  city: "Tempo Traveller in Varanasi",  type: "Pilgrimage Groups & Cultural Tours" },
+  { href: "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-prayagraj", city: "Tempo Traveller in Prayagraj", type: "Kumbh, Pilgrimages & City Tours" },
+  { href: "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-bengaluru",     city: "Tempo Traveller in Bengaluru",     type: "Corporate Travel, Weddings & Outstation" },
+  { href: "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-agra",      city: "Tempo Traveller in Agra",      type: "Heritage Tours & Group Travel" },
+  { href: "https://www.yatratravelindia.com/tempo-traveller-in-manali",    city: "Tempo Traveller in Manali",    type: "Mountain Routes & Adventure Tours" },
 ];
 
 /* Section Title helper */
