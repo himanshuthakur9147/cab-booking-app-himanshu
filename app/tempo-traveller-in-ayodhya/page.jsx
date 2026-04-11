@@ -100,12 +100,12 @@ const FAQS = [
 ];
 
 const NETWORK = [
-  { href: "https://www.yatratravelindia.com/tempo-traveller-in-kanpur",    city: "Tempo Traveller in Kanpur",    type: "Weddings, VIP Travel & Outstation" },
-  { href: "https://www.yatratravelindia.com/tempo-traveller/lucknow",   city: "Tempo Traveller in Lucknow",   type: "Family Travel & Religious Tours" },
-  { href: "https://www.yatratravelindia.com/tempo-traveller/varanasi",  city: "Tempo Traveller in Varanasi",  type: "Pilgrimage Groups & Cultural Tours" },
-  { href: "https://www.yatratravelindia.com/tempo-traveller/prayagraj", city: "Tempo Traveller in Prayagraj", type: "Kumbh, Pilgrimages & City Tours" },
-  { href: "https://www.yatratravelindia.com/tempo-traveller/delhi",     city: "Tempo Traveller in Delhi",     type: "Corporate Travel, Weddings & Outstation" },
-  { href: "https://www.yatratravelindia.com/tempo-traveller/agra",      city: "Tempo Traveller in Agra",      type: "Heritage Tours & Group Travel" },
+  { href: "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-mumbai",    city: "Tempo Traveller in Mumbai",    type: "Weddings, VIP Travel & Outstation" },
+  { href: "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-delhi",   city: "Tempo Traveller in Delhi",   type: "Family Travel & Religious Tours" },
+  { href: "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-varanasi",  city: "Tempo Traveller in Varanasi",  type: "Pilgrimage Groups & Cultural Tours" },
+  { href: "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-prayagraj", city: "Tempo Traveller in Prayagraj", type: "Kumbh, Pilgrimages & City Tours" },
+  { href: "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-bengaluru",     city: "Tempo Traveller in Bengaluru",     type: "Corporate Travel, Weddings & Outstation" },
+  { href: "https://www.yatratravelindia.com/tempo-traveller/tempo-traveller-in-agra",      city: "Tempo Traveller in Agra",      type: "Heritage Tours & Group Travel" },
   { href: "https://www.yatratravelindia.com/tempo-traveller-in-manali",    city: "Tempo Traveller in Manali",    type: "Mountain Routes & Adventure Tours" },
 ];
 
