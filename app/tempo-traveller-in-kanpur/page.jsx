@@ -92,12 +92,12 @@ const FAQS = [
 ];
 
 const NETWORK_LINKS = [
-  { href: "/tempo-traveller-in-delhi",     city: "Tempo Traveller in Delhi",     type: "Corporate Travel, Weddings & Outstation" },
-  { href: "/tempo-traveller-in-lucknow",   city: "Tempo Traveller in Lucknow",   type: "Family Travel & Religious Tours" },
-  { href: "/tempo-traveller-in-varanasi",  city: "Tempo Traveller in Varanasi",  type: "Pilgrimage Groups & Cultural Tours" },
-  { href: "/tempo-traveller-in-jaipur",    city: "Tempo Traveller in Jaipur",    type: "Weddings, Tourism & Destination Events" },
-  { href: "/tempo-traveller-in-agra",      city: "Tempo Traveller in Agra",      type: "Heritage Tours & Group Travel" },
-  { href: "/tempo-traveller-in-prayagraj", city: "Tempo Traveller in Prayagraj", type: "Kumbh, Pilgrimages & City Tours" },
+  { href: "/tempo-traveller/delhi",     city: "Tempo Traveller in Delhi",     type: "Corporate Travel, Weddings & Outstation" },
+  { href: "/tempo-traveller/lucknow",   city: "Tempo Traveller in Lucknow",   type: "Family Travel & Religious Tours" },
+  { href: "/tempo-traveller/varanasi",  city: "Tempo Traveller in Varanasi",  type: "Pilgrimage Groups & Cultural Tours" },
+  { href: "/tempo-traveller/jaipur",    city: "Tempo Traveller in Jaipur",    type: "Weddings, Tourism & Destination Events" },
+  { href: "/tempo-traveller/agra",      city: "Tempo Traveller in Agra",      type: "Heritage Tours & Group Travel" },
+  { href: "/tempo-traveller/prayagraj", city: "Tempo Traveller in Prayagraj", type: "Kumbh, Pilgrimages & City Tours" },
   { href: "/tempo-traveller-in-ayodhya",   city: "Tempo Traveller in Ayodhya",   type: "Pilgrimage & Darshan Tours" },
 ];
 
