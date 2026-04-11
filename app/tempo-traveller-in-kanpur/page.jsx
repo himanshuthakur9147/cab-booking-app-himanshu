@@ -339,7 +339,7 @@ export default function TempoTravellerKanpur() {
             </ul>
           </div>
           <div className="border border-blue-200 rounded-xl overflow-hidden">
-            <div className="bg-[#0a4a8f] px-5 py-3">
+            <div className="bg-[#1e40af] px-5 py-3">
               <span className="text-white font-bold text-sm tracking-widest uppercase">Excluded</span>
             </div>
             <ul className="list-none m-0 p-0">
