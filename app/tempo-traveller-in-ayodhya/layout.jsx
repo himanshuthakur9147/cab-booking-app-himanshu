@@ -1,15 +1,15 @@
 // app/tempo-traveller-in-ayodhya/layout.jsx
 
 export const metadata = {
-  title: "Tempo Traveller in Ayodhya | Yatra Travel India – Ram Mandir Darshan, Pilgrimage & Outstation Tours",
+  title: "Best Tempo Traveller Ayodhya | Yatra Travel India  | Per Km Rate Starting ₹23 | Yatra Travel India",
   description:
-    "Travel in comfort with Yatra Travel India's tempo traveller hire in Ayodhya. Ideal for Ram Mandir darshan, family pilgrimage trips, religious tours, corporate travel, and weddings. Reliable AC vehicles with verified drivers. Call 9044019511.",
+    "Hire a Tempo Traveller in Ayodhya at just ₹23 per km for Ram Mandir darshan, group pilgrimages, and outstation travel. 9 to 17 seater vehicles, verified drivers, zero hidden charges.",
   keywords:
-    "tempo traveller in ayodhya, ayodhya group travel vehicle, tempo traveller for ram mandir visit, ayodhya tour rental, tempo traveller for rent in ayodhya, 12 seater tempo traveller ayodhya, luxury tempo traveller ayodhya, ayodhya pilgrimage tempo traveller",
+    "Keywords: Tempo Traveller in Ayodhya, Tempo Traveller per Km Rate in Ayodhya, Tempo Traveller Hire in Ayodhya,9 Seater Tempo Traveller in Ayodhya, 12 Seater Tempo Traveller in Ayodhya, 20 Seater Tempo Traveller in Ayodhya, AC Tempo Traveller in Ayodhya, , Tempo Traveller Charge per Km in Ayodhya, Affordable Tempo Traveller in Ayodhya, Tempo Traveller Cost in Ayodhya, Ram Mandir Darshan Tempo Traveller, Book Tempo Traveller in Ayodhya, Online Tempo Traveller Booking in Ayodhya,Tempo Traveller Booking  in AyodhyaYatra Travel India ",
   openGraph: {
-    title: "Tempo Traveller in Ayodhya — Ram Mandir Darshan & Pilgrimage Tours | Yatra Travel India",
+    title: "Best Tempo Traveller Ayodhya | Yatra Travel India  | Per Km Rate Starting ₹23 | Yatra Travel India",
     description:
-      "Tour Ram Mandir plus nearby temples via spacious tempo traveller in Ayodhya. Get reliable rides from Yatra Travel India. Dial +91 9044019511 to book fast.",
+      "Hire a Tempo Traveller in Ayodhya at just ₹23 per km for Ram Mandir darshan, group pilgrimages, and outstation travel. 9 to 17 seater vehicles, verified drivers, zero hidden charges.",
     url: "https://www.yatratravelindia.com/tempo-traveller-in-ayodhya",
     siteName: "Yatra Travel India",
     type: "website",
