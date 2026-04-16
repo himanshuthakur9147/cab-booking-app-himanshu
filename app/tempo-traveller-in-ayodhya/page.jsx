@@ -97,6 +97,8 @@ const FAQS = [
   { q: "Are tempo travellers in Ayodhya suitable for long-distance travel?",    a: "Yes, our vehicles are ideal for long-distance journeys from Ayodhya with comfortable reclining seats, full AC, and large luggage space for multi-day trips." },
   { q: "Do you offer last-minute tempo traveller booking in Ayodhya?",          a: "Yes, last-minute tempo traveller hire in Ayodhya is possible subject to vehicle availability. We recommend booking at least 3–5 days in advance during peak festival season." },
   { q: "Is tempo traveller available for school or college tours in Ayodhya?",  a: "Yes, we provide tempo traveller hire in Ayodhya for educational tours, student pilgrimage trips, and cultural visits to Ram Mandir and Ayodhya heritage sites." },
+  { q: "Can I pre-book tempo traveller in Ayodhya for future dates?", a: "Yes, advance reservations are accepted for future tempo traveller bookings in Ayodhya." },
+  { q: "Is luggage space sufficient in tempo traveller Ayodhya?", a: "Yes, our tempo travellers have large luggage carriers suitable for pilgrimage and tour travel." },
 ];
 
 const NETWORK = [
@@ -187,15 +189,138 @@ export default function TempoTravellerAyodhya() {
           <p className="text-sm text-blue-800 leading-relaxed">Yatra Travel India offers <strong>tempo traveller on rent in Ayodhya</strong> for Ram Mandir darshan, pilgrimage tours, family trips, wedding guest transfers, and outstation travel to Varanasi, Prayagraj, Lucknow, and Delhi. <strong>9 seater to 20 seater available — including Luxury and Maharaja Tempo Traveller.</strong> Fully AC, clean, pushback seats, verified drivers. Transparent pricing — no hidden charges. Call <strong>9044019511</strong> to book.</p>
         </div>
 
+        {/* Why Millions Visit Ayodhya - NEW SECTION FROM PDF */}
         <div className="mb-12">
-          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#ff6b35]">Tempo Traveller in Ayodhya — Comfortable Group Travel for Pilgrimage and Tours</h2>
-          <p className="text-base text-gray-600 leading-relaxed mb-3">Ayodhya is one of India&apos;s most sacred cities — the birthplace of Lord Shri Ram and home to the magnificent Ram Mandir, Hanuman Garhi, Kanak Bhawan, and dozens of ancient temples. Millions of devotees, families, and pilgrims visit Ayodhya every year for darshan, spiritual peace, and religious tours. Travelling in multiple autos or cars can be exhausting and disorganised. A tempo traveller in Ayodhya keeps your entire group together, comfortable, and on time.</p>
-          <p className="text-base text-gray-600 leading-relaxed">Yatra Travel India provides tempo traveller hire in Ayodhya with fully air-conditioned vehicles, comfortable pushback seats, ample luggage space, and experienced local drivers. Whether you are planning a short Ram Mandir darshan circuit, a multi-temple pilgrimage, an airport transfer, or a long-distance outstation trip to Varanasi, Lucknow, or Delhi — our tempo travellers make every journey smooth, safe, and affordable.</p>
+          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#ff6b35]">Why Millions of Tourists and Pilgrims Visit Ayodhya Every Year</h2>
+          <div className="bg-gradient-to-br from-orange-50 to-yellow-50 border border-orange-200 rounded-xl p-6 mb-6">
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Ayodhya is popular among visitors because it holds a deep spiritual, cultural, and historical significance that touches the hearts of millions of people across India and the world. Known as the birthplace of Lord Shri Ram, Ayodhya is one of the most important pilgrimage destinations in Hinduism.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">One of the biggest reasons people visit Ayodhya is the <strong>Shri Ram Janmabhoomi (Ram Mandir)</strong>. Devotees come here to seek blessings, offer prayers, and experience the peaceful and devotional atmosphere. The temple has become a symbol of faith and devotion, attracting pilgrims throughout the year.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Ayodhya is also home to many other sacred temples such as Hanuman Garhi, Kanak Bhawan, Nageshwarnath Temple, and Dashrath Mahal, making it a perfect place for a complete spiritual journey. Visitors often spend days exploring these holy sites and participating in religious rituals.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Apart from its religious importance, Ayodhya has a rich mythological and historical background. The city is closely linked to the Ramayana, which makes it special for those interested in Indian culture, traditions, and ancient stories. Walking through the ghats, temples, and old streets gives visitors a glimpse into India&apos;s timeless heritage.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Another reason Ayodhya is popular is its calm and spiritual environment. Many people visit not just for worship, but also to find peace, meditate, and take a break from busy city life. The evening aarti on the Sarayu River is a beautiful experience that leaves a lasting impression on visitors.</p>
+            <p className="text-base text-gray-700 leading-relaxed">With better roads, railway connectivity, and improved tourism facilities, Ayodhya has become easier to reach, making it a preferred destination for families, senior citizens, and group travelers. In simple words, Ayodhya is popular because it offers a unique mix of faith, history, culture, and inner peace, making every visit meaningful and memorable.</p>
+          </div>
         </div>
 
         <ST id="services">Tempo Traveller Options in Ayodhya</ST>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
           {VEHICLES.map(v => <VehicleCard key={v.badge} vehicle={v} onSelect={handleSelectVehicle} />)}
+        </div>
+
+        {/* Ayodhya Tempo Traveller Rental - NEW SECTION FROM PDF */}
+        <div className="mb-12">
+          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#0f6ec8]">Ayodhya Tempo Traveller Rental | 12 Seater, 16 Seater & Luxury Vehicle</h2>
+          <p className="text-base text-gray-600 leading-relaxed mb-4">Looking for a reliable tempo traveller rental in Ayodhya for pilgrimage, family trips, or group travel? Yatra Travel India provides safe, comfortable, and affordable tempo traveller hire in Ayodhya with multiple seating options to suit every group size. From 12 seater tempo traveller Ayodhya and 16 seater tempo traveller Ayodhya to luxury and Maharaja tempo traveller models, we have the perfect vehicle for your journey.</p>
+          <p className="text-base text-gray-600 leading-relaxed mb-4">Whether you are visiting the sacred Ram Mandir, planning a multi temple pilgrimage, organizing a family vacation, or traveling outstation from Ayodhya, our well-maintained AC tempo travellers ensure a smooth, relaxed, and hassle free ride. Each vehicle is designed with comfortable pushback seats, ample legroom, clean interiors, powerful air conditioning, and enough luggage space for long and short trips alike.</p>
+          
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-4">
+            <h3 className="font-bold text-gray-900 text-base mb-3">Our tempo traveller hire service in Ayodhya is ideal for:</h3>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-2">
+                {/* <span className="text-[#0f6ec8] mt-1">✓</span> */}
+                <span className="text-sm text-gray-700">1. Ram Mandir darshan and temple visits</span>
+              </li>
+              <li className="flex items-start gap-2">
+                {/* <span className="text-[#0f6ec8] mt-1">✓</span> */}
+                <span className="text-sm text-gray-700">2. Pilgrimage and religious tours</span>
+              </li>
+              <li className="flex items-start gap-2">
+                {/* <span className="text-[#0f6ec8] mt-1">✓</span> */}
+                <span className="text-sm text-gray-700">3. Family outings and weekend trips</span>
+              </li>
+              <li className="flex items-start gap-2">
+                {/* <span className="text-[#0f6ec8] mt-1">✓</span> */}
+                <span className="text-sm text-gray-700">4. Wedding guest transportation</span>
+              </li>
+              <li className="flex items-start gap-2">
+                {/* <span className="text-[#0f6ec8] mt-1">✓</span> */}
+                <span className="text-sm text-gray-700">5. Corporate travel and group tours</span>
+              </li>
+              <li className="flex items-start gap-2">
+                {/* <span className="text-[#0f6ec8] mt-1">✓</span> */}
+                <span className="text-sm text-gray-700">6. Local sightseeing and outstation journeys</span>
+              </li>
+            </ul>
+          </div>
+          
+          <p className="text-base text-gray-600 leading-relaxed mb-4">We believe in transparent and fair pricing. Our tempo traveller price in Ayodhya is competitive, with no hidden charges. You receive complete cost details in advance, helping you plan your travel budget with confidence.</p>
+          <p className="text-base text-gray-600 leading-relaxed">Booking a tempo traveller in Ayodhya with us is quick and easy. Simply call, WhatsApp, or book online by sharing your travel date, pickup location, destination, and number of passengers. Our team will provide an instant quote and confirmation. With experienced and verified drivers, well-serviced vehicles, and 24×7 customer support, Yatra Travel India is your trusted partner for tempo traveller rental in Ayodhya.</p>
+        </div>
+
+        {/* Comfortable and Well-Maintained - NEW SECTION FROM PDF */}
+        <div className="mb-12">
+          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-green-500">Comfortable and Well-Maintained Tempo Travellers in Ayodhya</h2>
+          <p className="text-base text-gray-600 leading-relaxed mb-4">At Yatra Travel India, we take pride in offering a fleet of modern and fully air conditioned tempo travellers in Ayodhya. Our tempo travellers in Ayodhya are clean, well kept, and perfect for both city travel and long outstation journeys. Whether you are visiting Ram Mandir, planning a family trip, or traveling with a group, our vehicles are designed to make your journey pleasant and relaxed.</p>
+          <p className="text-base text-gray-600 leading-relaxed mb-4">Each tempo traveller comes with comfortable pushback seats, good legroom, strong air-conditioning, and neat interiors. There is enough space for luggage, so you don&apos;t have to compromise on comfort, even on longer trips. We make sure every vehicle is checked and cleaned before each trip, so you always step into a fresh and well-maintained vehicle.</p>
+          
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 mb-4">
+            <h3 className="font-bold text-gray-900 text-base mb-3">Vehicle Options Available:</h3>
+            <ul className="space-y-2">
+              <li className="flex items-start gap-2">
+                <span className="text-[#0f6ec8] mt-1">•</span>
+                <span className="text-sm text-gray-700"><strong>12 Seater Tempo Traveller in Ayodhya</strong> – Best for families and small groups</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#0f6ec8] mt-1">•</span>
+                <span className="text-sm text-gray-700"><strong>16 Seater Tempo Traveller in Ayodhya</strong> – Suitable for medium-sized groups</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#0f6ec8] mt-1">•</span>
+                <span className="text-sm text-gray-700"><strong>Luxury & Maharaja Tempo Traveller</strong> – Ideal for weddings and premium travel</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#0f6ec8] mt-1">•</span>
+                <span className="text-sm text-gray-700">Bigger vehicles available for large groups on request</span>
+              </li>
+            </ul>
+          </div>
+          
+          <p className="text-base text-gray-600 leading-relaxed">All our tempo travellers are driven by experienced and verified drivers who understand local roads and major routes well. With Yatra Travel India, you can travel with confidence, knowing your comfort and safety are always our priority.</p>
+        </div>
+
+        {/* Hire for Outstation - NEW SECTION FROM PDF */}
+        <div className="mb-12">
+          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-blue-500">Hire Tempo Traveller in Ayodhya for Outstation Travel</h2>
+          <p className="text-base text-gray-600 leading-relaxed mb-4">Looking to hire tempo traveller in Ayodhya for outstation trips? Yatra Travel India provides trusted and affordable tempo traveller rental in Ayodhya for long-distance travel, pilgrimage tours, family outings, and group journeys.</p>
+          <p className="text-base text-gray-600 leading-relaxed mb-4">We offer clean and fully AC tempo traveller on rent in Ayodhya for one-way and round trips to popular destinations like Varanasi, Prayagraj, Lucknow, Delhi, Gorakhpur, and other nearby cities. Our service is ideal for people searching for tempo traveller booking Ayodhya, tempo traveller hire near me, and luxury tempo traveller Ayodhya.</p>
+          
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-4">
+            <h3 className="font-bold text-gray-900 text-base mb-3">Why choose our Tempo Traveller Service in Ayodhya:</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="flex items-start gap-2">
+                {/* <span className="text-blue-600 mt-1">✓</span> */}
+                <span className="text-sm text-gray-700">Affordable tempo traveller price in Ayodhya</span>
+              </div>
+              <div className="flex items-start gap-2">
+                {/* <span className="text-purple-600 mt-1">✓</span> */}
+                <span className="text-sm text-gray-700">Fully AC and comfortable vehicles</span>
+              </div>
+              <div className="flex items-start gap-2">
+                {/* <span className="text-purple-600 mt-1">✓</span> */}
+                <span className="text-sm text-gray-700">Experienced and verified drivers</span>
+              </div>
+              <div className="flex items-start gap-2">
+                {/* <span className="text-purple-600 mt-1">✓</span> */}
+                <span className="text-sm text-gray-700">Easy booking by call or WhatsApp</span>
+              </div>
+              <div className="flex items-start gap-2">
+                {/* <span className="text-purple-600 mt-1">✓</span> */}
+                <span className="text-sm text-gray-700">Best for family trips and corporate travel</span>
+              </div>
+              <div className="flex items-start gap-2">
+                {/* <span className="text-purple-600 mt-1">✓</span> */}
+                <span className="text-sm text-gray-700">Perfect for pilgrimage tours</span>
+              </div>
+            </div>
+          </div>
+          
+          <p className="text-base text-gray-600 leading-relaxed">Book your tempo traveller from Ayodhya for outstation travel today with Yatra Travel India and enjoy a safe, smooth, and comfortable journey. Our experienced drivers ensure safe highway travel and timely arrivals.</p>
+        </div>
+
+        <div className="mb-12">
+          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#ff6b35]">Tempo Traveller in Ayodhya — Comfortable Group Travel for Pilgrimage and Tours</h2>
+          <p className="text-base text-gray-600 leading-relaxed mb-3">Ayodhya is one of India&apos;s most sacred cities — the birthplace of Lord Shri Ram and home to the magnificent Ram Mandir, Hanuman Garhi, Kanak Bhawan, and dozens of ancient temples. Millions of devotees, families, and pilgrims visit Ayodhya every year for darshan, spiritual peace, and religious tours. Travelling in multiple autos or cars can be exhausting and disorganised. A tempo traveller in Ayodhya keeps your entire group together, comfortable, and on time.</p>
+          <p className="text-base text-gray-600 leading-relaxed">Yatra Travel India provides tempo traveller hire in Ayodhya with fully air-conditioned vehicles, comfortable pushback seats, ample luggage space, and experienced local drivers. Whether you are planning a short Ram Mandir darshan circuit, a multi-temple pilgrimage, an airport transfer, or a long-distance outstation trip to Varanasi, Lucknow, or Delhi — our tempo travellers make every journey smooth, safe, and affordable.</p>
         </div>
 
         <ST>Tempo Traveller Options in Ayodhya — Full Comparison</ST>
@@ -232,6 +357,37 @@ export default function TempoTravellerAyodhya() {
         </div>
         <p className="text-xs text-gray-400 mb-4 pt-2">* Ayodhya Airport parking charges payable as per airport authority rules. Fares are one-way.</p>
 
+        {/* Tempo Traveller Rent Price List - NEW SECTION FROM PDF */}
+        <div className="mb-12">
+          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-orange-500">Tempo Traveller Rent in Ayodhya – Affordable Price List</h2>
+          <p className="text-base text-gray-600 leading-relaxed mb-4">Yatra Travel India offers budget-friendly and transparent tempo traveller rent in Ayodhya for local trips, outstation travel, and pilgrimage tours. If you are searching for tempo traveller hire in Ayodhya, tempo traveller booking Ayodhya, or tempo traveller on rent in Ayodhya, we provide the best options at competitive rates.</p>
+          
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-4">
+            <h3 className="font-bold text-gray-900 text-base mb-3">Our starting tempo traveller price in Ayodhya:</h3>
+            <div className="space-y-2">
+              <div className="flex justify-between items-center py-2 border-b border-blue-200">
+                <span className="text-sm font-semibold text-gray-700">9 Seater Tempo Traveller in Ayodhya</span>
+                <span className="text-sm font-bold text-blue-600">₹22 per km</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-blue-200">
+                <span className="text-sm font-semibold text-gray-700">12 Seater Tempo Traveller Fare in Ayodhya</span>
+                <span className="text-sm font-bold text-blue-600">₹23 to ₹25 per km</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-blue-200">
+                <span className="text-sm font-semibold text-gray-700">16 Seater Urbania Tempo Traveller Ayodhya</span>
+                <span className="text-sm font-bold text-blue-600">₹26 to ₹28 per km</span>
+              </div>
+              <div className="flex justify-between items-center py-2">
+                <span className="text-sm font-semibold text-gray-700">20 Seater Tempo Traveller Hire in Ayodhya</span>
+                <span className="text-sm font-bold text-blue-600">₹30 per km</span>
+              </div>
+            </div>
+          </div>
+          
+          <p className="text-base text-gray-600 leading-relaxed mb-3">Toll tax, parking charges, and driver allowance are clearly discussed in advance. No hidden charges.</p>
+          <p className="text-base text-gray-600 leading-relaxed">We also provide customized Ayodhya pilgrimage tour packages, Ram Mandir darshan travel plans, and group tour packages for families, corporate groups, and travel agents.</p>
+        </div>
+
         <ST border="border-green-500">Tempo Traveller Hire in Ayodhya — Key Outstation Routes</ST>
         <div className="overflow-x-auto rounded-xl border border-gray-200 mb-2">
           <table className="w-full text-sm min-w-[420px]">
@@ -248,7 +404,227 @@ export default function TempoTravellerAyodhya() {
             </tbody>
           </table>
         </div>
-        <p className="text-xs text-gray-400 mb-12 pt-2">* Fares depend on vehicle size and trip duration. Call 9044019511 for an exact quote.</p>
+
+
+        {/* Best Time to Visit Ayodhya - NEW SECTION FROM PDF */}
+        <div className="mb-12">
+          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-teal-500">Best Time to Visit Ayodhya with Family – Plan Your Trip</h2>
+          <p className="text-base text-gray-600 leading-relaxed mb-4">Ayodhya is one of the most sacred cities in India and a popular destination for family trips, Ram Mandir darshan, and pilgrimage tours. If you are planning to visit Ayodhya with family, choosing the right season makes your journey more comfortable, safe, and enjoyable.</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-4">
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
+              <h3 className="font-bold text-blue-800 text-base mb-3">October to March</h3>
+              <p className="text-sm font-semibold text-gray-700 mb-2">Perfect Season for Family Visit</p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1 text-xs">✓</span>
+                  <span className="text-xs text-gray-600">Pleasant and cool weather, ideal for sightseeing</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1 text-xs">✓</span>
+                  <span className="text-xs text-gray-600">Comfortable for Ram Mandir darshan</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1 text-xs">✓</span>
+                  <span className="text-xs text-gray-600">Great for senior citizens and children</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1 text-xs">✓</span>
+                  <span className="text-xs text-gray-600">Peak season for pilgrimage tours</span>
+                </li>
+              </ul>
+              <p className="text-xs text-blue-700 mt-3 font-medium">Tip: Book your tempo traveller early to avoid last-minute hassle</p>
+            </div>
+            
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
+              <h3 className="font-bold text-blue-800 text-base mb-3">April to June</h3>
+              <p className="text-sm font-semibold text-gray-700 mb-2">Summer Travel in Ayodhya</p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1 text-xs">✓</span>
+                  <span className="text-xs text-gray-600">Summers are hot but manageable</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1 text-xs">✓</span>
+                  <span className="text-xs text-gray-600">Best to travel in morning or evening</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1 text-xs">✓</span>
+                  <span className="text-xs text-gray-600">AC tempo traveller ensures cool ride</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1 text-xs">✓</span>
+                  <span className="text-xs text-gray-600">Ideal for short trips and overnight stays</span>
+                </li>
+              </ul>
+              <p className="text-xs text-blue-700 mt-3 font-medium">Avoid afternoon travel during hottest months</p>
+            </div>
+            
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
+              <h3 className="font-bold text-blue-800 text-base mb-3">July to September</h3>
+              <p className="text-sm font-semibold text-gray-700 mb-2">Monsoon Visits</p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1 text-xs">✓</span>
+                  <span className="text-xs text-gray-600">Monsoon brings freshness to Ayodhya</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1 text-xs">✓</span>
+                  <span className="text-xs text-gray-600">Less crowded than peak season</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1 text-xs">✓</span>
+                  <span className="text-xs text-gray-600">Greenery around temples is pleasant</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1 text-xs">✓</span>
+                  <span className="text-xs text-gray-600">Experienced drivers ensure safe travel</span>
+                </li>
+              </ul>
+              <p className="text-xs text-blue-700 mt-3 font-medium">Smooth and safe travel even in rainy conditions</p>
+            </div>
+          </div>
+          
+          <div className="bg-gradient-to-r from-blue-50 to-blue-50 border border-blue-200 rounded-xl p-5">
+            <h3 className="font-bold text-blue-800 text-base mb-3">Festival Season – Experience Ayodhya at Its Best</h3>
+            <p className="text-sm text-gray-700 leading-relaxed mb-3">Ayodhya is magical during festivals like Ram Navami, Diwali, and Makar Sankranti with special prayers, cultural events, and decorations.</p>
+            <div className="bg-yellow-50 border border-yellow-300 rounded-lg p-3">
+              <p className="text-xs text-yellow-800 font-semibold">High demand for hotels and transport. Early booking of tempo traveller in Ayodhya is recommended for stress-free travel.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Things to Know Before Booking - NEW SECTION FROM PDF */}
+        <div className="mb-12">
+          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-indigo-500">Things to Know Before Booking Tempo Traveller in Ayodhya</h2>
+          <p className="text-base text-gray-600 leading-relaxed mb-5">Planning a trip to Ayodhya? Whether it&apos;s for Ram Mandir darshan, family travel, pilgrimage tours, wedding groups, or outstation trips, hiring a tempo traveller in Ayodhya is the most comfortable and convenient option. Here&apos;s everything you should know before booking your tempo traveller hire in Ayodhya.</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="bg-white border border-gray-200 rounded-xl p-5 hover:border-indigo-400 transition-colors">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-indigo-600 font-bold">1</span>
+                </div>
+                <h3 className="font-bold text-gray-900 text-sm">Choose the Right Tempo Traveller Size</h3>
+              </div>
+              <ul className="space-y-2 ml-11">
+                <li className="text-xs text-gray-600">• 12 Seater – Small families and group tours</li>
+                <li className="text-xs text-gray-600">• 16 Seater – Medium-sized groups</li>
+                <li className="text-xs text-gray-600">• Luxury/Maharaja – VIP travel or special occasions</li>
+                <li className="text-xs text-gray-600">• 20 Seater/Volvo – Large pilgrimage groups</li>
+              </ul>
+            </div>
+            
+            <div className="bg-white border border-gray-200 rounded-xl p-5 hover:border-indigo-400 transition-colors">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-indigo-600 font-bold">2</span>
+                </div>
+                <h3 className="font-bold text-gray-900 text-sm">Check Vehicle Features for Comfort</h3>
+              </div>
+              <ul className="space-y-2 ml-11">
+                <li className="text-xs text-gray-600">• Fully air-conditioned (AC) interiors</li>
+                <li className="text-xs text-gray-600">• Pushback and reclining seats</li>
+                <li className="text-xs text-gray-600">• Spacious luggage area</li>
+                <li className="text-xs text-gray-600">• LED lights, music system</li>
+              </ul>
+            </div>
+            
+            <div className="bg-white border border-gray-200 rounded-xl p-5 hover:border-indigo-400 transition-colors">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-indigo-600 font-bold">3</span>
+                </div>
+                <h3 className="font-bold text-gray-900 text-sm">Transparent Pricing</h3>
+              </div>
+              <ul className="space-y-2 ml-11">
+                <li className="text-xs text-gray-600">• Confirm fare before booking</li>
+                <li className="text-xs text-gray-600">• Check if toll and parking included</li>
+                <li className="text-xs text-gray-600">• Verify driver allowance details</li>
+                <li className="text-xs text-gray-600">• Avoid hidden costs</li>
+              </ul>
+            </div>
+            
+            <div className="bg-white border border-gray-200 rounded-xl p-5 hover:border-indigo-400 transition-colors">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-indigo-600 font-bold">4</span>
+                </div>
+                <h3 className="font-bold text-gray-900 text-sm">Plan Your Route</h3>
+              </div>
+              <ul className="space-y-2 ml-11">
+                <li className="text-xs text-gray-600">• Ayodhya → Varanasi</li>
+                <li className="text-xs text-gray-600">• Ayodhya → Lucknow</li>
+                <li className="text-xs text-gray-600">• Ayodhya → Delhi</li>
+                <li className="text-xs text-gray-600">• Ayodhya → Prayagraj / Haridwar</li>
+              </ul>
+            </div>
+            
+            <div className="bg-white border border-gray-200 rounded-xl p-5 hover:border-indigo-400 transition-colors">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-indigo-600 font-bold">5</span>
+                </div>
+                <h3 className="font-bold text-gray-900 text-sm">Professional and Verified Drivers</h3>
+              </div>
+              <ul className="space-y-2 ml-11">
+                <li className="text-xs text-gray-600">• Verified and trained drivers</li>
+                <li className="text-xs text-gray-600">• Know local roads and highways</li>
+                <li className="text-xs text-gray-600">• Ensure safe and punctual journey</li>
+                <li className="text-xs text-gray-600">• Polite and professional service</li>
+              </ul>
+            </div>
+            
+            <div className="bg-white border border-gray-200 rounded-xl p-5 hover:border-indigo-400 transition-colors">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-indigo-600 font-bold">6</span>
+                </div>
+                <h3 className="font-bold text-gray-900 text-sm">Easy Booking Options</h3>
+              </div>
+              <ul className="space-y-2 ml-11">
+                <li className="text-xs text-gray-600">• Book via call or WhatsApp</li>
+                <li className="text-xs text-gray-600">• Share pickup, destination, date</li>
+                <li className="text-xs text-gray-600">• Instant quote and confirmation</li>
+                <li className="text-xs text-gray-600">• Customized pilgrimage packages</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mt-5">
+            <div className="flex items-start gap-3">
+              <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span className="text-black-600 font-bold">7</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-gray-900 text-sm mb-2">Plan Ahead During Festivals and Peak Seasons</h3>
+                <p className="text-xs text-gray-700 leading-relaxed">Festivals like Ram Navami, Diwali, and Makar Sankranti attract large crowds. Book tempo traveller in Ayodhya at least 3–5 days in advance. Luxury or Maharaja tempo traveller Ayodhya is recommended for VIPs or senior citizens.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Most Booked Routes - NEW SECTION FROM PDF */}
+        <div className="mb-12">
+          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-blue-500">Most Booked Tempo Traveller Routes from Ayodhya</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { title: "Ayodhya to Varanasi", desc: "A favorite route for temple visits and spiritual journeys. Perfect for families and groups who want a relaxed and smooth ride." },
+              { title: "Ayodhya to Lucknow", desc: "Ideal for business meetings, shopping trips, and weekend travel. Reliable service for comfortable AC travel." },
+              { title: "Ayodhya to Delhi", desc: "Best for long distance journeys, group tours, and pilgrimage travel. Spacious seating and comfortable AC travel." },
+              { title: "Ayodhya to Gorakhpur", desc: "Suitable for short outstation trips and family visits. 12 seater tempo traveller and bigger vehicles available." },
+              { title: "Ayodhya to Prayagraj", desc: "Popular for cultural tours and student groups. Safe and convenient travel for all group sizes." },
+              { title: "Ayodhya to Haridwar & Rishikesh", desc: "Perfect for spiritual tours and group pilgrimages. Comfortable journey throughout the route." },
+              { title: "Ayodhya to Agra, Mathura & Vrindavan", desc: "Great for sightseeing and heritage trips. Premium group experiences with luxury options." },
+              { title: "Ayodhya Airport Pickup/Drop", desc: "Group transport to or from the airport. Punctual pickups and smooth rides for airport transfers." },
+            ].map((route, i) => (
+              <div key={i} className="bg-gradient-to-br from-blue-50 to-blue-50 border border-blue-200 rounded-xl p-5 hover:border-blue-400 transition-colors">
+                <h3 className="font-bold text-blue-800 text-sm mb-2">{route.title}</h3>
+                <p className="text-xs text-gray-600 leading-relaxed">{route.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <ST border="border-[#ff6b35]">Perfect For</ST>
         <div className="flex flex-wrap gap-2 mb-12">{USE_TAGS.map(tag => <span key={tag} className="bg-blue-50 border border-blue-200 text-[#0f6ec8] text-xs font-semibold px-4 py-2 rounded-full">{tag}</span>)}</div>
@@ -278,7 +654,7 @@ export default function TempoTravellerAyodhya() {
             <ul className="list-none m-0 p-0">{INCLUDED.map((item, i) => <li key={item} className={"px-5 py-4 text-base font-semibold text-[#1e40af] border-b border-blue-100 last:border-0 " + (i % 2 === 0 ? "bg-[#f0f5ff]" : "bg-white")}>{item}</li>)}</ul>
           </div>
           <div className="border border-blue-200 rounded-xl overflow-hidden">
-            <div className="bg-[#0a4a8f] px-5 py-3"><span className="text-white font-bold text-sm tracking-widest uppercase">Excluded</span></div>
+            <div className="bg-[#1e40af] px-5 py-3"><span className="text-white font-bold text-sm tracking-widest uppercase">Excluded</span></div>
             <ul className="list-none m-0 p-0">{EXCLUDED.map((item, i) => <li key={item} className={"px-5 py-4 text-base font-semibold text-[#1e40af] border-b border-blue-100 last:border-0 " + (i % 2 === 0 ? "bg-[#f0f5ff]" : "bg-white")}>{item}</li>)}</ul>
           </div>
         </div>
@@ -339,7 +715,6 @@ export default function TempoTravellerAyodhya() {
           </div>
         </div>
 
-        {/* NETWORK — white card style with full URLs */}
         <ST>Our Pan-India Tempo Traveller Network</ST>
         <p className="text-sm text-gray-500 mb-6 -mt-3">Connecting India&apos;s major cities with premium group travel services.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
@@ -367,25 +742,37 @@ export default function TempoTravellerAyodhya() {
 function VehicleCard({ vehicle, onSelect }) {
   return (
     <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:border-[#0f6ec8] hover:shadow-md transition-all">
-      <div className="relative h-52 overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100">
-        {vehicle.img
-          ? <img src={vehicle.img} alt={vehicle.title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" onError={e => { e.currentTarget.style.display = "none"; }} />
-          : <div className="w-full h-full flex items-center justify-center"><FaBus className="text-[#0f6ec8] opacity-20 text-5xl" /></div>
-        }
-        <span className="absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full bg-[#0f6ec8] z-10">{vehicle.badge}</span>
+      <div className="relative h-44 overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100">
+        {vehicle.img ? (
+          <img src={vehicle.img} alt={vehicle.title} className="w-full h-full object-cover"
+            onError={(e) => { e.currentTarget.style.display = "none"; }} />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <FaBus className="text-[#0f6ec8] opacity-20 text-5xl" />
+          </div>
+        )}
+        <span className="absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full bg-[#0f6ec8] z-10">
+          {vehicle.badge}
+        </span>
       </div>
       <div className="p-5">
         <h3 className="font-bold text-gray-900 text-sm mb-4 leading-snug">{vehicle.title}</h3>
         <div className="bg-[#f8faff] rounded-lg p-4 mb-4 space-y-2">
-          {vehicle.specs.map(s => (
-            <div key={s.label} className="flex items-start justify-between text-[12.5px] gap-2">
-              <span className="text-gray-500 font-medium whitespace-nowrap">{s.label}</span>
-              <span className="font-bold text-gray-900 text-right">{s.value}</span>
-            </div>
+          {vehicle.specs.map((s) => (
+            <p key={s.label} className="text-[12.5px] text-gray-700 leading-relaxed">
+              <span className="font-bold">{s.label}:</span>{" "}{s.value}
+            </p>
           ))}
         </div>
-        <div className="flex flex-wrap gap-1.5 mb-4">{vehicle.tags.map(tag => <span key={tag} className="text-[11px] font-semibold px-2.5 py-1 rounded-full border bg-blue-50 text-[#0f6ec8] border-blue-200">{tag}</span>)}</div>
-        <button onClick={() => onSelect(vehicle.title)} className="w-full py-3 text-sm font-bold text-white rounded-lg bg-[#0f6ec8] hover:bg-[#0a4a8f] transition-colors">Book {vehicle.badge} Tempo</button>
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          {vehicle.tags.map((tag) => (
+            <span key={tag} className="text-[11px] font-semibold px-2.5 py-1 rounded-full border bg-blue-50 text-[#0f6ec8] border-blue-200">{tag}</span>
+          ))}
+        </div>
+        <button onClick={() => onSelect(vehicle.title)}
+          className="w-full py-3 text-sm font-bold text-white rounded-lg bg-[#0f6ec8] hover:bg-[#0a4a8f] transition-colors">
+          Book {vehicle.badge} Tempo
+        </button>
       </div>
     </div>
   );
