@@ -9,7 +9,6 @@ import { FaPhoneAlt, FaWhatsapp, FaShieldAlt, FaBus } from "react-icons/fa";
 const VEHICLES = [
   { badge: "9 Seater",  title: "9 Seater Tempo Traveller in Ayodhya",  img: "/images/9seater.jpg",  specs: [{ label: "Seating Capacity", value: "9 Passengers + 1 Driver" }, { label: "Starting Fare", value: "₹22/km" }, { label: "Driving Charges", value: "₹500/day" }, { label: "Minimum Km/Day", value: "250 km/day" }, { label: "Facility", value: "AC, Pushback Seat, Music System" }], tags: ["Full AC", "Pushback Seats", "Ram Mandir Tour", "Small Groups"] },
   { badge: "12 Seater", title: "12 Seater Tempo Traveller in Ayodhya", img: "/images/12seater.jpg", specs: [{ label: "Seating Capacity", value: "12 Passengers + 1 Driver" }, { label: "Starting Fare", value: "₹23/km" }, { label: "Driving Charges", value: "₹500/day" }, { label: "Minimum Km/Day", value: "250 km/day" }, { label: "Facility", value: "AC, Pushback Seat, Music System" }], tags: ["Full AC", "Pushback Seats", "Family Pilgrimage", "Lucknow Trip"] },
-  { badge: "13 Seater", title: "13 Seater Tempo Traveller in Ayodhya", img: "/images/13seater.jpg", specs: [{ label: "Seating Capacity", value: "13 Passengers + 1 Driver" }, { label: "Starting Fare", value: "₹24/km" }, { label: "Driving Charges", value: "₹500/day" }, { label: "Minimum Km/Day", value: "250 km/day" }, { label: "Facility", value: "AC, Pushback Seat, Music System" }], tags: ["Full AC", "Temple Tours", "Group Travel", "Airport Transfer"] },
   { badge: "16 Seater", title: "16 Seater Tempo Traveller in Ayodhya", img: "/images/16seater.jpg", specs: [{ label: "Seating Capacity", value: "16 Passengers + 1 Driver" }, { label: "Starting Fare", value: "₹26/km" }, { label: "Driving Charges", value: "₹500/day" }, { label: "Minimum Km/Day", value: "250 km/day" }, { label: "Facility", value: "AC, Pushback Seat, Music System" }], tags: ["Full AC", "Extra Legroom", "Varanasi Trip", "Corporate Tours"] },
   { badge: "20 Seater", title: "20 Seater Tempo Traveller in Ayodhya", img: "/images/20seater.jpg", specs: [{ label: "Seating Capacity", value: "20 Passengers + 1 Driver" }, { label: "Starting Fare", value: "₹30/km" }, { label: "Driving Charges", value: "₹500/day" }, { label: "Minimum Km/Day", value: "250 km/day" }, { label: "Facility", value: "AC, Pushback Seat, Music System" }], tags: ["Full AC", "Max Luggage", "Wedding Groups", "Pilgrimage"] },
   { badge: "Luxury",    title: "Luxury Tempo Traveller in Ayodhya",    img: "/images/luxury.jpg",   specs: [{ label: "Seating Capacity", value: "9–16 Passengers + 1 Driver" }, { label: "Starting Fare", value: "On Request" }, { label: "Driving Charges", value: "₹500/day" }, { label: "Minimum Km/Day", value: "250 km/day" }, { label: "Facility", value: "AC, Pushback Seat, Music System" }], tags: ["Premium AC", "LED Lighting", "Music System", "Charging Points"] },
@@ -19,7 +18,6 @@ const VEHICLES = [
 const OPTIONS_TABLE = [
   { vehicle: "9 Seater Tempo Traveller in Ayodhya",   capacity: "9 + Driver",     ac: "AC",         ideal: "Small families and groups - Ram Mandir darshan, short temple circuits, and local sightseeing in Ayodhya" },
   { vehicle: "12 Seater Tempo Traveller in Ayodhya",  capacity: "12 + Driver",    ac: "AC",         ideal: "Medium family groups - pilgrimage tours, Hanuman Garhi, Kanak Bhawan, and outstation to Lucknow and Varanasi" },
-  { vehicle: "13 Seater Tempo Traveller in Ayodhya",  capacity: "13 + Driver",    ac: "AC",         ideal: "Medium groups - airport transfers, multi-temple darshan, and comfortable outstation travel from Ayodhya" },
   { vehicle: "16 Seater Tempo Traveller in Ayodhya",  capacity: "16 + Driver",    ac: "AC",         ideal: "Large groups - corporate tours, religious groups, wedding parties, and longer routes to Delhi and Prayagraj" },
   { vehicle: "20 Seater Tempo Traveller in Ayodhya",  capacity: "20 + Driver",    ac: "AC",         ideal: "Large pilgrimage and wedding groups - spacious seating and luggage space for multi-day religious tours from Ayodhya" },
   { vehicle: "Luxury Tempo Traveller in Ayodhya",     capacity: "9–16 + Driver",  ac: "Premium AC", ideal: "VIP guests, senior citizens, wedding functions - soft pushback seats, LED lighting, music system, and charging points" },
@@ -28,7 +26,6 @@ const OPTIONS_TABLE = [
 
 const AIRPORT_TABLE = [
   { vehicle: "12 Seater Tempo Traveller", pickup: "₹2,000", drop: "₹2,000" },
-  { vehicle: "13 Seater Tempo Traveller", pickup: "₹2,200", drop: "₹2,200" },
   { vehicle: "14 Seater Tempo Traveller", pickup: "₹2,200", drop: "₹2,200" },
   { vehicle: "16 Seater Tempo Traveller", pickup: "₹2,500", drop: "₹2,500" },
 ];
