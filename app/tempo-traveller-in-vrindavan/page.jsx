@@ -332,8 +332,8 @@ export default function TempoTravellerVrindavan() {
 
         {/* ══ SECTION 4: Outstation Routes ══ */}
         <div className="mb-12">
-          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-green-500">Tempo Traveller for Outstation Trips from Vrindavan</h2>
-          <p className="text-base text-gray-600 leading-relaxed mb-5">Plan safe and convenient group travel with our tempo traveller for outstation from Vrindavan service. We offer one-way and round-trip bookings to major religious and tourist destinations across North India. Our experienced drivers ensure smooth highway travel and timely arrivals.</p>
+          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-green-500">Popular Tempo Traveller Routes from Vrindavan</h2>
+          <p className="text-base text-gray-600 leading-relaxed mb-5">Travel comfortably, safely, and hassle-free with Yatra Travel India on these popular tempo traveller routes from Vrindavan. Whether it’s a family outing, corporate trip, wedding, or pilgrimage, we provide reliable, spacious, and fully AC tempo travellers in Vrindavan for a stress-free journey.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
             {OUTSTATION_ROUTES.map(r => (
               <div key={r.route} className="bg-white border border-gray-200 rounded-xl p-5 hover:border-[#0f6ec8] transition-colors">
@@ -410,6 +410,9 @@ export default function TempoTravellerVrindavan() {
               { title: "Perfect Vehicle for Every Trip",      desc: "Whether you need a 12-seater tempo traveller Vrindavan, a luxury tempo traveller Vrindavan, or a larger 17, 20, or 45+ seater Volvo bus, we have the ideal vehicle for every occasion — from family trips and group tours to corporate travel and VIP transfers." },
               { title: "Professional & Verified Drivers",     desc: "Travel with experienced, friendly, and trustworthy drivers who know Vrindavan and major highway routes inside out. Whether it's a tempo traveller for outstation Vrindavan or a local sightseeing tour, our drivers ensure a safe, smooth, and punctual journey every time." },
               { title: "Ultimate Comfort & Luxury",           desc: "All our vehicles are fully air-conditioned with spacious interiors, reclining seats, and premium features. Enjoy long-distance travel — Vrindavan to Mathura, Vrindavan to Agra, or Vrindavan to Delhi — in complete comfort and style." },
+              { title: "Flexible and Easy Booking",           desc: "Whether it’s an outstation adventure, local sightseeing, airport pickup, or tempo traveller booking Vrindavan, we provide instant quotes and easy booking via call or WhatsApp, saving you time and effort." },
+              { title: "Trusted by Hundreds of Happy Customers",           desc: "With a proven track record of safe, punctual, and reliable service, we are the go-to choice for families, corporates, wedding groups, and large tours in Vrindavan." },
+              { title: "24×7 Support & Assistance",           desc: "Our dedicated team is always ready to answer queries, provide assistance, or handle last-minute changes, giving you complete peace of mind throughout your journey." },
             ].map(item => (
               <div key={item.title} className="bg-gradient-to-br from-orange-50 to-yellow-50 border border-orange-200 rounded-xl p-5">
                 <h3 className="font-bold text-orange-800 text-sm mb-2">{item.title}</h3>
