@@ -87,8 +87,8 @@ const SIGHTSEEING_PLACES = [
 const WHY_PEOPLE_CHOOSE = [
   { title: "Travelling Without Distress",  desc: "We manage every step which we undertake such as planning, coordination, and assistance. This offers you to travel peacefully knowing that it is taken great care of your journey." },
   { title: "Comfort You Get in Travel",    desc: "While you travel, you get complete comfort on the way. A complete relaxation offers you to get through trips without any problem." },
-  { title: "Everlasting Trust",            desc: "You get everlasting trust as our experts offer you varied needs. This makes your communication effective and builds great trust. You can have reliable amenity from us." },
-  { title: "Available 24 Hours",           desc: "Tempo Chennai Travellers offer 24 hours support to passengers. Get service at any time through our webpage and make best use of it." },
+  { title: "Everlasting Trust",            desc: "You get everlasting trust as our experts’ offer you varied needs. This makes your communication effective and builds great trust. You can have reliable amenity from us. Thus you get soothing effect with no delay." },
+  { title: "Available 24 Hours",           desc: "The Tempo Chennai Travellers offer 24 hours support to passengers. Get service at any time through our webpage and make best use of it." },
 ];
 
 const LUXURY_12_FEATURES = [
@@ -101,9 +101,9 @@ const LUXURY_12_FEATURES = [
 ];
 
 const RENTAL_SERVICES = [
-  { capacity: "14 Seater", desc: "Chennai Travels offer 14-seater vans for rental purpose. Clients can take on our well-maintained vans for weekend tours, visit tourist attractions, religious trips, etc." },
-  { capacity: "16 Seater", desc: "We at Chennai Travels offer 16-seater vans for charge in Chennai for neighbourhood and outstation trips. Our vans are highly maintained and driven by well-experienced drivers." },
-  { capacity: "20 Seater", desc: "Chennai Travels provide vans for rental purpose with 20 seats at a reasonable value. Hire this van for Chennai neighbouring trips and Chennai to outstation trips at a cheaper rate." },
+  { capacity: "14 Seater", desc: "Chennai Travels offer 14 -seater vans for rental purpose. Clients can take on our well-maintained vans for weekend tours, visit tourist attractions, religious trips, etc. Connect with us to book your services for trip." },
+  { capacity: "16 Seater", desc: "We at Chennai Travels offer 16-seater vans for charge in Chennai for neighbourhood and outstation trips. Our vans are highly maintained and driven by well-experienced drivers. Book your services now." },
+  { capacity: "20 Seater", desc: "Chennai Travels provide vans for rental purpose with 20 seats at a reasonable value. So, connect with us immediately. Hire this van for Chennai neighbouring trips and Chennai to outstation trips at a cheaper rate. The 20 Seater Tempo Travellers for rent in Chennai offer great help to your trip." },
 ];
 
 const USE_TAGS = [
@@ -114,9 +114,9 @@ const USE_TAGS = [
 ];
 
 const FEATURES = [
-  { title: "Dirt-Free & Clean Cars",      desc: "Every car is dirt free, having air conditioner and serviced regularly to offer a safe experience to passengers on every Chennai tour and outstation trip." },
-  { title: "Expert Drivers",              desc: "Welcoming, on time, and dutiful — our drivers bring consistency, warmness, and know-how that make every trip feel easy, relaxing, and wholly timed." },
-  { title: "Flexible Rentals",            desc: "Whether it's a city task or weekend escape, we become accustomed to your time, plans, and comforting needs, assuring total freedom all mile." },
+  { title: "Dirt-Free & Clean Cars",      desc: "Every car is dirt free, having air conditioner and serviced regularly to offer a safe experience to patrons." },
+  { title: "Expert Drivers",              desc: "Welcoming, on time, and dutiful, our drivers bring consistency, warmness, and know-how that make every trip feel easy, relaxing, and wholly timed." },
+  { title: "Flexible Rentals",            desc: "Whether it’s a city task or weekend escape, we become accustomed to your time, plans, and soothing needs, assuring total freedom all mile." },
   { title: "Pushback Seats for Comfort",  desc: "Proper pushback seats ensure passengers are comfortable even on long routes like Chennai to Bangalore or Chennai to Tirupati." },
   { title: "AC for Chennai Heat",         desc: "Powerful air conditioning is essential in Chennai's weather. All vehicles maintain comfortable temperatures throughout the journey." },
   { title: "Charging Points",             desc: "Charging points for phones available in most vehicles — keeps everyone connected during long sightseeing tours and outstation trips." },
@@ -237,9 +237,7 @@ export default function TempoTravellerChennai() {
         <div className="mb-12">
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#0f6ec8]">Tempo Travellers in Chennai Offer Best Deals</h2>
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 mb-5">
-            <p className="text-base text-gray-700 leading-relaxed mb-4">We welcome you to our website and offer you services to make your trip interesting. You can roam around Chennai or go outstation. If you are longing for a trip and desire to go according to your plans — then certainly look for the best amenities. Our experts offer prime requirements fulfilled without any hindrance.</p>
-            <p className="text-base text-gray-700 leading-relaxed mb-4">We offer facilities to the people to go through vast amenities. We endeavour to offer best comforts by Tempo Travellers Chennai. Whether it is a leisure trip, big business trip, or any other — we offer varied facilities without any negligence. With PAN India bond, you can look for several trips with no problem.</p>
-            <p className="text-base text-gray-700 leading-relaxed">As one of the best travels in Chennai, you can travel from this site to another place without a delay. While you plan for a trip by branded cars, vans and buses — your trip lasts forever. As Tempo Travellers in Chennai offer unique facilities to come across wide services.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">We welcome you to our website and offer you services to make your trip interesting. You can roam around Chennai or go outstation. If you are longing for trip and desire to go according to your plans. Then certainly look for best amenities. You can proceed well with all your needs and taken good care of. Our expert offer prime requirements fulfilled without any hindrance. We offer facilities to the people to go through vast amenities. We endeavour to offer best comforts by Tempo Travellers Chennai. Whether it is a leisure trip or big business trip or any other, we offer varied facilities without any negligence. With PAN India bond, you can look for several trips with no problem. As one of the best travels in Chennai, you can travel from this site to another place without a delay. While you plan for a trip by branded cars, vans and buses and thus your trip lasts forever. We long to offer you accurate services making your trip awesome! As Tempo Travellers in Chennai offer unique facilities to come across wide services.</p>
           </div>
 
         {/* ══ VEHICLE CARDS ══ */}
@@ -264,8 +262,7 @@ export default function TempoTravellerChennai() {
         <div className="mb-12">
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#ff6b35]">Chennai Travel Car Rental Services</h2>
           <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
-            <p className="text-base text-gray-700 leading-relaxed mb-4">Chennai Travellers Rental offers you outstanding amenities to the people. Being a leading car rental provider in Chennai, we in the city make the trip safe and secure without any hurdles. Our drivers are too experienced in their task. We provide budget-friendly cars such as Maruti, Toyota and many others.</p>
-            <p className="text-base text-gray-700 leading-relaxed mb-4">You can contact us directly by sending us messages or by calling us. Get Chennai to outstation and looking to hire a car for corporate proceedings or wedding? Thus experience smooth travelling, quietness and cool interiors that makes your trip comfortable. Hire a Tempo Traveller in Chennai offering great solution for your trip.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Chennai Travellers Rental offers you outstanding amenities to the people. Being a leading car rental provider in Chennai, we in the city make the trip safe and secure without any hurdles. Our drivers are too experienced in their task. We provide budget- friendly cars such as Maruti, Toyota and many others. Approach our experts through our website and get lasting facilities. You can contact us directly by sending us messages or by calling us. Get Chennai to outstation and looking to hire a car for corporate proceedings or wedding? Thus experience smooth travelling, quietness and cool interiors that makes your trip comfortable. Hire a Tempo Traveller in Chennai offering great solution for your trip.</p>
           </div>
         </div>
 
@@ -276,7 +273,9 @@ export default function TempoTravellerChennai() {
             <p className="text-base text-gray-700 leading-relaxed mb-4">Chennai is a large and lively city with many famous temples, beaches, markets, and cultural landmarks. Since the attractions are spread across different areas of the city, traveling from one place to another can take time, especially when you are visiting with family or a group. That&apos;s why many travelers prefer hiring a tempo traveller in Chennai for a comfortable and convenient sightseeing experience.</p>
             <p className="text-base text-gray-700 leading-relaxed mb-4">A tempo traveller for Chennai sightseeing allows everyone in your group to travel together in one vehicle. Instead of booking several taxis or worrying about public transport, a tempo traveller keeps the whole group together and makes the journey more enjoyable. These vehicles are designed for group travel and usually come with comfortable pushback seats, air conditioning, good legroom, and space for luggage.</p>
             <p className="text-base text-gray-700 leading-relaxed mb-4">With a tempo traveller, you can easily visit some of the most popular places in the city such as Marina Beach, the famous Kapaleeshwarar Temple, and the historic Fort St. George. Since you have your own vehicle, you can travel at your own pace, stop for photos, explore local food spots, and spend more time at places you like.</p>
-            <p className="text-base text-gray-700 leading-relaxed">Whether you are planning a family holiday, a temple tour, or a group sightseeing trip, booking a tempo traveller rental in Chennai is one of the easiest ways to explore the city comfortably. It helps you enjoy the journey without worrying about transportation, so you can focus on discovering the beauty and culture of Chennai.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Whether you are planning a family holiday, a temple tour, or a group sightseeing trip, booking a tempo traveller rental in Chennai is one of the easiest ways to explore the city comfortably. It helps you enjoy the journey without worrying about transportation, so you can focus on discovering the beauty and culture of Chennai.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Another big advantage of hiring a tempo traveller on rent in Chennai is that it is very practical for group trips. When the travel cost is shared among many passengers, it becomes more affordable than hiring multiple cars. Most travel companies also provide experienced drivers who know the city routes well, which makes the trip smoother and stress-free.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Whether you are planning a family holiday, a temple tour, or a group sightseeing trip, booking a tempo traveller rental in Chennai is one of the easiest ways to explore the city comfortably. It helps you enjoy the journey without worrying about transportation, so you can focus on discovering the beauty and culture of Chennai.</p>
           </div>
         </div>
 
@@ -284,7 +283,7 @@ export default function TempoTravellerChennai() {
         {/* ══ SECTION 4: Rental Services ══ */}
         <div className="mb-12">
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#0f6ec8]">Tempo Travellers Rental Services in Chennai</h2>
-          <p className="text-base text-gray-600 leading-relaxed mb-5">Search van for your trip. We at Chennai Tempo Travellers offer van with 30 seats availability. We feel proud to offer amenities. The customers get a pleasant experience by providing trip at competitive cost. We offer timely amenity, efficient fleet management, accurate billing and clear talks.</p>
+          <p className="text-base text-gray-600 leading-relaxed mb-5">Search van for your trip. We at Chennai Tempo Travellers offer you van with 30 seats availability. We feel proud to offer amenities. The customers get a pleasant experience by providing trip at competitive cost. Besides, we offer timely amenity, efficient fleet management, accurate billing and clear talks.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
             {RENTAL_SERVICES.map(item => (
               <div key={item.capacity} className="bg-blue-50 border border-blue-200 rounded-xl p-5">
@@ -314,10 +313,10 @@ export default function TempoTravellerChennai() {
         <div className="mb-12">
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-blue-500">12 Seater Luxury Tempo Traveller in Chennai</h2>
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 mb-5">
-            <p className="text-base text-gray-700 leading-relaxed mb-4">12 seater luxury tempo traveller in Chennai is a really smart choice. It gives you enough space to travel together, relax on the way, and enjoy the journey just as much as the destination. Whether it&apos;s a short city ride or a long outstation trip, this vehicle is perfect for families, friends, or even office groups who don&apos;t want to split into multiple cars.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">12 seater luxury tempo traveller in Chennai is a really smart choice. It gives you enough space to travel together, relax on the way, and enjoy the journey just as much as the destination.Whether it’s a short city ride or a long outstation trip, this vehicle is perfect for families, friends, or even office groups who don’t want to split into multiple cars.</p>
 
             <h3 className="font-bold text-gray-900 text-sm mb-3">Why This Option Works So Well</h3>
-            <p className="text-sm text-gray-600 leading-relaxed mb-3">One of the biggest problems during group travel is comfort. Some people feel tired, some don&apos;t get enough space, and the journey becomes stressful. That&apos;s exactly where a luxury 12 seater tempo traveller makes a difference. You get:</p>
+            <p className="text-sm text-gray-600 leading-relaxed mb-3">One of the biggest problems during group travel is comfort. Some people feel tired, some don’t get enough space, and the journey becomes stressful. That’s exactly where a luxury 12 seater tempo traveller makes a difference. You get:</p>
             <div className="grid grid-cols-2 gap-2 mb-4">
               {["Enough space to sit comfortably", "A smooth ride even on long routes", "Everyone traveling together in one vehicle", "No confusion of managing multiple cars"].map(item => (
                 <div key={item} className="flex items-start gap-2">
@@ -391,6 +390,7 @@ export default function TempoTravellerChennai() {
             <p className="text-base text-gray-700 leading-relaxed mb-4">When you land in a busy city like Chennai, the last thing you want is confusion around transport. Finding multiple taxis, managing luggage, and coordinating with everyone in your group can quickly become stressful. That&apos;s why choosing a tempo traveller is a much smarter option. It allows your entire group to travel together in one vehicle, making the experience easy and organized from the very beginning.</p>
             <p className="text-base text-gray-700 leading-relaxed mb-4">One of the biggest advantages of booking a tempo traveller is the luggage space. Airport travel usually means extra bags, and fitting everything into small cars can be difficult. In a tempo traveller, you get enough room for both passengers and luggage, so no one feels uncomfortable during the journey.</p>
             <p className="text-base text-gray-700 leading-relaxed">Another benefit is doorstep service. We provide pickup and drop from anywhere — your home, hotel, railway station, or airport. Booking is also very easy through our website with no hidden charges, and everything is clearly communicated in advance.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Booking is also very easy. You can reserve your tempo traveller online through our website and choose your preferred vehicle in just a few steps. There are no hidden charges, and everything is clearly communicated in advance so you can plan your trip without confusion.</p>
           </div>
         </div>
 
@@ -398,9 +398,9 @@ export default function TempoTravellerChennai() {
         <div className="mb-12">
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-orange-500">Contact for Booking Tempo Traveller in Chennai — Tirupati Darshan Package</h2>
           <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
-            <p className="text-base text-gray-700 leading-relaxed mb-4">Yatra Travels India provides you Tirupathi darshan ticket booking facility for the round-trip. We continue a professional approach, simplicity towards clients and fulfilling their dream of travelling Tirumala without any bother.</p>
-            <p className="text-base text-gray-700 leading-relaxed mb-4">Our company offers a wide range of facilities including Chennai to Tirupathi particular Darshan Packages at a reasonable price. We offer unusual aid starting from the air travel point till you return home after a religious Darshan of Tirupathi. Our client-driven from Chennai to Tirupati Darshan Package includes Pick up and Drops at spots near to your region in Chennai.</p>
-            <p className="text-base text-gray-700 leading-relaxed">Booking a voucher from Chennai - Tirupathi route is an easy way to book your ticket with Chennai schedule. Travellers can avail Tirupathi Darshan Ticket Booking facility from Chennai to Tirupathi utilizing our services. Just call us on our prescribed number; we will give you all information about Tirupathi Darshan ticket booking service. You can benefit a variety of payment modes like net banking, credit card, debit card and UPI method.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Yatra Travels India provides you Tirupathi darshan ticket booking facility for the round-trip. We continue a professional approach, simplicity towards clients and fulfilling their dream of travelling Tirumala without any bother. Our company offers a wide range of facilities including Chennai to Tirupathi particular Darshan Packages time and again at a reasonable price. We offer unusual aid starting from the air travel point till you return home after a religious Darshan of Tirupathi. Our client-driven from Chennai to Tirupati Darshan Package add in Pick up and Drops at spots near to your region in Chennai.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Booking a voucher from Chennai - Tirupathi route is an easy way to book your ticket with Chennai schedule. There are manifold amenities available on the Chennai travels to safe and sound accommodation, your Tirupathi Darshan Trip. Travellers can avail Tirupathi Darshan Ticket Booking facility from Chennai to Tirupathi utilizing our Chennai Travels Tirupathi Darshan Ticket Booking Service. Just call us on our prescribed number; we will give you all information about Tirupathi Darshan ticket booking service with great calm and elegance.</p>
+            <p className="text-base text-gray-700 leading-relaxed">Our Tirupathi Darshan Ticket Booking Service also offers you the liberty to decide your mode of imbursement. You can benefit a variety of payment mode like net banking, credit card, debit card and UPI method, payment anyway. What kind of visit you actually want; we make sure to present it to you. Whether you are making a plan to stay for few days on a trip or a single road trip, we are here to sketch and guide you continuously. Tempo Traveller ac in Chennai offer great relaxation to clients.</p>
           </div>
         </div>
 
