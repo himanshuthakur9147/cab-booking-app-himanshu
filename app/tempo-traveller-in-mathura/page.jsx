@@ -57,13 +57,11 @@ const VEHICLES = [
 ];
 
 const PLACES = [
-  { name: "Dwarkadhish Temple",       desc: "Devoted to Lord Krishna. Built in 1814 by Seth Gokul Das Parikh. Well-known for festivals and structural design including celebrations during Janmashtami and Holi. The temple has imprinted pillars, difficult craftsmanship, and holy atmosphere." },
-  { name: "Shri Krishna Janmasthan", desc: "The most noteworthy site in Mathura — thought to be the birthplace of Lord Krishna. A living site of reverence where thousands of followers visit every day to offer prayers. Vast historical and religious significance dating from Dwapar Yuga." },
-  { name: "ISKCON Temple",            desc: "Also known as Krishna Balaram Mandir. Established in 1975 by the International Society for Krishna Consciousness. Known for stunning deity worship and serene environment. Big attraction for followers and sightseers from around the world." },
-  { name: "Vishram Ghat",             desc: "An exceptionally individual place in Mathura — said to be the place where Lord Krishna rested after killing Kansa. This ghat on the Yamuna River is incredibly peaceful and calm. Famous for its holy significance and evening worship aarti." },
-  { name: "Prem Mandir",              desc: "Located in Vrindavan — a new but very popular temple. Built by Jagadguru Kripalu. Well-known for its white marble building, intricate carvings, and evening beam show. The temple compound has striking gardens and fountains." },
-  { name: "Banke Bihari Mandir",      desc: "One of the most sacred temples in Vrindavan. Famous for the unique style of deity darshan and the joyful atmosphere. Thousands of devotees visit daily. Early morning visits offer the most peaceful darshan experience." },
-  { name: "Govardhan Hill",           desc: "Sacred to Lord Krishna who lifted Govardhan Hill to protect the people of Vrindavan. The 21 km Govardhan Parikrama is a deeply spiritual walk. Tempo traveller follows the group and waits at key rest points." },
+  { name: "Dwarkadhish Temple",       desc: "If you visit in Mathura is Dwarkadhish, this Temple is devoted to Lord Krishna. Build up in 1814 through Seth Gokul Das Parikh. This holy place is well-known for festivals and for its structural design including celebrations particularly during Janmashtami plus Holi. The temples have imprinted pillars; difficult job and holy atmosphere build up attraction." },
+  { name: "Shri Krishna Janmasthan", desc: "It is the mainly noteworthy site in Mathura and is thought to be the place of birth of Lord Krishna. The place of worship is a live site of reverence where thousands of followers visit every day to offer prayers. The place has vast historical and religious significance, has its line from Dwapar Yuga." },
+  { name: "ISKCON Temple",            desc: "The temple is also famous as Krishna Balaram Mandir. Set up in 1975 by the Worldwide Society for Krishna Realization, this temple is a big attraction for followers and sightseers. This temple is known for stunning deity worship and serene environment for people." },
+  { name: "Vishram Ghat",             desc: "It is an exceptionally individual place in Mathura as it is said to be the place where Lord Krishna took a rest after killing Kansa. This ghat on the Yamuna River is an incredibly peaceful and calm place. It is often visited for its holy worthiness and evening worship aarti. The ghat is bounded by lots of small place of worship and major sites therefore it should be visited." },
+  { name: "Prem Mandir",              desc: "The temple is situated in Vrindavan is a newest but very well-liked temple, and people are eager to travel. Build up by Jagadguru Kripalu, this temple is well-known for its white marble building, complicated carvings as well as evening beam show. The temple compound has striking gardens and fountains which provides visual pleasure to the people." },
   { name: "Barsana & Nandgaon",       desc: "Birthplace of Radha Rani and hometown of Lord Krishna respectively. Famous for Lathmar Holi celebrations. Complete Holi circuit covers Mathura, Vrindavan, Barsana, and Nandgaon — best covered by tempo traveller in one comfortable day." },
 ];
 
@@ -76,17 +74,17 @@ const TEMPO_TYPES = [
   {
     type: "Deluxe Tempo Traveller in Mathura",
     color: "indigo",
-    desc: "Those who desire to have a bit more comfort — the Deluxe Tempo Traveller is the next stride. With seating capacity the same as the Standard but it is more comfortable. It has better sitting arrangement and AC facilities. This is for those people who need better comforts on a trip without expanding the budget.",
+    desc: "Those who desire to have a bit more comfort and the Deluxe Tempo Traveller is the next stride. With seating capacity the same as the Standard but it is more comfortable. It has better sitting arrangement and ac facilities. This is for those people who need better comforts on a trip without expanding the budget.",
   },
   {
     type: "Luxury Tempo Traveller in Mathura",
     color: "purple",
-    desc: "With seating capacity of 9, 12, 14, 18 and 20 seaters. Having ample leg room and superb air conditioning, it makes your journey good. The interior has lot of space and looks beautiful. This is ideal for the long trip and special occasions.",
+    desc: "With seating capacity of 9, 12, 14, 18 and 20 seaters this is accurate in seating. Having ample leg room and superb air conditioning, it makes your journey good. The interior has lot of space and looks beautiful. This is ideal for the long trip and special occasions.",
   },
   {
     type: "Maharaja Tempo Traveller in Mathura",
     color: "orange",
-    desc: "For the final travel experience the Maharaja is the topmost choice. With seating capacity of 9, 12 and 16 seaters and reclining sitting arrangements, this offers complete relaxation. You can come across individual entertainment monitors and premium interiors. It is for those who desire luxury on the road so each facet of the journey is cosy and pleasant.",
+    desc: "For the final travel experience the Maharaja is the topmost choice. With seating capacity of 9, 12 and 16 seaters and have reclining sitting arrangements, this offers relaxation. You can come across the individual entertainment monitor and premium interiors. It is for those who desire to know-how luxury on the road so each facet of the journey is cosy and pleasant.",
   },
 ];
 
@@ -107,12 +105,12 @@ const USE_TAGS = [
 ];
 
 const WHY_CARDS = [
-  { title: "On Time Pickup Every Time",         desc: "Driver details shared the night before. Vehicle at your hotel or dharamshala at the confirmed time. No chasing, no waiting, no starting the pilgrimage day already stressed." },
-  { title: "Experienced Mathura Route Drivers", desc: "Every driver knows Mathura, Vrindavan, Govardhan, Barsana, and Nandgaon roads personally. Temple timings, parking near Banke Bihari Mandir, the quickest route to Govardhan during peak season. Local knowledge that makes the whole pilgrimage run smoother." },
-  { title: "Fixed Fare, Nothing Hidden",         desc: "Fare confirmed before the trip starts. Fuel, toll, parking, and driver allowance all included. No meter running, no additions at the end of a long pilgrimage day when everyone is tired." },
-  { title: "Well Maintained Fleet",              desc: "New vehicles, regularly serviced, full AC throughout. Clean interiors before every trip. Proper luggage space for pilgrimage groups carrying bags, prasad, and offerings." },
-  { title: "All Group Sizes Covered",            desc: "9 seater for small family pilgrimages. 12 seater for medium groups. 16 and 20 seater for large pilgrimage tours and wedding parties. Luxury tempo traveller for premium group travel in Mathura." },
-  { title: "Direct Contact Throughout",          desc: "Driver number shared before departure. Team reachable during the trip. Someone always picks up the phone." },
+  { title: "On Time Pickup Every Time",         desc: "On Time Pickup Every Time Driver details shared the night before. Vehicle at your hotel or dharamshala at the confirmed time. No chasing, no waiting, no starting the pilgrimage day already stressed." },
+  { title: "Experienced Mathura Route Drivers", desc: "Experienced Mathura Route Drivers Every driver at Yatra Travel India knows Mathura, Vrindavan, Govardhan, Barsana, and Nandgaon roads personally. Temple timings, parking near Banke Bihari Mandir, the quickest route to Govardhan during peak season. Local knowledge that makes the whole pilgrimage run smoother." },
+  { title: "Fixed Fare, Nothing Hidden",         desc: "Fixed Fare, Nothing Hidden Fare confirmed before the trip starts. Fuel, toll, parking, and driver allowance all included. No meter running, no additions at the end of a long pilgrimage day when everyone is tired." },
+  { title: "Well Maintained Fleet",              desc: "Well Maintained Fleet New vehicles, regularly serviced, full AC throughout. Clean interiors before every trip. Proper luggage space for pilgrimage groups carrying bags, prasad, and offerings." },
+  { title: "All Group Sizes Covered",            desc: "All Group Sizes Covered 9 seater for small family pilgrimages. 12 seater for medium groups. 16 and 20 seater for large pilgrimage tours and wedding parties. Luxury tempo traveller for premium group travel in Mathura." },
+  { title: "Direct Contact Throughout",          desc: "Direct Contact Throughout Driver number shared before departure. Team reachable during the trip. Someone always picks up the phone." },
 ];
 
 const FEATURES = [
@@ -287,7 +285,7 @@ export default function TempoTravellerMathura() {
           {/* Tempo Traveller on Rent */}
           <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 mb-5">
             <h3 className="font-bold text-gray-900 text-base mb-3">Tempo Traveller on Rent in Mathura</h3>
-            <p className="text-sm text-gray-600 leading-relaxed mb-3">Searching for a Tempo Traveller on Rent in Mathura that offers awesome comfort? You can look for various types ranging from 12–36 seaters, enough for group travel. Our vehicles are well-maintained and equipped with advanced services. It ensures a comfy journey whether you go for a business trip or sightseeing. With experienced drivers and well-trusted services, you can go for a long trip. It makes transportation easier while you are travelling with no hassle.</p>
+            <p className="text-sm text-gray-600 leading-relaxed mb-3">Searching for a Tempo Traveller on Rent in Mathura That offers you awesome comfort. You can look for various types of cars such as 12-36 seaters , enough for group travel. Our vehicles are well-maintained, equipped with advanced services. It ensures a comfy journey while you go for a business trip or sightseeing. With experienced drivers and well trusted services, you can go for a long trip. It makes transportation easier while you are travelling with no hassle. Thus it makes you enjoy all facilities well. Therefore you reach on time with no problem on the way.</p>
           </div>
 
           {/* Benefits of Tempo Traveller Cab */}
@@ -311,7 +309,7 @@ export default function TempoTravellerMathura() {
         {/* ══ SECTION 3: Tempo Traveller Types ══ */}
         <div className="mb-12">
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#ff6b35]">Tempo Traveller Types Available in Mathura</h2>
-          <p className="text-base text-gray-600 leading-relaxed mb-5">Here are mainly four variations obtainable for rental — AC Tempo Traveller with different seating facilities. You can verify our whole register of Tempo Travellers and select one that suits your ease and financial plan.</p>
+          <p className="text-base text-gray-600 leading-relaxed mb-5">Here are mainly four variations obtainable for rental fee AC Tempo Traveller with different seating facilities. So you can verify our whole register of Tempo Travellers and select one that suits your ease and financial plan.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {TEMPO_TYPES.map(item => (
               <div key={item.type} className={`bg-white border border-gray-200 rounded-xl p-5 hover:border-[#0f6ec8] transition-colors`}>
@@ -326,9 +324,9 @@ export default function TempoTravellerMathura() {
         <div className="mb-12">
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-blueorange-500">Tempo Traveller Booking in Mathura</h2>
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <p className="text-base text-gray-700 leading-relaxed mb-4">Booking a Tempo Traveller in Mathura has many benefits that make it a favourite amongst both sightseers and nearby places. Tempo Travellers are popular for their roomy interiors and comfortable seating. When you are undergoing numerous destinations in a day, it becomes essential to have a car filled with all the contemporary facilities like Air conditioner, amusement system, mobile charging points, first aid kit, LED Television, etc.</p>
-            <p className="text-base text-gray-700 leading-relaxed mb-4">Unlike smaller vans, a Tempo Traveller has adequate room for passengers as well as luggage so that your tour is restful and bother-free. Having an enthusiastic driver who is aware of the local road and attractions puts you at ease.</p>
-            <p className="text-base text-gray-700 leading-relaxed mb-3"><strong>Tempo Traveller Cost in Mathura:</strong> While the precise rental price has several factors that can have an effect on the whole cost such as driver fees and parking charges — when you book, you can be rest guaranteed that the ultimate price we quote comprises all these additional charges. We don&apos;t consider hidden fees at the last minute like some other service providers do.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Booking Tempo Traveller in Mathura has many benefits that make it a favourite amongst both the sightseer and nearby places. Tempo Travellers are too popular for their roomy interiors and comfy seating. When you are undergoing numerous destinations in a daylight hours, somehow it turn out to be essential to have a car filled with all the contemporary facilities like Air conditioner, amusement system, mobile charging points, first aid kit, LED Television, etc.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Unlike smaller van a Tempo Traveller has adequate room for passengers as well as luggage so that your tour is restful and bother- free. Having an enthusiastic driver who is aware of the local road and attractions put you in easiness.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-3"><strong>Tempo Traveller Cost in Mathura:</strong> It is hard to give the precise rental price of Tempo Traveller as there are several factors that can have an effect on the whole cost such as driver fees and parking charges. However while you book, you can be rest guaranteed that the ultimate price we quote comprise all these additional charges. We don't consider hidden fees at the last minute like some other facility providers do. Call us at prescribed number or message us and our client care squad will take great care of the whole.Tempo Traveller Booking in Mathura is trouble-free, just visit our website or connect with us on Whatsapp</p>
             <div className="bg-blue-600 rounded-lg p-3 text-center">
               <p className="text-white text-sm font-semibold">Tempo Traveller Booking in Mathura is trouble-free — visit our website or connect with us on WhatsApp. Call 9044019511 today.</p>
             </div>
@@ -339,7 +337,7 @@ export default function TempoTravellerMathura() {
         <div className="mb-12">
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-blue-500">Places of Travel in Mathura by Tempo Traveller</h2>
           <p className="text-base text-gray-600 leading-relaxed mb-5">Mathura and the surrounding Braj region is home to some of the most sacred sites in Hinduism. A tempo traveller makes it easy to cover all of them comfortably in one day.</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {PLACES.map(place => (
               <div key={place.name} className="bg-gradient-to-br from-blue-50 to-blue-50 border border-blue-200 rounded-xl p-4">
                 <h3 className="font-bold text-blue-800 text-sm mb-2">{place.name}</h3>
@@ -352,7 +350,7 @@ export default function TempoTravellerMathura() {
         {/* ══ SECTION 6: Why Book Yatra Travel India ══ */}
         <div className="mb-12">
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#0f6ec8]">Why Book Tempo Traveller in Mathura with Yatra Travel India</h2>
-          <p className="text-base text-gray-600 leading-relaxed mb-5">Mathura has no shortage of transport options. Autos, cabs, e-rickshaws. But when the whole group needs to travel together to Vrindavan, Govardhan, Barsana, and Nandgaon in one comfortable vehicle with one fixed fare and one reliable driver — a tempo traveller from Yatra Travel India is the only option that actually delivers that.</p>
+          <p className="text-base text-gray-600 leading-relaxed mb-5">Mathura has no shortage of transport options. Autos, cabs, e-rickshaws. But when the whole group needs to travel together to Vrindavan, Govardhan, Barsana, and Nandgaon in one comfortable vehicle with one fixed fare and one reliable driver, a tempo traveller from Yatra Travel India is the only option that actually delivers that.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {WHY_CARDS.map(w => (
               <div key={w.title} className="bg-white border border-gray-200 rounded-xl p-5 flex items-start gap-3 hover:border-[#0f6ec8] transition-colors">
