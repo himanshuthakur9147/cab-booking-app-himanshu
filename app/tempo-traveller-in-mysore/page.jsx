@@ -339,8 +339,6 @@ const FAQS = [
   { q: "What is the difference between 12 seater and 16 seater tempo traveller in Mysore?",      a: "12 seater tempo traveller in Mysore fits 10 to 12 people starting at Rs 4,500. 16 seater tempo traveller in Mysore fits 13 to 16 people starting at Rs 6,000. Go with 16 seater if group size is close to 12 and carrying heavy luggage. Extra space makes a real difference on longer drives." },
   { q: "Can I book a tempo traveller in Mysore for a wedding guest transfer?",                    a: "Yes. Tempo traveller for wedding in Mysore is regularly booked for guest transfers between venues, hotels, and reception halls. 12 seater for small wedding parties. 16 and 20 seater for larger groups. Clean vehicle, on time pickup, fixed fare. Call 9044019511 to confirm availability on your wedding date." },
   { q: "How does Yatra Travel India ensure on time pickup for tempo traveller in Mysore?",       a: "Driver details shared the night before every trip. Vehicle confirmed at booking with registration number. Driver briefed on pickup location and time in advance. At Yatra Travel India Mysore on time pickup is not just a promise. It is the standard on every single booking." },
-  { q: "Is tempo traveller available in Mysore for school annual excursion trips?",               a: "Yes. Tempo traveller for school trips in Mysore available for educational tours, annual excursions, and nature camps. Safe well maintained vehicles, experienced drivers, fixed group fare. 16 and 20 seater most popular for larger student groups. Call 9044019511 to book school trip tempo traveller in Mysore." },
-  { q: "What makes Yatra Travel India the best tempo traveller service in Mysore?",               a: "Three things. Vehicle shows up on time. Driver knows every Mysore and Karnataka route personally. Fare is exactly what was agreed at booking with nothing added after. Best tempo traveller service in Mysore means no surprises, no hidden charges, no last minute changes. Just reliable comfortable group travel every time." },
 ];
 
 const NETWORK = [
@@ -510,12 +508,7 @@ export default function TempoTravellerMysore() {
           </h2>
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 mb-6">
             <p className="text-base text-gray-700 leading-relaxed mb-4">
-              Intercity travel, as we all are aware of the challenges associated with it, but Mysore is made simple and
-              comfortable when you book a Tempo Traveller in Mysore. For a family outing, temple visit, school trip, or
-              corporate tour, group travel in Mysore requires enough space, good planning, and on-time movement — with the
-              assistance of the best tempo traveller rental service in Mysore. As local travel operators that manage daily
-              tours in the Mysore city and surrounding areas, we know how the traffic moves, what road is in what condition,
-              and what group travellers really need.
+              Intercity travel, as we all are aware of the challenges associated with it, but Mysore is made simple and comfort when you book a Tempo Traveller in Mysore For a family outing, temple visit or school trip to corporate tour, group travel in Mysore requires you enough space good planning on-time movement with the assistance of best tempo traveller rental service in Mysore. As local travel operators that manage daily tours in the Mysore city and surrounding areas, we know how the traffic moves, what road is in what condition and what do group traveller really needs.
             </p>
             <p className="text-base text-gray-700 leading-relaxed mb-4">
               From a day trip on an early morning to Chamundi Hills to a full-day sightseeing tour covering Mysore Palace,
@@ -524,10 +517,10 @@ export default function TempoTravellerMysore() {
               is easier, and time management is better — especially on weekends, during festivals, and peak tourist seasons.
             </p>
             <p className="text-base text-gray-700 leading-relaxed mb-4">
-              Tempo Traveller in Mysore for outstation is also very popular. Routes from Mysore to Coorg, Ooty, Wayanad,
-              Bangalore, and Kabini are best covered in the comfort of a group vehicle. With wide corridors and generous
-              luggage room, knowledgeable professional drivers who have navigated ghat roads and fast highways, it is a
-              smooth, hassle-free ride.
+              From a day trip on an early morning to Chamundi Hills to a full-day sightseeing tour covering Mysore Palace, Brindavan Gardens, and Srirangapatna a Tempo Traveller gives you that flexibility which booking multiple cars wouldn't. Many visitors in Mysore like to travel via one large vehicle so that everyone is together, parking is easier and time management is better especially on weekends, during festivals and peak seasons of tourist.
+            </p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">
+              Tempo Traveller in Mysore for outstation is also very demanding. It is advisable to cover routes from Mysore to Coorg, Ooty, Wayanad Bangalore and Kabini in comfort of group vehicle. With wide corridors and generous luggage room, knowledgeable professional drivers who navigated the labyrinth of ghat roads and fast highways through their sleep, it was a smooth hassle free ride.
             </p>
 
             {/* What makes it different & Amenities grid */}
@@ -581,25 +574,17 @@ export default function TempoTravellerMysore() {
         ══════════════════════════════════════════════════════════════ */}
         <div className="mb-12">
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#ff6b35]">
-            Explore India More — Road Trips from Mysore
+            Explore India More - Road Trips from Mysore
           </h2>
           <div className="bg-gradient-to-br from-orange-50 to-yellow-50 border border-orange-200 rounded-xl p-6">
             <p className="text-base text-gray-700 leading-relaxed mb-4">
-              A road trip is really exciting for every traveller. You can visit the whole of India with memorable facilities at a time.
-              Road trips are more thrilling and offer superb chances to discover something new at every turn. There is something
-              to look at and something to explore. To make your travel effective, hire a 12 seater tempo traveller in Mysore.
+              A road trip is really exciting for persons. You can visit the whole India with memorable facilities at a time. The road trip is more thrilling and offers you superb chances. There is something to look at and something to explore. To make your travel effective, hire 12 seater tempo travellers in Mysore. Just make your trip splendid by coming in contact with us.
             </p>
             <p className="text-base text-gray-700 leading-relaxed mb-4">
-              Just make your trip splendid by coming in contact with us. We are striving to provide you the best services
-              within a short time. We offer you more travel by roadside — it is an effective way of going through any road trip.
-              Travel with our chauffeurs. You can breathe fresh air and know more about various cultures. Just pack your luggage
-              well and go on a trip. You can enjoy street food or dine at a restaurant along the way. Instead of driving yourself,
-              choose chauffeur-driven cabs without any further delay.
+              We are striving to proffer you best services within a short time. We offer you more travel by roadside. It is an effective way of going through the road trip. Take a travel through our chauffeurs. We want; you should enjoy your trip very well. We can offer you amenities as per your likes. You can breathe fresh air, know more about various cultures. Just pack your luggage well and go on a trip.
             </p>
             <p className="text-base text-gray-700 leading-relaxed">
-              Once you book the tempo traveller, you get superb facilities to make your trip enjoyable. So just contact our
-              team of experts who can answer all your queries once you connect with them. If you are seeking a large group trip,
-              you can avail our <strong>20 seater tempo traveller on rent in Mysore</strong>.
+              You can have a taste of street food or in restaurant. Instead of driving, you can keep chauffeurs driven cabs without any further delay. Once you book the cab, you get superb facilities to make your trip nice. So, just contact our team of experts who can answer you once you connect with them. <strong>20 seater tempo traveller on rent in Mysore</strong>.
             </p>
           </div>
         </div>
@@ -630,10 +615,8 @@ export default function TempoTravellerMysore() {
             points, and music systems further enhance the travel experience.
           </p>
           <p className="text-base text-gray-600 leading-relaxed">
-            For group sightseeing in Mysore — such as Mysore Palace, Chamundi Hills, Brindavan Gardens, and nearby temples —
-            a tempo traveller rental in Mysore offers unmatched flexibility. You can plan your own schedule, take stops as
-            needed, and travel at your own pace. Choosing a tempo traveller in Mysore ensures a safe, comfortable, and
-            hassle-free journey, making it the ideal travel option for group tours and outstation trips.
+            For group sightseeing in Mysore such as Mysore Palace, Chamundi Hills, Brindavan Gardens, and nearby temples a tempo traveller rental in Mysore offers unmatched flexibility. You can plan your own schedule, take stops as needed, and travel at your own pace.
+Overall, choosing a tempo traveller in Mysore ensures a safe, comfortable, and hassle-free journey, making it the ideal travel option for group tours and outstation trips.
           </p>
         </div>
 
@@ -646,26 +629,29 @@ export default function TempoTravellerMysore() {
           </h2>
           <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
             <p className="text-base text-gray-600 leading-relaxed mb-4">
-              Traveling around Mysore is always better when everyone stays together. That is why choosing a Tempo Traveller
-              in Mysore is a simple and smart option for families, friends, and groups. Instead of booking multiple cars and
-              managing different pickup times, one comfortable vehicle keeps the entire group together from start to finish.
+              Traveling around Mysore is always better when everyone stays together. That’s why choosing a Tempo Traveller in Mysore is a simple and smart option for families, friends, and groups. 
+              Instead of booking multiple cars and managing different pickup times, 
+              one comfortable vehicle keeps the entire group together from start to finish.
             </p>
             <p className="text-base text-gray-600 leading-relaxed mb-4">
-              If you are visiting popular places like Mysore Palace, Chamundi Hills, or Brindavan Gardens, or planning a
-              trip to nearby destinations such as Coorg, Ooty, or Bandipur, a tempo traveller makes the journey easy and
-              relaxed. There is enough space for everyone to sit comfortably, stretch their legs, and carry luggage without
-              feeling cramped. Even long drives feel smooth with air-conditioning and comfortable seating.
+              If you’re visiting popular places like Mysore Palace, Chamundi Hills, or Brindavan Gardens, or planning a trip to nearby destinations such as Coorg, Ooty, or Bandipur, 
+              a tempo traveller makes the journey easy and relaxed. There’s enough space for everyone to sit comfortably, stretch their legs, and carry luggage without feeling cramped. 
+              Even long drives feel smooth with air-conditioning and comfortable seating.
             </p>
             <p className="text-base text-gray-600 leading-relaxed mb-4">
-              Hiring a tempo traveller on rent in Mysore also means you do not have to worry about driving or directions.
-              An experienced local driver handles the traffic and routes, so you can enjoy the views, chat with your group,
-              and focus on making memories. This is especially helpful when traveling with elders or children.
+              Hiring a tempo traveller on rent in Mysore also means you don’t have to worry about driving or directions. 
+              An experienced local driver handles the traffic and routes, so you can enjoy the views, chat with your group, and focus on making memories. 
+              This is especially helpful when traveling with elders or children.
             </p>
-            <p className="text-base text-gray-600 leading-relaxed">
+            <p className="text-base text-gray-600 leading-relaxed mb-4">
               Another big plus is affordability. When you travel as a group, a tempo traveller hire in Mysore often costs
               less than booking several taxis. You get clear pricing and better value for money without compromising on
               comfort. If you want a relaxed, convenient, and stress-free way to explore Mysore and nearby places together,
               a tempo traveller is the perfect choice.
+            </p>
+            <p className="text-base text-gray-600 leading-relaxed">
+              If you want a relaxed, convenient, and stress-free way to explore Mysore and nearby places together, a tempo traveller is the perfect choice. 
+              It keeps everyone connected and makes every trip more enjoyable.
             </p>
           </div>
         </div>
