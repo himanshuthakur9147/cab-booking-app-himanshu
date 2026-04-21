@@ -55,14 +55,12 @@ const VEHICLES = [
 ];
 
 const ATTRACTIONS = [
-  { name: "Ramanathaswamy Temple",        desc: "The most famous landmark in Rameshwaram and one of the twelve sacred Jyotirlinga temples dedicated to Lord Shiva. Known for its magnificent corridors, beautiful pillars, and peaceful spiritual environment. Pilgrims take a holy bath in the temple's 22 sacred wells before offering prayers." },
-  { name: "Dhanushkodi Beach",            desc: "A quiet and scenic place located about 20 km from Rameshwaram. Famous for its untouched beach and the remains of an old town destroyed in a cyclone. Visitors love coming here to enjoy the sea views and peaceful surroundings." },
-  { name: "Pamban Bridge",                desc: "One of the most iconic attractions near Rameshwaram. It connects the island to mainland India and offers breathtaking views of the sea. Watching trains cross this historic bridge is a unique experience for travelers." },
-  { name: "Dr. A.P.J. Abdul Kalam Memorial", desc: "Dedicated to India's former President Dr. A.P.J. Abdul Kalam, who was born in Rameshwaram. Displays photographs, achievements, and stories from his life — an inspiring place to visit." },
-  { name: "Agni Theertham",               desc: "Located near Ramanathaswamy Temple. A sacred beach where devotees take a ritual bath before entering the temple. The calm sea and spiritual atmosphere make it a very special place for pilgrims." },
-  { name: "Gandhamadhana Parvatham",      desc: "The highest point in Rameshwaram offering a panoramic view of the entire island. According to belief, it also has the footprints of Lord Rama, which attracts many devotees." },
-  { name: "Hanuman Temple",               desc: "A revered temple dedicated to Lord Hanuman. An important stop on the Rameshwaram pilgrimage circuit with deep mythological significance from the Ramayana." },
-  { name: "Adam's Bridge & Ram Setu View Point", desc: "The legendary chain of limestone shoals connecting Rameshwaram to Sri Lanka. A significant landmark for pilgrims and tourists with strong religious and historical importance." },
+  { name: "Ramanathaswamy Temple",        desc: "Ramanathaswamy Temple is the most famous landmark in Rameshwaram and one of the twelve sacred Jyotirlinga temples dedicated to Lord Shiva. The temple is known for its magnificent corridors, beautiful pillars, and peaceful spiritual environment. Pilgrims also take a holy bath in the temple’s 22 sacred wells before offering prayers." },
+  { name: "Dhanushkodi Beach",            desc: "Dhanushkodi is a quiet and scenic place located about 20 km from Rameshwaram. It is famous for its untouched beach and the remains of an old town that was destroyed in a cyclone many years ago. Visitors love coming here to enjoy the sea views and peaceful surroundings." },
+  { name: "Pamban Bridge",                desc: "Pamban Bridge is one of the most iconic attractions near Rameshwaram. It connects the island to mainland India and offers breathtaking views of the sea. Watching trains cross this historic bridge is a unique experience for travelers." },
+  { name: "Dr. A.P.J. Abdul Kalam Memorial", desc: "This memorial is dedicated to India’s former President Dr. A.P.J. Abdul Kalam, who was born in Rameshwaram. The site displays photographs, achievements, and stories from his life, making it an inspiring place to visit." },
+  { name: "Agni Theertham",               desc: "Located near Ramanathaswamy Temple, Agni Theertham is a sacred beach where devotees take a ritual bath before entering the temple. The calm sea and spiritual atmosphere make it a very special place for pilgrims." },
+  { name: "Gandhamadhana Parvatham",      desc: "This small hill is the highest point in Rameshwaram and offers a panoramic view of the entire island. According to belief, it also has the footprints of Lord Rama, which attracts many devotees." },
 ];
 
 const WHY_TEMPO = [
@@ -75,12 +73,12 @@ const WHY_TEMPO = [
 ];
 
 const SERVICES_PROVIDED = [
-  { title: "Various Types of Vehicles",    desc: "We offer solutions as per your desires and provide unique vehicles for travelling. The travel supports you with diverse cars, vans and many more — from 9 seater to 24 seater." },
-  { title: "24/7 Support",                 desc: "Get good opportunity as the services are available and you get hassle-free service. Contact at anytime without any hamper and get the best service for your trip." },
+  { title: "Various Types of Vehicles",    desc: "It offer solutions as per your desires and get unique vehicles for travelling. The travel supports you with diverse cars, vans and many more." },
+  { title: "24/7 Support",                 desc: "Get good opportunity as the services are available and you get hassle-free service. Contact at anytime without any hamper and get the best." },
   { title: "Nominal Pricing",              desc: "You get vehicles at nominal price and this makes people satisfied. You can easily afford this service and make your trip extraordinary without a fuss." },
-  { title: "Well-Maintained Fleet",        desc: "You get well-maintained task force and comfortable services make you glad. Every vehicle is checked and cleaned before each trip." },
+  { title: "Well-Maintained Fleet",        desc: "You get well-maintained task force and comfy services make you glad." },
   { title: "Tempos for Group Travel",      desc: "Good for group travel having extra space — 9 to 24 seater options available for all types of pilgrim groups, families, and tour parties." },
-  { title: "Mini Buses Available",         desc: "Ideal for small groups or families for an outing. Mini buses available for larger groups alongside tempo traveller options." },
+  { title: "Mini Buses Available",         desc: "Ideal for small groups or families for an outing." },
 ];
 
 const RAMESWARAM_OPTIONS_TABLE = [
@@ -273,13 +271,13 @@ export default function TempoTravellerRameshwaram() {
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-5">
             <h3 className="font-bold text-gray-900 text-base mb-3">Tempo Travellers for Rent in Rameshwaram</h3>
             <p className="text-sm text-gray-700 leading-relaxed mb-3">Rameshwaram is regarded for temples and sightseeing. It is well known for its culture and tradition. If you are interested to explore Rameshwaram with your buddies, family group, or visitors who are eager to roam around — then hire an AC Tempo Traveller. One can have a good experience of travelling.</p>
-            <p className="text-sm text-gray-700 leading-relaxed">By renting a Tempo you can easily tour the city. The city offers unique sightseeing regions amalgamated with recent developments. Just enjoy the flexible stops while you travel. The mode is easy and you can travel freely with children and family. The good facility is ensured while you travel comfortably without any hassle. Back seat offers fine nap while you get relaxation. Enjoy with your buddies the high-quality music system. Large windows and sliding curtains make your view possible.</p>
+            <p className="text-sm text-gray-700 leading-relaxed">By renting a Tempo you can easily tour the city. The city offers unique sightseeing regions amalgamated with recent developments. Just enjoy the flexible stops while you travel. The mode is easy and you can travel freely with children and family. The good facility is ensured while you travel comfortably without any hassle. Back seat offers fine nap while you get relaxation. Enjoy with your buddies the high-quality music system. Large windows and sliding curtains make your view possible.<strong>Hire a Tempo Traveller in Rameshwaram</strong> for splendid tour and stay in the hotel.</p>
           </div>
 
           {/* Book Options */}
           <div className="bg-gray-50 border border-gray-200 rounded-xl p-5">
             <h3 className="font-bold text-gray-900 text-base mb-3">Book Tempo Traveller in Rameshwaram</h3>
-            <p className="text-sm text-gray-600 leading-relaxed mb-3">Book your needs and go for online services. By hiring a Tempo one can make his travelling easy. You can look for several seats such as 12 seats or 16 seats available. Or you can look for 18 seats or 26 seats to get on the way.</p>
+            <p className="text-sm text-gray-600 leading-relaxed mb-3">Book your needs and go for online services. By hiring a Tempo one can make his travelling easy. You can look for several seats such as 12 seats or 16 seats available. Or you can look for 18 seats or 26 seats to get on the way. Travelling makes you to come across with splendid tours. Cover your tours with grand fun. Look out for great travel and facilities, enjoying the day with your friends and relatives. If you are seeking college trip, you can book 15 to 20 seats tempo traveller. If you need small outing service, you can book 9 to 18 seats for your trip. Book instantly what you prefer and look for speedy services on the way.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {["If you are seeking college trip, you can book 15 to 20 seats tempo traveller.", "If you need small outing service, you can book 9 to 18 seats for your trip.", "Book instantly what you prefer and look for speedy services on the way.", "Cover your tours with grand fun and great travel facilities."].map(item => (
                 <div key={item} className="flex items-start gap-2">
@@ -296,9 +294,10 @@ export default function TempoTravellerRameshwaram() {
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#ff6b35]">Tempo Traveller for Rameshwaram Local Sightseeing</h2>
           <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
             <p className="text-base text-gray-700 leading-relaxed mb-4">When you visit Rameshwaram, there are many beautiful and religious places to explore around the town. For families and groups travelling together, hiring a tempo traveller is one of the most comfortable and practical options for local sightseeing.</p>
-            <p className="text-base text-gray-700 leading-relaxed mb-4">Rameshwaram is famous for its spiritual atmosphere and historic temples. Many visitors come here to visit the sacred Ramanathaswamy Temple. Apart from the temple, there are several other attractions nearby such as Dhanushkodi Beach, Agni Theertham, and the famous Pamban Bridge. These places are located at different points in the town, so having a comfortable vehicle makes the trip much easier.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Rameshwaram is famous for its spiritual atmosphere and historic temples. Many visitors come here to visit the sacred Ramanathaswamy Temple, which is one of the most important pilgrimage sites in India. Apart from the temple, there are several other attractions nearby such as Dhanushkodi Beach, Agni Theertham, and the famous Pamban Bridge. These places are located at different points in the town, so having a comfortable vehicle makes the trip much easier.</p>
             <p className="text-base text-gray-700 leading-relaxed mb-4">A tempo traveller allows the whole group to travel together without the need to book multiple cars. The vehicle usually comes with comfortable pushback seats, air-conditioning, and enough space for luggage. This makes it ideal for long temple visits and full-day sightseeing tours around Rameshwaram.</p>
-            <p className="text-base text-gray-700 leading-relaxed">Another benefit is flexibility. When you book a tempo traveller for local sightseeing, you can visit different places at your own pace — spend more time at temples, stop for photos at scenic locations, and explore the peaceful beaches without worrying about transportation.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Another benefit is flexibility. When you book a tempo traveller for local sightseeing, you can visit different places at your own pace. You can spend more time at temples, stop for photos at scenic locations, and explore the peaceful beaches without worrying about transportation.</p>
+            <p className="text-base text-gray-700 leading-relaxed ">Overall, a tempo traveller is a perfect choice for local sightseeing in Rameshwaram. It provides comfort, convenience, and enough space for everyone, making the journey smooth and enjoyable for pilgrims, families, and travel groups visiting this sacred destination.</p>
           </div>
         </div>
 
@@ -306,7 +305,7 @@ export default function TempoTravellerRameshwaram() {
         <div className="mb-12">
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-blue-500">Top Attractions in Rameshwaram</h2>
           <p className="text-base text-gray-600 leading-relaxed mb-5">You can view top attractions in the city such as Arulmigo Ramanatha Temple, Hanuman Temple, Adam&apos;s Bridge, and Ram Setu View Point. With a 12 seater tempo traveller in Rameshwaram, your trip is memorable and you travel safely with all amenities on the way.</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {ATTRACTIONS.map(place => (
               <div key={place.name} className="bg-gradient-to-br from-blue-50 to-blue-50 border border-blue-200 rounded-xl p-4">
                 <h3 className="font-bold text-blue-800 text-sm mb-2">{place.name}</h3>
