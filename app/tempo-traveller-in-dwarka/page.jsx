@@ -79,19 +79,17 @@ const WHY_CARDS = [
 
 const FAQS = [
   { q: "Is a tempo traveller better than auto or cab for Dwarka pilgrimage groups?", a: "Yes. Tempo traveller in Dwarka keeps the whole pilgrimage group together in one vehicle. Autos and cabs split the group across multiple vehicles creating coordination problems at every temple stop. One tempo traveller means one pickup, one driver, everyone arrives together at Dwarkadhish Temple, Nageshwar, and Bet Dwarka without anyone getting separated." },
-  { q: "Can I hire a tempo traveller in Dwarka for just half a day?", a: "Yes. Half day tempo traveller hire in Dwarka available for shorter requirements. Nageshwar Jyotirlinga and Rukmini Devi Temple can be covered comfortably in 4 hours. Half day package starts at Rs 2,000 for a 12 seater. Confirm pickup time and stops at booking." },
+  { q: "Can I hire a tempo traveller in Dwarka for just half a day?", a: "Yes. Half day tempo traveller hire in Dwarka available for shorter requirements. Nageshwar Jyotirlinga and Rukmini Devi Temple can be covered comfortably in 4 hours. Half day package starts at Rs 2,000 for a 12 seater. Confirm pickup time and stops at booking. Call 9044019511 for half day fare." },
   { q: "What is the per km rate for outstation tempo traveller from Dwarka?", a: "Outstation tempo traveller rate from Dwarka starts at Rs 16 per km for a 9 seater and Rs 21 per km for a 12 seater. Rate applies to full distance both ways. Includes fuel, toll, parking, and driver allowance. No additions after the trip ends." },
-  { q: "Is tempo traveller available from Dwarka railway station for group pickup?", a: "Yes. Tempo traveller pickup from Dwarka railway station available for all group sizes. Driver waiting at station at confirmed arrival time. Vehicle confirmed in advance with registration details shared before travel date." },
-  { q: "Can I book a tempo traveller in Dwarka for a multi day Gujarat pilgrimage tour?", a: "Yes. Multi day tempo traveller from Dwarka covers complete Gujarat pilgrimage circuit including Somnath Jyotirlinga, Palitana Shatrunjaya, Ambaji, and Junagadh Girnar. Driver accommodation included for overnight stops. Full multi day fare confirmed upfront." },
+  { q: "Is tempo traveller available from Dwarka railway station for group pickup?", a: "Yes. Tempo traveller pickup from Dwarka railway station available for all group sizes. Driver waiting at station at confirmed arrival time. Vehicle confirmed in advance with registration details shared before travel date. Call 9044019511 to arrange station pickup." },
+  { q: "Can I book a tempo traveller in Dwarka for a multi day Gujarat pilgrimage tour?", a: "Yes. Multi day tempo traveller from Dwarka covers complete Gujarat pilgrimage circuit including Somnath Jyotirlinga, Palitana Shatrunjaya, Ambaji, and Junagadh Girnar. Driver accommodation included for overnight stops. Full multi day fare confirmed upfront. Call 9044019511 to plan complete itinerary." },
   { q: "What is the tempo traveller fare from Dwarka to Junagadh?", a: "Tempo traveller Dwarka to Junagadh fare starts at Rs 7,500 for a 12 seater. Junagadh is 190 km from Dwarka. Popular pilgrimage destination for Girnar Hill temple circuit. Drive takes around 3.5 hours on Gujarat state highway." },
-  { q: "Does Yatra Travel India provide tempo traveller for school pilgrimage trips in Dwarka?", a: "Yes. Tempo traveller for school trips in Dwarka regularly booked for educational and religious excursions. Safe well maintained vehicles, experienced drivers, fixed group fare. 16 and 20 seater most popular for larger student groups." },
+  { q: "Does Yatra Travel India provide tempo traveller for school pilgrimage trips in Dwarka?", a: "Yes. Tempo traveller for school trips in Dwarka regularly booked for educational and religious excursions. Safe well maintained vehicles, experienced drivers, fixed group fare. 16 and 20 seater most popular for larger student groups. Call 9044019511 to book." },
   { q: "What is the tempo traveller fare from Dwarka to Rajkot?", a: "Tempo traveller Dwarka to Rajkot fare starts at Rs 8,000 for a 12 seater. Rajkot is 220 km from Dwarka. Popular outstation transfer for groups flying out of Rajkot airport after completing Dwarka pilgrimage. Drive takes around 4 hours." },
   { q: "Can I get a tempo traveller in Dwarka with a driver who knows Gujarati?", a: "Yes. Every tempo traveller driver at Yatra Travel India in Dwarka is a local Gujarati driver fluent in Gujarati and Hindi. Familiar with all temple timings, local routes, and pilgrimage customs in Dwarka. Makes communication easy for groups from Gujarat and neighbouring states." },
-  { q: "Is tempo traveller available in Dwarka during monsoon season?", a: "Yes. Tempo traveller hire in Dwarka during monsoon available throughout the year. Gujarat coastal roads remain accessible during monsoon. Vehicles are well maintained with good tyres for wet road conditions. Bet Dwarka ferry service may be restricted during heavy rain periods." },
-  { q: "What is the tempo traveller fare from Dwarka to Palitana?", a: "Tempo traveller Dwarka to Palitana fare starts at Rs 12,000 for a 12 seater. Palitana is 300 km from Dwarka. Most sacred Jain pilgrimage destination in Gujarat. Popular multi day package combining Dwarka and Palitana for groups covering multiple sacred sites in one Gujarat trip." },
-  { q: "Is luxury tempo traveller available in Dwarka for elderly pilgrimage groups?", a: "Yes. Luxury tempo traveller in Dwarka strongly recommended for groups with elderly passengers. Air suspension handles Gujarat roads smoothly, reclining seats allow proper rest between temple stops, and powerful multi zone AC keeps everyone comfortable throughout the full day Panchkroshi circuit. Starting fare Rs 7,000." },
-  { q: "Is a tempo traveller the best option from Somnath to Dwarka?", a: "Yes, a tempo traveller is the most practical option for group travel between Somnath and Dwarka. The journey is around 230 km and takes about 4 hours." },
-  { q: "Can I book a tempo traveller for evening aarti in Dwarka?", a: "Yes, short duration bookings are available for evening aarti visits at Dwarkadhish Temple with flexible timing." },
+  { q: "Is tempo traveller available in Dwarka during monsoon season?", a: "Yes. Tempo traveller hire in Dwarka during monsoon available throughout the year. Gujarat coastal roads remain accessible during monsoon. Vehicles are well maintained with good tyres for wet road conditions. Bet Dwarka ferry service may be restricted during heavy rain periods. Confirm at booking if monsoon travel is planned." },
+  { q: "What is the tempo traveller fare from Dwarka to Palitana?", a: "Tempo traveller Dwarka to Palitana fare starts at Rs 12,000 for a 12 seater. Palitana is 300 km from Dwarka.Most sacred Jain pilgrimage destination in Gujarat. Popular multi day package combining Dwarka and Palitana for groups covering multiple sacred sites in one Gujarat trip." },
+  { q: "Is luxury tempo traveller available in Dwarka for elderly pilgrimage groups?", a: "Yes. Luxury tempo traveller in Dwarka strongly recommended for groups with elderly passengers. Air suspension handles Gujarat roads smoothly, reclining seats allow proper rest between temple stops, and powerful multi zone AC keeps everyone comfortable throughout the full day Panchkroshi circuit. Starting fare Rs 7,000. Call 9044019511 to book." },
 ];
 
 const NETWORK = [
@@ -113,10 +111,10 @@ const PANCHKROSHI_STOPS = [
 ];
 
 const DWARKA_SOMNATH_STOPS = [
-  { title: "Nageshwar Jyotirlinga", desc: "Just 16 km from Dwarka. Third Jyotirlinga easily added to the same trip. Most groups cover this first thing in the morning." },
-  { title: "Porbandar", desc: "Around halfway between Dwarka and Somnath. Birthplace of Mahatma Gandhi. Kirti Mandir is the most visited heritage site. Easy 30-45 minute stop." },
-  { title: "Madhavpur Beach", desc: "Around 60 km before Somnath. Clean quiet beach with mythological significance as the marriage site of Lord Krishna and Rukmini. Good rest stop." },
-  { title: "Bhalka Tirth",  desc: "Just 4 km from Somnath Temple. Sacred site where Lord Krishna was wounded before leaving his earthly form. Important pilgrimage stop." },
+  { title: "Nageshwar Jyotirlinga", desc: "Just 16 km from Dwarka. Third Jyotirlinga easily added to the same trip before heading toward Somnath. Most groups starting from Dwarka cover Nageshwar darshan first thing in the morning before the long drive south." },
+  { title: "Porbandar", desc: "Around halfway between Dwarka and Somnath. Birthplace of Mahatma Gandhi. Kirti Mandir is the most visited heritage site in Porbandar. Easy 30 to 45 minute stop for groups interested in combining pilgrimage with history." },
+  { title: "Madhavpur Beach", desc: "Around 60 km before Somnath on the coastal highway. Clean quiet beach, mythological significance as the marriage site of Lord Krishna and Rukmini. Good rest stop for groups on the long drive." },
+  { title: "Bhalka Tirth",  desc: "Just 4 km from Somnath Temple. Sacred site where Lord Krishna was wounded by an arrow before leaving his earthly form. Important stop for pilgrimage groups arriving at Somnath." },
 ];
 
 function ST({ children, border = "border-[#0f6ec8]", id }) {
@@ -277,19 +275,19 @@ export default function TempoTravellerDwarka() {
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="text-blue-600 mt-1 text-xs">✓</span>
-                <span className="text-sm text-gray-700"><strong>Start Early from Dwarka:</strong> Leave by 6 AM to cover Nageshwar Jyotirlinga darshan before the drive and still reach Somnath comfortably for afternoon or evening aarti.</span>
+                <span className="text-sm text-gray-700"><strong>Start Early from Dwarka:</strong> Leave by 6 AM to cover Nageshwar Jyotirlinga darshan before the drive and still reach Somnath comfortably for the afternoon or evening aarti.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-blue-600 mt-1 text-xs">✓</span>
-                <span className="text-sm text-gray-700"><strong>Book in Advance for Festival Periods:</strong> Janmashtami in Dwarka and Kartik Purnima in Somnath both draw massive crowds. Book at least 3-4 weeks in advance.</span>
+                <span className="text-sm text-gray-700"><strong>Book in Advance for Festival Periods:</strong> Janmashtami in Dwarka and Kartik Purnima in Somnath both draw massive crowds. If your trip falls during either festival, book the tempo traveller at least 3 to 4 weeks in advance.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-blue-600 mt-1 text-xs">✓</span>
-                <span className="text-sm text-gray-700"><strong>Confirm Driver Experience:</strong> Driver who has done this route knows the best stops, parking near both temples, and quickest routes through Porbandar.</span>
+                <span className="text-sm text-gray-700"><strong>Confirm Driver Experience on This Route.:</strong> The Dwarka to Somnath coastal highway is straightforward but a driver who has done this route before knows the best stops, the parking situation near both temples, and the quickest routes through Porbandar.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-blue-600 mt-1 text-xs">✓</span>
-                <span className="text-sm text-gray-700"><strong>Go One Size Up:</strong> Pilgrimage groups carry bags, offerings, prasad, extra clothing. Always go one size up for full day outstation drives.</span>
+                <span className="text-sm text-gray-700"><strong>Go One Size Up for Pilgrimage Groups:</strong> Pilgrimage groups carry more than regular travellers. Bags, offerings, prasad, extra clothing for temple visits. Always go one size up from what seems sufficient on a full day outstation drive.</span>
               </li>
             </ul>
           </div>
@@ -318,7 +316,9 @@ export default function TempoTravellerDwarka() {
             </div>
             <div className="mt-4 p-3 bg-white rounded-lg">
               <p className="text-xs text-gray-600 mb-2"><strong>Best Combined With:</strong></p>
-              <p className="text-xs text-gray-700">Dwarkadhish Temple, Bet Dwarka, Rukmini Devi Temple</p>
+              <p className="text-xs text-gray-700 mb-4">Dwarkadhish Temple, Bet Dwarka, Rukmini Devi Temple</p>
+              <p className="text-xs text-gray-600 mb-2"><strong>Route:</strong></p>
+              <p className="text-xs text-gray-700">Dwarka to Nageshwar via coastal road</p>
             </div>
           </div>
         </div>
@@ -326,8 +326,8 @@ export default function TempoTravellerDwarka() {
         {/* Panchkroshi Yatra - NEW SECTION FROM PDF */}
         <div className="mb-12">
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-indigo-500">Tempo Traveller for Dwarka Panchkroshi Yatra Group Tour</h2>
-          <p className="text-base text-gray-600 leading-relaxed mb-4">One of the holiest pilgrimage circuits in Gujarat — <strong>Dwarka Panchkroshi Yatra</strong>. A single sacred trip covering five holy shrines across Dwarka: Dwarkadhish Temple, Nageshwar Jyotirlinga, Bet Dwarka, Rukmini Devi Temple and Gopi Talav.</p>
-          <p className="text-base text-gray-600 leading-relaxed mb-4">It is believed that by completing the Panchkroshi, the ring of pilgrimage, all five sacred sites bless the pilgrims at once. Visiting all five attractions comfortably in a day, with a large group, requires one dependable vehicle with a knowledgeable driver who knows every route.</p>
+          <p className="text-base text-gray-600 leading-relaxed mb-4">One of the holiest pilgrimage circuits in Gujarat <strong>Dwarka Panchkroshi Yatra.</strong> A single sacred trip covering five holy shrines across Dwarka. Other local sights: Dwarkadhish Temple, Nageshwar Jyotirlinga, Bet Dwarka, Rukmini Devi Temple and Gopi Talav It is believed that by completing the Panchkroshi, the ring of pilgrimage, all five sacred sites bless the pilgrims at once.</p>
+          <p className="text-base text-gray-600 leading-relaxed mb-4">Visiting all five attractions comfortably in a day, with such a large group, requires one dependable vehicle that has one knowledgeable driver who knows every route and also demands the fare be agreed on before departing.</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-5">
             {PANCHKROSHI_STOPS.map((stop, i) => (
@@ -492,12 +492,13 @@ export default function TempoTravellerDwarka() {
   );
 }
 
+// ─── VEHICLE CARD — Ayodhya style (label: value, left-to-right) ──────────────
 function VehicleCard({ vehicle, onSelect }) {
   return (
     <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:border-[#0f6ec8] hover:shadow-md transition-all">
-      <div className="relative h-52 overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100">
+      <div className="relative h-44 overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100">
         {vehicle.img
-          ? <img src={vehicle.img} alt={vehicle.title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" onError={e => { e.currentTarget.style.display = "none"; }} />
+          ? <img src={vehicle.img} alt={vehicle.title} className="w-full h-full object-cover" onError={e => { e.currentTarget.style.display = "none"; }} />
           : <div className="w-full h-full flex items-center justify-center"><FaBus className="text-[#0f6ec8] opacity-20 text-5xl" /></div>
         }
         <span className="absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full bg-[#0f6ec8] z-10">{vehicle.badge}</span>
@@ -506,14 +507,17 @@ function VehicleCard({ vehicle, onSelect }) {
         <h3 className="font-bold text-gray-900 text-sm mb-4 leading-snug">{vehicle.title}</h3>
         <div className="bg-[#f8faff] rounded-lg p-4 mb-4 space-y-2">
           {vehicle.specs.map(s => (
-            <div key={s.label} className="flex items-start justify-between text-[12.5px] gap-2">
-              <span className="text-gray-500 font-medium whitespace-nowrap">{s.label}</span>
-              <span className="font-bold text-gray-900 text-right">{s.value}</span>
-            </div>
+            <p key={s.label} className="text-[12.5px] text-gray-700 leading-relaxed">
+              <span className="font-bold">{s.label}:</span>{" "}{s.value}
+            </p>
           ))}
         </div>
-        <div className="flex flex-wrap gap-1.5 mb-4">{vehicle.tags.map(tag => <span key={tag} className="text-[11px] font-semibold px-2.5 py-1 rounded-full border bg-blue-50 text-[#0f6ec8] border-blue-200">{tag}</span>)}</div>
-        <button onClick={() => onSelect(vehicle.title)} className="w-full py-3 text-sm font-bold text-white rounded-lg bg-[#0f6ec8] hover:bg-[#0a4a8f] transition-colors">Book {vehicle.badge} Tempo</button>
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          {vehicle.tags.map(tag => <span key={tag} className="text-[11px] font-semibold px-2.5 py-1 rounded-full border bg-blue-50 text-[#0f6ec8] border-blue-200">{tag}</span>)}
+        </div>
+        <button onClick={() => onSelect(vehicle.title)} className="w-full py-3 text-sm font-bold text-white rounded-lg bg-[#0f6ec8] hover:bg-[#0a4a8f] transition-colors">
+          Book {vehicle.badge} Tempo
+        </button>
       </div>
     </div>
   );
