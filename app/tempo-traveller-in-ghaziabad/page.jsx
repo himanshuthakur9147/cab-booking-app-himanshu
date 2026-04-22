@@ -253,18 +253,26 @@ export default function TempoTravellerGhaziabad() {
 
         {/* ══ SECTION 1: Main Intro ══ */}
         <div className="mb-12">
-          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#0f6ec8]">Book Tempo Traveller in Ghaziabad — Comfortable Group Travel at the Best Price</h2>
+          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#0f6ec8]">Book Tempo Traveller in Ghaziabad - Comfortable Group Travel at the Best Price</h2>
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 mb-5">
-            <p className="text-base text-gray-700 leading-relaxed mb-4">Ghaziabad is one of NCR&apos;s busiest cities and group travel here means one thing — you need a reliable vehicle that shows up on time and gets everyone where they need to go without any drama. Yatra Travel India offers tempo traveller hire in Ghaziabad for local tours, outstation trips, weddings, corporate travel, and pilgrimage tours. 9 to 20 seaters available. Fixed fare. No hidden charges.</p>
-            <p className="text-base text-gray-700 leading-relaxed mb-4">Ghaziabad is one of NCR&apos;s fastest growing cities and group travel demand here is high. Whether your group is heading to Haridwar for a pilgrimage, Agra for a Taj Mahal visit, Mathura Vrindavan for a religious tour, or simply covering a local function across the city — getting everyone there together in one vehicle is always the smarter call.</p>
-            <p className="text-base text-gray-700 leading-relaxed mb-4">Booking multiple cabs sounds fine until someone gets delayed, someone takes the wrong route, and half the group is waiting at the venue while the other half is stuck in Ghaziabad traffic. A tempo traveller from Yatra Travel India removes all of that. One pickup point, one vehicle, one driver, one fare. Everyone travels together and everyone arrives together.</p>
-            <p className="text-base text-gray-700 leading-relaxed">And the cost works out better too. Split a tempo traveller fare across 10 or 12 people in Ghaziabad and the per head amount is almost always lower than booking individual cabs. Especially on longer outstation routes where cab meters keep running.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Ghaziabad is one of NCR's busiest cities and group travel here means one thing you need a reliable vehicle that shows up on time and gets everyone where they need to go without any drama. Yatra Travel India offers tempo traveller hire in Ghaziabad for local tours, outstation trips, weddings, corporate travel, and pilgrimage tours. 9 to 20 seaters available. Fixed fare. No hidden charges. Call 9044019511 to book.</p>
           </div>
 
           {/* ══ VEHICLE CARDS ══ */}
         <ST id="services">Tempo Traveller Options in Ghaziabad</ST>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
           {VEHICLES.map(v => <VehicleCard key={v.badge} vehicle={v} onSelect={handleSelectVehicle} />)}
+        </div>
+
+        {/* ══ 2 Seater Section ══ */}
+        <div className="mb-12">
+          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#ff6b35]">Book Tempo Traveller in Ghaziabad - Confirmed Vehicle, Experienced Driver, Fixed Fare</h2>
+          <div>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Yatra Travel India offers 9 to 20 seater tempo travellers for local tours, outstation trips, weddings, corporate travel, and pilgrimage tours. Vehicle confirmed at booking, experienced driver assigned, fare fixed upfront. No hidden charges.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Ghaziabad is one of NCR's fastest growing cities and group travel demand here is high. Whether your group is heading to Haridwar for a pilgrimage, Agra for a Taj Mahal visit, Mathura Vrindavan for a religious tour, or simply covering a local function across the city, getting everyone there together in one vehicle is always the smarter call.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Booking multiple cabs sounds fine until someone gets delayed, someone takes the wrong route, and half the group is waiting at the venue while the other half is stuck in Ghaziabad traffic. A tempo traveller from Yatra Travel India removes all of that. One pickup point, one vehicle, one driver, one fare. Everyone travels together and everyone arrives together.</p>
+            <p className="text-base text-gray-700 leading-relaxed">And the cost works out better too. Split a tempo traveller fare across 10 or 12 people in Ghaziabad and the per head amount is almost always lower than booking individual cabs. Especially on longer outstation routes where cab meters keep running.</p>
+          </div>
         </div>
 
           {/* What every booking includes */}
@@ -291,6 +299,7 @@ export default function TempoTravellerGhaziabad() {
           <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
             <p className="text-base text-gray-700 leading-relaxed mb-4">The 9 seater tempo traveller is the smartest choice for small groups of 6 to 9 people travelling in and around Ghaziabad. Compact enough to move through NCR traffic without any trouble, comfortable enough for a full day of sightseeing or a long outstation drive, and easy on the budget when the group is small. No paying for empty seats in a larger vehicle. No squeezing into cabs that were never built for group travel.</p>
             <p className="text-base text-gray-700 leading-relaxed mb-4">Ghaziabad connects directly to some of the most travelled group trip routes in North India. Mathura Vrindavan for a pilgrimage day trip. Haridwar for a Ganga aarti group tour. Agra for a Taj Mahal family visit. Nainital and Dehradun for a weekend hill station getaway. Rishikesh for an adventure or yoga group retreat. Every one of these routes is regularly covered by Yatra Travel India 9 seater tempo travellers from Ghaziabad with experienced drivers who know the roads personally.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">Every booking with Yatra Travel India comes with a confirmed vehicle, not just a promise. Driver details shared before the trip. Fare agreed upfront with fuel, toll, parking, and driver allowance all included. Nothing added after the trip ends. What is quoted before departure is exactly what is paid on return.</p>
             <p className="text-base text-gray-700 leading-relaxed">For small wedding transfers, corporate team outings, school excursions, family picnics, or religious group tours from Ghaziabad, the 9 seater tempo traveller from Yatra Travel India covers every requirement without overcharging for space the group does not need.</p>
           </div>
         </div>
@@ -307,7 +316,7 @@ export default function TempoTravellerGhaziabad() {
         {/* ══ 16 Seater Section ══ */}
         <div className="mb-12">
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-blue-500">Book 16 Seater Tempo Traveller in Ghaziabad — Yatra Travel India</h2>
-          <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
             <p className="text-base text-gray-700 leading-relaxed mb-3">Looking to book a 16 seater tempo traveller in Ghaziabad? Yatra Travel India offers well maintained 16 seater tempo travellers for medium sized groups travelling locally or outstation. Fixed fare, confirmed vehicle, experienced driver on all routes.</p>
             <p className="text-base text-gray-700 leading-relaxed font-semibold text-blue-800">16 seater tempo traveller is the right choice for groups of 13 to 16 people. Better legroom, more luggage space, and noticeably more comfortable than squeezing 13 or 14 people into a 12 seater. Works for office outings, wedding transfers, pilgrimage tours, school trips, and family holidays from Ghaziabad.</p>
           </div>
@@ -409,7 +418,7 @@ export default function TempoTravellerGhaziabad() {
 
         {/* ══ Popular Outstation Routes Detail ══ */}
         <div className="mb-12">
-          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-green-500">Popular Outstation Routes from Ghaziabad by Tempo Traveller</h2>
+          <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-blue-500">Popular Outstation Routes from Ghaziabad by Tempo Traveller</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             {OUTSTATION_ROUTES_DETAIL.map(r => (
               <div key={r.title} className="bg-white border border-gray-200 rounded-xl p-5 hover:border-[#0f6ec8] transition-colors">
