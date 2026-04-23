@@ -56,6 +56,15 @@ const VEHICLES = [
   { badge: "Luxury",    title: "Luxury Tempo Traveller in",    img: "/images/luxury.jpg",   specs: [{ label: "Seating Capacity", value: "9–16 Passengers + 1 Driver" }, { label: "Local Fare", value: "₹11,000 onwards" }, { label: "Outstation Rate", value: "₹30/km onwards" }, { label: "Extras", value: "WiFi, Mini Fridge, LED Lighting" }, { label: "Facility", value: "Leather Seats, Multi-Zone AC" }], tags: ["WiFi", "Mini Fridge", "Leather Seats", "VIP Travel"] },
 ];
 
+const BHUBANESWAR_OPTIONS_TABLE = [
+  { vehicle: "9 Seater Tempo Traveller in Bhubaneswar",   capacity: "6–9 + Driver",   ac: "AC",          ideal: "Small pilgrim families — Lingaraj Temple, Mukteshwar Temple, ISKCON, and Odisha temple circuit in one comfortable day" },
+  { vehicle: "12 Seater Tempo Traveller in Bhubaneswar",  capacity: "10–12 + Driver", ac: "AC",          ideal: "Medium groups — Puri Jagannath Dham, Konark Sun Temple, Odisha Golden Triangle, and outstation to Chilika Lake" },
+  { vehicle: "16 Seater Tempo Traveller in Bhubaneswar",  capacity: "13–16 + Driver", ac: "AC",          ideal: "Corporate tours, school trips, wedding parties — multi-destination Odisha tours including Baripada and Bhitarkanika" },
+  { vehicle: "20 Seater Tempo Traveller in Bhubaneswar",  capacity: "17–20 + Driver", ac: "AC",          ideal: "Large pilgrimage groups, college batch trips — Puri, Konark, Chilika and extended multi-day Odisha circuit tours" },
+  { vehicle: "24 Seater Tempo Traveller in Bhubaneswar",  capacity: "21–24 + Driver", ac: "AC",          ideal: "Large corporate events, major school excursions, community group travel across Odisha destinations" },
+  { vehicle: "Luxury Tempo Traveller in Bhubaneswar",     capacity: "9–16 + Driver",  ac: "Multi-Zone",  ideal: "VIP corporate travel, wedding functions, senior pilgrim groups — leather seats, WiFi, mini fridge, LED lighting" },
+];
+
 const LOCAL_PRICE_TABLE = [
   { vehicle: "9 Seater Tempo Traveller",   seating: "6 to 9 people",   fare: "₹5,800 onwards",  hours: "8 hours", km: "80 km" },
   { vehicle: "12 Seater Tempo Traveller",  seating: "10 to 12 people", fare: "₹6,200 onwards",  hours: "8 hours", km: "80 km" },
@@ -235,7 +244,7 @@ export default function TempoTravellerBhubaneswar() {
           <h2 className="text-xl md:text-2xl font-extrabold text-gray-900 mb-4 pl-4 border-l-4 border-[#0f6ec8]">Best Tempo Traveller Service in Bhubaneswar — Yatra Travel India</h2>
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 mb-5">
             <h3 className="font-bold text-gray-900 text-base mb-3">Book Budget Friendly Tempo Travellers in Bhubaneswar</h3>
-            <p className="text-base text-gray-700 leading-relaxed mb-4">Travelling with a group in Bhubaneswar does not have to be expensive. Yatra Travel India offers budget friendly tempo travellers in Bhubaneswar for every group size starting at Rs 3,000 for a 9 seater and Rs 4,200 for a 12 seater. Transparent pricing, no hidden charges, and fare confirmed before the trip starts.</p>
+            <p className="text-base text-gray-700 leading-relaxed mb-4">With Yatra Travel India You Can Book Budget Friendly Tempo Travellers in Bhubaneswar,Travelling with a group in Bhubaneswar does not have to be expensive. Yatra Travel India offers budget friendly tempo travellers in Bhubaneswar for every group size starting at Rs 3,000 for a 9 seater and Rs 4,200 for a 12 seater. Transparent pricing, no hidden charges, and fare confirmed before the trip starts.</p>
             <p className="text-base text-gray-700 leading-relaxed mb-4">Whether your group is heading to Lingaraj Temple, Puri Jagannath Dham, Konark Sun Temple, or anywhere across Odisha, Yatra Travel India has the right vehicle at the right price. Split the fare across 10 or 12 people and the per head cost beats individual cabs on every route.</p>
             <p className="text-base text-gray-700 leading-relaxed mb-4">Every booking includes fuel, toll, parking, and driver allowance. No surprise additions after the trip. Budget friendly does not mean compromising on comfort or reliability. Every tempo traveller in the Yatra Travel India fleet is well maintained, regularly serviced, and driven by an experienced driver who knows Bhubaneswar and all major Odisha routes personally.</p>
             <div className="bg-[#0f6ec8] rounded-lg p-3 text-center">
@@ -330,6 +339,39 @@ export default function TempoTravellerBhubaneswar() {
                   <td className="py-3 px-4 font-bold text-[#0f6ec8] border-r border-b border-gray-100 text-xs">{row.fare}</td>
                   <td className="py-3 px-4 text-gray-600 border-r border-b border-gray-100 text-xs">{row.vehicle}</td>
                   <td className="py-3 px-4 border-b border-gray-100"><a href="tel:+919044019511" className="inline-flex items-center gap-1 bg-[#0f6ec8] hover:bg-[#0a4a8f] text-white text-xs font-bold px-3 py-1.5 rounded-full transition-colors"><FaPhoneAlt size={9} /> Call Now</a></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Comparison Table */}
+        <h2 className="text-xl font-bold text-gray-900 mb-6 pl-4 border-l-4 border-[#0f6ec8]">
+          Tempo Traveller Options in Bhubaneswar — Full Comparison
+        </h2>
+        <div className="overflow-x-auto rounded-xl border border-gray-200 mb-10">
+          <table className="w-full text-sm min-w-[600px]">
+            <thead>
+              <tr className="bg-[#0f6ec8]">
+                {["Vehicle Type", "Seating Capacity", "Air Conditioning", "Ideal For"].map(h => (
+                  <th key={h} className="text-left text-white font-bold text-xs py-4 px-4 border-r border-white/20 last:border-0">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {BHUBANESWAR_OPTIONS_TABLE.map((row, i) => (
+                <tr key={i} className={(i % 2 === 0 ? "bg-[#f8faff]" : "bg-white") + " hover:bg-blue-50"}>
+                  <td className="py-3 px-4 font-semibold text-gray-900 border-r border-b border-gray-100 text-xs">{row.vehicle}</td>
+                  <td className="py-3 px-4 text-gray-600 border-r border-b border-gray-100 text-xs whitespace-nowrap">{row.capacity}</td>
+                  <td className="py-3 px-4 border-r border-b border-gray-100">
+                    <span className={"text-xs font-bold px-2.5 py-1 rounded-full border " +
+                      (row.ac === "Premium AC" || row.ac === "Multi-Zone"
+                        ? "bg-orange-50 text-orange-700 border-orange-200"
+                        : "bg-blue-50 text-[#0f6ec8] border-blue-200")}>
+                      {row.ac}
+                    </span>
+                  </td>
+                  <td className="py-3 px-4 text-gray-600 border-b border-gray-100 text-xs leading-relaxed">{row.ideal}</td>
                 </tr>
               ))}
             </tbody>
