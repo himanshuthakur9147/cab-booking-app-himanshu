@@ -2,11 +2,17 @@ import metaData from "@/components/tempo-traveller/metaData.json";
 import cityDataFile from "@/components/cityData.json";
 import TempoTravellerClient from "@/components/tempo-traveller/TempoTravellerClient";
 import Script from "next/script";
-import { redirect } from "next/navigation";
+import { redirect, notFound } from "next/navigation"; // Added notFound
 
-// 1. DYNAMIC METADATA (This replaces <Head>)
+// 1. DYNAMIC METADATA
 export async function generateMetadata({ params }) {
-const { city } = await params; // Await params for Next.js 15 compatibility
+  const { city } = await params; 
+  
+  // OPTION 1 LOGIC: If the URL doesn't have the prefix, don't generate metadata (SEO safety)
+  if (!city.startsWith("tempo-traveller-in-")) {
+    return {};
+  }
+
   const cityname = city.replace("tempo-traveller-in-", "");
   const dataMeta = metaData[cityname.toLowerCase()] || {};
 
@@ -16,16 +22,11 @@ const { city } = await params; // Await params for Next.js 15 compatibility
   return {
     title: title,
     description: description,
-    // 1. ADD KEYWORDS
     keywords: `Tempo Traveller in ${city}, Hire ${city} Tempo Traveller, Luxury Tempo Traveller ${city}, Yatra Travel India`,
-    
-    // 2. ADD AUTHOR & PUBLISHER
     authors: [{ name: 'Yatra Travel India', url: 'https://www.yatratravelindia.com' }],
     publisher: 'Yatra Travel India',
-
-    // 3. ADD LANGUAGE & REGION
     other: {
-      'content-language': 'en', // Defines the language
+      'content-language': 'en',
     },
     alternates: {
       canonical: `https://www.yatratravelindia.com/tempo-traveller/${city}`,
@@ -34,7 +35,6 @@ const { city } = await params; // Await params for Next.js 15 compatibility
         'hi-IN': `https://www.yatratravelindia.com/tempo-traveller/${city}`,
       },
     },
-   // 4. IMPROVED ROBOTS (for Google Discover)
     robots: {
       index: true,
       follow: true,
@@ -46,30 +46,33 @@ const { city } = await params; // Await params for Next.js 15 compatibility
         'max-snippet': -1,
       },
     },
-
     openGraph: {
       title: title,
       description: description,
       url: `https://www.yatratravelindia.com/tempo-traveller/${city}`,
       siteName: 'Yatra Travel India',
       type: 'website',
-      locale: 'en_IN', // Best for Indian audience
+      locale: 'en_IN',
     },
   };
 }
 
 export default async function Page({ params }) {
- 
-// We MUST extract these variables again inside the Page function
- const { city } = await params;
+  const { city } = await params;
+
+  // --- OPTION 1: URL VALIDATION LOGIC ---
+  // If user visits /tempo-traveller/lucknow instead of /tempo-traveller/tempo-traveller-in-lucknow
+  if (!city.startsWith("tempo-traveller-in-")) {
+    return notFound(); // Triggers your global 404 page
+  }
+
   const cityname = city.replace("tempo-traveller-in-", "").toLowerCase();
 
-  // 2. EXISTENCE CHECK & REDIRECT
-  // Check if the city exists in your cityData.json keys
+  // --- EXISTENCE CHECK ---
   const cityExists = Object.keys(metaData).includes(cityname);
 
   if (!cityExists) {
-    redirect("/"); // Redirects to homepage if city is not in your data
+    redirect("/"); // If city is valid format but not in your database, go home
   }
 
   const cityData = cityDataFile[cityname];
