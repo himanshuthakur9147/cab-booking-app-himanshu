@@ -48,6 +48,7 @@ import MaduraiPage from "./MaduraiPage";
 import TirupatiPage from "./TirupatiPage";
 import JabalpurPage from "./JabalpurPage";
 import RishikeshPage from "./RishikeshPage";
+import VaranasiToAyodhyaPage from "./VaranasiToAyodhyaPage";
 import { HiArrowRight } from "react-icons/hi";
 
 
@@ -235,6 +236,8 @@ export default function TempoTravellerClient({cityData, cityname, city}) {
 {cityname==="tirupati" && <TirupatiPage/> }
 {cityname==="jabalpur" && <JabalpurPage/> }
 {cityname==="rishikesh" && <RishikeshPage/> }
+{cityname === "varanasi-to-ayodhya" && <VaranasiToAyodhyaPage />}
+    
 
 {/* WhatsApp Floating Button */}
 <a
