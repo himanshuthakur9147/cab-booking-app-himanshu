@@ -359,7 +359,7 @@ export default function VaranasiToAyodhyaPage() {
                     <td className="py-3 px-4 text-gray-700">{row.capacity}</td>
                     <td className="py-3 px-4 font-semibold text-[#2482c2]">{row.fare}</td>
                     <td className="py-3 px-4">
-                      <a href="tel:9044019511" className="bg-[#2482c2] hover:bg-orange-500 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors">
+                      <a href="tel:9044019511" className="bg-[#2482c2] hover:bg-orange-500 text-white text-sm font-bold px-3 py-2 rounded-lg transition-colors whitespace-nowrap min-w-[80px] text-center block">
                         CALL US
                       </a>
                     </td>
