@@ -254,7 +254,6 @@ function VehicleCard({ vehicle, onSelect }) {
 return (
 <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:border-[#0f6ec8] hover:shadow-md transition-all">
 <div className="relative h-44 overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100">
-{/* eslint-disable-next-line @next/next/no-img-element */}
 {vehicle.img ? <img src={vehicle.img} alt={vehicle.title} className="w-full h-full object-cover" onError={e => { e.currentTarget.style.display = "none"; }} /> : <div className="w-full h-full flex items-center justify-center"><FaBus className="text-[#0f6ec8] opacity-20 text-5xl" /></div>}
 <span className="absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full bg-[#0f6ec8] z-10">{vehicle.badge}</span>
 </div>
@@ -495,7 +494,7 @@ return (
   {/* === AYODHYA ATTRACTIONS === */}  
   <section className="py-12 bg-white border-t border-gray-100">  
     <div className="max-w-6xl mx-auto px-6">  
-      <ST>Ayodhya — What to See &amp; What Every Group Should Know</ST>  
+      <ST>Ayodhya - What to See &amp; What Every Group Should Know</ST>  
       <p className="text-gray-600 text-sm max-w-3xl mb-8 leading-relaxed">  
         An honest account of what a group spending one day in Ayodhya actually sees, does, and experiences at each stop, not a list of identical two-line descriptions.  
       </p>  
@@ -551,7 +550,7 @@ return (
   {/* === PACKAGE OPTIONS === */}  
   <section className="py-12 bg-white">  
     <div className="max-w-6xl mx-auto px-6">  
-      <ST>One Day, Two Days, or Three Days?</ST>  
+      <ST>One Day, Two Days, or Three Days</ST>  
       <div className="grid md:grid-cols-3 gap-6 mb-8">  
         {packageOptions.map((pkg, i) => (  
           <div key={i} className={`rounded-xl p-6 border ${pkg.color} shadow-sm hover:shadow-md transition-all`}>  
@@ -644,7 +643,7 @@ return (
         {[  
           { icon: <MdDirectionsBus className="text-2xl" />, title: "Vehicle at Pickup on Time", desc: "The vehicle at the pickup point at the time agreed. Not approximately, not 5 minutes late." },  
           { icon: <FaMapMarkerAlt className="text-2xl" />, title: "Driver Who Knows Ayodhya", desc: "Familiar with the new road layout, designated pilgrimage vehicle parking, and accessible entry points." },  
-          { icon: <FaStar className="text-2xl" />, title: "Fare That Doesn't Change", desc: "A fare that does not change between the booking call and the return to Varanasi. That is the whole promise." },  
+          { icon: <FaStar className="text-2xl" />, title: "Fare That Does Not Change", desc: "A fare that does not change between the booking call and the return to Varanasi. That is the whole promise." },  
         ].map((item, i) => (  
           <div key={i} className="bg-[#f8faff] rounded-xl p-6 border border-blue-100 text-center shadow-sm">  
             <div className="w-12 h-12 bg-[#0f6ec8] text-white rounded-lg flex items-center justify-center mx-auto mb-4">{item.icon}</div>  
@@ -672,7 +671,7 @@ return (
     <p className="text-blue-200 text-sm mb-6 max-w-2xl mx-auto">Vehicle confirmed, driver assigned, fare locked. Everything sorted before the pilgrimage begins.</p>  
     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">  
       <a href="tel:9044019511" className="flex items-center justify-center gap-2 bg-[#ff6b35] hover:bg-[#e55a24] text-white font-bold px-8 py-3.5 rounded-lg text-sm transition-colors shadow-lg">  
-        <FaPhoneAlt size={12} /> Call Now — 9044019511  
+        <FaPhoneAlt size={12} /> Call Now - 9044019511  
       </a>  
       <a href="https://wa.me/919044019511" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/40 text-white font-bold px-8 py-3.5 rounded-lg text-sm transition-colors shadow-lg">  
         <FaWhatsapp size={16} /> WhatsApp Us  
