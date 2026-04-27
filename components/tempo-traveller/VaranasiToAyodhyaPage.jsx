@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import BookingTabs from "@/components/BookingTabs";
 import {
 FaClock, FaShieldAlt, FaUserCheck, FaWhatsapp,
-FaBus, FaMapMarkerAlt, FaPhoneAlt, FaStar, FaRoad, FaInfoCircle, FaCheckCircle
+FaBus, FaMapMarkerAlt, FaPhoneAlt, FaStar, FaInfoCircle, FaCheckCircle
 } from "react-icons/fa";
 import RouteLoader from "@/components/Loader/RouteLoader";
 import Footer from "@/components/footer/Footer";
@@ -17,7 +17,6 @@ import TempoImageCards from "@/components/tempo-traveller/TempoImageCards";
 import TempoSeatConfig from "@/components/tempo-traveller/TempoSeatConfig";
 import GoogleMapsScriptLoader from "@/components/googleComponents/GoogleMapsScriptLoader";
 import SEOJsonLD from "@/components/SEOJsonLD";
-import { TypewriterText } from "@/components/home/TypewriterText";
 import { HiArrowRight, HiChevronDown } from "react-icons/hi";
 import { MdDirectionsBus } from "react-icons/md";
 
@@ -61,7 +60,7 @@ const INCLUDED = [
 
 const EXCLUDED = [
 "State entry tax / permit charges (outstation, as applicable)",
-"Driver night allowance (₹500 for tempo traveller, if applicable)",
+"Driver night allowance (Rs 500 for tempo traveller, if applicable)",
 "Any additional km beyond agreed package",
 "Luggage carrier Charges",
 "Personal expenses of passengers"
@@ -255,6 +254,7 @@ function VehicleCard({ vehicle, onSelect }) {
 return (
 <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:border-[#0f6ec8] hover:shadow-md transition-all">
 <div className="relative h-44 overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100">
+{/* eslint-disable-next-line @next/next/no-img-element */}
 {vehicle.img ? <img src={vehicle.img} alt={vehicle.title} className="w-full h-full object-cover" onError={e => { e.currentTarget.style.display = "none"; }} /> : <div className="w-full h-full flex items-center justify-center"><FaBus className="text-[#0f6ec8] opacity-20 text-5xl" /></div>}
 <span className="absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full bg-[#0f6ec8] z-10">{vehicle.badge}</span>
 </div>
@@ -373,11 +373,11 @@ return (
     <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 w-[90%] md:w-[70%] z-10">  
       <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 flex items-center gap-4">  
         <div className="w-10 h-10 bg-[#0f6ec8] rounded-lg flex items-center justify-center text-white text-lg"><FaShieldAlt /></div>  
-        <div><h4 className="text-white font-bold text-sm">Safe & Secure</h4><p className="text-gray-200 text-[11px] uppercase font-medium">Verified Drivers</p></div>  
+        <div><h4 className="text-white font-bold text-sm">Safe &amp; Secure</h4><p className="text-gray-200 text-[11px] uppercase font-medium">Verified Drivers</p></div>  
       </div>  
       <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 flex items-center gap-4">  
         <div className="w-10 h-10 bg-[#0f6ec8] rounded-lg flex items-center justify-center text-white text-lg"><FaUserCheck /></div>  
-        <div><h4 className="text-white font-bold text-sm">Expert Chauffeurs</h4><p className="text-gray-200 text-[11px] uppercase font-medium">Professional & Punctual</p></div>  
+        <div><h4 className="text-white font-bold text-sm">Expert Chauffeurs</h4><p className="text-gray-200 text-[11px] uppercase font-medium">Professional &amp; Punctual</p></div>  
       </div>  
       <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 flex items-center gap-4">  
         <div className="w-10 h-10 bg-[#0f6ec8] rounded-lg flex items-center justify-center text-white text-lg"><FaClock /></div>  
@@ -406,7 +406,7 @@ return (
       </div>  
     </div>  
 
-    {/* === VEHICLE CARDS (ADDED ACCORDING TO SPECS) === */}  
+    {/* === VEHICLE CARDS === */}  
     <ST id="services">Choose your ride with Yatra Travel India</ST>  
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">  
       {VEHICLES.map(v => <VehicleCard key={v.badge} vehicle={v} onSelect={scrollToBooking} />)}  
@@ -449,7 +449,7 @@ return (
   {/* === ROUTE AND DISTANCE === */}  
   <section className="py-12 bg-gray-50">  
     <div className="max-w-6xl mx-auto px-6">  
-      <ST>Route & Distance</ST>  
+      <ST>Route &amp; Distance</ST>  
       <p className="text-gray-700 text-sm mb-6 leading-relaxed">  
         Varanasi to Jaunpur to Sultanpur to Faizabad to Ayodhya. NH19 becoming NH28. 200 km. 3.5 to 4 hours on a normal day. Leave at 5 in the morning and the group is walking into Hanuman Garhi before 9 AM with the entire day still ahead.  
       </p>  
@@ -476,7 +476,7 @@ return (
 
   <TempoImageCards cd={{ cityname: "Varanasi to Ayodhya" }} />  
 
-  {/* === FEATURES SECTION (ADDED ACCORDING TO SPECS) === */}  
+  {/* === FEATURES SECTION === */}  
   <section className="max-w-6xl mx-auto px-5 py-12">  
     <ST>Features of Our Tempo Travellers</ST>  
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">  
@@ -495,7 +495,7 @@ return (
   {/* === AYODHYA ATTRACTIONS === */}  
   <section className="py-12 bg-white border-t border-gray-100">  
     <div className="max-w-6xl mx-auto px-6">  
-      <ST>Ayodhya — What to See & What Every Group Should Know</ST>  
+      <ST>Ayodhya — What to See &amp; What Every Group Should Know</ST>  
       <p className="text-gray-600 text-sm max-w-3xl mb-8 leading-relaxed">  
         An honest account of what a group spending one day in Ayodhya actually sees, does, and experiences at each stop, not a list of identical two-line descriptions.  
       </p>  
@@ -611,7 +611,7 @@ return (
     </div>  
   </section>  
 
-  {/* === FARE INCLUSIONS AND EXCLUSIONS (ADDED ACCORDING TO SPECS) === */}  
+  {/* === FARE INCLUSIONS AND EXCLUSIONS === */}  
   <section className="py-12 bg-gray-50 border-t border-gray-100">  
     <div className="max-w-6xl mx-auto px-6">  
       <ST>Fare Inclusions and Exclusions</ST>  
@@ -682,7 +682,7 @@ return (
 
   <Footer />  
 
-  {/* Mobile Fixed Action Buttons (ADDED ACCORDING TO SPECS) */}  
+  {/* Mobile Fixed Action Buttons */}  
   <a href="https://wa.me/919044019511" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="fixed bottom-6 left-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">  
     <FaWhatsapp size={26} color="#fff" />  
   </a>  
