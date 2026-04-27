@@ -552,14 +552,56 @@
       {
         "from": "Dehradun → Dehradun Airport Transfers ",
         "description": "Quick, reliable, and convenient airport transfers for families, corporate teams, and VIP guests. Travel stress-free with punctual pickups and clean AC vehicles.  "
-      }
-     
-    ]
+      }{  
+    "from": "Dehradun → Dehradun Airport Transfers ",  
+    "description": "Quick, reliable, and convenient airport transfers for families, corporate teams, and VIP guests. Travel stress-free with punctual pickups and clean AC vehicles.  "  
+  }  
+]
 
-
-
-   
-   
-  }
-
+},
+"varanasi-to-ayodhya": {
+"cityname": "Varanasi to Ayodhya",
+"title": "Tempo Traveller from Varanasi to Ayodhya | Yatra Travel India",
+"metaDescription": [
+"Book a comfortable and affordable tempo traveller from Varanasi to Ayodhya with Yatra Travel India. Perfect for Ram Mandir Darshan, family pilgrimages, and group tours.",
+"We offer 9, 12, 16, and 20 seater AC tempo travellers with verified drivers, clean interiors, and fixed pricing. Enjoy a safe and smooth journey to the holy city of Ayodhya."
+],
+"affordable": [
+"9-seater tempo traveller for small family pilgrimages",
+"12-seater tempo traveller for group tours to Ram Mandir",
+"16-seater Urbania for premium travel comfort",
+"20-seater tempo traveller for large temple trusts and joint families"
+],
+"affordableLastPara": "Each vehicle is sanitized, fully air-conditioned, and equipped with comfortable pushback seats for your 200 km journey.",
+"bestSeaterLine1": "Looking for the best 12 seater tempo traveller from Varanasi to Ayodhya? Yatra Travel India offers premium vehicles specifically for the Ayodhya pilgrimage circuit.",
+"bestSeaterPointsHeading": "All our Ayodhya route vehicles feature",
+"bestSeaterPoints": [
+"Premium pushback seats for the 4-hour drive",
+"Excellent AC for summer travel",
+"Ample luggage space for your belongings",
+"Experienced drivers familiar with the Varanasi-Ayodhya highway",
+"Music system for bhajans and entertainment"
+],
+"bestSeaterLine2": [
+"We guarantee a safe, comfortable, and punctual journey so you can focus entirely on your pilgrimage."
+],
+"outstationPara": [
+"The Varanasi to Ayodhya route is one of our most popular outstation services. We ensure your group travels together without the hassle of coordinating multiple cabs."
+],
+"outstationRoutes": [
+"Varanasi to Ayodhya - Direct Ram Janmabhoomi Darshan",
+"Varanasi to Ayodhya via Jaunpur",
+"Varanasi to Ayodhya via Sultanpur",
+"Ayodhya local sightseeing - Hanuman Garhi, Saryu Ghat"
+],
+"outstationLast": "Book your Varanasi to Ayodhya tempo traveller directly with us for transparent, zero-hidden-fee pricing.",
+"rates": ["22", "23-25", "26-28", "30"],
+"routesLine": "Travel safely on the NH19/NH28 highway with our verified drivers. We also cover other popular pilgrimage routes.",
+"routes": [
+{
+"from": "Varanasi → Ayodhya",
+"description": "Direct transfer to Ayodhya for Ram Mandir Darshan. Comfortable 4-hour drive with AC tempo travellers."
+}
+]
+}
 }
