@@ -45,21 +45,18 @@ const attractions = [
   {
     name: "Hanuman Garhi",
     subtitle: "The Beginning",
-    icon: "🚩",
     desc: "Every serious Ayodhya pilgrimage begins here — not at Ram Janmabhoomi. 76 steps cut into the hillside lead to the most recognisable temple on the Ayodhya skyline. Lord Hanuman is the guardian of the city and visiting Hanuman before Ram darshan is the correct sequence that most devoted pilgrims follow instinctively. Allow a full hour.",
     tip: "Palanquin carriers are available at the base for elderly group members.",
   },
   {
     name: "Ram Janmabhoomi",
     subtitle: "The Reason Most Groups Are Here",
-    icon: "🛕",
     desc: "The Ram Lalla darshan at Ram Janmabhoomi is the centrepiece of this pilgrimage. Queue time before 10 AM on weekdays runs 1–2 hours on a normal day. Three hours is the right allocation for the full visit — security check, queue, darshan, and exit. Phones are strictly not permitted inside the complex.",
     tip: "Leave phones in the tempo traveller. Traditional dress required — shorts and sleeveless clothing are turned away.",
   },
   {
     name: "Kanak Bhawan",
     subtitle: "The One That Surprises Every Group",
-    icon: "✨",
     desc: "Five minutes from Ram Janmabhoomi on foot. The temple gifted by Queen Kaikeyi to Sita after her marriage to Lord Ram. Interiors painted gold, quieter and more intimate than the main complex. The stop most groups are glad they included when they initially considered skipping it.",
     tip: "Allow 30 to 45 minutes. Go in without rushing.",
   },
