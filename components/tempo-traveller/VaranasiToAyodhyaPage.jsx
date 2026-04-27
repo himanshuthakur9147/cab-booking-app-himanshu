@@ -1,24 +1,14 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { useBooking } from "@/context/BookingContext";
-import Navbar from "@/components/Navbar";
-import BookingTabs from "@/components/BookingTabs";
 import {
 FaClock, FaShieldAlt, FaUserCheck, FaWhatsapp,
 FaBus, FaCheckCircle, FaMapMarkerAlt, FaPhoneAlt,
 FaStar, FaRoad, FaInfoCircle, FaSnowflake, FaCouch,
 FaMusic, FaUserTie, FaTools, FaHeadset
 } from "react-icons/fa";
-import RouteLoader from "@/components/Loader/RouteLoader";
-import Footer from "@/components/footer/Footer";
-import AuthInit from "@/components/login/AuthInit";
 import TempoImageCards from "@/components/tempo-traveller/TempoImageCards";
 import TempoSeatConfig from "@/components/tempo-traveller/TempoSeatConfig";
-import GoogleMapsScriptLoader from "@/components/googleComponents/GoogleMapsScriptLoader";
-import SEOJsonLD from "@/components/SEOJsonLD";
-import { TypewriterText } from "@/components/home/TypewriterText";
-import { HiArrowRight, HiChevronDown } from "react-icons/hi";
+import { HiChevronDown } from "react-icons/hi";
 import { MdDirectionsBus } from "react-icons/md";
 
 // --- DATA ---
@@ -145,6 +135,33 @@ fare: "Rs 19,000 onwards",
 },
 ];
 
+const FEATURES = [
+{ icon: <FaSnowflake />, title: "Full Air Conditioning", desc: "Fully working AC to keep you comfortable during the entire Varanasi to Ayodhya journey and sightseeing tours." },
+{ icon: <FaCouch />, title: "Comfortable Pushback Seats", desc: "Reclining seats for maximum comfort during long temple visits and the 4-hour highway journey each way." },
+{ icon: <FaMusic />, title: "Music System and Entertainment", desc: "High-quality music system and large windows with sliding curtains for a relaxed travel experience." },
+{ icon: <FaUserTie />, title: "Professional Drivers", desc: "Experienced and courteous drivers who know Varanasi to Ayodhya routes and ensure safe, on-time travel." },
+{ icon: <FaMapMarkerAlt />, title: "Flexible Stops", desc: "Stop at temples, ghats, and attractions at your own pace without any time pressure or rush." },
+{ icon: <FaTools />, title: "Clean and Well-Maintained", desc: "All vehicles sanitised and regularly serviced for your health, safety, and comfort on every trip." },
+{ icon: <FaRoad />, title: "Nominal Pricing", desc: "Affordable rates with transparent billing and no hidden charges whatsoever. Fare confirmed at booking is final." },
+{ icon: <FaHeadset />, title: "24/7 Customer Support", desc: "Round-the-clock support team available to assist with any queries or concerns before and during your trip." },
+];
+
+const INCLUDED = [
+"Base fare of Tempo Traveller",
+"Fuel charges included",
+"Driver day allowance included",
+"Clean, well-maintained vehicle",
+"Driver Accommodation (Multi-day trips)",
+];
+
+const EXCLUDED = [
+"Toll tax charges (as per actual during the trip)",
+"State entry tax / permit charges (if applicable)",
+"Parking charges (as per actual at locations)",
+"Driver night allowance (Rs 500 for tempo traveller, if applicable)",
+"Luggage carrier charges",
+];
+
 const faqs = [
 {
 question: "How do I book a tempo traveller from Varanasi to Ayodhya?",
@@ -176,7 +193,7 @@ answer: "A one day trip with a 5 AM departure covers the complete Ayodhya pilgri
 },
 {
 question: "How do I get the best tempo traveller rate for Varanasi to Ayodhya?",
-answer: "Book directly rather than through aggregators or third party platforms. Call Yatra Travel India on 9044019511. Direct bookings get the base rate without platform markup, confirmed vehicle details before the travel date, and a driver briefed on the group's requirements. Book at least 5 to 7 days in advance on regular dates and 2 to 3 weeks in advance during festival periods.",
+answer: "Book directly rather than through aggregators or third party platforms. Call Yatra Travel India on 9044019511. Direct bookings get the base rate without platform markup, confirmed vehicle details before the travel date, and a driver briefed on the group requirements. Book at least 5 to 7 days in advance on regular dates and 2 to 3 weeks in advance during festival periods.",
 },
 {
 question: "Which is the best route from Varanasi to Ayodhya by tempo traveller?",
@@ -208,33 +225,6 @@ answer: "Call or WhatsApp 9044019511. The booking is confirmed verbally on the s
 },
 ];
 
-const FEATURES = [
-{ icon: <FaSnowflake />, title: "Full Air Conditioning", desc: "Fully working AC to keep you comfortable during the entire Varanasi to Ayodhya journey and sightseeing tours." },
-{ icon: <FaCouch />, title: "Comfortable Pushback Seats", desc: "Reclining seats for maximum comfort during long temple visits and the 4-hour highway journey each way." },
-{ icon: <FaMusic />, title: "Music System and Entertainment", desc: "High-quality music system and large windows with sliding curtains for a relaxed travel experience." },
-{ icon: <FaUserTie />, title: "Professional Drivers", desc: "Experienced and courteous drivers who know Varanasi to Ayodhya routes and ensure safe, on-time travel." },
-{ icon: <FaMapMarkerAlt />, title: "Flexible Stops", desc: "Stop at temples, ghats, and attractions at your own pace without any time pressure or rush." },
-{ icon: <FaTools />, title: "Clean and Well-Maintained", desc: "All vehicles sanitised and regularly serviced for your health, safety, and comfort on every trip." },
-{ icon: <FaRoad />, title: "Nominal Pricing", desc: "Affordable rates with transparent billing and no hidden charges whatsoever. Fare confirmed at booking is final." },
-{ icon: <FaHeadset />, title: "24/7 Customer Support", desc: "Round-the-clock support team available to assist with any queries or concerns before and during your trip." },
-];
-
-const INCLUDED = [
-"Base fare of Tempo Traveller",
-"Fuel charges included",
-"Driver day allowance included",
-"Clean, well-maintained vehicle",
-"Driver Accommodation (Multi-day trips)",
-];
-
-const EXCLUDED = [
-"Toll tax charges (as per actual during the trip)",
-"State entry tax / permit charges (if applicable)",
-"Parking charges (as per actual at locations)",
-"Driver night allowance (Rs 500 for tempo traveller, if applicable)",
-"Luggage carrier charges",
-];
-
 // FAQ Accordion Item
 function FaqItem({ question, answer }) {
 const [open, setOpen] = useState(false);
@@ -259,97 +249,28 @@ className={flex-shrink-0 text-[#0f6ec8] text-xl transition-transform duration-30
 }
 
 export default function VaranasiToAyodhyaPage() {
-const router = useRouter();
-const [loader, setLoader] = useState(false);
-const { pickupLocation, dropLocation, pickupDate, returnDate, pickupTime } = useBooking();
-
-const onSubmit = () => {
-setLoader(true);
-let detectedServiceType = "One Way";
-if (returnDate === "" && dropLocation === "") detectedServiceType = "Cab Rental Service";
-else if (returnDate !== "") detectedServiceType = "Round Trip";
-router.push(
-/booking/select_car?pickup_location=${pickupLocation}&service_type=${encodeURIComponent(detectedServiceType)}&drop_location=${dropLocation}&pickup_date=${pickupDate}&pickup_time=${pickupTime}&return_date=${returnDate}
-);
-setTimeout(() => setLoader(false), 2000);
-};
-
 return (
-<>
-<SEOJsonLD />
-<GoogleMapsScriptLoader onLoad={() => {}} />
-<AuthInit />
-<Navbar />
-{loader && <RouteLoader />}
+<main>
+{/* === ANNOUNCEMENT BAR === */}
+<div className="bg-[#0f6ec8] py-2 px-4">
+<div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+<p className="text-white text-xs font-medium">Varanasi to Ayodhya Tempo Traveller -- Pilgrimage Group Travel Specialists</p>
+<div className="flex items-center gap-4">
+<a href="https://wa.me/919044019511" className="text-yellow-300 font-semibold text-xs hover:underline">WhatsApp Us</a>
+<a href="tel:+919044019511" className="text-yellow-300 font-semibold text-xs hover:underline">+91 90440 19511</a>
+</div>
+</div>
+</div>
 
-{/* === TOP ANNOUNCEMENT BAR === */}  
-  <div className="bg-[#0f6ec8] py-2 px-4">  
-    <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">  
-      <p className="text-white text-xs font-medium">Varanasi to Ayodhya Tempo Traveller -- Pilgrimage Group Travel Specialists</p>  
-      <div className="flex items-center gap-4">  
-        <a href="https://wa.me/919044019511" className="text-yellow-300 font-semibold text-xs hover:underline">WhatsApp Us</a>  
-        <a href="tel:+919044019511" className="text-yellow-300 font-semibold text-xs hover:underline">+91 90440 19511</a>  
-      </div>  
-    </div>  
-  </div>  
-
-  {/* === HERO SECTION === */}  
-  <div className="relative min-h-screen flex flex-col items-center justify-start pt-20 pb-20 px-4">  
-    <div  
-      className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"  
-      style={{ backgroundImage: `url('/bg.webp')` }}  
-    />  
-    <div className="text-center z-10 mb-6 mt-4">  
-      <h1 className="uppercase font-black text-3xl md:text-6xl text-white tracking-tighter drop-shadow-2xl">  
-        <TypewriterText />  
-      </h1>  
-    </div>  
-    <div className="w-[80%] md:w-[50%] max-w-3xl z-10">  
-      <div className="bg-white rounded-xl shadow-2xl border border-gray-100 w-full">  
-        <div className="pb-12">  
-          <BookingTabs />  
-          <div className="flex justify-center -mt-10 relative z-30">  
-            <button  
-              onClick={onSubmit}  
-              disabled={!pickupLocation?.trim()}  
-              className={`group flex items-center gap-4 px-12 md:px-20 py-3 md:py-4 rounded-2xl font-black uppercase text-xl md:text-3xl transition-all duration-300 shadow-[0_20px_50px_rgba(37,99,235,0.3)] transform active:scale-95 ${  
-                !pickupLocation?.trim()  
-                  ? "bg-slate-700 text-slate-400 cursor-not-allowed"  
-                  : "bg-[#0f6ec8] hover:bg-orange-500 text-white hover:shadow-orange-500/40"  
-              }`}  
-            >  
-              Search Cabs  
-              <HiArrowRight className="group-hover:translate-x-3 transition-transform duration-300" />  
-            </button>  
-          </div>  
-        </div>  
-      </div>  
-    </div>  
-    <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 w-[80%] md:w-[65%]">  
-      <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10 flex items-center gap-4 hover:bg-white/20 transition-all">  
-        <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center text-white text-xl shadow-lg"><FaShieldAlt /></div>  
-        <div><h4 className="text-white font-bold text-sm">Safe and Secure</h4><p className="text-gray-300 text-[10px] uppercase font-medium">Verified Drivers and Vehicles</p></div>  
-      </div>  
-      <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10 flex items-center gap-4 hover:bg-white/20 transition-all">  
-        <div className="w-12 h-12 bg-[#0f6ec8] rounded-xl flex items-center justify-center text-white text-xl shadow-lg"><FaUserCheck /></div>  
-        <div><h4 className="text-white font-bold text-sm">Expert Chauffeurs</h4><p className="text-gray-300 text-[10px] uppercase font-medium">Professional and Punctual</p></div>  
-      </div>  
-      <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/10 flex items-center gap-4 hover:bg-white/20 transition-all">  
-        <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center text-white text-xl shadow-lg"><FaClock /></div>  
-        <div><h4 className="text-white font-bold text-sm">24/7 Support</h4><p className="text-gray-300 text-[10px] uppercase font-medium">We are always here for you</p></div>  
-      </div>  
-    </div>  
-  </div>  
-
-  {/* === TRUST BAR === */}  
+{/* === TRUST BAR === */}  
   <div className="bg-[#f8faff] border-b border-gray-200 py-3 px-4">  
     <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200">  
       {[  
         { title: "On-Time Pickup", sub: "Pickup from your exact location" },  
         { title: "Clean and Well Maintained", sub: "Checked before every trip" },  
         { title: "Transparent Pricing", sub: "Toll, parking, driver allowance included" },  
-        { title: "Verified Drivers", sub: "Know Varanasi and Ayodhya routes" }  
-      ].map(item => (  
+        { title: "Verified Drivers", sub: "Know Varanasi and Ayodhya routes" },  
+      ].map((item) => (  
         <div key={item.title} className="flex items-start gap-2 px-4 py-3">  
           <div className="w-9 h-9 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">  
             <FaShieldAlt className="text-[#0f6ec8] text-sm" />  
@@ -384,7 +305,7 @@ return (
     </div>  
   </section>  
 
-  {/* === VEHICLE IMAGES (just after intro) === */}  
+  {/* === VEHICLE IMAGES === */}  
   <TempoImageCards />  
 
   {/* === FARE TABLE === */}  
@@ -525,11 +446,11 @@ return (
             <h3 className="text-lg font-bold text-red-600">Leave at 8:00 AM</h3>  
           </div>  
           <ul className="space-y-2 text-gray-700">  
-            <li className="flex items-start gap-2 text-sm"><span className="text-red-400 mt-1 flex-shrink-0 font-bold">X</span><span>Reach Ayodhya at 11:30 AM</span></li>  
-            <li className="flex items-start gap-2 text-sm"><span className="text-red-400 mt-1 flex-shrink-0 font-bold">X</span><span>Join the midday Ram Lalla queue (4 to 6 hrs on weekends)</span></li>  
-            <li className="flex items-start gap-2 text-sm"><span className="text-red-400 mt-1 flex-shrink-0 font-bold">X</span><span>Complete darshan between 4:00 to 5:00 PM</span></li>  
-            <li className="flex items-start gap-2 text-sm"><span className="text-red-400 mt-1 flex-shrink-0 font-bold">X</span><span>Drive back through the evening traffic</span></li>  
-            <li className="flex items-start gap-2 text-sm"><span className="text-red-400 mt-1 flex-shrink-0 font-bold">X</span><span>Reach Varanasi tired, having seen significantly less</span></li>  
+            <li className="flex items-start gap-2 text-sm"><span className="text-red-400 mt-1 flex-shrink-0 font-bold">✗</span><span>Reach Ayodhya at 11:30 AM</span></li>  
+            <li className="flex items-start gap-2 text-sm"><span className="text-red-400 mt-1 flex-shrink-0 font-bold">✗</span><span>Join the midday Ram Lalla queue (4 to 6 hrs on weekends)</span></li>  
+            <li className="flex items-start gap-2 text-sm"><span className="text-red-400 mt-1 flex-shrink-0 font-bold">✗</span><span>Complete darshan between 4:00 to 5:00 PM</span></li>  
+            <li className="flex items-start gap-2 text-sm"><span className="text-red-400 mt-1 flex-shrink-0 font-bold">✗</span><span>Drive back through the evening traffic</span></li>  
+            <li className="flex items-start gap-2 text-sm"><span className="text-red-400 mt-1 flex-shrink-0 font-bold">✗</span><span>Reach Varanasi tired, having seen significantly less</span></li>  
           </ul>  
         </div>  
       </div>  
@@ -546,7 +467,7 @@ return (
         Features of Our Tempo Travellers for Varanasi to Ayodhya  
       </h2>  
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">  
-        {FEATURES.map(f => (  
+        {FEATURES.map((f) => (  
           <div key={f.title} className="bg-[#f8faff] border border-blue-100 rounded-xl p-5 text-center hover:border-[#0f6ec8] hover:shadow-md transition-all">  
             <div className="w-11 h-11 bg-[#0f6ec8] rounded-xl flex items-center justify-center mx-auto mb-3 text-white text-lg">  
               {f.icon}  
@@ -586,7 +507,7 @@ return (
           <ul className="list-none m-0 p-0">  
             {EXCLUDED.map((item, i) => (  
               <li key={item} className={"px-5 py-4 text-sm font-semibold text-[#0f6ec8] border-b border-blue-100 last:border-0 flex items-center gap-2 " + (i % 2 === 0 ? "bg-[#f0f5ff]" : "bg-white")}>  
-                <span className="text-red-400 font-bold flex-shrink-0">X</span>  
+                <span className="text-red-400 font-bold flex-shrink-0">✗</span>  
                 {item}  
               </li>  
             ))}  
@@ -716,27 +637,7 @@ return (
       </a>  
     </div>  
   </section>  
-
-  <Footer />  
-
-  {/* === FLOATING MOBILE BUTTONS === */}  
-  <a  
-    href="https://wa.me/919044019511"  
-    target="_blank"  
-    rel="noopener noreferrer"  
-    aria-label="WhatsApp"  
-    className="fixed bottom-6 left-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all"  
-  >  
-    <FaWhatsapp size={26} color="#fff" />  
-  </a>  
-  <a  
-    href="tel:+919044019511"  
-    aria-label="Call Now"  
-    className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#0f6ec8] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all"  
-  >  
-    <FaPhoneAlt size={20} color="#fff" />  
-  </a>  
-</>
+</main>
 
 );
 }
