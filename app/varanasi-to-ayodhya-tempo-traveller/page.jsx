@@ -24,8 +24,8 @@ const SCHEMA = {
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://www.yatratravelindia.com/tempo-traveller-varanasi-to-ayodhya#service",
-      "url": "https://www.yatratravelindia.com/tempo-traveller-varanasi-to-ayodhya",
+      "@id": "https://www.yatratravelindia.com/varanasi-to-ayodhya-tempo-traveller#service",
+      "url": "https://www.yatratravelindia.com/varanasi-to-ayodhya-tempo-traveller",
       "name": "Varanasi to Ayodhya Tempo Traveller | Yatra Travel India",
       "description": "Book tempo traveller from Varanasi to Ayodhya for Ram Janmabhoomi darshan. 9 to 20 seater AC vehicles with fixed all-inclusive fares.",
       "provider": {
@@ -40,7 +40,7 @@ const SCHEMA = {
     },
     {
       "@type": "FAQPage",
-      "@id": "https://www.yatratravelindia.com/tempo-traveller-varanasi-to-ayodhya#faq",
+      "@id": "https://www.yatratravelindia.com/varanasi-to-ayodhya-tempo-traveller#faq",
       "mainEntity": [
         {
           "@type": "Question",
