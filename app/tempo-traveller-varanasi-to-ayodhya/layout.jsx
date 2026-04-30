@@ -13,7 +13,7 @@ siteName: "Yatra Travel India",
 type: "website",
 },
 alternates: {
-canonical: "https://www.yatratravelindia.com/tempo-traveller-varanasi-to-ayodhya",
+canonical: "https://www.yatratravelindia.com/varanasi-to-ayodhya-tempo-traveller",
 },
 };
 
