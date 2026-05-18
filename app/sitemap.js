@@ -1,6 +1,9 @@
 import dbConnect from '@/lib/db';
 import Blog from '@/models/Blog';
 
+// Add this line to force Next.js to regenerate the sitemap on every request
+export const dynamic = 'force-dynamic';
+
 export default async function sitemap() {
   const baseUrl = 'https://www.yatratravelindia.com';
 
