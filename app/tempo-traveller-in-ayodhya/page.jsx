@@ -126,6 +126,58 @@ export default function TempoTravellerAyodhya() {
 
   return (
     <div style={{ maxWidth: "100%", overflowX: "hidden" }}>
+      <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "LocalBusiness",
+              name: "Yatra Travel India",
+              url: "https://www.yatratravelindia.com",
+              telephone: "+91-9044019511",
+            },
+            {
+              "@type": "Service",
+              name: "Tempo Traveller in Ayodhya",
+              url: "https://www.yatratravelindia.com/tempo-traveller-in-ayodhya",
+              serviceType: "Tempo Traveller Rental",
+              areaServed: {
+                "@type": "City",
+                name: "Ayodhya",
+              },
+              offers: {
+                "@type": "Offer",
+                price: "23",
+                priceCurrency: "INR",
+              },
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "Tempo traveller ka rate Ayodhya me kitna hai?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "₹23 per km se start hota hai.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Ram Mandir darshan ke liye tempo traveller available hai?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Haan, AC tempo travellers available hain.",
+                  },
+                },
+              ],
+            },
+          ],
+        }),
+      }}
+    />
       <Navbar />
 
       <div className="bg-[#0f6ec8] py-2 px-4">
